@@ -1,7 +1,7 @@
 {
   "status": "success",
   "updatedAt": "2026-11-07T05:00:44.877893",
-  "count": 563,
+  "count": 532,
   "worksCount": 6,
   "irisCount": 44,
   "items": [
@@ -228,24 +228,6 @@
       ]
     },
     {
-      "id": 14,
-      "code": "natalie.mu/stage/news/685503",
-      "date": "2026-08-17",
-      "title": "舞台「ジョーカー・ゲームⅣ」ティザービジュアル＆追加出演者解禁、キャスト登壇イベントも",
-      "summary": "舞台『ジョーカー・ゲームⅣ』の追加キャスト発表記事。野上百合子役としての出演決定や、東京・京都での公演日程およびトークイベント情報が掲載。",
-      "url": "https://natalie.mu/stage/news/685503",
-      "media": "ナタリー",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "舞台",
-        "声優",
-        "ナタリー"
-      ]
-    },
-    {
       "id": 15,
       "code": "sipory.jp/blog/himika-akaneya-sgf2026",
       "date": "2026-08-11",
@@ -438,42 +420,6 @@
       "tags": [
         "i☆Ris",
         "声優グランプリ"
-      ]
-    },
-    {
-      "id": 26,
-      "code": "seigura.com/news/168221",
-      "date": "2026-04-28",
-      "title": "シネマダミス『超時空捜査隊マルキュー』一般チケットが4月28日（火）19時より販売開始！感想戦の同時開催決定！",
-      "summary": "シネマダミス『超時空捜査隊マルキュー』一般発売および感想戦開催決定に伴うキャストコメント記事。薔薇ヶ崎あかね役として3度目のマダミスに挑む意気込みを語る。",
-      "url": "https://seigura.com/news/168221/",
-      "media": "声優グランプリ",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "舞台",
-        "声優",
-        "声優グランプリ"
-      ]
-    },
-    {
-      "id": 27,
-      "code": "adv.tokyo-np.co.jp/prtimes/article139857",
-      "date": "2026-04-03",
-      "title": "『シネマダミス』の最速先行（抽選）受付開始！『超時空捜査隊マルキュー』の各キャストの担当キャラクターも発表！",
-      "summary": "シネマダミス『超時空捜査隊マルキュー』第3回公演の配役発表＆コメント記事。自身と性格が似ているという薔薇ヶ崎あかね役への意気込みを語っています。",
-      "url": "https://adv.tokyo-np.co.jp/prtimes/article139857/",
-      "media": "東京新聞 (PR TIMES)",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "舞台",
-        "声優",
-        "東京新聞 (PR TIMES)"
       ]
     },
     {
@@ -672,24 +618,6 @@
       "tags": [
         "i☆Ris",
         "リスアニ！"
-      ]
-    },
-    {
-      "id": 39,
-      "code": "mediact.info/release_info/26600",
-      "date": "2025-11-22",
-      "title": "朗読劇「4月の花嫁」上演決定！ 井口裕香、河内美里、茜屋日海夏、久保田未夢ら豪華声優陣が出演！ 脚本、演出 田邊俊喜",
-      "summary": "チャペルで上演される朗読劇『4月の花嫁』の上演決定＆キャストコメント記事。脚本を読んでほぐれた感情や、演出・田邊俊喜氏との作品づくりへの期待を語る。",
-      "url": "https://mediact.info/release_info/26600/",
-      "media": "Media-ct",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "舞台",
-        "声優",
-        "Media-ct"
       ]
     },
     {
@@ -911,23 +839,6 @@
       ]
     },
     {
-      "id": 52,
-      "code": "animatetimes.com/news/details.php?id=1761885086",
-      "date": "2025-10-31",
-      "title": "『嘆きの亡霊は引退したい』より、第18話「のんびり温泉浸かりたい」先行場面カット＆あらすじ公開！ 追加声優に茜屋日海夏さんが決定",
-      "summary": "TVアニメ『嘆きの亡霊は引退したい』第18話の先行カットおよび追加キャスト発表記事。地底人のリーダー・リューラン役として作品とキャラクターの魅力を語るコメントが掲載されています。",
-      "url": "https://www.animatetimes.com/news/details.php?id=1761885086",
-      "media": "アニメイトタイムズ",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "声優",
-        "アニメイトタイムズ"
-      ]
-    },
-    {
       "id": 53,
       "code": "realsound.jp/movie/2025/10/post-2189180.html",
       "date": "2025-10-22",
@@ -1135,24 +1046,6 @@
         "舞台",
         "対談",
         "MANTANWEB"
-      ]
-    },
-    {
-      "id": 64,
-      "code": "engekisengen.com/genre/play/115615",
-      "date": "2025-08-25",
-      "title": "Casual Meets Shakespeare『ヴェニスの商人CS』キービジュアル公開、日替わりゲスト発表！",
-      "summary": "舞台『ヴェニスの商人 CS』のキービジュアル公開記事。コメディバージョンでバサーニオが憧れる貴婦人・ポーシャ役を演じる茜屋日海夏さんのキャラクタービジュアルや公演概要が紹介されています。",
-      "url": "https://engekisengen.com/genre/play/115615/",
-      "media": "ローチケ演劇宣言！",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "舞台",
-        "声優",
-        "ローチケ演劇宣言！"
       ]
     },
     {
@@ -2324,25 +2217,6 @@
       ]
     },
     {
-      "id": 131,
-      "code": "nbpress.online/archives/99037",
-      "date": "2024-05-15",
-      "title": "【動画インタビュー＆読者プレゼント】アイドル＆声優の両立！芹澤優×茜屋日海夏×若井友希「劇中で言えなかったこれまでの苦労話」劇場版アニメ『i☆Ris the Movie – Full Energy!! -』",
-      "summary": "劇場版アニメ『i☆Ris the Movie』公開に向けた芹澤さん・茜屋さん・若井さんのインタビュー。楽屋のリアルな空気感や10年間の歩み、ファンへの感謝を語っています。",
-      "url": "https://nbpress.online/archives/99037",
-      "media": "NB Press Online",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "対談",
-        "声優",
-        "NB Press Online"
-      ]
-    },
-    {
       "id": 132,
       "code": "nbpress.online/archives/98129",
       "date": "2024-04-28",
@@ -2734,24 +2608,6 @@
         "ソロ",
         "声優",
         "リスアニ！"
-      ]
-    },
-    {
-      "id": 154,
-      "code": "animatetimes.com/news/details.php?id=1699860412",
-      "date": "2023-11-21",
-      "title": "i☆Ris・茜屋日海夏さん ソロデビューシングル「Stereo Sunset (Prod.AmPm)」発売記念インタビュー｜これまで歌ったことのないチルな雰囲気の『MFゴースト』ED曲と、自身が作詞を手掛けた“重い愛”がテーマのカップリング曲で新たな一面を見せる！",
-      "summary": "ソロデビュー曲「Stereo Sunset」発売記念インタビュー。チルな曲調の表題曲と、深い愛をテーマに自身で作詞したカップリング曲「SARANG」の制作秘話を語っています。",
-      "url": "https://www.animatetimes.com/news/details.php?id=1699860412",
-      "media": "アニメイトタイムズ",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "ソロ",
-        "i☆Ris",
-        "アニメイトタイムズ"
       ]
     },
     {
@@ -3435,42 +3291,6 @@
       ]
     },
     {
-      "id": 193,
-      "code": "joqr.co.jp/ag/article/60815",
-      "date": "2022-08-03",
-      "title": "ゲストに石原夏織さん、i☆Risから茜屋日海夏さん＆若井友希さんが登場！代打パーソナリティは井口裕香さん！エジソン8月6日",
-      "summary": "文化放送『A&G TRIBAL RADIO エジソン』ゲスト出演告知記事。22ndシングル「Queens Bluff」特集として若井友希さんとともに登場し、ハッタリを試すゲーム企画に挑戦することを紹介。",
-      "url": "https://www.joqr.co.jp/ag/article/60815/",
-      "media": "文化放送",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "ラジオ",
-        "文化放送"
-      ]
-    },
-    {
-      "id": 194,
-      "code": "joqr.co.jp/ag/article/30804",
-      "date": "2022-06-27",
-      "title": "7月8日・15日放送はi☆Ris全員勢ぞろいでお届け！『i☆Ristation!!』",
-      "summary": "文化放送『i☆Ristation!!』の番組5周年＆i☆Ris結成10周年を記念したメンバー全員出演特番（7月8日・15日放送）の特集記事。茜屋日海夏さんが座長を務める人気コーナーの特別企画「劇団あかねやSP（ある日のi☆Ris）」などが紹介されています。",
-      "url": "https://www.joqr.co.jp/ag/article/30804/",
-      "media": "文化放送",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "ラジオ",
-        "文化放送"
-      ]
-    },
-    {
       "id": 195,
       "code": "realsound.jp/2022/06/post-1047759.html",
       "date": "2022-06-09",
@@ -3588,24 +3408,6 @@
       "tags": [
         "i☆Ris",
         "アニメイトタイムズ"
-      ]
-    },
-    {
-      "id": 202,
-      "code": "joqr.co.jp/ag/article/45650",
-      "date": "2022-03-28",
-      "title": "4月1日＆8日放送にRun Girls, Run！の森嶋優花さんがゲスト出演！『i☆Ristation!!』",
-      "summary": "文化放送『i☆Ristation!!』のゲスト特集および番組コーナー紹介記事。茜屋日海夏さんが座長となって劇団員と毎回様々な即興演技を披露するレギュラーコーナー「劇団あかねや」などの企画内容が紹介されています。",
-      "url": "https://www.joqr.co.jp/ag/article/45650/",
-      "media": "文化放送",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "ラジオ",
-        "文化放送"
       ]
     },
     {
@@ -3784,59 +3586,6 @@
       ]
     },
     {
-      "id": 213,
-      "code": "s.animeanime.jp/article/2021/11/09/65264.html",
-      "date": "2021-11-09",
-      "title": "i☆Risがデビュー9周年ライブで魅せた「新たな魅力と変わらないらしさ」、全国ツアーの開催も発表【レポート】",
-      "summary": "幕張メッセで開催された9周年記念ライブ「～Queen's Message～」のレポート。クイーン衣装での登場や「12月のSnowry」初披露など、5人の新たな魅力が紹介されています。",
-      "url": "https://s.animeanime.jp/article/2021/11/09/65264.html",
-      "media": "アニメ！アニメ！",
-      "category": "ライブレポ",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "アニメ！アニメ！"
-      ]
-    },
-    {
-      "id": 214,
-      "code": "animatetimes.com/news/details.php?id=1636367275",
-      "date": "2021-11-08",
-      "title": "「i☆Ris 9th Anniversary Live～Queen's Message～」公式ライブレポート到着！ “声優アイドル”として奇跡の9周年！ 10年目も立ち止まらず駆け抜ける、5人の決意表明",
-      "summary": "幕張メッセでのデビュー9周年ライブ公式レポート。新曲3曲の初披露や、10周年イヤーへ向けて5人それぞれが語ったMCコメントが掲載されています。",
-      "url": "https://www.animatetimes.com/news/details.php?id=1636367275",
-      "media": "アニメイトタイムズ",
-      "category": "ライブレポ",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "声優",
-        "アニメイトタイムズ"
-      ]
-    },
-    {
-      "id": 215,
-      "code": "barks.jp/news/925316",
-      "date": "2021-11-08",
-      "title": "【ライブレポート】i☆Ris、声優アイドルとして“奇跡の10周年”へ",
-      "summary": "デビュー9周年ライブの速報レポート。5人体制初の周年ライブでの堂々たるパフォーマンスや、ファンへの直筆メッセージ・MCコメントが紹介されています。",
-      "url": "https://barks.jp/news/925316/",
-      "media": "BARKS",
-      "category": "ライブレポ",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "声優",
-        "BARKS"
-      ]
-    },
-    {
       "id": 216,
       "code": "animatetimes.com/news/details.php?id=1634886815",
       "date": "2021-10-23",
@@ -3942,23 +3691,6 @@
         "ソロ",
         "プリパラ",
         "声優",
-        "アニメイトタイムズ"
-      ]
-    },
-    {
-      "id": 222,
-      "code": "animatetimes.com/news/details.php?id=1630400671",
-      "date": "2021-09-04",
-      "title": "「i☆Ris 公式チャンネル」本格始動から神動画連発中！メンバーに直撃すると「反響は…もっと欲しいですね！」と貪欲なメッセージ！／インタビュー",
-      "summary": "i☆Ris公式YouTubeチャンネル本格始動に関するインタビュー。企画動画の撮影エピソードや、動画を通じてより幅広い層へ魅力を届けたいという意気込みを語っています。",
-      "url": "https://www.animatetimes.com/news/details.php?id=1630400671",
-      "media": "アニメイトタイムズ",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
         "アニメイトタイムズ"
       ]
     },
@@ -4488,24 +4220,6 @@
       ]
     },
     {
-      "id": 253,
-      "code": "popnroll.tv/articles/11278",
-      "date": "2020-09-20",
-      "title": "【ライブレポート】茜屋日海夏、芹澤優、久保田未夢ら出演、TVアニメ『プリパラ』シリーズ無観客生配信ライブ開催！",
-      "summary": "無観客生配信ライブ「プリパラ スペシャルイベント『朝も！夜も！どんな時も！always WITH you！！』by アイドルタイムプリパラ」のレポート。真中らぁら役としてのステージや挨拶を掲載。",
-      "url": "https://popnroll.tv/articles/11278",
-      "media": "Pop'n'Roll",
-      "category": "ライブレポ",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "プリパラ",
-        "声優",
-        "Pop'n'Roll"
-      ]
-    },
-    {
       "id": 254,
       "code": "animatetimes.com/news/details.php?id=1597978842",
       "date": "2020-08-22",
@@ -4593,24 +4307,6 @@
       "tags": [
         "声優",
         "アニメイトタイムズ"
-      ]
-    },
-    {
-      "id": 259,
-      "code": "anime.eiga.com/news/111508",
-      "date": "2020-07-07",
-      "title": "小宮有紗主演の実写映画「13月の女の子」に茜屋日海夏ら出演決定",
-      "summary": "舞台原案の実写映画『13月の女の子』の追加キャスト解禁記事。辰巳涼子役としての出演決定および役衣装の制服姿ビジュアルを紹介。",
-      "url": "https://anime.eiga.com/news/111508/",
-      "media": "アニメハック",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "舞台",
-        "声優",
-        "アニメハック"
       ]
     },
     {
@@ -5120,7 +4816,7 @@
       "date": "2019-08-16",
       "title": "２０１９年８月１５日（木）OA ＃６９９",
       "summary": "文化放送 超!A&G+『鷲崎健のヨルナイト×ヨルナイト』木曜日の放送レポート。山北早紀さんとともにゲスト出演し、深夜生放送でのトークや19thシングル「FANTASTIC ILLUSION」について語っています。",
-      "url": "http://www.joqr.co.jp/yonayona/2019/08/post-677.html",
+      "url": "https://www.joqr.co.jp/yonayona/2019/08/post-677.html",
       "media": "文化放送",
       "category": "インタビュー",
       "featured": false,
@@ -5451,24 +5147,6 @@
       ]
     },
     {
-      "id": 307,
-      "code": "animatetimes.com/news/details.php?id=1550561956",
-      "date": "2019-02-19",
-      "title": "『プリパラジオ』第1回 そらみスマイル：収録レポート&インタビュー／出演：茜屋日海夏さん、芹澤優さん、久保田未夢さん",
-      "summary": "『プリパラ』初のWEBラジオ番組『プリパラジオ』第1回の収録レポート＆独占インタビュー。SoLaMi♡SMILEの3人で『プリパラ』の思い出やコンプリートアルバムBOX、ツアーについて語っています。",
-      "url": "https://www.animatetimes.com/news/details.php?id=1550561956",
-      "media": "アニメイトタイムズ",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "プリパラ",
-        "ラジオ",
-        "アニメイトタイムズ"
-      ]
-    },
-    {
       "id": 308,
       "code": "news.mynavi.jp/article/20190215-iRis",
       "date": "2019-02-15",
@@ -5746,24 +5424,6 @@
       ]
     },
     {
-      "id": 324,
-      "code": "animatetimes.com/news/details.php?id=1538219271",
-      "date": "2018-09-29",
-      "title": "「プリパラ＆キラッとプリ☆チャンAUTUMN LIVE TOUR み～んなでアイドルやってみた！」東京公演より公式レポート到着！ 総勢22名の声優陣が熱いライブを展開",
-      "summary": "「プリパラ＆キラッとプリ☆チャンAUTUMN LIVE TOUR」東京公演の公式速報レポート。総勢22名のステージと、主演として語った温かい挨拶コメントが掲載されています。",
-      "url": "https://www.animatetimes.com/news/details.php?id=1538219271",
-      "media": "アニメイトタイムズ",
-      "category": "ライブレポ",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "プリパラ",
-        "声優",
-        "アニメイトタイムズ"
-      ]
-    },
-    {
       "id": 325,
       "code": "webnewtype.com/report/cast/161556.html",
       "date": "2018-09-10",
@@ -5778,40 +5438,6 @@
       "tags": [
         "声優",
         "WebNewtype"
-      ]
-    },
-    {
-      "id": 326,
-      "code": "natalie.mu/comic/news/298479",
-      "date": "2018-09-05",
-      "title": "義理の兄妹の一つ屋根の下ラブ1巻、櫻井孝宏＆茜屋日海夏のボイスドラマも",
-      "summary": "折笠まみ『ミントチョコレート』コミックス第1巻発売およびマンガアプリ「マンガPark」でのボイスドラマ配信記事。ヒロイン・七海役を茜屋日海夏さん、義理の兄・京平役を櫻井孝宏さんが演じるボイスドラマ企画が紹介されています。",
-      "url": "https://natalie.mu/comic/news/298479",
-      "media": "ナタリー",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "声優",
-        "ナタリー"
-      ]
-    },
-    {
-      "id": 327,
-      "code": "natalie.mu/comic/news/297721",
-      "date": "2018-08-31",
-      "title": "「夏目友人帳」がマンガParkに登場、「絶頂島の姫」ボイスドラマ第3弾も",
-      "summary": "白泉社のマンガアプリ「マンガPark」での『ミントチョコレート』ボイスドラマ配信告知記事。折笠まみ原作の義理の兄妹ラブコメにて、村田七海役を茜屋日海夏さん、鈴村京平役を櫻井孝宏さんが担当することが発表されています。",
-      "url": "https://natalie.mu/comic/news/297721",
-      "media": "ナタリー",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "声優",
-        "ナタリー"
       ]
     },
     {
@@ -5902,24 +5528,6 @@
         "舞台",
         "声優",
         "ウォーカープラス"
-      ]
-    },
-    {
-      "id": 333,
-      "code": "moca-news.net/artdisp.php?artid=201805301147a00",
-      "date": "2018-05-30",
-      "title": "6月2日（土）に公開となる映画『馬の骨』の初日舞台挨拶が開催。アイドル役で出演する茜屋日海夏らも登壇",
-      "summary": "実写映画『馬の骨』の公開および初日舞台挨拶開催の告知記事。水島エリ役として出演する作品概要やテアトル新宿での舞台挨拶登壇について紹介。",
-      "url": "https://moca-news.net/artdisp.php?artid=201805301147a00",
-      "media": "MoCa",
-      "category": "舞台挨拶・イベント",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "舞台",
-        "声優",
-        "MoCa"
       ]
     },
     {
@@ -6106,25 +5714,6 @@
       ]
     },
     {
-      "id": 344,
-      "code": "animatetimes.com/news/details.php?id=1523520298",
-      "date": "2018-04-12",
-      "title": "【連載】TVアニメ『魔法少女サイト』大野柚布子さん(朝霧 彩役)×茜屋日海夏さん(奴村露乃役)対談｜「第1話は彩の味方がいない世界」「露乃が早く出て行きたかった」",
-      "summary": "TVアニメ『魔法少女サイト』第1話放送後の大野柚布子さんとの対談。第1話のアフレコを振り返りつつ、奴村露乃を演じるうえで大切にした点やWEBラジオを語っています。",
-      "url": "https://www.animatetimes.com/news/details.php?id=1523520298",
-      "media": "アニメイトタイムズ",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "ラジオ",
-        "対談",
-        "声優",
-        "アニメイトタイムズ"
-      ]
-    },
-    {
       "id": 345,
       "code": "hominis.media/category/voiceActor/post646",
       "date": "2018-04-11",
@@ -6235,24 +5824,6 @@
       ]
     },
     {
-      "id": 351,
-      "code": "mantan-web.jp/article/20180403dog00m200033000c.html",
-      "date": "2018-04-04",
-      "title": "茜屋日海夏：「プリパラ」声優が実写映画「お前ら全員めんどくさい！」に出演",
-      "summary": "実写映画『お前ら全員めんどくさい！』への出演決定記事。『馬の骨』に続く実写映画出演として、教師に絡むツンデレ女子生徒・榎本英子役を演じることを紹介。",
-      "url": "https://mantan-web.jp/article/20180403dog00m200033000c.html",
-      "media": "MANTANWEB",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "プリパラ",
-        "声優",
-        "MANTANWEB"
-      ]
-    },
-    {
       "id": 352,
       "code": "theatertainment.jp/japanese-play/1749",
       "date": "2018-03-20",
@@ -6304,24 +5875,6 @@
         "i☆Ris",
         "プリパラ",
         "リスアニ！"
-      ]
-    },
-    {
-      "id": 355,
-      "code": "news.livedoor.com/article/detail/14331377",
-      "date": "2018-02-21",
-      "title": "【インタビュー】全員が負けず嫌いで「頑張らなきゃ！」の一心。i☆Risが持つパワフルさの源",
-      "summary": "15thシングル「Memorial」発売記念のロングインタビュー。『プリパラ』の思い出が詰まった楽曲への想いや、負けず嫌いな6人が切磋琢磨してきた関係性について語っています。",
-      "url": "https://news.livedoor.com/article/detail/14331377/",
-      "media": "ライブドアニュース",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "プリパラ",
-        "ライブドアニュース"
       ]
     },
     {
@@ -6502,23 +6055,6 @@
       "tags": [
         "i☆Ris",
         "リスアニ！"
-      ]
-    },
-    {
-      "id": 366,
-      "code": "spice.eplus.jp/articles/157568",
-      "date": "2017-11-15",
-      "title": "i☆Ris 5周年ライブはヒット曲ぶっ続け！ 新シングルとツアーも発表 『i☆Ris 5th Anniversary Live～Go～』レポート",
-      "summary": "府中の森芸術劇場で開催されたデビュー5周年記念ライブ2日目のレポート。全シングル曲を網羅したセットリストや、5年間の感謝と決意を語るMCが綴られています。",
-      "url": "https://spice.eplus.jp/articles/157568",
-      "media": "SPICE",
-      "category": "ライブレポ",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "SPICE"
       ]
     },
     {
@@ -7017,24 +6553,6 @@
       "tags": [
         "プリパラ",
         "キッズイベント"
-      ]
-    },
-    {
-      "id": 395,
-      "code": "animatetimes.com/news/details.php?id=1489131990",
-      "date": "2017-03-14",
-      "title": "14thシングルは新しい世代へ伝える様な曲――i☆Risが語った「Shining Star」の聞きどころ＆武道館公演でひとつになった瞬間とは",
-      "summary": "14thシングル「Shining Star」のグループインタビュー。武道館公演後のエピソードや、『プリパラ』新世代へ繋ぐ表題曲・昭和アイドル風カップリング曲の魅力を語っています。",
-      "url": "https://www.animatetimes.com/news/details.php?id=1489131990",
-      "media": "アニメイトタイムズ",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "プリパラ",
-        "アニメイトタイムズ"
       ]
     },
     {
@@ -7547,25 +7065,6 @@
       ]
     },
     {
-      "id": 424,
-      "code": "mantan-web.jp/article/20161029dog00m200026000c.html",
-      "date": "2016-10-29",
-      "title": "プリパラ：“真中姉妹”声優が初ライブ 茜屋日海夏は“妹”の活躍に「100点！」",
-      "summary": "『プリパラ』公式親衛隊イベントのレポート。真中らぁら役として妹・のん役の田中美海さんとイベント初共演し、「Brand New Dreamer」などを披露した感想を語っています。",
-      "url": "https://mantan-web.jp/article/20161029dog00m200026000c.html",
-      "media": "MANTANWEB",
-      "category": "舞台挨拶・イベント",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "プリパラ",
-        "舞台",
-        "声優",
-        "MANTANWEB"
-      ]
-    },
-    {
       "id": 425,
       "code": "getnews.jp/archives/1541872",
       "date": "2016-10-22",
@@ -7789,7 +7288,7 @@
       "date": "2016-08-05",
       "title": "２０１６年８月４日（木）OA #７２",
       "summary": "文化放送 超!A&G+『鷲崎健のヨルナイト×ヨルナイト』木曜日の放送レポート。芹澤優さん・若井友希さんと出演した「誰が一番かわいいかグランプリ」や13thシングル「Re:Call」、武道館公演に向けた企画が綴られています。",
-      "url": "http://www.joqr.co.jp/yonayona/2016/08/",
+      "url": "https://www.joqr.co.jp/yonayona/2016/08/",
       "media": "文化放送",
       "category": "インタビュー",
       "featured": false,
@@ -8159,7 +7658,7 @@
       "date": "2016-04-11",
       "title": "『Th!s !s i☆Ris!!』 ゲスト：i☆Ris・山北早紀さん＆茜屋日海夏さん（2016.4/9 OA）",
       "summary": "文化放送『A&Gメディアステーション こむちゃっとカウントダウン』の放送レポート。山北早紀さんとともにゲスト出演し、2ndアルバム『Th!s !s i☆Ris!!』の聴きどころや2ndライブツアー、日本武道館公演に向けた意気込みを語っています。",
-      "url": "http://www.joqr.co.jp/comcha/notes/ths_s_irisiris201649_oa.php",
+      "url": "https://www.joqr.co.jp/comcha/notes/ths_s_irisiris201649_oa.php",
       "media": "文化放送",
       "category": "インタビュー",
       "featured": false,
@@ -8328,7 +7827,7 @@
       "date": "2016-03-04",
       "title": "ゲストに「i☆Ris」から『茜屋日海夏さん』と『久保田未夢さん』が登場！金曜THE CATCH！！",
       "summary": "文化放送 超!A&G+『A&G ARTIST ZONE THE CATCH』金曜日の放送後記。11thシングル「Goin'on」発売記念として久保田未夢さんとゲスト出演した模様や、パーソナリティの鷲崎健さんによる感想コメントが掲載されています。",
-      "url": "http://www.joqr.co.jp/blog/2h/archives/2016/03/iristhe_catch_1.html",
+      "url": "https://www.joqr.co.jp/blog/2h/archives/2016/03/iristhe_catch_1.html",
       "media": "文化放送",
       "category": "インタビュー",
       "featured": false,
@@ -8984,7 +8483,7 @@
       "date": "2015-07-07",
       "title": "火曜THE CATCH 茜屋 日海夏さんが登場！ そして、茜屋丼 ～サマーバージョン～",
       "summary": "文化放送 超!A&G+『A&G ARTIST ZONE THE CATCH』火曜日（GeroのTHE CATCH）の放送後記。単独ゲストとして出演し、番組内で「茜屋丼 ～サマーバージョン～」を披露した模様が紹介されています。",
-      "url": "http://www.joqr.co.jp/blog/2h/archives/2015/07/the_catch_12.html",
+      "url": "https://www.joqr.co.jp/blog/2h/archives/2015/07/the_catch_12.html",
       "media": "文化放送",
       "category": "インタビュー",
       "featured": false,
@@ -9342,23 +8841,6 @@
       ]
     },
     {
-      "id": 523,
-      "code": "iris.dive2ent.com/news/detail.php?id=1019486",
-      "date": "2015-02-25",
-      "title": "BSフジ開局15周年スペシャルドラマ 鈴木光司リアルホラー「タクシー」に茜屋日海夏が出演します！！",
-      "summary": "BSフジ開局15周年スペシャルドラマ『鈴木光司 リアルホラー』第三夜「タクシー」への出演発表記事。春菜役としてテレビドラマに出演する放送情報を紹介。",
-      "url": "https://iris.dive2ent.com/news/detail.php?id=1019486",
-      "media": "i☆Ris公式",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "声優",
-        "i☆Ris公式"
-      ]
-    },
-    {
       "id": 524,
       "code": "lisani.jp/0000001452",
       "date": "2015-02-24",
@@ -9418,7 +8900,7 @@
       "date": "2015-02-16",
       "title": "『Realize!』 ゲスト：i☆Ris・芹澤優さん＆茜屋日海夏さん（2015.2/14 OA）",
       "summary": "文化放送『A&Gメディアステーション こむちゃっとカウントダウン』第636回放送レポート。8thシングル「Realize!」発売記念で芹澤優さんとともに番組初登場し、楽曲や『プリパラ』について語っています。",
-      "url": "http://www.joqr.co.jp/comcha/notes/realizeiris2015214_oa.php",
+      "url": "https://www.joqr.co.jp/comcha/notes/realizeiris2015214_oa.php",
       "media": "文化放送",
       "category": "インタビュー",
       "featured": false,
@@ -9472,7 +8954,7 @@
       "date": "2014-12-29",
       "title": "最終回！月曜２ｈ",
       "summary": "文化放送超！A&G+『A&G ARTIST ZONE i☆Risの2h』最終回放送後のパーソナリティ6人全員による振り返り記事。デビュー初期から約1年5か月にわたり担当した初冠生放送ラジオへの感謝と成長の思い出を綴っています。",
-      "url": "http://www.joqr.co.jp/blog/2h/archives/2014/12/index.html",
+      "url": "https://www.joqr.co.jp/blog/2h/archives/2014/12/index.html",
       "media": "文化放送",
       "category": "インタビュー",
       "featured": false,
@@ -9490,7 +8972,7 @@
       "date": "2014-12-23",
       "title": "茜屋日海夏の月曜２ｈ",
       "summary": "文化放送超！A&G+『A&G ARTIST ZONE i☆Risの2h』第73回放送後の本人ブログ記事。最終回直前の単独パーソナリティ回として、番組への愛着やリスナーとのやり取りを振り返っています。",
-      "url": "http://www.joqr.co.jp/blog/2h/archives/2014/12/post_1156.html",
+      "url": "https://www.joqr.co.jp/blog/2h/archives/2014/12/post_1156.html",
       "media": "文化放送",
       "category": "インタビュー",
       "featured": false,
@@ -9847,7 +9329,7 @@
       "date": "2013-11-20",
       "title": "New Comer特集 Vol.43 i☆Ris 1st Anniversaryシングル「WONDERLAND」リリース",
       "summary": "デビュー1周年記念シングル「WONDERLAND」の特集インタビュー。夏フェスを経て変化したライブへの意識や、新曲の歌とダンスに挑み成長したエピソードを語っています。",
-      "url": "http://shop.mu-mo.net/st/event/newcomer/43/?jsiteid=mumo",
+      "url": "https://shop.mu-mo.net/st/event/newcomer/43/?jsiteid=mumo",
       "media": "mu-moショップ特集",
       "category": "インタビュー",
       "featured": false,
@@ -10034,42 +9516,6 @@
         "i☆Ris",
         "声優",
         "れポたま！"
-      ]
-    },
-    {
-      "id": 561,
-      "code": "animatetimes.com/news/details.php?id=1352347500",
-      "date": "2012-11-08",
-      "title": "戦国の世は声優界にも……アニソン・ヴォーカル・アイドルユニットがアイドル戦国時代に挑む！ i☆Ris（アイリス）がデビュー！",
-      "summary": "デビューシングル「Color」発売記念の紹介＆コメント記事。秋葉原でのチラシ配布やお披露目イベントの模様とともに、デビュー時の初々しい意気込みが紹介されています。",
-      "url": "https://www.animatetimes.com/news/details.php?id=1352347500",
-      "media": "アニメイトタイムズ",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "声優",
-        "アニメイトタイムズ"
-      ]
-    },
-    {
-      "id": 562,
-      "code": "oricon.co.jp/news/2018557/full",
-      "date": "2012-11-07",
-      "title": "声優アイドルユニットの卵、i☆Risがエイベックスからデビュー",
-      "summary": "デビューシングル「Color」発売当日の特集記事。オーディション合格からチラシ配り、お披露目イベントまでの歩みや今後の目標が紹介されています。",
-      "url": "https://www.oricon.co.jp/news/2018557/full/",
-      "media": "ORICON NEWS",
-      "category": "インタビュー",
-      "featured": false,
-      "featuredMark": "非表示",
-      "hidden": true,
-      "tags": [
-        "i☆Ris",
-        "声優",
-        "ORICON NEWS"
       ]
     },
     {
