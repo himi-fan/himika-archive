@@ -1,0 +1,3620 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+ <title>茜屋日海夏 インタビュー＆活動まとめ（非公式ファンサイト）</title>
+ <meta name="description" content="声優・アーティスト・俳優として活動する茜屋日海夏さんのWebインタビュー、対談、ラジオ、公式レポート記事を体系化した非公式ファン作成アーカイブ・索引ポータルです。">
+ <meta name="robots" content="index, follow">
+
+ <!-- OGP / メタ情報 -->
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="茜屋日海夏 インタビュー＆活動まとめ（非公式ファンサイト）">
+ <meta property="og:description" content="声優・アーティスト・俳優として活動する茜屋日海夏さんのWebインタビュー、対談、ラジオ、公式レポート記事を体系化した非公式ファン作成アーカイブ・索引ポータルです。">
+ <meta property="og:site_name" content="茜屋日海夏 インタビュー＆活動まとめ（非公式ファンサイト）">
+
+ <!-- Tailwind CSS CDN -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <!-- Phosphor Icons CDN -->
+ <script src="https://unpkg.com/@phosphor-icons/web"></script>
+ <!-- Google Fonts: Zen Maru Gothic, M PLUS Rounded 1c, Quicksand (柔らかく親しみやすい丸ゴシック＆ラウンド英数字) -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Quicksand:wght@500;600;700&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+ <script>
+ tailwind.config = {
+ darkMode: 'class',
+ theme: {
+ extend: {
+ fontFamily: {
+ sans: ['"Zen Maru Gothic"', '"M PLUS Rounded 1c"', '"Hiragino Maru Gothic ProN"', 'sans-serif'],
+ serif: ['"Zen Maru Gothic"', '"M PLUS Rounded 1c"', 'sans-serif'],
+ mono: ['"Quicksand"', '"Zen Maru Gothic"', 'sans-serif'],
+ },
+ colors: {
+ himi: {
+ 50: '#FBF8FF',
+ 100: '#F5EEFF',
+ 200: '#EADBFD',
+ 300: '#DABDFB',
+ 400: '#C08EF7',
+ 500: '#A35CF0',
+ 600: '#883AE2',
+ 700: '#7226C6',
+ 800: '#5E20A3',
+ 900: '#4E1C84',
+ 950: '#2E0D54'
+ }
+ }
+ }
+ }
+ }
+ </script>
+ <style>
+ html {
+ scroll-behavior: smooth;
+ background-color: #FBF9FF;
+ color: #261B38;
+ -webkit-tap-highlight-color: transparent;
+ }
+ html.dark {
+ background-color: #120D1C;
+ color: #F5F0FC;
+ }
+
+ body {
+ font-feature-settings: "palt" 1;
+ letter-spacing: 0.02em;
+ }
+
+ .purple-scrollbar {
+ scrollbar-width: thin;
+ scrollbar-color: #C08EF7 #F2ECFA;
+ }
+ .dark .purple-scrollbar {
+ scrollbar-color: #7226C6 #1E162B;
+ }
+ .purple-scrollbar::-webkit-scrollbar {
+ height: 6px;
+ width: 6px;
+ }
+ .purple-scrollbar::-webkit-scrollbar-track {
+ background: #F2ECFA;
+ border-radius: 9999px;
+ }
+ .dark .purple-scrollbar::-webkit-scrollbar-track {
+ background: #1E162B;
+ border-radius: 9999px;
+ }
+ .purple-scrollbar::-webkit-scrollbar-thumb {
+ background: #C08EF7;
+ border-radius: 9999px;
+ }
+ .dark .purple-scrollbar::-webkit-scrollbar-thumb {
+ background: #7226C6;
+ }
+
+ /* スマホの横スワイプ時にスクロールバーをすっきり隠す補助クラス */
+ .no-scrollbar::-webkit-scrollbar {
+ display: none;
+ }
+ .no-scrollbar {
+ -ms-overflow-style: none;
+ scrollbar-width: none;
+ }
+
+ .break-words-any {
+ overflow-wrap: anywhere;
+ word-break: break-word;
+ }
+ .editorial-border {
+ border-color: #EAE0F6;
+ }
+ .dark .editorial-border {
+ border-color: #2D2142;
+ }
+ .timeline-grab {
+ cursor: grab;
+ user-select: none;
+ }
+ .timeline-grabbing {
+ cursor: grabbing;
+ user-select: none;
+ }
+
+ /* ふわふわと優しいアニメーション */
+ @keyframes slideUpSheet {
+ from { transform: translateY(100%); opacity: 0.5; }
+ to { transform: translateY(0); opacity: 1; }
+ }
+ .animate-sheet-up {
+ animation: slideUpSheet 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+ }
+ @keyframes fadeInPanel {
+ from { opacity: 0; transform: translateY(-4px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+ .animate-fade-in {
+ animation: fadeInPanel 0.2s ease-out forwards;
+ }
+ </style>
+</head>
+<body class="bg-[#FBF9FF] dark:bg-[#120D1C] text-[#261B38] dark:text-purple-50 min-h-screen flex flex-col font-sans antialiased selection:bg-himi-500 selection:text-white transition-colors duration-200 pb-32 sm:pb-28 md:pb-8">
+
+ <!-- やわらかいグラデーションのトップアクセントライン -->
+ <div class="h-1.5 w-full bg-gradient-to-r from-himi-600 via-purple-400 to-pink-400"></div>
+
+ <!-- スティッキーヘッダー（スマホで押しやすいハンバーガー＆絞り込みボタン付き） -->
+ <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#181126]/95 backdrop-blur-md border-b editorial-border shadow-xs">
+ <div class="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+ <div class="h-14 sm:h-16 flex items-center justify-between gap-1.5 sm:gap-2">
+ <div class="flex items-center gap-2 min-w-0 flex-1">
+             <a href="#top-anchor" onclick="resetAllFilters(); return false;" class="group flex items-center gap-2 min-w-0 focus:outline-none">
+              <div class="min-w-0">
+                <span class="text-[14px] sm:text-lg font-bold tracking-tight text-himi-950 dark:text-white group-hover:text-himi-600 dark:group-hover:text-himi-300 transition-colors block leading-tight whitespace-nowrap">
+                  茜屋日海夏 インタビュー＆活動まとめ
+                </span>
+                <span class="text-[10px] sm:text-[11px] text-himi-700/80 dark:text-himi-300/80 font-medium tracking-normal block truncate max-w-[220px] sm:max-w-none">
+                  非公式ファンサイト
+                </span>
+              </div>
+            </a>
+ </div>
+
+ <div class="flex items-center gap-1 sm:gap-2.5 shrink-0">
+ <nav class="hidden lg:flex items-center gap-1.5 text-xs font-bold">
+ <a href="https://x.com/iRis_a_himi" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full text-himi-800 dark:text-himi-200 hover:bg-himi-100 dark:hover:bg-himi-900/50 transition-colors inline-flex items-center gap-1">
+ <span>公式X</span>
+ <i class="ph-bold ph-arrow-up-right text-[10px] text-himi-500"></i>
+ </a>
+ <a href="https://www.instagram.com/himika_akaneya_official/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full text-himi-800 dark:text-himi-200 hover:bg-himi-100 dark:hover:bg-himi-900/50 transition-colors inline-flex items-center gap-1">
+ <span>Instagram</span>
+ <i class="ph-bold ph-arrow-up-right text-[10px] text-himi-500"></i>
+ </a>
+ <a href="https://www.youtube.com/@himichannel0716" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full text-himi-800 dark:text-himi-200 hover:bg-himi-100 dark:hover:bg-himi-900/50 transition-colors inline-flex items-center gap-1">
+ <span>ひみちゃんねる</span>
+ <i class="ph-bold ph-arrow-up-right text-[10px] text-himi-500"></i>
+ </a>
+          <a href="https://forms.gle/3TKFSE8veyUxVZWk7" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full bg-himi-100/90 dark:bg-himi-900/60 hover:bg-himi-200 dark:hover:bg-himi-800 text-himi-900 dark:text-purple-100 transition-colors inline-flex items-center gap-1 border border-himi-200 dark:border-himi-800">
+            <i class="ph-bold ph-paper-plane-tilt text-xs text-himi-500"></i>
+            <span>情報提供・修正依頼</span>
+          </a>
+ </nav>
+
+ <div class="hidden sm:inline-flex items-center gap-1.5">
+ <span id="archive-status-badge" class="font-mono text-[11px] font-bold text-himi-700 dark:text-himi-200 px-3 py-1 bg-himi-100/90 dark:bg-himi-900/60 border border-himi-200 dark:border-himi-800 rounded-full">
+ --- RECORDS
+ </span>
+ <button id="refresh-cache-btn" type="button" onclick="refreshArchiveData()" title="スプレッドシートから最新データを再取得" class="w-8 h-8 rounded-full flex items-center justify-center text-himi-600 dark:text-himi-300 hover:bg-himi-100 dark:hover:bg-himi-900/60 transition-colors">
+ <i id="refresh-cache-icon" class="ph-bold ph-arrows-clockwise text-xs"></i>
+ </button>
+ </div>
+
+ <!-- ダークモード切替ボタン -->
+ <button id="theme-toggle" type="button" aria-label="テーマ切替" class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-himi-700 hover:text-himi-950 dark:text-himi-300 dark:hover:text-white border editorial-border rounded-full bg-himi-50/70 dark:bg-[#221833] hover:bg-himi-100 transition-colors">
+ <i id="theme-icon" class="ph-bold ph-moon text-sm sm:text-base"></i>
+ </button>
+
+ <!-- ハンバーガー＆条件フィルターメニューボタン（スマホ・タブレットで特に便利） -->
+ <button id="open-drawer-btn" type="button" onclick="openMobileDrawer()" aria-label="メニュー・絞り込みを開く" class="inline-flex items-center gap-1 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-himi-600 hover:bg-himi-700 text-white text-[11px] sm:text-xs font-bold shadow-xs shadow-himi-600/25 transition-all active:scale-95">
+ <i class="ph-bold ph-sliders-horizontal text-xs sm:text-sm"></i>
+ <span>メニュー</span>
+ <span id="header-filter-count" class="hidden px-1.5 py-0.5 rounded-full bg-white text-himi-700 font-mono text-[9px] sm:text-[10px] font-extrabold leading-tight">0</span>
+ </button>
+ </div>
+ </div>
+ </div>
+ </header>
+
+ <!-- コンパクトで優しい印象のヒーローセクション（スマホのファーストビューを圧迫しないよう余白調整） -->
+ <section id="top-anchor" class="bg-gradient-to-b from-himi-100/80 via-himi-50/40 to-transparent dark:from-himi-950/60 dark:via-[#181126]/40 dark:to-transparent border-b editorial-border">
+ <div class="max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 py-3 sm:py-5 flex flex-col md:flex-row md:items-end justify-between gap-2.5 sm:gap-3">
+ <div class="space-y-1 sm:space-y-1.5">
+           <h1 class="text-lg sm:text-2xl md:text-3xl font-bold text-himi-950 dark:text-white tracking-normal leading-snug">
+            茜屋日海夏 インタビュー＆活動まとめ
+          </h1>
+          <p class="text-[11px] sm:text-sm text-himi-900/85 dark:text-purple-100/90 max-w-2xl leading-relaxed">
+            2012年のデビューから現在まで。i☆Risやソロ活動「Himika Akaneya」、声優・舞台・ラジオなどのインタビューや取材レポートを年代順にまとめたファン作成の応援アーカイブです。
+          </p>
+ </div>
+
+ <!-- スマホ用SNSショートカットピル（コンパクト化） -->
+ <div class="flex lg:hidden items-center gap-1.5 overflow-x-auto no-scrollbar text-[10px] font-bold pt-0.5">
+ <a href="https://x.com/iRis_a_himi" target="_blank" rel="noopener noreferrer" class="shrink-0 px-2.5 py-1 rounded-full bg-white/90 dark:bg-himi-900/50 border editorial-border text-himi-800 dark:text-himi-200 inline-flex items-center gap-1 shadow-xs">
+ <span>公式X</span>
+ <i class="ph-bold ph-arrow-up-right text-[9px] text-himi-500"></i>
+ </a>
+ <a href="https://www.instagram.com/himika_akaneya_official/" target="_blank" rel="noopener noreferrer" class="shrink-0 px-2.5 py-1 rounded-full bg-white/90 dark:bg-himi-900/50 border editorial-border text-himi-800 dark:text-himi-200 inline-flex items-center gap-1 shadow-xs">
+ <span>Instagram</span>
+ <i class="ph-bold ph-arrow-up-right text-[9px] text-himi-500"></i>
+ </a>
+ <a href="https://www.youtube.com/@himichannel0716" target="_blank" rel="noopener noreferrer" class="shrink-0 px-2.5 py-1 rounded-full bg-white/90 dark:bg-himi-900/50 border editorial-border text-himi-800 dark:text-himi-200 inline-flex items-center gap-1 shadow-xs">
+ <span>ひみちゃんねる</span>
+ <i class="ph-bold ph-arrow-up-right text-[9px] text-himi-500"></i>
+ </a>
+ </div>
+ </div>
+ </section>
+
+ <main class="flex-grow max-w-6xl w-full mx-auto px-3.5 sm:px-6 lg:px-8 py-3 sm:py-6 space-y-4 sm:space-y-7">
+
+ <!-- ポータルメイン切り替えタブ（3選択肢：記事一覧 / i☆Ris / 主な出演作） -->
+ <div class="flex items-center justify-center pt-0.5 pb-0.5">
+ <div class="w-full max-w-md sm:max-w-xl mx-auto grid grid-cols-3 p-1 rounded-2xl bg-himi-100/90 dark:bg-[#1A1228] border-2 border-himi-200 dark:border-himi-800 shadow-xs gap-1">
+ <button type="button" id="main-tab-articles" onclick="switchPortalTab('articles')" class="flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-bold transition-all bg-himi-600 text-white shadow-xs whitespace-nowrap min-w-0">
+ <i class="ph-bold ph-newspaper text-xs sm:text-base shrink-0"></i>
+ <span class="truncate">記事一覧</span>
+ <span id="tab-articles-badge" class="font-mono text-[9px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-white/20 text-white shrink-0">---件</span>
+ </button>
+ <button type="button" id="main-tab-iris" onclick="switchPortalTab('iris')" class="flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-bold transition-all text-himi-800/80 hover:text-himi-950 dark:text-purple-200/80 dark:hover:text-white whitespace-nowrap min-w-0">
+ <i class="ph-bold ph-sparkle text-xs sm:text-base text-pink-500 shrink-0"></i>
+ <span class="truncate">i☆Ris</span>
+ <span id="tab-iris-badge" class="font-mono text-[9px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-himi-200/70 dark:bg-himi-800 text-himi-700 dark:text-himi-300 shrink-0">44件</span>
+ </button>
+ <button type="button" id="main-tab-works" onclick="switchPortalTab('works')" class="flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-bold transition-all text-himi-800/80 hover:text-himi-950 dark:text-purple-200/80 dark:hover:text-white whitespace-nowrap min-w-0">
+ <i class="ph-bold ph-film-strip text-xs sm:text-base text-himi-500 shrink-0"></i>
+ <span class="truncate">主な出演作</span>
+ <span id="tab-works-badge" class="font-mono text-[9px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-himi-200/70 dark:bg-himi-800 text-himi-700 dark:text-himi-300 shrink-0">6件</span>
+ </button>
+ </div>
+ </div>
+
+ <!-- 記事・レポート ポータル表示エリア -->
+ <div id="articles-portal-view" class="space-y-5 sm:space-y-7">
+
+ <!-- おすすめ記事（スマホでは横スワイプカルーセルにして縦スクロール量を大幅に節約） -->
+ <section id="featured-section" class="space-y-2.5">
+ <div class="flex items-center justify-between px-1">
+ <div class="flex items-center gap-2">
+ <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-tr from-himi-600 to-pink-400"></span>
+ <h2 class="text-xs sm:text-sm text-himi-800 dark:text-himi-200 font-bold">
+ おすすめ必読インタビュー
+ </h2>
+ <span class="text-[11px] text-himi-700/60 dark:text-purple-300/60 md:hidden font-medium">
+ （横にスワイプ →）
+ </span>
+ </div>
+ <button id="toggle-featured-btn" type="button" class="text-xs text-himi-700 dark:text-himi-300 hover:text-himi-950 dark:hover:text-white inline-flex items-center gap-1 font-bold px-2.5 py-1 rounded-full bg-himi-100/70 dark:bg-himi-900/40 hover:bg-himi-200/70 transition-colors">
+ <span id="toggle-featured-label">HIDE</span>
+ <i id="toggle-featured-icon" class="ph-bold ph-caret-up text-xs"></i>
+ </button>
+ </div>
+
+ <div id="spotlight-container" class="flex md:grid md:grid-cols-3 gap-3.5 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar pb-1"></div>
+ </section>
+
+ <!-- スマホ操作に最適化したメイン検索＆フィルターパネル -->
+ <section id="filter-panel" class="bg-white dark:bg-[#181226] border-2 border-himi-200/90 dark:border-himi-800/80 rounded-3xl p-3.5 sm:p-6 shadow-md shadow-himi-900/5 space-y-4">
+
+ <!-- 1. キーワード検索 ＆ 並び順・表示切替・類似記事まとめ切替 -->
+ <div class="flex flex-col sm:flex-row gap-2.5">
+ <div class="relative flex-grow">
+ <i class="ph-bold ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-himi-500 text-base"></i>
+ <input type="text" id="search-input" placeholder="スペース区切りで複数検索（例: 14周年 横浜アリーナ、2024 ソロ、プリパラ 下地）..." class="w-full pl-10 pr-10 py-3 bg-himi-50/80 dark:bg-[#110C1B] border editorial-border rounded-2xl text-sm text-himi-950 dark:text-white focus:outline-none focus:border-himi-500 focus:ring-2 focus:ring-himi-400/25 transition-all placeholder:text-himi-900/45 dark:placeholder:text-purple-200/40">
+ <button id="clear-search-btn" type="button" aria-label="検索クリア" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-himi-400 hover:text-himi-700 dark:hover:text-white p-1">
+ <i class="ph-fill ph-x-circle text-lg"></i>
+ </button>
+ </div>
+
+ <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0">
+ <!-- 類似記事の集約トグルボタン -->
+ <button type="button" id="group-similar-btn" onclick="toggleGroupSimilarMode()" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-2xl border text-xs font-bold transition-all active:scale-95 bg-himi-600 text-white border-himi-600 shadow-xs" title="同じライブやリリースに関する複数メディアの類似記事を1つにまとめ、クリックでメディア一覧を表示します">
+ <i id="group-similar-icon" class="ph-fill ph-stack text-sm"></i>
+ <span id="group-similar-label">類似記事をまとめる: ON</span>
+ </button>
+
+ <div class="relative flex-grow sm:w-44">
+ <select id="sort-select" aria-label="並び替え" class="w-full pl-3.5 pr-8 py-3 bg-himi-50/80 dark:bg-[#110C1B] border editorial-border rounded-2xl text-xs font-bold text-himi-900 dark:text-purple-100 focus:outline-none focus:border-himi-500 appearance-none cursor-pointer">
+ <option value="date-desc">公開日：新しい順</option>
+ <option value="date-asc">公開日：古い順</option>
+ <option value="title-asc">タイトル：五十音順</option>
+ </select>
+ <i class="ph-bold ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-himi-600 text-xs pointer-events-none"></i>
+ </div>
+
+ <div class="hidden md:inline-flex rounded-2xl border editorial-border bg-himi-50/80 dark:bg-[#110C1B] p-1 shrink-0">
+ <button type="button" id="view-grid-btn" onclick="setViewMode('grid')" class="inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl transition-all" title="カード表示">
+ <i class="ph-bold ph-squares-four text-sm"></i>
+ <span class="hidden sm:inline">カード</span>
+ </button>
+ <button type="button" id="view-list-btn" onclick="setViewMode('list')" class="inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl transition-all" title="コンパクトリスト表示">
+ <i class="ph-bold ph-rows text-sm"></i>
+ <span class="hidden sm:inline">目次リスト</span>
+ </button>
+ </div>
+ </div>
+ </div>
+
+ <!-- 2. カテゴリー選択（スマホでも横スクロール不要で一目でタップしやすいピル型ボタングリッド） -->
+ <div class="space-y-2">
+ <div class="flex items-center justify-between px-0.5">
+ <span class="text-xs font-bold text-himi-800 dark:text-himi-200 flex items-center gap-1.5">
+ <i class="ph-fill ph-folders text-himi-500 text-sm"></i>
+ <span>カテゴリー</span>
+ </span>
+ <span class="text-[11px] text-himi-700/70 dark:text-purple-300/70">複数メディア記事はタップで全媒体一覧を展開</span>
+ </div>
+ <div class="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2" id="category-tabs"></div>
+ </div>
+
+ <!-- スマホ用：年代・タグ選択の案内バー（タップでドロワー展開） -->
+ <div class="md:hidden flex items-center justify-between gap-2 bg-himi-50/80 dark:bg-[#130E1F] border editorial-border rounded-2xl px-3.5 py-2.5">
+ <div class="flex items-center gap-1.5 min-w-0">
+ <i class="ph-fill ph-sliders-horizontal text-himi-500 text-sm shrink-0"></i>
+ <span class="text-xs font-bold text-himi-900 dark:text-purple-100 truncate">
+ 年代やタグで絞り込む
+ </span>
+ </div>
+ <button type="button" onclick="openMobileDrawer()" class="shrink-0 px-3.5 py-1.5 rounded-full bg-himi-600 hover:bg-himi-700 text-white text-[11px] font-bold shadow-xs active:scale-95 transition-all inline-flex items-center gap-1">
+ <span>選択する</span>
+ <i class="ph-bold ph-caret-right text-[10px]"></i>
+ </button>
+ </div>
+
+ <!-- 3. 年代・タグセレクター（スマホでは画面下部・メニューから選択するため非表示、パソコン画面で表示） -->
+ <div class="hidden md:grid grid-cols-1 lg:grid-cols-12 gap-3.5 pt-1">
+
+ <!-- 年代セレクター (YEAR TIMELINE) -->
+ <div class="lg:col-span-5 bg-himi-50/75 dark:bg-[#130E1F] border editorial-border rounded-2xl p-3.5 space-y-2.5">
+ <div class="flex items-center justify-between gap-2">
+ <div class="flex items-center gap-2">
+ <span class="text-xs font-bold text-himi-900 dark:text-himi-200 flex items-center gap-1.5">
+ <i class="ph-fill ph-calendar-blank text-himi-500 text-sm"></i>
+ <span>年代で絞り込む</span>
+ </span>
+ <span id="year-slider-readout" class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-himi-600 text-white shadow-xs">
+ 全期間
+ </span>
+ </div>
+ <button type="button" id="toggle-year-view-btn" onclick="toggleYearGridMode()" class="text-[11px] font-bold text-himi-700 dark:text-himi-300 hover:text-himi-950 dark:hover:text-white bg-white dark:bg-himi-900/60 px-2.5 py-1 rounded-full border editorial-border inline-flex items-center gap-1 transition-colors">
+ <span id="toggle-year-view-label">すべて表示</span>
+ <i id="toggle-year-view-icon" class="ph-bold ph-caret-down text-[10px]"></i>
+ </button>
+ </div>
+
+ <!-- スマホでは3列グリッド（展開時）または押しやすいピル一覧で年代を選択可能 -->
+ <div id="year-timeline" class="timeline-grab grid grid-cols-3 sm:grid-cols-4 lg:flex lg:items-center gap-1.5 lg:overflow-x-auto purple-scrollbar pt-0.5 pb-1"></div>
+ </div>
+
+ <!-- タグセレクター (TAGS - ラジオ追加＆複数選択可) -->
+ <div class="lg:col-span-7 bg-himi-50/75 dark:bg-[#130E1F] border editorial-border rounded-2xl p-3.5 space-y-2.5">
+ <div class="flex items-center justify-between gap-2">
+ <div class="flex items-center gap-2">
+ <span class="text-xs font-bold text-himi-900 dark:text-himi-200 flex items-center gap-1.5">
+ <i class="ph-fill ph-hash text-himi-500 text-sm"></i>
+ <span>タグで絞り込む</span>
+ </span>
+ <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-himi-200/70 dark:bg-himi-900/70 text-himi-800 dark:text-purple-200">
+ 複数選択OK
+ </span>
+ </div>
+ <button type="button" id="toggle-tags-view-btn" onclick="toggleTagsExpandMode()" class="text-[11px] font-bold text-himi-700 dark:text-himi-300 hover:text-himi-950 dark:hover:text-white bg-white dark:bg-himi-900/60 px-2.5 py-1 rounded-full border editorial-border inline-flex items-center gap-1 transition-colors sm:hidden">
+ <span id="toggle-tags-view-label">メディア別も見る</span>
+ <i id="toggle-tags-view-icon" class="ph-bold ph-caret-down text-[10px]"></i>
+ </button>
+ </div>
+
+ <div class="flex flex-wrap items-center gap-1.5" id="quick-filters"></div>
+ </div>
+
+ </div>
+
+ <!-- 4. 現在の絞り込み状況バー ＆ 件数表示 -->
+ <div class="border-t editorial-border pt-3 flex flex-wrap items-center justify-between gap-2 text-xs">
+ <div id="results-count" class="font-bold text-himi-900 dark:text-purple-100">
+ 読み込み中...
+ </div>
+
+ <div class="flex flex-wrap items-center gap-1.5" id="active-filters-bar">
+ <div id="active-year-indicator" class="hidden items-center gap-1 bg-himi-100 dark:bg-himi-900/70 text-himi-900 dark:text-purple-100 px-3 py-1 rounded-full border border-himi-300 dark:border-himi-700 text-[11px] font-bold">
+ <span>年代:<strong id="active-year-name" class="ml-1 text-himi-700 dark:text-himi-300"></strong></span>
+ <button id="clear-year-btn" type="button" class="hover:text-himi-600 ml-1 p-0.5" title="年フィルター解除">
+ <i class="ph-bold ph-x"></i>
+ </button>
+ </div>
+ <div id="active-category-indicator" class="hidden items-center gap-1 bg-himi-100 dark:bg-himi-900/70 text-himi-900 dark:text-purple-100 px-3 py-1 rounded-full border border-himi-300 dark:border-himi-700 text-[11px] font-bold">
+ <span>種別:<strong id="active-category-name" class="ml-1 text-himi-700 dark:text-himi-300"></strong></span>
+ <button id="clear-cat-btn" type="button" class="hover:text-himi-600 ml-1 p-0.5" title="種別フィルター解除">
+ <i class="ph-bold ph-x"></i>
+ </button>
+ </div>
+ <div id="active-tags-container" class="flex flex-wrap items-center gap-1.5"></div>
+ </div>
+ </div>
+
+ </section>
+
+ <!-- 記事一覧表示エリア -->
+ <section id="archive-display-wrapper" class="space-y-4">
+ <!-- カードグリッド表示 -->
+ <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-start"></div>
+
+ <!-- コンパクトリスト表示（スマホでも横スクロール不要で見やすいレスポンシブ設計） -->
+ <div id="list-container" class="hidden bg-white dark:bg-[#181226] border editorial-border rounded-3xl overflow-hidden shadow-xs">
+ <div class="overflow-x-auto purple-scrollbar">
+ <table class="w-full text-left border-collapse">
+ <thead class="hidden sm:table-header-group">
+ <tr class="border-b editorial-border bg-himi-100/60 dark:bg-himi-950/60 text-[11px] text-himi-900 dark:text-himi-200 font-bold">
+ <th class="py-3.5 px-4 w-28 whitespace-nowrap">公開日</th>
+ <th class="py-3.5 px-3 w-36 whitespace-nowrap">カテゴリー</th>
+ <th class="py-3.5 px-3">タイトル / 概要・各メディア一覧</th>
+ <th class="py-3.5 px-3 w-36 hidden md:table-cell whitespace-nowrap">媒体名</th>
+ <th class="py-3.5 px-3 w-14 text-center whitespace-nowrap">保存</th>
+ </tr>
+ </thead>
+ <tbody id="list-table-body" class="divide-y editorial-border text-xs"></tbody>
+ </table>
+ </div>
+ </div>
+ </section>
+
+ <!-- 分割表示（もっと見る）ボタンエリア -->
+ <div id="load-more-container" class="hidden text-center pt-2 pb-6">
+ <button type="button" id="load-more-btn" onclick="loadMoreArticles()" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-[#181226] border-2 border-himi-300/90 dark:border-himi-700 text-himi-800 dark:text-purple-100 text-xs font-bold shadow-sm shadow-himi-900/5 hover:border-himi-500 hover:bg-himi-50 dark:hover:bg-himi-900/50 transition-all active:scale-95">
+ <i class="ph-bold ph-plus-circle text-himi-500 text-sm"></i>
+ <span id="load-more-text">もっと見る</span>
+ </button>
+ <p id="all-loaded-text" class="hidden text-xs text-himi-700/70 dark:text-purple-300/60 font-medium pt-2">
+ すべての記事を表示しました
+ </p>
+ </div>
+
+ <!-- 0件時のエンプティステート -->
+ <div id="empty-state" class="hidden text-center py-14 bg-white dark:bg-[#181226] rounded-3xl border editorial-border p-6 sm:p-8 space-y-3 shadow-xs">
+ <div class="w-12 h-12 rounded-full bg-himi-100 dark:bg-himi-900/50 text-himi-600 dark:text-himi-300 flex items-center justify-center mx-auto text-xl">
+ <i class="ph-bold ph-magnifying-glass"></i>
+ </div>
+ <p class="font-serif text-base font-bold text-himi-950 dark:text-white">条件に一致する記事が見つかりませんでした</p>
+ <p class="text-xs text-himi-800/70 dark:text-purple-200/70 max-w-md mx-auto leading-relaxed">
+ 検索キーワードを変更するか、現在選択されている年代・カテゴリー・タグの絞り込みをリセットしてみてください。
+ </p>
+ <div class="pt-2">
+ <button id="reset-filters-btn" type="button" class="px-5 py-2.5 text-xs font-bold text-white bg-himi-600 hover:bg-himi-700 rounded-full transition-colors shadow-sm shadow-himi-600/20">
+ すべての絞り込みをリセット
+ </button>
+ </div>
+ </div>
+
+ </div>
+ <!-- /articles-portal-view -->
+
+ <!-- i☆Ris 活動アーカイブ ポータル表示エリア（シート3連動） -->
+ <div id="iris-portal-view" class="hidden space-y-5 sm:space-y-6">
+
+ <!-- i☆Ris アーカイブ ガイドバナー -->
+ <div class="bg-gradient-to-r from-pink-100/80 via-himi-100/80 to-purple-50/70 dark:from-pink-950/50 dark:via-himi-950/70 dark:to-[#191228]/70 border-2 border-himi-200/90 dark:border-himi-800/80 rounded-3xl p-4 sm:p-5 shadow-sm space-y-2">
+ <div class="flex items-center justify-between flex-wrap gap-2">
+ <div class="flex items-center gap-2">
+ <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-pink-500 to-himi-600"></span>
+ <h2 class="font-serif text-sm sm:text-base font-bold text-himi-950 dark:text-white">
+ i☆Ris ツアー・周年ライブ・イベント活動記録
+ </h2>
+ </div>
+ <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-pink-200/80 dark:bg-pink-950/80 text-pink-900 dark:text-pink-200">
+ i☆Ris LIVE &amp; EVENT ARCHIVE
+ </span>
+ </div>
+ <p class="text-xs text-himi-900/80 dark:text-purple-200/80 leading-relaxed max-w-3xl">
+ i☆Risとしての全国ツアー、デビュー＆結成周年ライブ、フェス・スペシャルイベント等のアーカイブです。項目ごとに絞り込めるほか、各ライブカードをタップすると<strong class="text-himi-700 dark:text-himi-300 font-bold">おすすめ記事</strong>が数件展開され、さらに<strong class="text-himi-700 dark:text-himi-300 font-bold">そのライブに関する記事一覧</strong>へジャンプできます。
+ </p>
+ </div>
+
+ <!-- i☆Ris 項目別切り替え ＆ 検索パネル -->
+ <div id="iris-filter-panel" class="bg-white dark:bg-[#181226] border-2 border-himi-200/90 dark:border-himi-800/80 rounded-3xl p-3.5 sm:p-5 shadow-md shadow-himi-900/5 space-y-3.5">
+ <div class="space-y-2">
+ <div class="flex items-center justify-between text-xs font-bold text-himi-800 dark:text-himi-200 px-0.5">
+ <span class="flex items-center gap-1.5">
+ <i class="ph-fill ph-sparkle text-pink-500 text-sm"></i>
+ <span>項目ごとに絞り込む</span>
+ </span>
+ <span id="iris-count-label" class="font-mono text-[11px] text-himi-700 dark:text-himi-300"></span>
+ </div>
+ <div class="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2" id="iris-category-tabs"></div>
+ </div>
+
+ <div class="relative flex-grow pt-1">
+ <i class="ph-bold ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-himi-500 text-base"></i>
+ <input type="text" id="iris-search-input" placeholder="ツアー名・周年ライブ名・会場・開催年で検索（例: 14周年、横浜アリーナ、ぴあアリーナ、武道館）..." class="w-full pl-10 pr-10 py-2.5 bg-himi-50/80 dark:bg-[#110C1B] border editorial-border rounded-2xl text-xs sm:text-sm text-himi-950 dark:text-white focus:outline-none focus:border-himi-500 focus:ring-2 focus:ring-himi-400/25 transition-all placeholder:text-himi-900/45 dark:placeholder:text-purple-200/40">
+ <button id="iris-clear-search-btn" type="button" aria-label="i☆Ris検索クリア" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-himi-400 hover:text-himi-700 dark:hover:text-white p-1">
+ <i class="ph-fill ph-x-circle text-lg"></i>
+ </button>
+ </div>
+ </div>
+
+ <!-- i☆Ris ライブ・イベント カードグリッド -->
+ <div id="iris-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-start"></div>
+
+ <!-- 該当ライブ・イベントなしエンプティステート -->
+ <div id="iris-empty-state" class="hidden text-center py-12 bg-white dark:bg-[#181226] rounded-3xl border editorial-border p-6 sm:p-8 space-y-3 shadow-xs">
+ <div class="w-12 h-12 rounded-full bg-himi-100 dark:bg-himi-900/50 text-himi-600 dark:text-himi-300 flex items-center justify-center mx-auto text-xl">
+ <i class="ph-bold ph-sparkle"></i>
+ </div>
+ <p class="font-serif text-base font-bold text-himi-950 dark:text-white">条件に一致するライブ・イベントが見つかりませんでした</p>
+ <p class="text-xs text-himi-800/70 dark:text-purple-200/70 max-w-md mx-auto">
+ キーワードを変更するか、項目の選択を「すべて」に戻してみてください。
+ </p>
+ <div class="pt-2">
+ <button type="button" onclick="resetIrisFilters()" class="px-5 py-2.5 text-xs font-bold text-white bg-himi-600 hover:bg-himi-700 rounded-full transition-colors shadow-sm">
+ 絞り込みをリセット
+ </button>
+ </div>
+ </div>
+
+ </div>
+ <!-- /iris-portal-view -->
+
+ <!-- 主な出演・作品アーカイブ ポータル表示エリア（シート2連動） -->
+ <div id="works-portal-view" class="hidden space-y-5 sm:space-y-6">
+
+ <!-- 作品アーカイブ ガイドバナー -->
+ <div class="bg-gradient-to-r from-himi-100/90 via-purple-50/60 to-pink-50/60 dark:from-himi-950/70 dark:via-[#191228]/60 dark:to-purple-950/40 border-2 border-himi-200/90 dark:border-himi-800/80 rounded-3xl p-4 sm:p-5 shadow-sm space-y-2">
+ <div class="flex items-center justify-between flex-wrap gap-2">
+ <div class="flex items-center gap-2">
+ <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-himi-600 to-pink-400"></span>
+ <h2 class="font-serif text-sm sm:text-base font-bold text-himi-950 dark:text-white">
+ 茜屋日海夏 主な出演・代表作アーカイブ
+ </h2>
+ </div>
+ <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-himi-200/80 dark:bg-himi-900/80 text-himi-800 dark:text-purple-200">
+ WORKS ARCHIVE
+ </span>
+ </div>
+ <p class="text-xs text-himi-900/80 dark:text-purple-200/80 leading-relaxed max-w-3xl">
+ 声優・俳優・ソロアーティスト等としての主な出演作・活動一覧です。各作品カードの<strong class="text-himi-700 dark:text-himi-300 font-bold">「関連インタビューを読む」</strong>をタップすると、その作品にフォーカスした記事一覧へダイレクトにジャンプできます。
+ </p>
+ </div>
+
+ <!-- 作品検索 ＆ カテゴリーフィルター（主な出演作選択時は非表示） -->
+ <div id="works-filter-panel" class="bg-white dark:bg-[#181226] border-2 border-himi-200/90 dark:border-himi-800/80 rounded-3xl p-3.5 sm:p-5 shadow-md shadow-himi-900/5 space-y-3.5">
+ <div class="relative flex-grow">
+ <i class="ph-bold ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-himi-500 text-base"></i>
+ <input type="text" id="works-search-input" placeholder="作品名・役名・曲名・時期で検索（ひらがな・カタカナ両対応）..." class="w-full pl-10 pr-10 py-3 bg-himi-50/80 dark:bg-[#110C1B] border editorial-border rounded-2xl text-sm text-himi-950 dark:text-white focus:outline-none focus:border-himi-500 focus:ring-2 focus:ring-himi-400/25 transition-all placeholder:text-himi-900/45 dark:placeholder:text-purple-200/40">
+ <button id="works-clear-search-btn" type="button" aria-label="作品検索クリア" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-himi-400 hover:text-himi-700 dark:hover:text-white p-1">
+ <i class="ph-fill ph-x-circle text-lg"></i>
+ </button>
+ </div>
+
+ <div class="space-y-1.5 pt-0.5">
+ <div class="flex items-center justify-between text-xs font-bold text-himi-800 dark:text-himi-200 px-0.5">
+ <span class="flex items-center gap-1.5">
+ <i class="ph-fill ph-folders text-himi-500 text-sm"></i>
+ <span>ジャンル別で絞り込む</span>
+ </span>
+ <span id="works-count-label" class="font-mono text-[11px] text-himi-700 dark:text-himi-300"></span>
+ </div>
+ <div class="flex flex-wrap items-center gap-1.5" id="works-category-tabs"></div>
+ </div>
+ </div>
+
+ <!-- 作品カードグリッド -->
+ <div id="works-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-start"></div>
+
+ <!-- 該当作品なしエンプティステート -->
+ <div id="works-empty-state" class="hidden text-center py-12 bg-white dark:bg-[#181226] rounded-3xl border editorial-border p-6 sm:p-8 space-y-3 shadow-xs">
+ <div class="w-12 h-12 rounded-full bg-himi-100 dark:bg-himi-900/50 text-himi-600 dark:text-himi-300 flex items-center justify-center mx-auto text-xl">
+ <i class="ph-bold ph-film-strip"></i>
+ </div>
+ <p class="font-serif text-base font-bold text-himi-950 dark:text-white">条件に一致する作品が見つかりませんでした</p>
+ <p class="text-xs text-himi-800/70 dark:text-purple-200/70 max-w-md mx-auto">
+ キーワードを変更するか、ジャンルの選択を「すべて」に戻してみてください。
+ </p>
+ <div class="pt-2">
+ <button type="button" onclick="resetWorksFilters()" class="px-5 py-2.5 text-xs font-bold text-white bg-himi-600 hover:bg-himi-700 rounded-full transition-colors shadow-sm">
+ 作品の絞り込みをリセット
+ </button>
+ </div>
+ </div>
+
+ </div>
+ <!-- /works-portal-view -->
+
+ </main>
+
+ <!-- スマホ用・下部固定フローティングナビバー（スマート自動開閉・被り解消） -->
+ <div id="mobile-floating-bar" class="md:hidden fixed bottom-3 inset-x-3.5 z-30 pointer-events-none flex items-center justify-center transition-all duration-300">
+ <div class="pointer-events-auto bg-white/95 dark:bg-[#1C142B]/95 backdrop-blur-md border-2 border-himi-300/90 dark:border-himi-700 rounded-full shadow-xl shadow-himi-950/25 px-1.5 py-1 flex items-center gap-1 max-w-full">
+ <button type="button" onclick="openMobileDrawer()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-himi-600 text-white text-[11px] font-bold shadow-xs active:scale-95 transition-transform">
+ <i class="ph-bold ph-sliders-horizontal text-xs"></i>
+ <span>年代・タグ・種別</span>
+ <span id="bottom-filter-badge" class="hidden px-1.5 py-0.5 rounded-full bg-white text-himi-700 font-mono text-[9px] font-extrabold">0</span>
+ </button>
+
+ <button type="button" onclick="selectCategoryFilter(selectedCategory === '★ ブックマーク' ? 'すべて' : '★ ブックマーク')" id="bottom-fav-btn" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full text-[11px] font-bold text-himi-800 dark:text-purple-100 hover:bg-himi-100 dark:hover:bg-himi-900/60 transition-colors">
+ <i class="ph-fill ph-bookmark-simple text-himi-500 text-xs"></i>
+ <span>保存済</span>
+ <span id="bottom-fav-count" class="font-mono text-[10px] opacity-80">(0)</span>
+ </button>
+
+ <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="ページ上部へ戻る" class="w-7 h-7 rounded-full flex items-center justify-center text-himi-700 dark:text-purple-200 hover:bg-himi-100 dark:hover:bg-himi-900/60 transition-colors">
+ <i class="ph-bold ph-arrow-up text-xs"></i>
+ </button>
+ </div>
+ </div>
+
+ <!-- ハンバーガーメニュー 兼 スマホ用絞り込みボトムシート / ドロワーモーダル -->
+ <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-end sm:items-center justify-center p-0 sm:p-4">
+ <div class="bg-white dark:bg-[#191229] w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl border-t sm:border editorial-border shadow-2xl overflow-hidden flex flex-col max-h-[88vh] animate-sheet-up">
+
+<!-- ドロワーヘッダー -->
+ <div class="px-5 py-3.5 border-b editorial-border bg-himi-50/90 dark:bg-himi-950/60 flex items-center justify-between shrink-0">
+ <div class="flex items-center gap-2">
+ <span class="w-2.5 h-2.5 rounded-full bg-himi-500"></span>
+ <h3 class="font-serif font-bold text-sm sm:text-base text-himi-950 dark:text-white">
+ 絞り込み・メニュー
+ </h3>
+ </div>
+ <button type="button" onclick="closeMobileDrawer()" class="w-8 h-8 rounded-full bg-white dark:bg-himi-900/70 border editorial-border flex items-center justify-center text-himi-700 hover:text-himi-950 dark:text-purple-200">
+ <i class="ph-bold ph-x text-sm"></i>
+ </button>
+ </div>
+
+ <!-- ドロワー内スクロール領域 -->
+ <div class="p-5 space-y-5 overflow-y-auto purple-scrollbar flex-grow text-xs">
+
+<!-- ドロワー内：メイン表示切替（3選択肢） -->
+ <div class="p-1 rounded-2xl bg-himi-100/90 dark:bg-himi-900/60 border editorial-border grid grid-cols-3 gap-1 items-center">
+ <button type="button" id="drawer-tab-articles" onclick="switchPortalTab('articles'); closeMobileDrawer();" class="py-2 rounded-xl text-xs font-bold transition-all bg-himi-600 text-white shadow-xs">
+ 記事一覧
+ </button>
+ <button type="button" id="drawer-tab-iris" onclick="switchPortalTab('iris'); closeMobileDrawer();" class="py-2 rounded-xl text-xs font-bold transition-all text-himi-800/90 dark:text-purple-200/95 hover:text-himi-950">
+ i☆Ris
+ </button>
+ <button type="button" id="drawer-tab-works" onclick="switchPortalTab('works'); closeMobileDrawer();" class="py-2 rounded-xl text-xs font-bold transition-all text-himi-800/90 dark:text-purple-200/95 hover:text-himi-950">
+ 主な出演作
+ </button>
+ </div>
+
+<!-- ドロワー内：カテゴリー選択 -->
+ <div class="space-y-2">
+ <div class="font-bold text-himi-900 dark:text-purple-100 flex items-center gap-1.5">
+ <i class="ph-fill ph-folders text-himi-500 text-sm"></i>
+ <span>カテゴリーを選ぶ</span>
+ </div>
+ <div id="drawer-categories" class="grid grid-cols-2 gap-2"></div>
+ </div>
+
+ <!-- ドロワー内：タグ選択（ラジオ含む） -->
+ <div class="space-y-2">
+ <div class="flex items-center justify-between">
+ <div class="font-bold text-himi-900 dark:text-purple-100 flex items-center gap-1.5">
+ <i class="ph-fill ph-hash text-himi-500 text-sm"></i>
+ <span>タグを選ぶ（複数選択OK）</span>
+ </div>
+ <button type="button" onclick="clearAllTags()" class="text-[11px] font-bold text-himi-600 dark:text-himi-300 hover:underline">
+ タグ解除
+ </button>
+ </div>
+ <div id="drawer-tags" class="flex flex-wrap gap-1.5"></div>
+ </div>
+
+ <!-- ドロワー内：年代選択（3列グリッドで全年代を快適タップ） -->
+ <div class="space-y-2">
+ <div class="font-bold text-himi-900 dark:text-purple-100 flex items-center gap-1.5">
+ <i class="ph-fill ph-calendar-blank text-himi-500 text-sm"></i>
+ <span>年代を選ぶ</span>
+ </div>
+ <div id="drawer-years" class="grid grid-cols-3 sm:grid-cols-4 gap-1.5"></div>
+ </div>
+
+ <!-- ドロワー内：公式リンク＆サイト情報 -->
+ <div class="pt-3 border-t editorial-border space-y-2.5">
+ <div class="font-bold text-himi-900 dark:text-purple-100 flex items-center gap-1.5">
+ <i class="ph-fill ph-link text-himi-500 text-sm"></i>
+ <span>公式リンク・サイト案内</span>
+ </div>
+ <div class="grid grid-cols-2 gap-2 font-bold">
+ <a href="https://x.com/iRis_a_himi" target="_blank" rel="noopener noreferrer" class="px-3 py-2.5 rounded-2xl bg-himi-50 dark:bg-himi-900/40 border editorial-border text-himi-800 dark:text-purple-100 flex items-center justify-between">
+ <span>公式X (@iRis_a_himi)</span>
+ <i class="ph-bold ph-arrow-up-right text-himi-500"></i>
+ </a>
+ <a href="https://www.instagram.com/himika_akaneya_official/" target="_blank" rel="noopener noreferrer" class="px-3 py-2.5 rounded-2xl bg-himi-50 dark:bg-himi-900/40 border editorial-border text-himi-800 dark:text-purple-100 flex items-center justify-between">
+ <span>Instagram</span>
+ <i class="ph-bold ph-arrow-up-right text-himi-500"></i>
+ </a>
+ <a href="https://www.youtube.com/@himichannel0716" target="_blank" rel="noopener noreferrer" class="px-3 py-2.5 rounded-2xl bg-himi-50 dark:bg-himi-900/40 border editorial-border text-himi-800 dark:text-purple-100 flex items-center justify-between">
+ <span>ひみちゃんねる</span>
+ <i class="ph-bold ph-arrow-up-right text-himi-500"></i>
+ </a>
+ <button type="button" onclick="closeMobileDrawer(); openPolicyModal();" class="px-3 py-2.5 rounded-2xl bg-himi-50 dark:bg-himi-900/40 border editorial-border text-himi-800 dark:text-purple-100 flex items-center justify-between text-left">
+ <span>運営方針・免責事項</span>
+ <i class="ph-bold ph-info text-himi-500"></i>
+ </button>
+            <a href="https://forms.gle/3TKFSE8veyUxVZWk7" target="_blank" rel="noopener noreferrer" class="col-span-2 px-3 py-2.5 rounded-2xl bg-himi-100/90 dark:bg-himi-900/70 border border-himi-300 dark:border-himi-700 text-himi-900 dark:text-purple-100 flex items-center justify-between font-bold">
+              <span class="flex items-center gap-1.5"><i class="ph-bold ph-paper-plane-tilt text-himi-600 dark:text-himi-300"></i> 情報提供・修正依頼フォーム</span>
+              <i class="ph-bold ph-arrow-up-right text-himi-500"></i>
+            </a>
+ </div>
+ </div>
+
+ </div>
+
+ <!-- ドロワー下部アクションバー -->
+ <div class="px-5 py-3.5 border-t editorial-border bg-himi-50/80 dark:bg-[#130D1F] flex items-center justify-between gap-2.5 shrink-0">
+ <div class="flex items-center gap-1.5">
+ <button type="button" onclick="resetAllFilters()" class="px-3.5 py-2.5 rounded-full border editorial-border bg-white dark:bg-himi-950 text-xs font-bold text-himi-800 dark:text-purple-200 hover:bg-himi-100 transition-colors whitespace-nowrap">
+ すべてリセット
+ </button>
+ <button type="button" onclick="refreshArchiveData()" title="最新データを再取得" class="p-2.5 rounded-full border editorial-border bg-white dark:bg-himi-950 text-xs font-bold text-himi-700 dark:text-purple-200 hover:bg-himi-100 transition-colors">
+ <i class="ph-bold ph-arrows-clockwise text-sm"></i>
+ </button>
+ </div>
+ <button type="button" onclick="closeMobileDrawer()" id="drawer-apply-btn" class="flex-grow py-2.5 px-5 rounded-full bg-himi-600 hover:bg-himi-700 text-white text-xs font-bold shadow-sm shadow-himi-600/30 transition-colors">
+ 記事を表示する
+ </button>
+ </div>
+ </div>
+ </div>
+
+ <!-- 運営方針・免責事項モーダル -->
+ <div id="policy-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+ <div class="bg-white dark:bg-[#1A1329] w-full max-w-lg rounded-3xl border editorial-border shadow-2xl overflow-hidden">
+ <div class="px-6 py-4 border-b editorial-border bg-himi-50 dark:bg-himi-950/60 flex items-center justify-between">
+ <h3 class="font-serif font-bold text-base text-himi-950 dark:text-white">当アーカイブの運営方針・免責事項・お問い合わせ</h3>
+ <button type="button" onclick="closePolicyModal()" class="text-himi-700 hover:text-himi-950 dark:text-purple-200 p-1">
+ <i class="ph-bold ph-x text-base"></i>
+ </button>
+ </div>
+ <div class="p-6 space-y-4 text-xs leading-relaxed text-himi-900/80 dark:text-purple-100/80 max-h-[70vh] overflow-y-auto purple-scrollbar">
+ <div>
+ <h4 class="font-bold text-himi-950 dark:text-white mb-1">1. サイトの目的（公式メディアへの案内所）</h4>
+ <p>当サイトは、声優・アーティスト・俳優として活動する茜屋日海夏さんのWebインタビュー、対談、ラジオ番組レポート、公演レポート等の公式記事へ迅速にアクセスするための非公式ファンサイトです。個人のファンが趣味の一環として運営しています。</p>
+ </div>
+ <div>
+ <h4 class="font-bold text-himi-950 dark:text-white mb-1">2. 著作権および権利帰属について</h4>
+ <p>当サイトは各メディアの本文や写真を転載するものではなく、すべて元記事（一次情報源）への直接リンク方式を採用しています。記事・画像等の著作権および肖像権は、各メディア媒体・所属事務所・関係権利元に帰属します。</p>
+ </div>
+ <div>
+ <h4 class="font-bold text-himi-950 dark:text-white mb-1">3. 保存機能・アクセス解析について</h4>
+ <p>ブックマーク（★）機能は、お使いのブラウザ内（ローカルストレージ）にのみ保存され、外部に送信されることはありません。また、利便性向上やサイトの稼働確認のため、個人を特定しない統計的なアクセス解析（Googleアナリティクス等）を導入する場合があります。</p>
+ </div>
+ <div class="pt-2 border-t editorial-border">
+ <h4 class="font-bold text-himi-950 dark:text-white mb-1">4. お問い合わせ窓口（修正依頼・情報提供）</h4>
+ <p class="mb-3">リンク切れの報告、掲載内容の修正依頼、追加してほしいインタビュー記事の情報提供、権利関係のお問い合わせなどは、以下のGoogleフォームよりご連絡ください。</p>
+ <a href="https://forms.gle/3TKFSE8veyUxVZWk7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-1.5 w-full py-2.5 px-4 bg-himi-100 hover:bg-himi-200 dark:bg-himi-900/70 dark:hover:bg-himi-800 text-himi-800 dark:text-purple-100 rounded-2xl font-bold border border-himi-300 dark:border-himi-700 transition-colors">
+ <i class="ph-bold ph-envelope-simple text-sm text-himi-600 dark:text-himi-300"></i>
+ <span>お問い合わせフォームを開く（Googleフォーム） ↗</span>
+ </a>
+ <p class="text-[10px] text-himi-700/70 dark:text-purple-300/60 mt-1.5 text-center">※ Googleアカウントにログインせずに匿名で送信可能です。</p>
+ </div>
+ </div>
+ <div class="px-6 py-3 border-t editorial-border bg-himi-50/50 dark:bg-[#120D1D] flex justify-end">
+ <button type="button" onclick="closePolicyModal()" class="px-5 py-1.5 text-xs font-bold bg-himi-600 hover:bg-himi-700 text-white rounded-full">
+ 閉じる
+ </button>
+ </div>
+ </div>
+ </div>
+
+ <footer class="mt-12 border-t editorial-border bg-himi-100/40 dark:bg-[#140E20] py-10 text-xs text-himi-900/85 dark:text-purple-100/90">
+ <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+ <div class="space-y-1.5">
+ <div class="flex items-center gap-2">
+ <span class="w-2.5 h-2.5 rounded-full bg-himi-500"></span>
+ <p class="font-serif font-bold text-sm text-himi-950 dark:text-white tracking-wide">
+ HIMIKA AKANEYA ARCHIVE
+ </p>
+ <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-himi-200/80 dark:bg-himi-900 text-himi-800 dark:text-purple-200">非公式</span>
+ </div>
+ <p class="text-[11px] leading-relaxed max-w-xl">
+ 当サイトは個人のファンが趣味で運営する非公式インデックスです。掲載リンク先の記事・画像の著作権および肖像権は各メディアおよび関係権利元に帰属します。
+ </p>
+ </div>
+
+ <div class="flex flex-wrap items-center gap-4 text-xs font-bold text-himi-800 dark:text-himi-300">
+ <button type="button" onclick="openPolicyModal()" class="hover:text-himi-600 underline underline-offset-4">
+ 運営方針・免責事項
+ </button>
+ <a href="https://forms.gle/3TKFSE8veyUxVZWk7" target="_blank" rel="noopener noreferrer" class="hover:text-himi-600 underline underline-offset-4 inline-flex items-center gap-1">
+ <span>お問い合わせ（Googleフォーム）</span>
+ <i class="ph-bold ph-arrow-up-right text-[10px]"></i>
+ </a>
+ <a href="https://x.com/iRis_a_himi" target="_blank" rel="noopener noreferrer" class="hover:text-himi-600">
+ 公式X
+ </a>
+ <a href="https://www.youtube.com/@himichannel0716" target="_blank" rel="noopener noreferrer" class="hover:text-himi-600">
+ ひみちゃんねる
+ </a>
+ <a href="https://iris.dive2ent.com/" target="_blank" rel="noopener noreferrer" class="hover:text-himi-600">
+ i☆Ris公式
+ </a>
+ </div>
+ </div>
+ </footer>
+
+ <script>
+ const LIVE_GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwPjjtMlbBxJRwZnruJolqaOwlKgg3FZOurpJ89r4FoFsvbZS2_YECOOQbncMtWYDio/exec";
+
+ // 安全なLocalStorageラッパー（file://やシークレットモードでのSecurityErrorを防止）
+ const safeStorage = {
+ getItem(key) {
+ try {
+ return localStorage.getItem(key);
+ } catch (e) {
+ return null;
+ }
+ },
+ setItem(key, val) {
+ try {
+ localStorage.setItem(key, val);
+ } catch (e) {}
+ }
+ };
+
+ // 静的データ読み込み（data.json から高速非同期ロード）
+ const STATIC_DATA_ENDPOINT = "./data.json";
+ const initialArticlesData = [];
+
+ // 全角半角・大文字小文字・ひらがなカタカナの表記揺れを吸収する正規化関数
+ // インラインonclick属性内のシングルクォート・ダブルクォート安全エスケープ関数
+ function escapeJsStr(str) {
+ if (!str) return "";
+ return String(str).replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/"/g, "&quot;");
+ }
+
+ function toNormalizedKana(str) {
+ if (!str) return "";
+ return str
+ .toString()
+ .normalize('NFKC')
+ .toLowerCase()
+ .replace(/[ァ-ヶ]/g, m => String.fromCharCode(m.charCodeAt(0) - 0x60));
+ }
+
+ const initialWorksData = [
+{"id":1,"category":"アニメ","title":"プリパラ","role":"真中らぁら（主演）","period":"2014年〜","description":"初主演を務めた代表作シリーズ。主人公・真中らぁら役としてTVアニメ『プリパラ』『アイドルタイムプリパラ』から10周年記念ライブ、劇場版『アイカツ！×プリパラ THE MOVIE -出会いのキセキ！-』（2025年）まで10年以上にわたり演じ続けている。","officialUrl":"https://www.tv-tokyo.co.jp/anime/pripara/","watchUrl":"","tag":"プリパラ","recommended":true},
+{"id":2,"category":"アニメ","title":"終末のイゼッタ","role":"イゼッタ（主演）","period":"2016年","description":"オリジナルTVアニメ。エイルシュタット公国を守るため「白き魔女」として戦場に立つ主人公・イゼッタ役を熱演し、シリアスな人間ドラマと芯のある演技が高く評価された。","officialUrl":"https://sh-anime.shochiku.co.jp/izetta/","watchUrl":"","tag":"終末のイゼッタ","recommended":true},
+{"id":3,"category":"舞台","title":"ワールドトリガー the Stage","role":"宇佐美栞","period":"2021年〜2025年","description":"大人気SFアクション漫画の舞台化シリーズ。2021年の初演から2025年の「B級ランク戦最終決戦編」まで、玉狛第2のオペレーター・宇佐美栞役として闘う仲間を支える役どころを一貫して好演。","officialUrl":"https://worldtrigger-stage.com/","watchUrl":"","tag":"ワールドトリガー","recommended":true},
+{"id":4,"category":"アニメ","title":"魔法少女サイト","role":"奴村露乃","period":"2018年","description":"過酷な運命に立ち向かう少女たちを描くダークファンタジーTVアニメ。主人公・朝霧彩の最大の理解者となるメインキャラクター・奴村露乃役を担当し、キャラクターソング「believe again」MVでは初のソロダンスにも挑戦した。","officialUrl":"https://mahoushoujyo-anime.com/","watchUrl":"","tag":"魔法少女サイト","recommended":true},
+{"id":5,"category":"アニメ","title":"Dance with Devils","role":"立華リツカ（ヒロイン）","period":"2015年〜2017年","description":"アクマとヴァンパイアに翻弄される運命を描いたミュージカルアニメ。ヒロイン・立華リツカ役としてTVアニメ（2015年）および劇場版『Dance with Devils-Fortuna-』（2017年）に出演し、劇中ミュージカル曲も歌唱。","officialUrl":"https://dwd-anime.com/","watchUrl":"","tag":"Dance with Devils","recommended":true},
+{"id":6,"category":"ソロ音楽","title":"Himika Akaneya","role":"Himika Akaneya（ソロアーティスト）","period":"2023年〜","description":"ソロアーティスト名義。TVアニメ『MFゴースト』1st〜3rd SeasonのEDテーマとなった1stシングル「Stereo Sunset (Prod. AmPm)」、2ndシングル「Side U (Prod. AmPm)」、3rdシングル「予感の途中 Prod. ☆Taku Takahashi (m-flo)」などをリリースし、大人のシティポップ・ダンスミュージックとファルセット表現で新境地を拓く。","officialUrl":"https://avex.jp/himika/","watchUrl":"","tag":"ソロ","recommended":true}
+];
+
+ const initialIrisData = [
+{"id":1,"category":"ツアー","title":"i☆Ris Final Live Tour 2027","period":"2027年4月〜7月","venue":"全国12会場17公演（初日：千葉・市川市文化会館 / 千秋楽：東京・立川ステージガーデン）","description":"2027年末の活動終了を前に開催される、i☆Risにとって最後となる全国ツアー。全国12会場17公演を巡り、15年間の集大成としてファンへの感謝を届けるラストツアー。","officialUrl":"https://iris.dive2ent.com/news/detail.php?id=1136911","tag":"Final Live Tour, ファイナルツアー, Final Live Tour 2027, ラストツアー"},
+{"id":2,"category":"周年ライブ","title":"i☆Ris 14th Anniversary Live ～FANTASISTA～","period":"2026年11月3日","venue":"横浜アリーナ","description":"グループ初となる横浜アリーナ単独公演として開催されたデビュー14周年記念ライブ。「幻想曲WONDERLAND」での茜屋日海夏さんの開幕シャウトや初期衣装での「Color」、山北早紀さんとの「Believe in」デュエット、客席降臨など全29曲を披露。ファイナルツアー等の重大発表も行われた。","officialUrl":"https://www.lisani.jp/0000321540/","tag":"14th Anniversary Live, 14周年記念, 14周年ライブ, FANTASISTA, 横浜アリーナ"},
+{"id":3,"category":"その他のイベント","title":"TOKYO IDOL FESTIVAL (TIF2026 / TIF2025 ほか)","period":"2026年8月 / 2025年8月 ほか","venue":"お台場・青海周辺エリア（HOT STAGEほか）","description":"世界最大のアイドルフェス「TOKYO IDOL FESTIVAL」への出演。7年ぶりの凱旋となったTIF2025や、14年目の総合力を見せつけたTIF2026のHOT STAGEなど、恒例の自己紹介や熱いパフォーマンスで会場を魅了。","officialUrl":"https://nikkan-spa.jp/2178229","tag":"TIF2026, TIF2025, TIFで刺激"},
+{"id":4,"category":"その他のイベント","title":"Animelo Summer Live (アニサマ2026 / 2013 ほか)","period":"2026年7月 / 2013年8月 ほか","venue":"さいたまスーパーアリーナ","description":"世界最大級のアニソンフェス「アニサマ」への出演。2013年の初出場から、14周年のキャリアが光る2026年DAY3ステージ（『アイカツ！×プリパラ』コラボメドレーや『賢者の孫』主題歌など計4曲披露）まで数々の名演を刻む。","officialUrl":"https://www.animatetimes.com/news/details.php?id=1783827263","tag":"Animelo Summer Live, アニサマ2026, 2度目のアニサマ"},
+{"id":5,"category":"ツアー","title":"i☆Ris 11th Live Tour 2026 ～VINTAGEイイ味出てます～","period":"2026年5月〜7月","venue":"全国ツアー（千秋楽：立川ステージガーデン）","description":"11回目の全国ツアー。ツアーテーマ曲「Sweet(×5) Vintage!」や27thシングル「Welcome to あざとさワールド」などを披露し、全公演完売を達成。円熟味あふれるステージとともに横浜アリーナ公演への決意を表明。","officialUrl":"https://www.lisani.jp/0000316491/","tag":"11th Live Tour, 11th全国ツアー, VINTAGEイイ味出てます"},
+{"id":6,"category":"周年ライブ","title":"i☆Ris 13th Anniversary Live -TITLE MATCH-","period":"2025年11月15日","venue":"ぴあアリーナMM","description":"2年連続となるぴあアリーナMMで開催されたデビュー13周年記念ライブ。チケット完売のリベンジとグループ史上最多動員を達成し、ソロバトルでの「Stereo Sunset」披露や掛け声バトル、新曲「夢へのヒトカケラ」を含む全30曲を熱唱。","officialUrl":"https://www.lisani.jp/0000296828/","tag":"13th Anniversary Live, 13周年記念, 13周年ライブ, TITLE MATCH, 13周年アリーナ"},
+{"id":7,"category":"ツアー","title":"i☆Ris 10th Live Tour 2025 ～ViVa i☆Ris～","period":"2025年5月〜7月","venue":"全国ツアー（初日：埼玉 / 千秋楽：東京）","description":"5thアルバム『ViVa i☆DOL』を引っ提げた記念すべき10回目の全国ツアー。自身がプロデュースに携わった楽曲や「Platonic」などアルバム新曲を披露し、ぴあアリーナMMでの13周年リベンジ公演も発表された。","officialUrl":"https://www.lisani.jp/0000288168/","tag":"10th Live Tour, 10th全国ツアー, ViVa i☆Ris"},
+{"id":8,"category":"その他のイベント","title":"劇場版アニメ『i☆Ris the Movie - Full Energy!! -』公開記念＆SPイベント","period":"2024年3月〜2025年2月","venue":"AnimeJapan 2024 / 完成披露上映会 / SPイベント","description":"10周年プロジェクトの集大成となる劇場版アニメの関連イベント群。AJ2024での主題歌「愛 for you！」初披露、完成披露プレミア上映会、シャッフル生アフレコや劇中曲ライブを行ったSPイベントなどを開催。","officialUrl":"https://www.animatetimes.com/news/details.php?id=1740306866","tag":"i☆Ris the Movie"},
+{"id":9,"category":"周年ライブ","title":"i☆Ris 12th Anniversary Live ‐初☆アリーナMM(マジみて)‐","period":"2024年11月4日","venue":"ぴあアリーナMM","description":"デビュー12周年を記念し、グループ史上最大規模となる初のアリーナ単独公演として開催。花道やセンターステージを駆使して12年間の歴史を凝縮した全28曲を披露し、MCではアイドルとしても高みを目指し続ける真摯な決意を語った。","officialUrl":"https://www.lisani.jp/0000271923/","tag":"12th Anniversary Live, 12周年記念, 初☆アリーナMM"},
+{"id":10,"category":"その他のイベント","title":"実写映画『Live & Documentary Movie ～i☆Ris on STAGE～』公開記念舞台挨拶","period":"2024年9月14日","venue":"新宿バルト9 ほか","description":"グループ初の実写ライブドキュメンタリー映画の公開記念舞台挨拶＆インタビュー。長期密着や故郷・秋田ロケの裏話、過去のライブ映像を振り返って「常に今が最高と更新し続けている」と語ったほか、澁谷梓希からのサプライズ手紙も披露された。","officialUrl":"https://natalie.mu/comic/news/590946","tag":"i☆Ris on STAGE"},
+{"id":11,"category":"その他のイベント","title":"ナガノアニエラフェスタ 2024","period":"2024年9月21日〜22日","venue":"長野県佐久市・駒場公園","description":"長野県で開催されたアニソン野外フェスへの出演。開催前対談では若井友希と共に前年の初出演時の思い出や野外ならではの開放感、ライブへの意気込みを語った。","officialUrl":"https://www.lisani.jp/0000266103/","tag":"ナガノアニエラフェスタ"},
+{"id":12,"category":"ツアー","title":"i☆Ris 9th Live Tour 2024 愛たくて…Full Ener9y!!","period":"2024年4月〜6月","venue":"全国ツアー（神奈川・東京ほか）","description":"劇場版アニメ『i☆Ris the Movie - Full Energy!! -』公開と連動して開催された9回目の全国ツアー。主題歌「愛 for you！」や挿入歌「希望の花を」など、メンバーとファンの愛が響き合う熱いステージを展開。","officialUrl":"https://www.lisani.jp/0000265353/","tag":"9th Live Tour, 9th全国ツアー, Full Ener9y"},
+{"id":13,"category":"周年ライブ","title":"i☆Ris 11th Anniversary Live ～Heart Jack～","period":"2023年11月26日","venue":"パシフィコ横浜 国立大ホール","description":"5人が怪盗となってファンのハートを奪うコンセプトで開催されたデビュー11周年記念ライブ。客席降臨演出や新曲「White Lyrical Kingdom」「Let you know!」の初披露、劇場版アニメに向けた歓声公開収録も行われた。","officialUrl":"https://www.lisani.jp/0000245877/","tag":"11th Anniversary Live, 11周年ライブ, 11周年記念ライブ, Heart Jack"},
+{"id":14,"category":"ツアー","title":"i☆Ris 8th Live Tour 2023 ～わっしょい!!!!!～","period":"2023年4月〜6月","venue":"全国ツアー（千秋楽：TOKYO DOME CITY HALL）","description":"約3年ぶりの声出し解禁となった8回目の全国ツアー。前山田健一提供のテーマ曲「あっぱれ！馬鹿騒ぎ」や縁日・屋台演出、ファン投票によるシャッフルユニットコーナー（「Secret Garden」「Believe in」等）で百花繚乱の盛り上がりを見せた。","officialUrl":"https://avexnet.jp/column/1000642","tag":"8th Live Tour, 8th全国ツアー, わっしょい!!!!!"},
+{"id":15,"category":"周年ライブ","title":"i☆Ris 10th Anniversary Live ～a Live～","period":"2022年11月7日","venue":"東京国際フォーラム ホールA","description":"デビュー10周年記念日当日に生バンド編成を交えて開催された集大成ライブ。デビュー曲「Color」から『プリパラ』歴代OPメドレー、メンバーの手紙をもとに作られた新曲「Anniversary」まで全27曲を披露し、劇場版アニメ化決定も発表された。","officialUrl":"https://www.lisani.jp/0000215144/","tag":"10th Anniversary Live, 10周年記念ライブ, 10周年ライブ, ～a Live～"},
+{"id":16,"category":"ツアー","title":"i☆Ris 7th Live Tour 2022 ～Traveling～","period":"2022年4月〜6月","venue":"全国ツアー（名古屋・中野サンプラザほか）","description":"10周年イヤーに“i☆Ris AirLine”による空の旅をコンセプトに開催された7thツアー。CA風衣装での登場やツアー新曲「Dream Travelers」、22ndシングル「Queens Bluff」初披露、若井友希とのデュエットなどを披露。","officialUrl":"https://www.lisani.jp/0000203459/","tag":"7th Live Tour, 7thライブツアー, Traveling"},
+{"id":17,"category":"周年ライブ","title":"i☆Ris 9th Anniversary Live ～Queen's Message～","period":"2021年11月7日","venue":"幕張メッセ イベントホール","description":"5人体制となって初の周年ライブ。フォーメーションを再構築した楽曲群や新曲「12月のSnowry」「5STAR☆(仮)」「Cheer up」の初披露、初のトロッコ・リフター演出、直筆メッセージ公開など10年目への決意を示した一夜。","officialUrl":"https://spice.eplus.jp/articles/296393","tag":"9th Anniversary Live, 9周年記念ライブ, 9周年ライブ, Queen's Message"},
+{"id":18,"category":"ツアー","title":"i☆Ris 6th Live Tour 2021 ～Carnival～","period":"2021年4月〜7月","venue":"全国ツアー（東京・愛知・大阪ほか）","description":"5人体制での新たなスタートとして開催された6回目の全国ツアー。歌割りやフォーメーションを再構築し、4thアルバム『Shall we☆Carnival』の楽曲や20thシングル「Summer Dude」へと繋がる進化したパフォーマンスを披露。","officialUrl":"https://barks.jp/news/916096/","tag":"新体制のツアー, Summer Dude"},
+{"id":19,"category":"その他のイベント","title":"i☆Ris LIVE 2021 ～storiez～（6人体制ラストライブ）","period":"2021年3月28日","venue":"パシフィコ横浜 国立大ホール","description":"澁谷梓希の卒業公演となる、6人体制最後のワンマンライブ。デビュー曲「Color」から「Memorial」やプリパラメドレーまで約8年間の軌跡を詰め込み、心からの感謝と共に新たな一歩へと送り出した感動のステージ。","officialUrl":"https://www.lisani.jp/0000169857/","tag":"storiez, 6人体制ラストライブ"},
+{"id":20,"category":"その他のイベント","title":"i☆Ris Special Online Live 2021","period":"2021年1月16日","venue":"オンライン配信ライブ","description":"2021年の“ライブ始め”として開催されたオンラインワンマンライブ。ソロコーナーでの「WHAT YOU ARE」披露など多彩なパフォーマンスを展開。","officialUrl":"https://seigura.com/news/53353/","tag":"Special Online Live 2021"},
+{"id":21,"category":"周年ライブ","title":"i☆Ris 8th Anniversary Live ～88888888～ (パチパチ)","period":"2020年11月7日","venue":"河口湖ステラシアター（生配信）","description":"約1年ぶりのワンマンとして思い出の地・河口湖ステラシアターから無観客生配信されたデビュー8周年記念ライブ。4thアルバム曲「ハピラキ☆Dream Carnival」「Spending」初披露やAR演出、夜空を彩る花火で魅了した。","officialUrl":"https://www.lisani.jp/0000158197/","tag":"8th Anniversary Live, 8周年記念ライブ, 8周年ライブ, 88888888"},
+{"id":22,"category":"その他のイベント","title":"虹会ファンクラブイベント 2020 WINTER","period":"2020年2月","venue":"ファンクラブ限定イベント","description":"公式ファンクラブ「虹会」の会員限定イベント。珍回答続出のバラエティゲームコーナーと熱狂のライブパートでファンとの交流を楽しんだ。","officialUrl":"https://avexnet.jp/column/1000359","tag":"虹会ファンクラブイベント"},
+{"id":23,"category":"周年ライブ","title":"i☆Ris 7th Anniversary Live ～七福万来～","period":"2019年11月24日","venue":"パシフィコ横浜 国立大ホール","description":"パシフィコ横浜に約5,000人のファンを集めて開催されたデビュー7周年記念ライブ。チャイナ風の華やかなコンセプト衣装や「FANTASTIC ILLUSION」「Changing point」、新曲「泡沫の光」初披露など7年間の絆を響かせた。","officialUrl":"https://www.lisani.jp/0000140446/","tag":"7th Anniversary Live, 7周年記念ライブ, 七福万来"},
+{"id":24,"category":"ツアー","title":"i☆Ris 5th Live Tour 2019 ～FEVER～","period":"2019年4月〜6月","venue":"全国ツアー（千秋楽：中野サンプラザ）","description":"メンバー自身が構成・演出に深く携わった5回目の全国ツアー。燕尾ベスト姿でのツアーテーマ曲「ありえんほどフィーバー」やバーレスク風のダンスパフォーマンス、18thシングル「アルティメット☆MAGIC」初披露などショーアップされたステージで魅了。","officialUrl":"https://www.lisani.jp/0000131688/","tag":"5th Live Tour, 5th全国ツアー, 5thツアー, ありえんほどフィーバー"},
+{"id":25,"category":"その他のイベント","title":"i☆Ris & Wake Up, Girls！ & Run Girls, Run！ バレンタインLive 2019","period":"2019年2月2日","venue":"ベイサイドヨコハマ","description":"姉妹ユニットであるi☆Ris・Wake Up, Girls！・Run Girls, Run！の3組が集結した合同バレンタインイベント。3ユニットの絆が光るトークやコラボライブステージが繰り広げられた。","officialUrl":"https://www.lisani.jp/0000123623/","tag":"バレンタインLive 2019, バレンタイン Live 2019"},
+{"id":26,"category":"周年ライブ","title":"i☆Ris 6th Anniversary Live ～Lock on♡ 無理なんて言わせないっ！～","period":"2018年11月7日","venue":"TOKYO DOME CITY HALL","description":"デビュー6周年記念日に開催されたアニバーサリーライブ。メンバー自身が構成に携わったストーリー仕立てのステージで、若井友希とのデュエット曲「流星」や新曲「アメコイ」初披露など全19曲をパフォーマンス。","officialUrl":"https://www.lisani.jp/0000119174/","tag":"6th Anniversary Live, 6周年記念ライブ, Lock on"},
+{"id":27,"category":"ツアー","title":"i☆Ris 4th Live Tour 2018 ～WONDERFUL PALETTE～","period":"2018年4月〜6月","venue":"全国ツアー（中野サンプラザ・名古屋ほか）","description":"3rdアルバム『WONDERFUL PALETTE』を引っ提げた4th全国ツアー。自身が作詞・歌唱したソロ曲「Dear...」や「Memorial」「Changing point」、最終・名古屋公演での「Color」披露など6人の実力が光るツアーとなった。","officialUrl":"https://www.lisani.jp/0000109648/","tag":"4th Live Tour, 4th全国ツアー, 4thツアー, 4回目の全国ツアー"},
+{"id":28,"category":"周年ライブ","title":"i☆Ris 5th Anniversary Live ～Go～","period":"2017年11月6日〜7日","venue":"府中の森芸術劇場 どりーむホール","description":"デビュー5周年を記念した2DAYSライブ。ファン投票による楽曲ランキングTOP10の発表＆披露や、新曲「WONDERFUL PALETTE」初披露など、5年間の成長とさらなる未来への一歩を刻んだ公演。","officialUrl":"https://www.lisani.jp/0000065185/","tag":"5th Anniversary Live, デビュー5周年記念ライブ, 5周年ライブ"},
+{"id":29,"category":"周年ライブ","title":"i☆Ris 結成5周年記念Live ～5 years old! Everyone comes together☆～","period":"2017年7月17日","venue":"かつしかシンフォニーヒルズ","description":"結成5周年を記念して開催されたスペシャルイベント。前半の「真夏の大運動会」ではリレー・大縄跳び・尻相撲で白熱のバトルを繰り広げ、後半ライブでは「真夏の花火と秘密基地」初披露や自身の23歳バースデーサプライズ祝福も行われた。","officialUrl":"https://www.lisani.jp/0000057746/","tag":"結成5周年記念"},
+{"id":30,"category":"ツアー","title":"i☆Ris 3rd Live Tour 2017 ～Fan+6=∞～","period":"2017年4月〜6月","venue":"全国9ヵ所17公演（ファイナル：NHK大阪ホール）","description":"日本武道館公演を経て、過去最多となる全国9ヵ所17公演を巡った3rdツアー。ファイナル大阪公演ではソロで「WHAT YOU ARE」を披露し、「i☆Risでいられることが誇らしい」とメンバーやファンへの思いを語った。","officialUrl":"https://www.lisani.jp/0000055151/","tag":"3rd Live Tour, 3rd全国ツアー, 3rdツアー"},
+{"id":31,"category":"その他のイベント","title":"ANIMAX MUSIX 2017 OSAKA","period":"2017年1月14日","venue":"大阪城ホール","description":"大阪城ホールで開催されたアニメミュージックイベントへの出演。声優アイドルならではの強みを生かしたパフォーマンスやコラボステージの感想を語った。","officialUrl":"https://news.mynavi.jp/article/20170330-iRis/","tag":"ANIMAX MUSIX"},
+{"id":32,"category":"その他のイベント","title":"シングル＆アルバム発売記念リリースイベント（噴水広場・教会広場ほか）","period":"2015年〜2017年","venue":"池袋サンシャインシティ噴水広場 / ヴィーナスフォート教会広場","description":"9thシングル「ドリームパレード」（噴水広場）、11thシングル「Goin'on」＆2ndアルバム（教会広場）、14thシングル「Shining Star」など、憧れのステージで新衣装・新曲を初披露してきたメモリアルなリリースイベント群。","officialUrl":"https://www.lisani.jp/0000001576/","tag":"リリースイベント, 予約イベント"},
+{"id":33,"category":"周年ライブ","title":"i☆Ris 4th Anniversary Live ～418～（日本武道館）","period":"2016年11月25日","venue":"日本武道館","description":"デビュー4周年にして念願の初・日本武道館単独公演。「鏡のLabyrinth」への想いやデビュー当時の葛藤、メンバーとファンへの感謝を涙ながらに語り、「どうしても6人全員でこの曲を歌いたい」と選んだ「ドリームパレード」まで全20曲を駆け抜けた。","officialUrl":"https://www.lisani.jp/0000037644/","tag":"4th Anniversary Live, 4周年記念ライブ, 日本武道館公演, 武道館ライブ"},
+{"id":34,"category":"周年ライブ","title":"i☆Ris 結成4周年記念Live ～foooour～","period":"2016年7月9日","venue":"河口湖ステラシアター","description":"デビュー合宿を行った思い出の地・河口湖での結成4周年凱旋野外ライブ。特別列車「i☆Ris号」の車内ナレーションや、弾き語り、法被姿でのレアアニソンカバー、「Garnet」「Re:Call」初披露など全21曲を披露。","officialUrl":"https://www.lisani.jp/0000002020/","tag":"結成4周年, foooor, foooour"},
+{"id":35,"category":"ツアー","title":"i☆Ris 2nd Live Tour 2016 ～Th!s !s i☆Ris!!～","period":"2016年4月〜5月","venue":"全国5大都市Zeppツアー（千秋楽：Zepp Tokyo）","description":"2ndアルバム『Th!s !s i☆Ris!!』を携えて全国5大都市のZeppを巡った2ndツアー。ユニット曲「Secret Garden」披露や恒例のアフレコ劇、13thシングル『Re:Call』発表など熱狂のステージを展開。","officialUrl":"https://www.animatetimes.com/news/details.php?id=1463849765","tag":"2nd Live Tour, 2ndライブツアー, 2ndツアー"},
+{"id":36,"category":"周年ライブ","title":"i☆Ris 3rd Anniversary LIVE ～GALAXY～","period":"2015年11月8日","venue":"豊洲PIT","description":"豊洲PITに約3,000人を動員して開催されたデビュー3周年記念ライブ。ソロコーナーでの「特捜戦隊デカレンジャー」熱唱や、3年間の総括と4年目の飛躍を誓う全21曲のステージを披露。","officialUrl":"https://www.lisani.jp/0000001734/","tag":"3rd Anniversary LIVE, 3周年記念ライブ, i☆Ris3周年ライブ, デビュー3周年"},
+{"id":37,"category":"周年ライブ","title":"i☆Ris 結成3周年記念イベント","period":"2015年7月25日","venue":"竹芝ニューピアホール","description":"結成3周年を記念して開催されたトーク＆ライブイベント。メンバーカラーの帯を取り入れた浴衣姿でのファンアンケート企画や告白セリフコーナー、デビュー前の秘蔵映像公開、ライブステージで会場を沸かせた。","officialUrl":"https://www.lisani.jp/0000001698/","tag":"結成3周年"},
+{"id":38,"category":"ツアー","title":"i☆Ris 1st Live Tour 2015 ～We are i☆Ris!!!～","period":"2015年4月〜5月","venue":"全国4大都市ツアー（ファイナル：Zepp Tokyo）","description":"1stフルアルバム『We are i☆Ris!!!』を引っ提げて開催された初の全国ツアー。若井友希とのデュエットバラード「流星」や朗読劇、新曲「ドリームパレード」初披露、そして「やってきたことはムダじゃなかった」と決意を語った記念すべきツアー。","officialUrl":"https://www.lisani.jp/0000001560/","tag":"1st Live Tour, 1st全国ツアー, 1stツアー, 初の全国ツアー"},
+{"id":39,"category":"その他のイベント","title":"AKIBAカルチャーズ劇場 メンバー生誕祭イベント","period":"2014年11月〜2015年3月","venue":"AKIBAカルチャーズ劇場","description":"メンバーそれぞれの誕生日に合わせて開催された生誕祭イベント（「若井友希生誕祭」「久保田未夢生誕祭」「山北早紀生誕祭」等）。特別ユニットでの「おジャ魔女カーニバル!!」カバーやアレンジ自己紹介などで祝福した。","officialUrl":"https://www.lisani.jp/0000001488/","tag":"生誕祭"},
+{"id":40,"category":"周年ライブ","title":"i☆Ris 2nd Anniversary Live ～Dream Evolution～","period":"2014年11月23日","venue":"六本木ブルーシアター","description":"デビュー2周年記念ライブ。「ミラクル☆パラダイス」から幕を開け、SoLaMi♡SMILEとしての『プリパラ』キャラクターソング初披露や生アフレココーナーなど、2年間の進化を証明する全17曲を披露。","officialUrl":"https://www.lisani.jp/0000001418/","tag":"2nd Anniversary Live, 2周年記念ライブ, 2周年ライブ"},
+{"id":41,"category":"その他のイベント","title":"i☆Ris 2ndワンマンライブ ～STEP INTO THE RAINBOW～","period":"2014年3月30日","venue":"新宿BLAZE","description":"新宿BLAZEで開催された2度目のワンマンライブ。若井友希とのカバー披露や生アフレコへの初挑戦、5thシングル「徒太陽」初披露など、初期の熱気あふれるステージ。","officialUrl":"https://www.lisani.jp/0000001178/","tag":"STEP INTO THE RAINBOW, 2ndワンマンライブ"},
+{"id":42,"category":"周年ライブ","title":"i☆Ris 1st Anniversary Live -THANK YOU ALL-","period":"2013年11月9日","venue":"原宿アストロホール","description":"デビュー1周年を記念した初のアニバーサリーワンマンライブ。1周年記念シングル「幻想曲WONDERLAND」の披露や、仲間とファンに支えられ「1人じゃない」と実感した感謝のMCが綴られた原点となる公演。","officialUrl":"https://repotama.com/2013/11/63648/","tag":"デビュー１周年ライブ, 1st Anniversary, 1周年記念ライブ"},
+{"id":43,"category":"周年ライブ","title":"i☆Ris 結成1周年記念イベント","period":"2013年7月7日","venue":"表参道GROUND","description":"結成1周年を記念して開催されたイベント。3rdシングル「§Rainbow」の初披露や、「Animelo Summer Live 2013 -FLAG NINE-」への初出演決定がサプライズ発表されメンバー全員が感涙した。","officialUrl":"https://barks.jp/news/699557/","tag":"結成1周年記念イベント"},
+{"id":44,"category":"その他のイベント","title":"デビュー曲「Color」お披露目イベント＆秋葉原 毎週月曜定期ライブ","period":"2012年10月〜2013年5月","venue":"アキバ☆ソフマップ1号店 ほか","description":"2012年10月のデビュー曲「Color」お披露目イベントから、2013年春に開催された毎週月曜定期ライブ最終公演まで、自身が選曲した「おジャ魔女カーニバル!!」カバー披露や1周年ライブサプライズ発表など、i☆Risの礎を築いた初期イベント。","officialUrl":"https://barks.jp/news/695796/","tag":"お披露目イベント, 定期ライブ"}
+];
+
+ // URLから媒体名を自動補完するマップ（GAS経由の最新データ取得時にも活用）
+ const DOMAIN_MEDIA_MAP = {
+ "www.animatetimes.com": "アニメイトタイムズ",
+ "www.lisani.jp": "リスアニ！",
+ "natalie.mu": "ナタリー",
+ "news.mynavi.jp": "マイナビニュース",
+ "mantan-web.jp": "MANTANWEB",
+ "spice.eplus.jp": "SPICE",
+ "seigura.com": "声優グランプリ",
+ "nikkan-spa.jp": "日刊SPA!",
+ "repotama.com": "れポたま！",
+ "www.joqr.co.jp": "文化放送",
+ "webnewtype.com": "WebNewtype",
+ "thetv.jp": "WEBザテレビジョン",
+ "barks.jp": "BARKS",
+ "avexnet.jp": "avex portal",
+ "avex-pictures.co.jp": "avex pictures",
+ "engekisengen.com": "ローチケ演劇宣言！",
+ "l-tike.com": "ローチケ",
+ "cho-animedia.jp": "超！アニメディア",
+ "hominis.media": "HOMINIS",
+ "www.oricon.co.jp": "ORICON NEWS",
+ "www.4gamer.net": "4Gamer.net",
+ "aniverse-mag.com": "Aniverse",
+ "mediact.info": "Media-ct",
+ "moca-news.net": "MoCa",
+ "gamebiz.jp": "gamebiz",
+ "www.famitsu.com": "ファミ通.com",
+ "app.famitsu.com": "ファミ通.com",
+ "theatertainment.jp": "シアターテイメントNEWS",
+ "sipory.jp": "しぽり (超吟醸祭)",
+ "www.uta-net.com": "歌ネット",
+ "www.vanitymix.jp": "VANITYMIX",
+ "www.galpo.info": "ガルポ！",
+ "www.cdjournal.com": "CDJournal",
+ "iris.dive2ent.com": "i☆Ris公式",
+ "eeo.today": "eeo Media",
+ "www.pashplus.jp": "PASH! PLUS",
+ "realsound.jp": "Real Sound",
+ "www.crank-in.net": "クランクイン！",
+ "www.nack5.co.jp": "FM NACK5",
+ "bezzy.jp": "Bezzy",
+ "www.huffingtonpost.jp": "ハフポスト",
+ "popnroll.tv": "Pop'n'Roll",
+ "voisjp.me": "Vois",
+ "nbpress.online": "NB Press Online",
+ "entameclip.com": "日刊エンタメクリップ",
+ "news.1242.com": "ニッポン放送",
+ "qjweb.jp": "QJWeb",
+ "dengekionline.com": "電撃オンライン",
+ "ddnavi.com": "ダ・ヴィンチWeb",
+ "www.billboard-japan.com": "Billboard JAPAN",
+ "animageplus.jp": "アニメージュプラス",
+"anime.eiga.com": "アニメハック",
+ "s.animeanime.jp": "アニメ！アニメ！",
+ "ameblo.jp": "Amebaブログ (公式日誌)",
+ "www.walkerplus.com": "ウォーカープラス",
+ "getnews.jp": "ガジェット通信",
+ "adv.tokyo-np.co.jp": "東京新聞 (PR TIMES)",
+ "magazine.confetti-web.com": "カンフェティ",
+ "news.denfaminicogamer.jp": "電ファミニコゲーマー",
+ "numan.tokyo": "numan",
+ "oshigoto.fan": "推しごと",
+ "www.astage-ent.com": "Astage",
+ "www.cinema-life.net": "CINEMA Life!",
+ "www.entergram.co.jp": "エンターグラム公式",
+ "www.cs.furyu.jp": "フリュー公式",
+ "tojitomo-anime.jp": "刀使ノ巫女公式",
+ "ure.pia.co.jp": "ぴあ (ウレぴあ総研)",
+ "kansai.pia.co.jp": "ぴあ関西版WEB",
+ "www.gamer.ne.jp": "Gamer",
+ "press.moviewalker.jp": "MOVIE WALKER PRESS",
+ "minitoji.jp": "みにとじ公式",
+ "news.livedoor.com": "ライブドアニュース",
+ "www.tbs.co.jp": "TBS公式",
+ "charalab.com": "キャララボ",
+ "www.edgeline-tokyo.com": "Edge Line",
+ "www.kids-event.jp": "キッズイベント",
+ "enterstage.jp": "エンタステージ",
+ "sh-anime.shochiku.co.jp": "終末のイゼッタ公式",
+ "stagenews25.jp": "Stage News",
+ "www.booklista.co.jp": "ブックリスタ",
+ "mikiki.tokyo.jp": "Mikiki",
+ "news.amiami.jp": "あみあみニュース",
+ "anime-jam.com": "アニメJAM公式",
+ "www.81produce.co.jp": "81プロデュース公式",
+ "shop.mu-mo.net": "mu-moショップ特集",
+ "jisin.jp": "女性自身"
+ };
+
+ function detectMediaFromUrl(urlStr, fallbackMedia) {
+ if (fallbackMedia && fallbackMedia !== "Webメディア") return fallbackMedia;
+ try {
+ const host = new URL(urlStr).hostname;
+ if (DOMAIN_MEDIA_MAP[host]) return DOMAIN_MEDIA_MAP[host];
+ } catch (e) {}
+ return fallbackMedia || "Webメディア";
+ }
+
+ const VERIFIED_ARTICLE_DATE_FIXES = {
+ "https://eeo.today/media/2025/12/01/287042/": "2025-12-01",
+ "https://www.nack5.co.jp/blog/shuka_radio/20282/": "2026-07-30",
+ "https://nikkan-spa.jp/2099909": "2025-07-03",
+ "https://www.joqr.co.jp/ag/article/95713/": "2023-07-21",
+ "https://s.animeanime.jp/article/2021/11/09/65264.html": "2021-11-09",
+ "https://www.lisani.jp/0000007338/": "2014-10-22",
+ "https://www.lisani.jp/0000006366/": "2014-08-20"
+ };
+
+ const CAT_CODE_MAP = ["インタビュー", "ライブレポ", "舞台挨拶・イベント"];
+
+ // 行番号ではなく記事固有のURL（または任意設定の記事コード）から不変IDを生成する関数
+ function getStableArticleId(urlStr, titleStr, dateStr, rawCode) {
+ if (rawCode && typeof rawCode === 'string' && !/^\d+$/.test(rawCode.trim())) {
+ return rawCode.trim().replace(/['"\\]/g, '');
+ }
+ if (urlStr) {
+ return urlStr.replace(/^https?:\/\/(www\.)?/i, '').replace(/\/+$/, '').replace(/['"\\]/g, '');
+ }
+ return `${dateStr}_${(titleStr || '').substring(0, 24)}`.replace(/[\s'"\\]/g, '');
+ }
+
+ function normalizeArticle(raw, index) {
+ const isArr = Array.isArray(raw);
+ let urlStr = (isArr ? (raw[3] || "") : (raw.url || "")).toString().trim();
+ if (urlStr.includes("news.mynバイ.jp")) {
+ urlStr = urlStr.replace("news.mynバイ.jp", "news.mynavi.jp");
+ }
+
+ let rawDate = (isArr ? (raw[0] || "") : (raw.date || "")).toString().trim();
+ let formattedDate = rawDate.replace(/\//g, '-');
+ const dateMatch = formattedDate.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+ if (dateMatch) {
+ formattedDate = `${dateMatch[1]}-${dateMatch[2].padStart(2, '0')}-${dateMatch[3].padStart(2, '0')}`;
+ }
+ if (VERIFIED_ARTICLE_DATE_FIXES[urlStr]) {
+ formattedDate = VERIFIED_ARTICLE_DATE_FIXES[urlStr];
+ }
+
+ const titleStr = (isArr ? (raw[1] || "") : (raw.title || "")).toString().trim();
+ const summaryStr = (isArr ? (raw[2] || "") : (raw.summary || "")).toString().trim();
+ const rawFeatured = (isArr ? (raw[6] || "") : (raw.featuredMark || (typeof raw.featured === 'string' ? raw.featured : (raw.featured === true ? "おすすめ" : "")))).toString().trim();
+ const isHidden = /^[✕×xX]|非表示|除外|NG|不要/i.test(rawFeatured) || (!isArr && raw.hidden === true);
+ const isFeatured = /^[★☆1]|おすすめ|注目/i.test(rawFeatured) || (!isArr && raw.featured === true);
+
+ const fallbackMedia = (isArr ? (raw[7] || "") : (raw.media || "")).toString().trim();
+ const mediaStr = detectMediaFromUrl(urlStr, fallbackMedia);
+
+ let rawTags = isArr
+ ? (raw[5] ? raw[5].split(",") : [])
+ : (Array.isArray(raw.tags) ? [...raw.tags] : []);
+ rawTags = rawTags.map(t => t.replace(/^#/, '').trim()).filter(Boolean);
+ if (mediaStr && mediaStr !== "Webメディア" && !rawTags.includes(mediaStr)) {
+ rawTags.push(mediaStr);
+ }
+
+ let catStr = isArr ? (CAT_CODE_MAP[raw[4]] || "インタビュー") : (raw.category || "").toString().trim();
+ if (catStr === "舞台・ゲネプロレポ") catStr = "舞台挨拶・イベント";
+ else if (catStr === "ラジオレポート") catStr = "インタビュー";
+ else if (!catStr) {
+ const ts = `${titleStr} ${summaryStr}`;
+ if (/ライブレポート|オフィシャルライブレポート|公式レポート|ライヴ開催|14周年記念ライブ|11周年ライブ|ツアー初日|ツアー開幕|ツアーファイナル|千秋楽/.test(ts)) {
+ catStr = "ライブレポ";
+ } else if (/舞台あいさつ|舞台挨拶|イベントレポート|始球式|発表会/.test(ts)) {
+ catStr = "舞台挨拶・イベント";
+ } else {
+ catStr = "インタビュー";
+ }
+ }
+
+ const rawCode = !isArr ? (raw.code || raw.articleCode || (typeof raw.id === 'string' ? raw.id : '')) : '';
+ const stableId = getStableArticleId(urlStr, titleStr, formattedDate, rawCode);
+
+ return {
+ id: stableId,
+ legacyRowId: (!isArr && typeof raw.id === 'number') ? raw.id : (index + 1),
+ date: formattedDate,
+ title: titleStr,
+ summary: summaryStr,
+ url: urlStr,
+ media: mediaStr,
+ category: catStr,
+ featured: isFeatured,
+ featuredMark: rawFeatured,
+ hidden: isHidden,
+ tags: Array.from(new Set(rawTags))
+ };
+ }
+
+ // --- 類似記事（同一ライブ・イベント・リリース等の複数メディア記事）のトピック集約ルール ---
+ const TOPIC_GROUP_RULES = [
+ // 2026
+ { pat: /14th Anniversary|FANTASISTA|14周年記念/i, yr: /^2026-11/, cat: "ライブレポ", title: "『i☆Ris 14th Anniversary Live ～FANTASISTA～』横浜アリーナ公演 ライブレポート" },
+ { pat: /Welcome to あざとさワールド|27thシングル/i, yr: /^2026/, cat: "インタビュー", title: "i☆Ris 27thシングル「Welcome to あざとさワールド」リリースインタビュー" },
+ { pat: /Animelo Summer Live 2026|アニサマ2026/i, yr: /^2026/, cat: "ライブレポ", title: "『Animelo Summer Live 2026 -Messenger-』DAY3 ライブレポート" },
+ { pat: /超時空捜査隊マルキュー|シネマダミス/i, yr: /^2026/, title: "シネマダミス『超時空捜査隊マルキュー』キャストコメント＆発表" },
+ { pat: /予感の途中|MFゴースト 3rd/i, yr: /^2026/, cat: "インタビュー", title: "Himika Akaneya 3rdシングル「予感の途中 Prod. ☆Taku Takahashi (m-flo)」インタビュー" },
+ { pat: /プリ♡プリライブ|アイプリ×キラッとプリ☆チャン/i, yr: /^2026/, cat: "ライブレポ", title: "合同ライブ「ひみつのアイプリ×キラッとプリ☆チャン プリ♡プリライブ」公式レポート" },
+ // 2025
+ { pat: /Crossing Live 2025|Crossing Live.*28曲/i, yr: /^2025/, cat: "ライブレポ", title: "合同ライブ「プリティーシリーズ Crossing Live 2025」イベントレポート" },
+ { pat: /13周年記念.*記者会見|TITLE MATCH.*記者会見|ファイティングポーズ/i, yr: /^2025-11/, cat: "舞台挨拶・イベント", title: "『i☆Ris 13th Anniversary Live -TITLE MATCH-』開催記念記者会見レポート" },
+ { pat: /13th Anniversary|TITLE MATCH|13周年記念.*(ライブ|アリーナ|奇跡)/i, yr: /^2025-11/, cat: "ライブレポ", title: "『i☆Ris 13th Anniversary Live -TITLE MATCH-』ぴあアリーナMM ライブレポート" },
+ { pat: /アイカツ！×プリパラ.*(初日舞台挨拶|点が線になった)/i, yr: /^2025-10/, cat: "舞台挨拶・イベント", title: "映画『アイカツ！×プリパラ THE MOVIE -出会いのキセキ！-』初日舞台挨拶レポート" },
+ { pat: /アイカツ！×プリパラ.*(完成披露|幼少期にこの映画|これから歩む10年|出会いは「奇跡」)/i, yr: /^2025/, cat: "舞台挨拶・イベント", title: "映画『アイカツ！×プリパラ THE MOVIE -出会いのキセキ！-』完成披露舞台挨拶レポート" },
+ { pat: /アイカツ！×プリパラ.*(対談|インタビュー|下地紫野)/i, yr: /^2025-10/, cat: "インタビュー", title: "映画『アイカツ！×プリパラ THE MOVIE』下地紫野×茜屋日海夏 対談インタビュー" },
+ { pat: /10th Live Tour.*(ファイナル|千秋楽)/i, yr: /^2025-07/, cat: "ライブレポ", title: "『i☆Ris 10th Live Tour 2025 ～ViVa i☆Ris～』千秋楽・東京公演レポート" },
+ { pat: /10th Live Tour.*(初日|リベンジ公演|完全サプライズ)/i, yr: /^2025/, cat: "ライブレポ", title: "『i☆Ris 10th Live Tour 2025 ～ViVa i☆Ris～』初日公演レポート" },
+ { pat: /ViVa i☆DOL|5thアルバム|アイドル13年目の説得力/i, yr: /^2025/, cat: "インタビュー", title: "i☆Ris 5thアルバム『ViVa i☆DOL』リリース記念インタビュー" },
+ { pat: /B級ランク戦最終決戦編.*(開幕|スタート)/i, yr: /^2025-04/, cat: "舞台挨拶・イベント", title: "『ワールドトリガー the Stage』B級ランク戦最終決戦編 開幕レポート＆コメント" },
+ { pat: /Thank you♡Music Live|プリパラ.*10周年(記念)?ライブ/i, yr: /^2025-02/, cat: "ライブレポ", title: "『プリパラ 10th Anniversary Thank you♡Music Live』ライブレポート" },
+ // 2024
+ { pat: /Side U|無理しなくてもいいんだ/i, yr: /^2024-12/, cat: "インタビュー", title: "Himika Akaneya 2ndシングル「Side U (Prod. AmPm)」リリースインタビュー" },
+ { pat: /Crossing Live 2024|プリティーシリーズの最前線/i, yr: /^2024-11/, cat: "ライブレポ", title: "合同ライブ「プリティーシリーズ Crossing Live 2024」イベントレポート" },
+ { pat: /12th Anniversary|初☆アリーナMM/i, yr: /^2024-11/, cat: "ライブレポ", title: "『i☆Ris 12th Anniversary Live ‐初☆アリーナMM(マジみて)‐』ライブレポート" },
+ { pat: /SoLaMi♡SMILE.*初単独|ウィー・ラブ・プリパラ！初単独/i, yr: /^2024/, cat: "舞台挨拶・イベント", title: "『プリパラ』10周年 SoLaMi♡SMILE 初単独イベント レポート" },
+ { pat: /i☆Ris on STAGE.*舞台挨拶|元メンバーからサプライズ|澁谷梓希からのメッセージ/i, yr: /^2024-09/, cat: "舞台挨拶・イベント", title: "実写映画『Live & Documentary Movie ～i☆Ris on STAGE～』公開記念舞台挨拶レポート" },
+ { pat: /i☆Ris on STAGE|実写ドキュメンタリー映画|実写映画.*インタビュー|12周年で向き合う歴史/i, yr: /^2024-09/, cat: "インタビュー", title: "実写映画『Live & Documentary Movie ～i☆Ris on STAGE～』公開記念インタビュー" },
+ { pat: /愛 for you|希望の花を|大雪の中でのMV撮影|永遠じゃないからアイドル/i, yr: /^2024/, cat: "インタビュー", title: "i☆Ris 25thシングル「愛 for you！／希望の花を」リリースインタビュー" },
+ { pat: /シャッター・ガイ.*開幕/i, yr: /^2024-06/, cat: "舞台挨拶・イベント", title: "梅棒 18th “RE”SHOW『シャッター・ガイ』開幕レポート＆コメント" },
+ { pat: /シャッター・ガイ.*稽古場/i, yr: /^2024-06/, cat: "舞台挨拶・イベント", title: "梅棒 18th “RE”SHOW『シャッター・ガイ』稽古場レポート" },
+ { pat: /プリパラフレンドシップメモリー/i, yr: /^2024/, cat: "ライブレポ", title: "『プリパラ』10周年単独ライブ「プリパラフレンドシップメモリー」レポート" },
+ { pat: /i☆Ris the Movie.*(インタビュー|推し曲は|アニメ化|苦労話)/i, yr: /^2024-05/, cat: "インタビュー", title: "劇場版アニメ『i☆Ris the Movie - Full Energy!! -』公開記念インタビュー" },
+ // 2023
+ { pat: /エジソン.*12月23日/i, yr: /^2023-12/, title: "文化放送『A&G TRIBAL RADIO エジソン』（2023年12月23日放送）ゲスト特集＆後記" },
+ { pat: /Winter Live 2023/i, yr: /^2023-12/, cat: "ライブレポ", title: "合同ライブ「プリパラ＆キラッとプリ☆チャン＆ワッチャプリマジ！Winter Live 2023」レポート" },
+ { pat: /11th Anniversary|Heart Jack|11周年ライブ|30歳になっても見たい景色/i, yr: /^(2023-11|2023-12|2024-01)/, cat: "ライブレポ", title: "『i☆Ris 11th Anniversary Live ～Heart Jack～』パシフィコ横浜 ライブレポート" },
+ { pat: /Stereo Sunset|ソロデビュー|K-POP沼/i, yr: /^(2023-11|2023-12)/, cat: "インタビュー", excl: /ヨルナイト/i, title: "Himika Akaneya ソロデビューシングル「Stereo Sunset (Prod. AmPm)」インタビュー" },
+ { pat: /Sun!Sea!Summer!'23|初ソロライブ|ソロ初ライブ/i, yr: /^2023-07/, cat: "ライブレポ", title: "初ソロライブ「HIMIKA AKANEYA 1st Live Sun!Sea!Summer!'23」公式レポート" },
+ { pat: /わっしょい.*(ファイナル|TOKYO DOME CITY HALL)|8th Live Tour.*(ファイナル|TOKYO DOME CITY HALL)/i, yr: /^2023-06/, cat: "ライブレポ", title: "『i☆Ris 8th Live Tour 2023 ～わっしょい!!!!!～』東京ファイナル公演レポート" },
+ { pat: /わっしょい.*(初日|開幕)|前山田健一.*初披露/i, yr: /^2023-04/, cat: "ライブレポ", title: "『i☆Ris 8th Live Tour 2023 ～わっしょい!!!!!～』初日公演レポート" },
+ { pat: /映画『30S』.*友情出演/i, yr: /^2023-04/, title: "映画『30S（サーティーズ）』出演決定＆キャストコメント" },
+ // 2022
+ { pat: /Winter Live\s*2022/i, yr: /^(2022-12|2023-01)/, cat: "ライブレポ", title: "合同ライブ「プリパラ＆キラッとプリ☆チャン＆ワッチャプリマジ！Winter Live 2022」レポート" },
+ { pat: /10th Anniversary Live|～a Live～|10周年ライブが令和で見た|10周年記念ライブ/i, yr: /^2022-11/, cat: "ライブレポ", title: "『i☆Ris 10th Anniversary Live ～a Live～』東京国際フォーラム ライブレポート" },
+ { pat: /ベストアルバム|10年間の足跡|10年間で築いた自信|ライバル視していたi☆Risの10年|葛藤、変化 「プリパラ」への思い/i, yr: /^2022-11/, cat: "インタビュー", title: "i☆Ris 10周年記念ベストアルバム『Best i☆Rist』対談＆インタビュー" },
+ { pat: /エジソン.*8月6日/i, yr: /^2022-08/, title: "文化放送『A&G TRIBAL RADIO エジソン』（2022年8月6日放送）特集＆後記" },
+ { pat: /Traveling.*(中野サンプラザ|東京|10周年の旅はまだまだ続く|最強の『i☆Ris』)/i, yr: /^2022-06/, cat: "ライブレポ", title: "『i☆Ris 7th Live Tour 2022 ～Traveling～』東京・中野サンプラザ公演レポート" },
+ { pat: /Traveling.*(初日|開幕)/i, yr: /^2022-05/, cat: "ライブレポ", title: "『i☆Ris 7th Live Tour 2022 ～Traveling～』初日・名古屋公演レポート" },
+ // 2021
+ { pat: /12月のSnowry|ハートビート急上昇|2021年を新曲とともに|声優でもアイドルでもない/i, yr: /^2021-12/, cat: "インタビュー", excl: /ヨルナイト/i, title: "i☆Ris 21stシングル「12月のSnowry／ハートビート急上昇」リリースインタビュー" },
+ { pat: /ワールドトリガー the Stage.*(開幕|スタート)/i, yr: /^2021-11/, cat: "舞台挨拶・イベント", title: "舞台『ワールドトリガー the Stage』初演・東京公演開幕レポート" },
+ { pat: /9th Anniversary|Queen's Message|9周年ライブ|新たな魅力と変わらないらしさ/i, yr: /^(2021-11|2021-12)/, cat: "ライブレポ", title: "『i☆Ris 9th Anniversary Live ～Queen's Message～』幕張メッセ ライブレポート" },
+ { pat: /オータムライブ2021|うっちゃり初ライブ/i, yr: /^(2021-09|2021-10)/, cat: "ライブレポ", title: "単独ライブ「プリパラフレンドシップ オータムライブ2021」イベントレポート" },
+ { pat: /Welcome to プリ☆チャンランド|『プリ☆チャン』ライブで林鼓子が宣言/i, yr: /^(2021-08|2021-09)/, title: "『キラッとプリ☆チャン』単独ライブ「Welcome to プリ☆チャンランド!」レポート" },
+ { pat: /Summer Dude/i, yr: /^2021-08/, cat: "インタビュー", title: "i☆Ris 20thシングル「Summer Dude」リリースインタビュー" },
+ { pat: /Pretty Festival|プリティーフェスティバル/i, yr: /^2021-05/, title: "10周年記念イベント「Pretty series 10th Anniversary Pretty Festival」レポート" },
+ { pat: /ワールドトリガー.*追加キャスト|ワールドトリガー.*第?2弾キャスト/i, yr: /^2021-04/, title: "舞台『ワールドトリガー the Stage』追加キャスト＆ビジュアル解禁コメント" },
+ { pat: /storiez|澁谷梓希.*ラストステージ/i, yr: /^2021-03/, cat: "ライブレポ", title: "6人体制ラストライブ「i☆Ris LIVE 2021 ～storiez～」オフィシャルレポート" },
+ { pat: /8周年の集い|生配信で見せたi☆Risらしさ/i, yr: /^2021-03/, cat: "インタビュー", title: "生配信特番『6人揃ってファンと8周年の集い』直後インタビュー" },
+ // 2020
+ { pat: /Winter Live 2020/i, yr: /^2020-12/, cat: "ライブレポ", title: "合同ライブ「プリパラ＆キラッとプリ☆チャン Winter Live 2020」公式レポート" },
+ { pat: /8th Anniversary|88888888|1年ぶりワンマン/i, yr: /^2020-11/, cat: "ライブレポ", title: "『i☆Ris 8th Anniversary Live ～88888888～』河口湖生配信ライブレポート" },
+ { pat: /ひみちゃんねる|女性声優YouTuber/i, yr: /^2020-(05|06|07)/, cat: "インタビュー", title: "個人YouTubeチャンネル「ひみちゃんねる」特集＆インタビュー" },
+ { pat: /リングマリィ|徳井青空/i, yr: /^2020-04/, cat: "インタビュー", title: "『キラッとプリ☆チャン』リングマリィ（茜屋日海夏×徳井青空）対談インタビュー" },
+ { pat: /戦国BASARA バトルパーティー|小松姫/i, yr: /^2020-03/, cat: "インタビュー", title: "アプリ『戦国BASARA バトルパーティー』新武将・小松姫役インタビュー" },
+ { pat: /Shall we☆Carnival|アルバム全曲ダイジェスト|i☆Risソロインタビュー（1）/i, yr: /^2020-03/, cat: "インタビュー", title: "i☆Ris 4thアルバム『Shall we☆Carnival』リリース記念インタビュー" },
+ { pat: /七福万来|7th Anniversary|7周年記念ライブ/i, yr: /^(2019-11|2019-12|2020-01)/, cat: "ライブレポ", title: "『i☆Ris 7th Anniversary Live ～七福万来～』パシフィコ横浜 ライブレポート" },
+ // 2019
+ { pat: /FANTASTIC ILLUSION|手品先輩.*OP/i, yr: /^2019-(08|09)/, cat: "インタビュー", excl: /ヨルナイト/i, title: "i☆Ris 19thシングル「FANTASTIC ILLUSION」（『手品先輩』OP）インタビュー" },
+ { pat: /5th Live Tour.*(ファイナル|千秋楽)|FEVER.*(ファイナル|千秋楽)/i, yr: /^2019-(06|07)/, cat: "ライブレポ", title: "『i☆Ris 5th Live Tour 2019 ～FEVER～』中野サンプラザ千秋楽レポート" },
+ { pat: /アルティメット☆MAGIC.*(インタビュー|座談会)/i, yr: /^2019-05/, cat: "インタビュー", title: "i☆Ris 18thシングル「アルティメット☆MAGIC」リリースインタビュー" },
+ { pat: /5th Live Tour.*初日/i, yr: /^2019-04/, cat: "ライブレポ", title: "『i☆Ris 5th Live Tour 2019 ～FEVER～』初日公演レポート" },
+ { pat: /バレンタイン\s*Live 2019/i, yr: /^2019-02/, cat: "ライブレポ", title: "合同イベント「i☆Ris & Wake Up, Girls！ & Run Girls, Run！ バレンタインLive 2019」レポート" },
+ { pat: /お前ら全員めんどくさい！.*舞台挨拶/i, yr: /^2019-02/, cat: "舞台挨拶・イベント", title: "実写映画『お前ら全員めんどくさい！』初日舞台挨拶レポート" },
+ { pat: /温泉むすめ.*4thライブ/i, yr: /^2019-02/, cat: "ライブレポ", title: "「温泉むすめ 4th LIVE“NOW ON☆SENSATION!!”」ライブレポート" },
+ { pat: /Endless Notes|グリムノーツ/i, yr: /^2019-02/, cat: "インタビュー", title: "i☆Ris 17thシングル「Endless Notes」リリースインタビュー" },
+ // 2018
+ { pat: /6th Anniversary|Lock on/i, yr: /^2018-11/, cat: "ライブレポ", title: "『i☆Ris 6th Anniversary Live ～Lock on♡ 無理なんて言わせないっ！～』ライブレポート" },
+ { pat: /AUTUMN LIVE TOUR み～んなでアイドルやってみた/i, yr: /^2018-(09|10|12)/, cat: "ライブレポ", title: "「プリパラ＆キラッとプリ☆チャン AUTUMN LIVE TOUR」東京公演レポート" },
+ { pat: /ミントチョコレート|絶頂島の姫/i, yr: /^2018-08/, title: "ボイスドラマ『ミントチョコレート』配信発表" },
+ { pat: /4th Live Tour|4回目の全国ツアー/i, yr: /^2018-(06|07)/, cat: "ライブレポ", title: "『i☆Ris 4th Live Tour 2018 ～WONDERFUL PALETTE～』ライブレポート" },
+ { pat: /馬の骨/i, yr: /^(2018-06|2018-07)/, title: "実写映画『馬の骨』初日舞台挨拶レポート＆告知" },
+ { pat: /Changing point/i, yr: /^2018-05/, cat: "インタビュー", title: "i☆Ris 16thシングル「Changing point」リリースインタビュー" },
+ { pat: /劇場版\s*プリパラ＆(キラッと)?プリ☆チャン.*初日舞台/i, yr: /^2018-05/, cat: "舞台挨拶・イベント", title: "『劇場版 プリパラ＆キラッとプリ☆チャン ～きらきらメモリアルライブ～』初日舞台挨拶レポート" },
+ { pat: /believe again|キャラソンで初のソロダンス|奴村露乃.*MV/i, yr: /^2018-04/, title: "『魔法少女サイト』奴村露乃キャラソン「believe again」MVレポート＆インタビュー" },
+ { pat: /魔法少女サイト.*(大野柚布子|インタビュー|注目ポイント)/i, yr: /^2018-(04|05|06)/, cat: "インタビュー", excl: /believe again/i, title: "TVアニメ『魔法少女サイト』キャスト対談インタビュー" },
+ { pat: /Memorial/i, yr: /^2018-02/, cat: "インタビュー", title: "i☆Ris 15thシングル「Memorial」リリースインタビュー" },
+ { pat: /刀使ノ巫女.*イベント|刀使祭/i, yr: /^2018-(01|02)/, cat: "舞台挨拶・イベント", title: "『刀使ノ巫女』キャストイベント「刀使祭」レポート" },
+ // 2017
+ { pat: /WONDERFUL PALETTE|3rdアルバム/i, yr: /^(2017-10|2017-11)/, cat: "インタビュー", title: "i☆Ris 3rdアルバム『WONDERFUL PALETTE』リリースインタビュー" },
+ { pat: /5th Anniversary|5周年ライブ|5周年記念ライブ1日目/i, yr: /^2017-11/, cat: "ライブレポ", title: "『i☆Ris 5th Anniversary Live ～Go～』府中の森芸術劇場 ライブレポート" },
+ { pat: /Dance with Devils-Fortuna-|ダンデビ/i, yr: /^2017-11/, title: "劇場版『Dance with Devils-Fortuna-』初日舞台挨拶レポート＆コメント" },
+ { pat: /ミイラの飼い方.*(サンリオ|逃げ恥)/i, yr: /^2017-09/, cat: "舞台挨拶・イベント", title: "TVアニメ『ミイラの飼い方』サンリオEXPO発表会レポート" },
+ { pat: /結成5周年記念Live|結成5周年記念ライブ/i, yr: /^2017-07/, cat: "ライブレポ", title: "『i☆Ris 結成5周年記念Live ～5 years old! Everyone comes together☆～』レポート" },
+ { pat: /POLKA DOTS|DRAGON CRY/i, yr: /^2017-05/, cat: "インタビュー", title: "ユニット「POLKA DOTS」（茜屋日海夏×タカオユキ）インタビュー" },
+ { pat: /AnimeJapan 2017|アニメジャパン2017|最終回は“らしく”/i, yr: /^2017-03/, cat: "舞台挨拶・イベント", title: "「AnimeJapan 2017」『アイドルタイムプリパラ』ステージレポート" },
+ { pat: /Shining Star.*(インタビュー|座談会)/i, yr: /^2017-03/, cat: "インタビュー", title: "i☆Ris 14thシングル「Shining Star」リリースインタビュー" },
+ { pat: /キラリン☆スターライブ|劇場版プリパラ.*(第4弾|3月4日|３月４日|見どころ)/i, yr: /^(2017-02|2017-03)/, cat: "インタビュー", title: "『劇場版プリパラ み～んなでかがやけ！キラリン☆スターライブ！』インタビュー" },
+ { pat: /プリズム☆ボイス2017/i, yr: /^2017-01/, cat: "舞台挨拶・イベント", title: "『ライブミュージカル「プリパラ」み～んなにとどけ！プリズム☆ボイス2017』公開ゲネプロ＆稽古場レポート" },
+ // 2016
+ { pat: /4th Anniversary|418|武道館(ライブレポート|で魅力と実力|公演で決意|公演でニューシングル|で告白した)/i, yr: /^(2016-11|2016-12)/, cat: "ライブレポ", title: "『i☆Ris 4th Anniversary Live ～418～』日本武道館 ライブレポート" },
+ { pat: /公式親衛隊|真中姉妹.*(初ステージ|初登場|初共演|初ライブ)/i, yr: /^2016-(10|11)/, cat: "舞台挨拶・イベント", title: "『プリパラ』真中らぁら＆のん 公式親衛隊限定イベントレポート" },
+ { pat: /Brand New Dreamer|真中姉妹.*(対談|デュエット)|姉妹感に注目/i, yr: /^2016-(09|10)/, cat: "インタビュー", title: "『プリパラ』新OP「Brand New Dreamer」茜屋日海夏×田中美海 対談インタビュー" },
+ { pat: /foooour|foooor|結成4周年|満4歳/i, yr: /^2016-07/, cat: "ライブレポ", title: "『i☆Ris 結成4周年記念Live ～foooour～』河口湖ステラシアター ライブレポート" },
+ { pat: /Re:Call/i, yr: /^(2016-07|2016-08)/, cat: "インタビュー", excl: /ヨルナイト/i, title: "i☆Ris 13thシングル「Re:Call」リリースインタビュー" },
+ { pat: /Ready Smile!!|12thシングル/i, yr: /^(2016-05|2016-06)/, cat: "インタビュー", title: "i☆Ris 12thシングル「Ready Smile!!」リリースインタビュー" },
+ { pat: /2ndライブツアー千秋楽|2nd Live Tour 2016/i, yr: /^2016-05/, cat: "ライブレポ", title: "『i☆Ris 2nd Live Tour 2016 ～Th!s !s i☆Ris!!～』Zepp Tokyo千秋楽レポート" },
+ { pat: /レッツゴー☆プリパリ.*(舞台挨拶|試写会)/i, yr: /^2016-03/, cat: "舞台挨拶・イベント", title: "『映画プリパラ み～んなのあこがれ♪レッツゴー☆プリパリ』舞台挨拶レポート" },
+ { pat: /レッツゴー☆プリパリ|映画『?プリパラ』?.*(インタビュー|3作目|関西弁も披露|覚悟を背負う|3年間の思い出)/i, yr: /^2016-03/, cat: "インタビュー", title: "『映画プリパラ み～んなのあこがれ♪レッツゴー☆プリパリ』公開記念インタビュー" },
+ { pat: /プリパリカフェ|一日店長|1日店長/i, yr: /^2016-02/, cat: "舞台挨拶・イベント", title: "『プリパラ』コラボカフェ「プリパリカフェ」1日店長就任イベントレポート" },
+ { pat: /Goin'on.*リリースイベント/i, yr: /^2016-(01|02)/, cat: "舞台挨拶・イベント", title: "i☆Ris 11thシングル「Goin'on」リリースイベントレポート" },
+ { pat: /Goin'on.*(インタビュー|魅力)/i, yr: /^2016-02/, cat: "インタビュー", title: "i☆Ris 11thシングル「Goin'on」リリースインタビュー" },
+ { pat: /ライブミュージカル.*プリパラ|ミュージカルで「無意識にらぁら/i, yr: /^(2016-01|2016-02)/, cat: "舞台挨拶・イベント", title: "初演『ライブミュージカル「プリパラ」み～んなにとどけ！プリズム☆ボイス』ゲネプロ＆稽古場レポート" },
+ { pat: /クォンタム・ドールズ/i, yr: /^2016-01/, title: "初主演舞台『クォンタム・ドールズ ～量子境界の遊歩者～』レポート＆対談" },
+ // 2015
+ { pat: /クリスマス☆ドリームライブ|クリスマスイベントで空中ライブ/i, yr: /^2015-12/, cat: "ライブレポ", title: "「プリパラ クリスマス☆ドリームライブ」イベントレポート" },
+ { pat: /とびだすプリパラ/i, yr: /^(2015-10|2015-11)/, cat: "インタビュー", title: "3D劇場版『とびだすプリパラ み～んなでめざせ！アイドル☆グランプリ』インタビュー" },
+ { pat: /3rd Anniversary|GALAXY|i☆Ris3周年ライブ/i, yr: /^2015-11/, cat: "ライブレポ", title: "『i☆Ris 3rd Anniversary LIVE ～GALAXY～』豊洲PIT ライブレポート" },
+ { pat: /ブライトファンタジー/i, yr: /^(2015-10|2015-11)/, cat: "インタビュー", title: "i☆Ris 10thシングル「ブライトファンタジー」リリースインタビュー" },
+ { pat: /結成3周年|デビュー3周年記念ライブを発表/i, yr: /^2015-(07|08|09|10)/, title: "『i☆Ris 結成3周年記念イベント』竹芝ニューピアホール レポート" },
+ { pat: /らぁら.*1周年|サプライズ.*バースデ/i, yr: /^2015-(07|08)/, title: "「らぁらプリパラデビュー1周年記念イベント」公式レポート" },
+ { pat: /ワンフェス|3周年記念ライブを発表/i, yr: /^2015-07/, title: "ワンダーフェスティバル2015［夏］i☆Risステージ＆3周年ライブ発表レポート" },
+ { pat: /ドリームパレード.*(噴水広場|予約イベント|ミニライブ)/i, yr: /^2015-(06|07)/, cat: "舞台挨拶・イベント", title: "i☆Ris 9thシングル「ドリームパレード」サンシャインシティ噴水広場イベントレポート" },
+ { pat: /ドリームパレード.*(インタビュー|緊急取材)/i, yr: /^2015-07/, cat: "インタビュー", title: "i☆Ris 9thシングル「ドリームパレード」リリースインタビュー" },
+ { pat: /1st Live Tour 2015|ツアーファイナル/i, yr: /^(2015-05|2015-06)/, cat: "ライブレポ", title: "『i☆Ris 1st Live Tour 2015 ～We are i☆Ris!!!～』東京千秋楽レポート" },
+ { pat: /We are i☆Ris!!!|初のアルバム|初フル作|新盤発売 i☆Ris/i, yr: /^2015-04/, cat: "インタビュー", title: "i☆Ris 1stアルバム『We are i☆Ris!!!』リリースインタビュー" },
+ { pat: /Realize！|Realize!/i, yr: /^(2015-02|2015-03)/, cat: "インタビュー", title: "i☆Ris 8thシングル「Realize!」＆『劇場版プリパラ』インタビュー" },
+ { pat: /プリズム☆(スターズ|ツアーズ).*舞台挨拶/i, yr: /^2015-03/, cat: "舞台挨拶・イベント", title: "『劇場版プリパラ み～んなあつまれ！プリズム☆ツアーズ』公開初日舞台挨拶レポート" },
+ { pat: /2nd Anniversary|Dream Evolution|2周年ライブ/i, yr: /^(2014-11|2014-12|2015-01)/, title: "『i☆Ris 2nd Anniversary Live ～Dream Evolution～』ライブレポート＆インタビュー" },
+ // 2014
+ { pat: /月曜２ｈ/i, yr: /^2014-12/, title: "文化放送超！A&G+『i☆Risの2h』最終回＆放送レポート" },
+ { pat: /町田にファン600人|キャラクターソングCD発売記念イベント/i, yr: /^2014-10/, title: "『プリパラ』キャラクターソングCD発売記念イベント（町田）レポート" },
+ { pat: /始球式/i, yr: /^2014-08/, title: "『プリパラ』×オリックス・バファローズ 始球式＆国歌斉唱レポート" },
+ { pat: /ドリームガールズオーディション.*発表会|東京おもちゃショー2014/i, yr: /^2014-06/, title: "「東京おもちゃショー2014」『プリパラ』ドリームガールズオーディション発表会レポート" },
+ { pat: /STEP INTO THE RAINBOW|2度目のワンマン/i, yr: /^(2014-03|2014-04)/, title: "『i☆Ris 2ndワンマンライブ ～STEP INTO THE RAINBOW～』ライブレポート" },
+ // 2013-2012
+ { pat: /デビュー１周年ライブ/i, yr: /^2013-11/, title: "『i☆Ris 1st Anniversary Live -THANK YOU ALL-』ライブレポート" },
+ { pat: /カバ☆リス/i, yr: /^(2013-03|2013-04)/, title: "アニソンカバーミニアルバム『カバ☆リス』発売コメント＆インタビュー" },
+ { pat: /アイドル戦国時代|エイベックスからデビュー|お披露目イベント/i, yr: /^(2012-09|2012-10|2012-11)/, title: "i☆Ris デビューシングル「Color」発売＆お披露目イベントレポート" }
+ ];
+
+ function formatGroupDateRange(minDate, maxDate) {
+ if (!minDate && !maxDate) return '----';
+ if (!minDate || minDate === maxDate) return maxDate || minDate;
+ if (minDate.substring(0, 4) === maxDate.substring(0, 4)) {
+ return `${minDate} ～ ${maxDate.substring(5)}`;
+ }
+ return `${minDate} ～ ${maxDate}`;
+ }
+
+ function getArticleGroupKey(item) {
+ const text = `${item.title || ""} ${item.summary || ""}`;
+ const dateStr = item.date || "";
+ const catStr = item.category || "";
+ for (let i = 0; i < TOPIC_GROUP_RULES.length; i++) {
+ const r = TOPIC_GROUP_RULES[i];
+ if (r.yr && !r.yr.test(dateStr)) continue;
+ if (r.cat && r.cat !== catStr) continue;
+ if (r.excl && r.excl.test(text)) continue;
+ if (r.pat.test(text)) {
+ return { key: `group_${i}`, groupTitle: r.title };
+ }
+ }
+ return null;
+ }
+
+ // 記事リストを類似トピックごとに集約する関数
+ function buildGroupedEntries(articleList) {
+ const groupMap = new Map();
+ const entries = [];
+
+ articleList.forEach(item => {
+ const gInfo = getArticleGroupKey(item);
+ if (!gInfo) {
+ entries.push({
+ isGroup: false,
+ groupKey: `single_${item.id}`,
+ primary: item,
+ articles: [item],
+ date: item.date,
+ minDate: item.date,
+ maxDate: item.date,
+ dateDisplay: item.date,
+ title: item.title,
+ summary: item.summary,
+ category: item.category,
+ media: item.media,
+ mediaList: [item.media],
+ tags: item.tags || []
+ });
+ } else {
+ if (!groupMap.has(gInfo.key)) {
+ const groupObj = {
+ isGroup: true,
+ groupKey: gInfo.key,
+ groupTitle: gInfo.groupTitle,
+ primary: item,
+ articles: [item],
+ date: item.date,
+ minDate: item.date,
+ maxDate: item.date,
+ dateDisplay: item.date,
+ title: gInfo.groupTitle,
+ summary: item.summary,
+ category: item.category,
+ media: item.media,
+ mediaList: [item.media],
+ tags: [...(item.tags || [])]
+ };
+ groupMap.set(gInfo.key, groupObj);
+ entries.push(groupObj);
+ } else {
+ const g = groupMap.get(gInfo.key);
+ g.articles.push(item);
+ if ((item.date || "") > (g.maxDate || "")) {
+ g.maxDate = item.date;
+ g.date = item.date;
+ }
+ if (!g.minDate || (item.date && item.date < g.minDate)) {
+ g.minDate = item.date;
+ }
+ g.dateDisplay = formatGroupDateRange(g.minDate, g.maxDate);
+ // おすすめ指定がある記事または詳細な概要を持つ記事を代表記事に優先
+ if (item.featuredMark && !g.primary.featuredMark) {
+ g.primary = item;
+ g.summary = item.summary;
+ }
+ if (item.media && !g.mediaList.includes(item.media)) {
+ g.mediaList.push(item.media);
+ }
+ (item.tags || []).forEach(t => {
+ if (!g.tags.includes(t)) g.tags.push(t);
+ });
+ }
+ }
+ });
+
+ // 1件のみのグループは通常の単一記事として扱う
+ return entries.map(ent => {
+ if (ent.articles.length === 1) {
+ const single = ent.articles[0];
+ return {
+ isGroup: false,
+ groupKey: `single_${single.id}`,
+ primary: single,
+ articles: [single],
+ date: single.date,
+ minDate: single.date,
+ maxDate: single.date,
+ dateDisplay: single.date,
+ title: single.title,
+ summary: single.summary,
+ category: single.category,
+ media: single.media,
+ mediaList: [single.media],
+ tags: single.tags || []
+ };
+ }
+ return ent;
+ });
+ }
+
+ const CACHE_KEY = "himika_articles_cache_v8";
+ const CACHE_TIME_KEY = "himika_articles_cache_time_v8";
+ const CACHE_TTL_MS = 30 * 60 * 1000; // 30分間キャッシュ保持
+
+ const PAGE_SIZE = 30; // 1回あたりの表示件数（分割表示）
+ let displayedCount = PAGE_SIZE;
+
+ let items = initialArticlesData.map((item, idx) => normalizeArticle(item, idx)).filter(it => !it.hidden);
+ let works = [...initialWorksData];
+ let selectedWorksCategory = "すべて";
+ let worksSearchQuery = "";
+ let selectedWorkId = null;
+ let irisEvents = [...initialIrisData];
+ let selectedIrisCategory = "すべて";
+ let irisSearchQuery = "";
+ let selectedIrisId = null;
+ let currentPortalTab = "articles"; // "articles" | "iris" | "works"
+ const WORKS_CACHE_KEY = "himika_works_cache_v8";
+ const IRIS_CACHE_KEY = "himika_iris_cache_v8";
+ const worksCategoryPresets = ["すべて", "アニメ", "舞台", "ソロ音楽"];
+ const irisCategoryPresets = ["すべて", "ツアー", "周年ライブ", "その他のイベント"];
+ let availableYearsList = ["全期間"];
+ let selectedYear = "";
+ let selectedCategory = "";
+ let selectedTags = [];
+ let searchQuery = "";
+ let currentSort = "date-desc";
+
+ // 類似記事まとめモード（初期状態: ON）＆展開中のグループキー管理
+ let isGroupSimilarEnabled = safeStorage.getItem('himika_group_similar') !== 'false';
+ let expandedArticleGroupKeys = new Set();
+
+ // スマホで年代やタグを選びやすくするための展開状態
+ let isYearGridExpanded = false;
+ let isTagsExpandedOnMobile = false;
+
+ let viewMode = safeStorage.getItem('himika_view_mode') || "grid";
+ let isFeaturedCollapsed = safeStorage.getItem('himika_featured_collapsed') === 'true';
+ let favoriteIds = [];
+ try {
+ favoriteIds = JSON.parse(safeStorage.getItem('himika_favorites') || '[]');
+ } catch (e) {
+ favoriteIds = [];
+ }
+
+ // 旧バージョンの行番号お気に入り（数値ID）を記事URLベースの不変IDへ自動移行する関数
+ function migrateLegacyFavorites(articleList) {
+ if (!Array.isArray(favoriteIds) || favoriteIds.length === 0) return;
+ let changed = false;
+ const migrated = [];
+ favoriteIds.forEach(fid => {
+ if (typeof fid === 'number' || (typeof fid === 'string' && /^\d+$/.test(fid))) {
+ const numId = parseInt(fid, 10);
+ const matched = articleList.find(a => a.legacyRowId === numId) || articleList[numId - 1];
+ if (matched && matched.id) {
+ migrated.push(matched.id);
+ changed = true;
+ }
+ } else if (typeof fid === 'string' && fid.length > 0) {
+ migrated.push(fid);
+ }
+ });
+ const uniqueFavs = Array.from(new Set(migrated));
+ if (changed || uniqueFavs.length !== favoriteIds.length) {
+ favoriteIds = uniqueFavs;
+ safeStorage.setItem('himika_favorites', JSON.stringify(favoriteIds));
+ }
+ }
+ migrateLegacyFavorites(items);
+
+ const categoryPresets = ["すべて", "インタビュー", "ライブレポ", "舞台挨拶・イベント", "★ ブックマーク"];
+ // テーマタグとメディアタグの定義
+ const themeTagPresets = ["ソロ", "i☆Ris", "プリパラ", "声優", "舞台", "ラジオ", "日本酒", "対談"];
+
+ function getAvailableMediaTags() {
+ const mediaMap = {};
+ items.forEach(it => {
+ if (it.media && it.media !== "Webメディア") {
+ mediaMap[it.media] = (mediaMap[it.media] || 0) + 1;
+ }
+ });
+ return Object.keys(mediaMap).sort((a, b) => mediaMap[b] - mediaMap[a]);
+ }
+
+ function getAllTagPresets() {
+ return [...themeTagPresets, ...getAvailableMediaTags()];
+ }
+
+ const primaryMobileTagCount = 8; // スマホ初期表示でスッキリ見せる主要テーマタグ数（展開でメディアタグも全表示）
+
+ const tagIcons = {
+ "ソロ": "ph-microphone-stage",
+ "i☆Ris": "ph-sparkle",
+ "プリパラ": "ph-ribbon",
+ "声優": "ph-headphones",
+ "舞台": "ph-mask-happy",
+ "ラジオ": "ph-radio",
+ "日本酒": "ph-wine",
+ "対談": "ph-chats-circle"
+ };
+
+ const cardsContainer = document.getElementById('cards-container');
+ const listContainer = document.getElementById('list-container');
+ const listTableBody = document.getElementById('list-table-body');
+ const yearTimeline = document.getElementById('year-timeline');
+ const yearSliderReadout = document.getElementById('year-slider-readout');
+ const categoryTabs = document.getElementById('category-tabs');
+ const quickFilters = document.getElementById('quick-filters');
+ const searchInput = document.getElementById('search-input');
+ const clearSearchBtn = document.getElementById('clear-search-btn');
+ const sortSelect = document.getElementById('sort-select');
+ const resultsCount = document.getElementById('results-count');
+ const emptyState = document.getElementById('empty-state');
+ const spotlightContainer = document.getElementById('spotlight-container');
+ const archiveStatusBadge = document.getElementById('archive-status-badge');
+
+ const activeYearIndicator = document.getElementById('active-year-indicator');
+ const activeYearName = document.getElementById('active-year-name');
+ const clearYearBtn = document.getElementById('clear-year-btn');
+ const activeCategoryIndicator = document.getElementById('active-category-indicator');
+ const activeCategoryName = document.getElementById('active-category-name');
+ const clearCatBtn = document.getElementById('clear-cat-btn');
+ const activeTagsContainer = document.getElementById('active-tags-container');
+ const resetFiltersBtn = document.getElementById('reset-filters-btn');
+
+ const themeToggle = document.getElementById('theme-toggle');
+ const themeIcon = document.getElementById('theme-icon');
+ const toggleFeaturedBtn = document.getElementById('toggle-featured-btn');
+ const toggleFeaturedLabel = document.getElementById('toggle-featured-label');
+ const toggleFeaturedIcon = document.getElementById('toggle-featured-icon');
+
+ function initTheme() {
+ const savedTheme = safeStorage.getItem('himika_theme');
+ if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+ document.documentElement.classList.add('dark');
+ themeIcon.className = 'ph-bold ph-sun text-base';
+ } else {
+ document.documentElement.classList.remove('dark');
+ themeIcon.className = 'ph-bold ph-moon text-base';
+ }
+ }
+
+ themeToggle.addEventListener('click', () => {
+ document.documentElement.classList.toggle('dark');
+ const isDark = document.documentElement.classList.contains('dark');
+ safeStorage.setItem('himika_theme', isDark ? 'dark' : 'light');
+ themeIcon.className = isDark ? 'ph-bold ph-sun text-base' : 'ph-bold ph-moon text-base';
+ });
+
+ function updateFeaturedCollapseUI() {
+ if (isFeaturedCollapsed) {
+ spotlightContainer.classList.add('hidden');
+ toggleFeaturedLabel.textContent = 'SHOW';
+ toggleFeaturedIcon.className = 'ph-bold ph-caret-down text-xs';
+ } else {
+ spotlightContainer.classList.remove('hidden');
+ toggleFeaturedLabel.textContent = 'HIDE';
+ toggleFeaturedIcon.className = 'ph-bold ph-caret-up text-xs';
+ }
+ }
+
+ toggleFeaturedBtn.addEventListener('click', () => {
+ isFeaturedCollapsed = !isFeaturedCollapsed;
+ safeStorage.setItem('himika_featured_collapsed', isFeaturedCollapsed);
+ updateFeaturedCollapseUI();
+ });
+
+ window.toggleGroupSimilarMode = function() {
+ isGroupSimilarEnabled = !isGroupSimilarEnabled;
+ safeStorage.setItem('himika_group_similar', isGroupSimilarEnabled ? 'true' : 'false');
+ updateGroupSimilarButtonUI();
+ applyFiltersAndRender();
+ };
+
+ function updateGroupSimilarButtonUI() {
+ const btn = document.getElementById('group-similar-btn');
+ const label = document.getElementById('group-similar-label');
+ if (!btn || !label) return;
+ if (isGroupSimilarEnabled) {
+ btn.className = "inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-2xl border text-xs font-bold transition-all active:scale-95 bg-himi-600 text-white border-himi-600 shadow-xs";
+ label.textContent = "類似記事をまとめる: ON";
+ } else {
+ btn.className = "inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-2xl border text-xs font-bold transition-all active:scale-95 bg-himi-50/80 dark:bg-[#110C1B] text-himi-800 dark:text-purple-200 border editorial-border hover:bg-himi-100";
+ label.textContent = "類似記事をまとめる: OFF";
+ }
+ }
+
+ window.toggleArticleGroupExpand = function(e, groupKey) {
+ if (e) {
+ e.preventDefault();
+ e.stopPropagation();
+ }
+ if (expandedArticleGroupKeys.has(groupKey)) {
+ expandedArticleGroupKeys.delete(groupKey);
+ } else {
+ expandedArticleGroupKeys.add(groupKey);
+ }
+ applyFiltersAndRender();
+ };
+
+ window.setViewMode = function(mode) {
+ viewMode = mode;
+ safeStorage.setItem('himika_view_mode', mode);
+ updateViewModeButtons();
+ applyFiltersAndRender();
+ };
+
+ function updateViewModeButtons() {
+ const gridBtn = document.getElementById('view-grid-btn');
+ const listBtn = document.getElementById('view-list-btn');
+ if (viewMode === 'grid') {
+ gridBtn.className = "inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl bg-himi-600 text-white shadow-xs transition-all";
+ listBtn.className = "inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl text-himi-800/70 hover:text-himi-950 dark:text-purple-200/70 dark:hover:text-white transition-all";
+ } else {
+ listBtn.className = "inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl bg-himi-600 text-white shadow-xs transition-all";
+ gridBtn.className = "inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl text-himi-800/70 hover:text-himi-950 dark:text-purple-200/70 dark:hover:text-white transition-all";
+ }
+ }
+
+ function setupTimelineInteractions() {
+ let isDown = false;
+ let startX;
+ let scrollLeft;
+
+ yearTimeline.addEventListener('mousedown', (e) => {
+ isDown = true;
+ yearTimeline.classList.add('timeline-grabbing');
+ yearTimeline.classList.remove('timeline-grab');
+ startX = e.pageX - yearTimeline.offsetLeft;
+ scrollLeft = yearTimeline.scrollLeft;
+ });
+
+ window.addEventListener('mouseup', () => {
+ if (isDown) {
+ isDown = false;
+ yearTimeline.classList.remove('timeline-grabbing');
+ yearTimeline.classList.add('timeline-grab');
+ }
+ });
+
+ yearTimeline.addEventListener('mousemove', (e) => {
+ if (!isDown) return;
+ e.preventDefault();
+ const x = e.pageX - yearTimeline.offsetLeft;
+ const walk = (x - startX) * 1.6;
+ yearTimeline.scrollLeft = scrollLeft - walk;
+ });
+ }
+
+ window.toggleFavorite = function(e, id) {
+ if (e) {
+ e.preventDefault();
+ e.stopPropagation();
+ }
+ if (favoriteIds.includes(id)) {
+ favoriteIds = favoriteIds.filter(fid => fid !== id);
+ } else {
+ favoriteIds.push(id);
+ }
+ safeStorage.setItem('himika_favorites', JSON.stringify(favoriteIds));
+ renderCategoryTabs();
+ applyFiltersAndRender();
+ renderFeaturedArticles();
+ renderDrawerContents();
+ };
+
+ function renderFeaturedArticles() {
+ let featuredList = items.filter(item => item.featured === true && item.featuredMark === "おすすめ");
+ if (featuredList.length < 3) {
+ const extra = items.filter(item => item.featured === true && !featuredList.includes(item));
+ featuredList = [...featuredList, ...extra];
+ }
+ if (featuredList.length === 0) {
+ featuredList = items.slice(0, 3);
+ }
+
+ spotlightContainer.innerHTML = featuredList.slice(0, 3).map((item, index) => {
+ const isFav = favoriteIds.includes(item.id);
+ const issueNum = String(index + 1).padStart(2, '0');
+
+ return `
+ <article class="w-[84vw] max-w-[320px] md:w-auto md:max-w-none shrink-0 snap-center group relative bg-white dark:bg-[#181226] border-2 border-himi-200 dark:border-himi-800/80 rounded-3xl p-4 sm:p-5 flex flex-col justify-between hover:border-himi-500 dark:hover:border-himi-400 hover:shadow-md hover:shadow-himi-600/10 transition-all overflow-hidden">
+ <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-himi-500 via-purple-400 to-pink-400"></div>
+ <div class="space-y-2 pt-0.5">
+ <div class="flex items-center justify-between border-b editorial-border pb-2 text-xs">
+ <div class="flex items-center gap-1.5 truncate">
+ <span class="font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-himi-100 dark:bg-himi-900/70 text-himi-700 dark:text-himi-300">PICK ${issueNum}</span>
+ <span class="text-himi-800/90 dark:text-purple-200/95 font-bold truncate">${item.media}</span>
+ </div>
+ <span class="font-mono text-[11px] font-semibold text-himi-700/70 dark:text-purple-300/70 shrink-0">${item.date}</span>
+ </div>
+
+ <h3 class="font-serif text-sm sm:text-base font-bold text-himi-950 dark:text-white leading-relaxed group-hover:text-himi-600 dark:group-hover:text-himi-300 transition-colors break-words-any line-clamp-2">
+ <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="focus:outline-none">
+ ${item.title}
+ </a>
+ </h3>
+
+ <p class="text-xs text-himi-900/85 dark:text-purple-100/90 line-clamp-2 leading-relaxed break-words-any">
+ ${item.summary || ''}
+ </p>
+ </div>
+
+ <div class="pt-2.5 mt-2.5 border-t editorial-border flex items-center justify-between text-xs">
+ <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="font-bold text-himi-700 dark:text-himi-300 group-hover:text-himi-500 inline-flex items-center gap-1">
+ <span>記事を読む</span>
+ <i class="ph-bold ph-arrow-up-right text-xs"></i>
+ </a>
+ <button type="button" onclick="toggleFavorite(event, '${item.id}')" class="text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors p-1.5 rounded-full hover:bg-himi-50 dark:hover:bg-himi-900/50" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+ <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-base"></i>
+ </button>
+ </div>
+ </article>
+ `;
+ }).join('');
+ }
+
+ window.toggleYearGridMode = function() {
+ isYearGridExpanded = !isYearGridExpanded;
+ renderYearTimeline();
+ };
+
+ function renderYearTimeline() {
+ const yearCountMap = {};
+ items.forEach(item => {
+ if (item.date && item.date.length >= 4) {
+ const yr = item.date.substring(0, 4);
+ if (/^\d{4}$/.test(yr)) {
+ yearCountMap[yr] = (yearCountMap[yr] || 0) + 1;
+ }
+ }
+ });
+
+ const sortedYears = Object.keys(yearCountMap).sort((a, b) => b - a);
+ availableYearsList = ["全期間", ...sortedYears];
+
+ yearSliderReadout.textContent = selectedYear === "" ? `全期間 (${items.length}件)` : `${selectedYear}年 (${yearCountMap[selectedYear] || 0}件)`;
+
+ const toggleLabel = document.getElementById('toggle-year-view-label');
+ const toggleIcon = document.getElementById('toggle-year-view-icon');
+ if (toggleLabel && toggleIcon) {
+ if (isYearGridExpanded) {
+ toggleLabel.textContent = "コンパクト表示";
+ toggleIcon.className = "ph-bold ph-caret-up text-[10px]";
+ yearTimeline.className = "grid grid-cols-3 sm:grid-cols-5 gap-1.5 pt-0.5 pb-1";
+ } else {
+ toggleLabel.textContent = `全${sortedYears.length}年代を表示`;
+ toggleIcon.className = "ph-bold ph-caret-down text-[10px]";
+ yearTimeline.className = "grid grid-cols-3 sm:grid-cols-6 gap-1.5 pt-0.5 pb-1";
+ }
+ }
+
+ // コンパクト時は「全期間」＋直近5年分（または選択中の年）をボタン表示し、展開時は全年代を表示
+ let displayYears = availableYearsList;
+ if (!isYearGridExpanded && availableYearsList.length > 6) {
+ displayYears = availableYearsList.slice(0, 6);
+ if (selectedYear && !displayYears.includes(selectedYear)) {
+ displayYears[5] = selectedYear;
+ }
+ }
+
+ yearTimeline.innerHTML = displayYears.map(yr => {
+ const isSelected = (yr === "全期間" && selectedYear === "") || selectedYear === yr;
+ const count = yr === "全期間" ? items.length : (yearCountMap[yr] || 0);
+
+ const btnClass = isSelected
+ ? "bg-himi-600 text-white font-bold shadow-xs shadow-himi-600/30 border-himi-600"
+ : "bg-white dark:bg-[#1C142B] text-himi-900 dark:text-purple-100 hover:bg-himi-100 dark:hover:bg-himi-900/50 border editorial-border font-bold";
+
+ return `
+ <button type="button" data-year="${yr}" onclick="selectYearFilter('${yr}')" class="inline-flex items-center justify-center gap-1 px-2.5 py-2 rounded-2xl text-xs font-mono whitespace-nowrap transition-all border active:scale-95 ${btnClass}">
+ <span>${yr === "全期間" ? "全期間" : yr + "年"}</span>
+ <span class="text-[10px] opacity-80">(${count})</span>
+ </button>
+ `;
+ }).join('');
+ }
+
+ window.selectYearFilter = function(yr) {
+ displayedCount = PAGE_SIZE;
+ if (yr === "全期間") {
+ selectedYear = "";
+ activeYearIndicator.classList.add('hidden');
+ activeYearIndicator.classList.remove('inline-flex');
+ } else {
+ selectedYear = yr;
+ activeYearIndicator.classList.remove('hidden');
+ activeYearIndicator.classList.add('inline-flex');
+ activeYearName.textContent = yr + "年";
+ }
+
+ renderYearTimeline();
+ applyFiltersAndRender();
+ renderDrawerContents();
+ };
+
+ function clearYearFilter() {
+ selectYearFilter("全期間");
+ }
+
+ clearYearBtn.addEventListener('click', clearYearFilter);
+
+ function renderCategoryTabs() {
+ categoryTabs.innerHTML = categoryPresets.map(cat => {
+ const isSelected = (cat === "すべて" && selectedCategory === "") || selectedCategory === cat;
+
+ let count = 0;
+ if (cat === "すべて") count = items.length;
+ else if (cat === "★ ブックマーク") count = favoriteIds.length;
+ else count = items.filter(it => it.category === cat).length;
+
+ const spanColClass = cat === "すべて" ? "col-span-2 sm:col-span-1" : "col-span-1";
+
+ const tabClass = isSelected
+ ? "bg-himi-600 text-white border-himi-600 font-bold shadow-xs shadow-himi-600/25"
+ : "bg-himi-50/90 dark:bg-[#130E1F] text-himi-900 dark:text-purple-100 hover:bg-himi-100 dark:hover:bg-himi-900/50 border editorial-border font-bold";
+
+ const badgeClass = isSelected
+ ? "bg-white/20 text-white"
+ : "bg-white dark:bg-himi-900/70 text-himi-700 dark:text-himi-300";
+
+ return `
+ <button type="button" onclick="selectCategoryFilter('${cat}')" class="${spanColClass} inline-flex items-center justify-between sm:justify-center gap-2 px-3.5 py-2.5 rounded-2xl border text-xs whitespace-nowrap transition-all active:scale-95 ${tabClass}">
+ <span class="truncate">${cat}</span>
+ <span class="font-mono text-[10px] px-2 py-0.5 rounded-full font-bold ${badgeClass}">${count}</span>
+ </button>
+ `;
+ }).join('');
+ }
+
+ window.selectCategoryFilter = function(cat) {
+ displayedCount = PAGE_SIZE;
+ if (cat === "すべて") {
+ clearCategoryFilter();
+ } else {
+ selectedCategory = cat;
+ activeCategoryIndicator.classList.remove('hidden');
+ activeCategoryIndicator.classList.add('inline-flex');
+ activeCategoryName.textContent = cat;
+ renderCategoryTabs();
+ applyFiltersAndRender();
+ renderDrawerContents();
+ }
+ };
+
+ function clearCategoryFilter() {
+ selectedCategory = "";
+ activeCategoryIndicator.classList.add('hidden');
+ activeCategoryIndicator.classList.remove('inline-flex');
+ renderCategoryTabs();
+ applyFiltersAndRender();
+ renderDrawerContents();
+ }
+
+ clearCatBtn.addEventListener('click', clearCategoryFilter);
+
+ window.toggleTagsExpandMode = function() {
+ isTagsExpandedOnMobile = !isTagsExpandedOnMobile;
+ renderQuickFilters();
+ };
+
+ function getTagCount(tag) {
+ return items.filter(it => (it.tags || []).some(t => t.toLowerCase() === tag.toLowerCase())).length;
+ }
+
+ function renderQuickFilters() {
+ const allTags = getAllTagPresets();
+ const toggleLabel = document.getElementById('toggle-tags-view-label');
+ const toggleIcon = document.getElementById('toggle-tags-view-icon');
+ if (toggleLabel && toggleIcon) {
+ if (isTagsExpandedOnMobile) {
+ toggleLabel.textContent = "主要タグのみ";
+ toggleIcon.className = "ph-bold ph-caret-up text-[10px]";
+ } else {
+ toggleLabel.textContent = "メディア別も見る";
+ toggleIcon.className = "ph-bold ph-caret-down text-[10px]";
+ }
+ }
+
+ quickFilters.innerHTML = allTags.map((tag, idx) => {
+ const isSelected = selectedTags.includes(tag);
+ const count = getTagCount(tag);
+ const iconName = tagIcons[tag] || "ph-hash";
+
+ // 展開前はテーマタグ（上位8個）＋選択中タグを表示、展開時は全メディアタグを表示
+ const hiddenClass = (!isTagsExpandedOnMobile && idx >= primaryMobileTagCount && !isSelected)
+ ? "hidden"
+ : "inline-flex";
+
+ const pillClass = isSelected
+ ? "bg-himi-600 text-white border-himi-600 font-bold shadow-xs shadow-himi-600/30"
+ : "bg-white dark:bg-[#1C142B] text-himi-900 dark:text-purple-100 hover:bg-himi-100 dark:hover:bg-himi-900/50 hover:border-himi-400 editorial-border font-bold";
+
+ return `
+ <button type="button" onclick="toggleTagFilter('${escapeJsStr(tag)}')" class="${hiddenClass} items-center gap-1.5 px-3 py-2 rounded-full border text-xs transition-all active:scale-95 ${pillClass}">
+ <i class="ph-fill ${iconName} text-xs ${isSelected ? 'text-white' : 'text-himi-500 dark:text-himi-400'}"></i>
+ <span>${tag}</span>
+ <span class="font-mono text-[10px] opacity-75">(${count})</span>
+ </button>
+ `;
+ }).join('');
+
+ renderActiveTagsBar();
+ renderDrawerContents();
+ }
+
+ window.toggleTagFilter = function(tag) {
+ displayedCount = PAGE_SIZE;
+ if (selectedTags.includes(tag)) {
+ selectedTags = selectedTags.filter(t => t !== tag);
+ } else {
+ selectedTags.push(tag);
+ }
+ renderQuickFilters();
+ applyFiltersAndRender();
+ };
+
+ function renderActiveTagsBar() {
+ if (selectedTags.length === 0) {
+ activeTagsContainer.innerHTML = '';
+ return;
+ }
+
+ activeTagsContainer.innerHTML = selectedTags.map(tag => `
+ <span class="inline-flex items-center gap-1 bg-himi-600 text-white px-3 py-1 rounded-full text-[11px] font-bold shadow-xs">
+ <span>#${tag}</span>
+ <button type="button" onclick="toggleTagFilter('${escapeJsStr(tag)}')" class="hover:opacity-75 p-0.5">
+ <i class="ph-bold ph-x text-[10px]"></i>
+ </button>
+ </span>
+ `).join('') + `
+ <button type="button" onclick="clearAllTags()" class="text-[11px] font-bold text-himi-700 dark:text-himi-300 hover:underline ml-1">
+ タグ全解除
+ </button>
+ `;
+ }
+
+ window.clearAllTags = function() {
+ displayedCount = PAGE_SIZE;
+ selectedTags = [];
+ renderQuickFilters();
+ applyFiltersAndRender();
+ };
+
+ let resizeTimer = null;
+ let lastWindowWidth = window.innerWidth;
+ window.addEventListener('resize', () => {
+ if (window.innerWidth === lastWindowWidth) return;
+ lastWindowWidth = window.innerWidth;
+ clearTimeout(resizeTimer);
+ resizeTimer = setTimeout(() => { applyFiltersAndRender(); }, 150);
+ });
+
+ window.loadMoreArticles = function() {
+ displayedCount += PAGE_SIZE;
+ applyFiltersAndRender(false);
+ };
+
+ window.resetAllFilters = function() {
+ displayedCount = PAGE_SIZE;
+ searchQuery = "";
+ searchInput.value = "";
+ clearSearchBtn.classList.add('hidden');
+ selectedYear = "";
+ activeYearIndicator.classList.add('hidden');
+ activeYearIndicator.classList.remove('inline-flex');
+ selectedCategory = "";
+ activeCategoryIndicator.classList.add('hidden');
+ activeCategoryIndicator.classList.remove('inline-flex');
+ selectedTags = [];
+ expandedArticleGroupKeys.clear();
+ renderYearTimeline();
+ renderCategoryTabs();
+ renderQuickFilters();
+ applyFiltersAndRender();
+ renderDrawerContents();
+ };
+
+ function updateMobileFloatingBadges(filteredLength) {
+ const activeCount = (selectedYear ? 1 : 0) + (selectedCategory ? 1 : 0) + selectedTags.length + (searchQuery.trim() ? 1 : 0);
+ const headerBadge = document.getElementById('header-filter-count');
+ const bottomBadge = document.getElementById('bottom-filter-badge');
+ const bottomFavCount = document.getElementById('bottom-fav-count');
+ const drawerApplyBtn = document.getElementById('drawer-apply-btn');
+
+ if (headerBadge) {
+ headerBadge.textContent = activeCount;
+ headerBadge.classList.toggle('hidden', activeCount === 0);
+ }
+ if (bottomBadge) {
+ bottomBadge.textContent = activeCount;
+ bottomBadge.classList.toggle('hidden', activeCount === 0);
+ }
+ if (bottomFavCount) {
+ bottomFavCount.textContent = `(${favoriteIds.length})`;
+ }
+ if (drawerApplyBtn) {
+ drawerApplyBtn.textContent = `${filteredLength}件の記事を表示する`;
+ }
+ }
+
+ function applyFiltersAndRender() {
+ let filtered = [...items];
+
+ if (selectedCategory === "★ ブックマーク") {
+ filtered = filtered.filter(item => favoriteIds.includes(item.id));
+ } else if (selectedCategory) {
+ filtered = filtered.filter(item => item.category === selectedCategory);
+ }
+
+ if (selectedYear) {
+ filtered = filtered.filter(item => item.date && item.date.startsWith(selectedYear));
+ }
+
+ if (selectedTags.length > 0) {
+ filtered = filtered.filter(item => {
+ const itemTags = item.tags || [];
+ return selectedTags.every(reqTag =>
+ itemTags.some(t => t.toLowerCase() === reqTag.toLowerCase())
+ );
+ });
+ }
+
+ if (searchQuery.trim() !== "") {
+ const rawQ = searchQuery.trim();
+ if (rawQ.includes("|")) {
+ const orKeywords = rawQ.split("|").map(k => toNormalizedKana(k.trim())).filter(Boolean);
+ filtered = filtered.filter(item => {
+ const combined = [
+ item.title || "",
+ item.summary || "",
+ item.media || "",
+ item.category || "",
+ item.date || "",
+ item.featuredMark || "",
+ ...(item.tags || [])
+ ].join(" ");
+ const normalizedTarget = toNormalizedKana(combined);
+ return orKeywords.some(kw => normalizedTarget.includes(kw));
+ });
+ } else {
+ const queryKeywords = rawQ.split(/[\s　]+/).filter(k => k.length > 0);
+ filtered = filtered.filter(item => {
+ const combined = [
+ item.title || "",
+ item.summary || "",
+ item.media || "",
+ item.category || "",
+ item.date || "",
+ item.featuredMark || "",
+ ...(item.tags || [])
+ ].join(" ");
+ const normalizedTarget = toNormalizedKana(combined);
+ return queryKeywords.every(kw => normalizedTarget.includes(toNormalizedKana(kw)));
+ });
+ }
+ }
+
+ if (currentSort === 'date-desc') {
+ filtered.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+ migrateLegacyFavorites(items);
+ } else if (currentSort === 'date-asc') {
+ filtered.sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+ } else if (currentSort === 'title-asc') {
+ filtered.sort((a, b) => (a.title || "").localeCompare(b.title || "", 'ja'));
+ }
+
+ const totalFilteredArticles = filtered.length;
+
+ // 類似記事まとめモードがONの場合は、同一イベント・リリースの記事を1つのグループエントリにまとめる
+ let displayEntries;
+ if (isGroupSimilarEnabled) {
+ displayEntries = buildGroupedEntries(filtered);
+ } else {
+ displayEntries = filtered.map(it => ({
+ isGroup: false,
+ groupKey: `single_${it.id}`,
+ primary: it,
+ articles: [it],
+ date: it.date,
+ title: it.title,
+ summary: it.summary,
+ category: it.category,
+ media: it.media,
+ mediaList: [it.media],
+ tags: it.tags || []
+ }));
+ }
+
+ const totalEntries = displayEntries.length;
+ const visibleEntries = displayEntries.slice(0, displayedCount);
+ const multiGroupCount = displayEntries.filter(e => e.isGroup && e.articles.length > 1).length;
+
+ if (isGroupSimilarEnabled && multiGroupCount > 0) {
+ resultsCount.innerHTML = `全 <strong class="text-himi-700 dark:text-himi-300 text-sm font-mono">${totalFilteredArticles}</strong> 記事を <strong class="text-himi-600 dark:text-himi-400 text-sm font-mono">${totalEntries}</strong> トピックに集約表示中 <span class="text-[11px] opacity-75">（複数メディアまとめ: ${multiGroupCount}件 / タップで一覧展開）</span>`;
+ } else if (totalEntries <= displayedCount) {
+ resultsCount.innerHTML = `全 <strong class="text-himi-700 dark:text-himi-300 text-sm font-mono">${totalFilteredArticles}</strong> 件を表示中 <span class="text-[11px] opacity-75 font-mono">(総収録: ${items.length}件)</span>`;
+ } else {
+ resultsCount.innerHTML = `全 <strong class="text-himi-700 dark:text-himi-300 text-sm font-mono">${totalFilteredArticles}</strong> 件中 <strong class="text-himi-600 dark:text-himi-400 font-mono">${visibleEntries.length}</strong> 件を表示中 <span class="text-[11px] opacity-75 font-mono">(総収録: ${items.length}件)</span>`;
+ }
+ updateMobileFloatingBadges(totalFilteredArticles);
+
+ const loadMoreContainer = document.getElementById('load-more-container');
+ const loadMoreBtn = document.getElementById('load-more-btn');
+ const loadMoreText = document.getElementById('load-more-text');
+ const allLoadedText = document.getElementById('all-loaded-text');
+
+ if (totalEntries === 0) {
+ cardsContainer.classList.add('hidden');
+ listContainer.classList.add('hidden');
+ emptyState.classList.remove('hidden');
+ if (loadMoreContainer) loadMoreContainer.classList.add('hidden');
+ } else {
+ emptyState.classList.add('hidden');
+ const isMobileScreen = window.innerWidth < 768;
+ const effectiveMode = isMobileScreen ? 'list' : viewMode;
+
+ if (effectiveMode === 'grid') {
+ listContainer.classList.add('hidden');
+ cardsContainer.classList.remove('hidden');
+ renderMagazineGrid(visibleEntries);
+ } else {
+ cardsContainer.classList.add('hidden');
+ listContainer.classList.remove('hidden');
+ renderIndexTable(visibleEntries);
+ }
+
+ if (loadMoreContainer) {
+ if (totalEntries > displayedCount) {
+ loadMoreContainer.classList.remove('hidden');
+ loadMoreBtn.classList.remove('hidden');
+ allLoadedText.classList.add('hidden');
+ const remaining = totalEntries - displayedCount;
+ loadMoreText.textContent = `もっと見る（残り ${remaining} 件）`;
+ } else if (totalEntries > PAGE_SIZE) {
+ loadMoreContainer.classList.remove('hidden');
+ loadMoreBtn.classList.add('hidden');
+ allLoadedText.classList.remove('hidden');
+ allLoadedText.textContent = `すべての項目を表示しました（全 ${totalEntries} トピック / ${totalFilteredArticles} 記事）`;
+ } else {
+ loadMoreContainer.classList.add('hidden');
+ }
+ }
+ }
+ }
+
+ // --- ポータル切り替え（記事一覧 ⇔ i☆Ris ⇔ 主な出演作） ---
+ window.switchPortalTab = function(tab) {
+ currentPortalTab = tab;
+ const articlesView = document.getElementById('articles-portal-view');
+ const irisView = document.getElementById('iris-portal-view');
+ const worksView = document.getElementById('works-portal-view');
+
+ const tabArticlesBtn = document.getElementById('main-tab-articles');
+ const tabIrisBtn = document.getElementById('main-tab-iris');
+ const tabWorksBtn = document.getElementById('main-tab-works');
+
+ const tabArticlesBadge = document.getElementById('tab-articles-badge');
+ const tabIrisBadge = document.getElementById('tab-iris-badge');
+ const tabWorksBadge = document.getElementById('tab-works-badge');
+
+ const drawerTabArticles = document.getElementById('drawer-tab-articles');
+ const drawerTabIris = document.getElementById('drawer-tab-iris');
+ const drawerTabWorks = document.getElementById('drawer-tab-works');
+
+ const activeBtnCls = "flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-bold transition-all bg-himi-600 text-white shadow-xs whitespace-nowrap min-w-0";
+ const inactiveBtnCls = "flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-bold transition-all text-himi-800/80 hover:text-himi-950 dark:text-purple-200/80 dark:hover:text-white whitespace-nowrap min-w-0";
+
+ const activeBadgeCls = "font-mono text-[9px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-white/20 text-white shrink-0";
+ const inactiveBadgeCls = "font-mono text-[9px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-himi-200/70 dark:bg-himi-800 text-himi-700 dark:text-himi-300 shrink-0";
+
+ const activeDrawerCls = "py-2 rounded-xl text-xs font-bold transition-all bg-himi-600 text-white shadow-xs";
+ const inactiveDrawerCls = "py-2 rounded-xl text-xs font-bold transition-all text-himi-800/90 dark:text-purple-200/95 hover:text-himi-950";
+
+ if (articlesView) articlesView.classList.toggle('hidden', tab !== 'articles');
+ if (irisView) irisView.classList.toggle('hidden', tab !== 'iris');
+ if (worksView) worksView.classList.toggle('hidden', tab !== 'works');
+
+ if (tabArticlesBtn) tabArticlesBtn.className = tab === 'articles' ? activeBtnCls : inactiveBtnCls;
+ if (tabIrisBtn) tabIrisBtn.className = tab === 'iris' ? activeBtnCls : inactiveBtnCls;
+ if (tabWorksBtn) tabWorksBtn.className = tab === 'works' ? activeBtnCls : inactiveBtnCls;
+
+ if (tabArticlesBadge) tabArticlesBadge.className = tab === 'articles' ? activeBadgeCls : inactiveBadgeCls;
+ if (tabIrisBadge) tabIrisBadge.className = tab === 'iris' ? activeBadgeCls : inactiveBadgeCls;
+ if (tabWorksBadge) tabWorksBadge.className = tab === 'works' ? activeBadgeCls : inactiveBadgeCls;
+
+ if (drawerTabArticles) drawerTabArticles.className = tab === 'articles' ? activeDrawerCls : inactiveDrawerCls;
+ if (drawerTabIris) drawerTabIris.className = tab === 'iris' ? activeDrawerCls : inactiveDrawerCls;
+ if (drawerTabWorks) drawerTabWorks.className = tab === 'works' ? activeDrawerCls : inactiveDrawerCls;
+
+ if (tab === 'articles') {
+ applyFiltersAndRender(false);
+ } else if (tab === 'iris') {
+ renderIrisCategoryTabs();
+ applyIrisFiltersAndRender();
+ } else {
+ renderWorksCategoryTabs();
+ applyWorksFiltersAndRender();
+ }
+ };
+
+ // --- 出演作の全関連記事リスト取得 ---
+ function getMatchedArticlesForWork(work) {
+ if (!work) return [];
+ const normTag = work.tag ? toNormalizedKana(work.tag) : "";
+ const cleanTitle = (work.title || "").replace(/[『』「」]/g, '').split(/[\/／]/)[0].trim();
+ const normTitle = toNormalizedKana(cleanTitle);
+
+ return items.filter(it => {
+ const itemTagsNorm = (it.tags || []).map(t => toNormalizedKana(t));
+ if (normTag && itemTagsNorm.includes(normTag)) return true;
+ const combined = toNormalizedKana(`${it.title} ${it.summary} ${it.featuredMark || ''}`);
+ if (normTag && combined.includes(normTag)) return true;
+ if (normTitle && combined.includes(normTitle)) return true;
+ if (work.title.includes("Dance with Devils") && combined.includes("だんでび")) return true;
+ if (work.title.includes("ワールドトリガー") && combined.includes("わーすて")) return true;
+ if (work.title.includes("イゼッタ") && combined.includes("いぜった")) return true;
+ return false;
+ });
+ }
+
+ // --- 出演作のおすすめ記事判定（スプレッドシート F列連動 ＋ 自動ピックアップ補完） ---
+ function getRecommendedArticlesForWork(work) {
+ if (!work) return [];
+
+ const normTag = work.tag ? toNormalizedKana(work.tag) : "";
+ const cleanTitle = (work.title || "").replace(/[『』「」]/g, '').split(/[\/／]/)[0].trim();
+ const normTitle = toNormalizedKana(cleanTitle);
+
+ // 1. F列（featuredMark）にその作品名またはタグ名が記載されている記事を優先抽出
+ const fMatched = items.filter(item => {
+ if (!item.featuredMark) return false;
+ const normMark = toNormalizedKana(item.featuredMark);
+ if (normTag && normMark.includes(normTag)) return true;
+ if (normTitle && normMark.includes(normTitle)) return true;
+ if (work.title.includes("プリパラ") && (normMark.includes("ぷりぱら") || normMark.includes("らぁら"))) return true;
+ if (work.title.includes("イゼッタ") && normMark.includes("いぜった")) return true;
+ if (work.title.includes("ワールドトリガー") && (normMark.includes("わーすて") || normMark.includes("わーるどとりがー"))) return true;
+ if (work.title.includes("魔法少女サイト") && (normMark.includes("まほうしょうじょさいと") || normMark.includes("露乃"))) return true;
+ if (work.title.includes("Dance with Devils") && (normMark.includes("だんでび") || normMark.includes("dance with devils") || normMark.includes("りつか"))) return true;
+ if (work.title.includes("Himika Akaneya") || work.title.includes("予感の途中") || work.title.includes("Stereo Sunset") || work.title.includes("Side U")) {
+ if (normMark.includes("そろ") || normMark.includes("himika")) return true;
+ }
+ return false;
+ });
+
+ if (fMatched.length > 0) return fMatched;
+
+ // 2. F列に未設定の場合は、関連記事の中からインタビュー・おすすめ記事を中心に上位3件を自動ピックアップ
+ const allMatched = getMatchedArticlesForWork(work);
+ const sorted = [...allMatched].sort((a, b) => {
+ const aScore = (a.featured ? 10 : 0) + (a.category === 'インタビュー' ? 5 : 0);
+ const bScore = (b.featured ? 10 : 0) + (b.category === 'インタビュー' ? 5 : 0);
+ if (bScore !== aScore) return bScore - aScore;
+ return (b.date || '').localeCompare(a.date || '');
+ });
+ return sorted.slice(0, 3);
+ }
+
+ window.toggleWorkSelection = function(id) {
+ if (selectedWorkId === id) {
+ selectedWorkId = null; // 再タップで閉じる
+ } else {
+ selectedWorkId = id; // タップされた作品を選択して展開
+ }
+ applyWorksFiltersAndRender();
+ };
+
+ // --- 作品と記事の相互連携（クロスリンク） ---
+ function getArticleCountForWork(work) {
+ return getMatchedArticlesForWork(work).length;
+ }
+
+ function renderRecommendedArticleCard(art, showFColTag = false) {
+ const isFav = favoriteIds.includes(art.id);
+ const badgeText = showFColTag ? 'おすすめ' : (art.category || 'おすすめ');
+ const footerLeft = showFColTag ? `
+ <span class="text-[10px] font-bold text-amber-700 dark:text-amber-400 flex items-center gap-0.5">
+ <i class="ph-bold ph-tag text-[10px]"></i>
+ <span>${art.featuredMark ? `F列: ${art.featuredMark}` : art.category}</span>
+ </span>` : '';
+ return `
+ <div class="bg-white dark:bg-[#140D20] border-2 border-amber-200/90 dark:border-amber-800/70 rounded-2xl p-3 sm:p-3.5 space-y-2 hover:border-amber-400 dark:hover:border-amber-500 transition-all shadow-xs" onclick="event.stopPropagation()">
+ <div class="flex items-center justify-between text-xs gap-2">
+ <div class="flex items-center gap-1.5 truncate">
+ <time class="font-mono text-[10px] font-bold text-himi-700 dark:text-himi-300">${art.date || '----'}</time>
+ <span class="text-[11px] font-bold text-himi-800 dark:text-purple-200 truncate max-w-[130px]">${art.media}</span>
+ <span class="px-1.5 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 text-[9px] font-bold border border-amber-300/80">${badgeText}</span>
+ </div>
+ <button type="button" onclick="toggleFavorite(event, '${art.id}')" class="p-1 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+ <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-sm"></i>
+ </button>
+ </div>
+ <h5 class="font-serif font-bold text-xs sm:text-[13px] text-himi-950 dark:text-white leading-snug hover:text-himi-600 dark:hover:text-himi-300 transition-colors line-clamp-2">
+ <a href="${art.url}" target="_blank" rel="noopener noreferrer">${art.title}</a>
+ </h5>
+ <p class="text-[11px] text-himi-900/85 dark:text-purple-100/90 line-clamp-2 leading-relaxed">${art.summary || ''}</p>
+ <div class="pt-1 flex items-center ${showFColTag ? 'justify-between' : 'justify-end'} text-[11px] border-t editorial-border">
+ ${footerLeft}
+ <a href="${art.url}" target="_blank" rel="noopener noreferrer" class="font-bold text-himi-600 dark:text-himi-300 hover:underline inline-flex items-center gap-1 text-[11px]">
+ <span>元記事を開く</span>
+ <i class="ph-bold ph-arrow-up-right text-[10px]"></i>
+ </a>
+ </div>
+ </div>`;
+ }
+
+ window.jumpToArticlesByWorkTag = function(tag, title) {
+ switchPortalTab('articles');
+ displayedCount = PAGE_SIZE;
+ selectedYear = "";
+ selectedCategory = "";
+ selectedTags = [];
+ searchQuery = "";
+ searchInput.value = "";
+ clearSearchBtn.classList.add('hidden');
+
+ const allKnownTags = getAllTagPresets();
+ if (tag && allKnownTags.includes(tag)) {
+ selectedTags = [tag];
+ } else {
+ const queryTerm = (tag || (title || "").replace(/[『』「」]/g, '').split(/[\/／]/)[0]).trim();
+ searchQuery = queryTerm;
+ searchInput.value = queryTerm;
+ clearSearchBtn.classList.remove('hidden');
+ }
+
+ renderYearTimeline();
+ renderCategoryTabs();
+ renderQuickFilters();
+ applyFiltersAndRender(true);
+ renderDrawerContents();
+
+ setTimeout(() => {
+ const target = document.getElementById('filter-panel');
+ if (target) {
+ target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ }
+ }, 100);
+ };
+
+ function renderWorksCategoryTabs() {
+ const container = document.getElementById('works-category-tabs');
+ if (!container) return;
+
+ container.innerHTML = worksCategoryPresets.map(cat => {
+ const isSelected = selectedWorksCategory === cat;
+ let count = 0;
+ if (cat === "すべて") count = works.length;
+ else count = works.filter(w => (w.category || "").includes(cat)).length;
+
+ const cls = isSelected
+ ? "bg-himi-600 text-white border-himi-600 font-bold shadow-xs shadow-himi-600/25"
+ : "bg-himi-50 dark:bg-[#130E1F] text-himi-900 dark:text-purple-100 hover:bg-himi-100 dark:hover:bg-himi-900/50 border editorial-border font-bold";
+
+ return `
+ <button type="button" onclick="selectWorksCategory('${cat}')" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-2xl border text-xs whitespace-nowrap transition-all active:scale-95 ${cls}">
+ <span>${cat}</span>
+ <span class="font-mono text-[10px] px-1.5 py-0.5 rounded-full font-bold ${isSelected ? 'bg-white/20 text-white' : 'bg-white dark:bg-himi-900 text-himi-700 dark:text-himi-300'}">(${count})</span>
+ </button>
+ `;
+ }).join('');
+ }
+
+ window.selectWorksCategory = function(cat) {
+ selectedWorksCategory = cat;
+ renderWorksCategoryTabs();
+ applyWorksFiltersAndRender();
+ }
+
+ // --- i☆Ris 活動アーカイブ（シート3連動）関連ロジック ---
+ function getKeywordsForIrisEvent(ev) {
+ if (!ev) return [];
+ const rawTag = (ev.tag || "").toString().trim();
+ const kwList = rawTag.split(/[,、|]+/).map(k => k.trim()).filter(Boolean);
+ if (kwList.length === 0 && ev.title) {
+ const cleanTitle = ev.title.replace(/[『』「」]/g, '').split(/[～〜(（]/)[0].trim();
+ if (cleanTitle) kwList.push(cleanTitle);
+ }
+ return kwList;
+ }
+
+ function getMatchedArticlesForIrisEvent(ev) {
+ if (!ev) return [];
+ const kwList = getKeywordsForIrisEvent(ev).map(k => toNormalizedKana(k)).filter(Boolean);
+ if (kwList.length === 0) return [];
+
+ return items.filter(it => {
+ const combined = toNormalizedKana(`${it.title} ${it.summary} ${it.featuredMark || ''} ${(it.tags || []).join(' ')}`);
+ return kwList.some(kw => combined.includes(kw));
+ });
+ }
+
+ function getRecommendedArticlesForIrisEvent(ev) {
+ if (!ev) return [];
+ const kwList = getKeywordsForIrisEvent(ev).map(k => toNormalizedKana(k)).filter(Boolean);
+ const cleanTitle = toNormalizedKana((ev.title || "").replace(/[『』「」]/g, '').split(/[～〜(（]/)[0].trim());
+
+ // 1. シート1のF列（featuredMark）にキーワードやライブ名が指定されている記事を最優先で抽出
+ const fMatched = items.filter(it => {
+ if (!it.featuredMark) return false;
+ const normMark = toNormalizedKana(it.featuredMark);
+ if (kwList.some(kw => normMark.includes(kw))) return true;
+ if (cleanTitle && normMark.includes(cleanTitle)) return true;
+ return false;
+ });
+
+ if (fMatched.length > 0) {
+ return { articles: fMatched, isFromFCol: true };
+ }
+
+ // 2. F列に未入力の場合は、そのライブの関連記事からライブレポ・インタビューの上位3件を自動ピックアップ
+ const allMatched = getMatchedArticlesForIrisEvent(ev);
+ const sorted = [...allMatched].sort((a, b) => {
+ const aScore = (a.featured ? 10 : 0) + (a.category === 'ライブレポ' ? 4 : (a.category === 'インタビュー' ? 3 : 1));
+ const bScore = (b.featured ? 10 : 0) + (b.category === 'ライブレポ' ? 4 : (b.category === 'インタビュー' ? 3 : 1));
+ if (bScore !== aScore) return bScore - aScore;
+ return (b.date || '').localeCompare(a.date || '');
+ });
+ return { articles: sorted.slice(0, 3), isFromFCol: false };
+ }
+
+ window.toggleIrisSelection = function(id) {
+ if (selectedIrisId === id) {
+ selectedIrisId = null;
+ } else {
+ selectedIrisId = id;
+ }
+ applyIrisFiltersAndRender();
+ };
+
+ window.selectIrisCategory = function(cat) {
+ selectedIrisCategory = cat;
+ renderIrisCategoryTabs();
+ applyIrisFiltersAndRender();
+ };
+
+ window.resetIrisFilters = function() {
+ selectedIrisCategory = "すべて";
+ irisSearchQuery = "";
+ const input = document.getElementById('iris-search-input');
+ const clearBtn = document.getElementById('iris-clear-search-btn');
+ if (input) input.value = "";
+ if (clearBtn) clearBtn.classList.add('hidden');
+ renderIrisCategoryTabs();
+ applyIrisFiltersAndRender();
+ };
+
+ window.jumpToArticlesByIrisEvent = function(id) {
+ const ev = irisEvents.find(e => e.id === id);
+ if (!ev) return;
+
+ switchPortalTab('articles');
+ displayedCount = PAGE_SIZE;
+ selectedYear = "";
+ selectedCategory = "";
+ selectedTags = [];
+ activeYearIndicator.classList.add('hidden');
+ activeYearIndicator.classList.remove('inline-flex');
+ activeCategoryIndicator.classList.add('hidden');
+ activeCategoryIndicator.classList.remove('inline-flex');
+
+ const kwList = getKeywordsForIrisEvent(ev);
+ const queryTerm = kwList.length > 1 ? kwList.join(" | ") : (kwList[0] || ev.title);
+
+ searchQuery = queryTerm;
+ searchInput.value = queryTerm;
+ clearSearchBtn.classList.remove('hidden');
+
+ renderYearTimeline();
+ renderCategoryTabs();
+ renderQuickFilters();
+ applyFiltersAndRender(true);
+ renderDrawerContents();
+
+ setTimeout(() => {
+ const target = document.getElementById('filter-panel');
+ if (target) {
+ target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ }
+ }, 100);
+ };
+
+ function getIrisBadgeClass(cat) {
+ if ((cat || "").includes("ツアー")) {
+ return "bg-pink-100 text-pink-900 border-pink-300 dark:bg-pink-950/70 dark:text-pink-200 dark:border-pink-800";
+ }
+ if ((cat || "").includes("周年")) {
+ return "bg-purple-100 text-purple-900 border-purple-300 dark:bg-purple-950/70 dark:text-purple-200 dark:border-purple-800";
+ }
+ return "bg-indigo-100 text-indigo-900 border-indigo-300 dark:bg-indigo-950/70 dark:text-indigo-200 dark:border-indigo-800";
+ }
+
+ function renderIrisCategoryTabs() {
+ const container = document.getElementById('iris-category-tabs');
+ if (!container) return;
+
+ container.innerHTML = irisCategoryPresets.map(cat => {
+ const isSelected = selectedIrisCategory === cat;
+ let count = 0;
+ if (cat === "すべて") count = irisEvents.length;
+ else count = irisEvents.filter(ev => (ev.category || "") === cat || (ev.category || "").includes(cat)).length;
+
+ const cls = isSelected
+ ? "bg-himi-600 text-white border-himi-600 font-bold shadow-xs shadow-himi-600/25"
+ : "bg-himi-50 dark:bg-[#130E1F] text-himi-900 dark:text-purple-100 hover:bg-himi-100 dark:hover:bg-himi-900/50 border editorial-border font-bold";
+
+ return `
+ <button type="button" onclick="selectIrisCategory('${cat}')" class="inline-flex items-center justify-between sm:justify-center gap-1.5 px-3.5 py-2.5 rounded-2xl border text-xs whitespace-nowrap transition-all active:scale-95 ${cls}">
+ <span>${cat}</span>
+ <span class="font-mono text-[10px] px-2 py-0.5 rounded-full font-bold ${isSelected ? 'bg-white/20 text-white' : 'bg-white dark:bg-himi-900 text-himi-700 dark:text-himi-300'}">${count}</span>
+ </button>
+ `;
+ }).join('');
+ }
+
+ function applyIrisFiltersAndRender() {
+ let filtered = [...irisEvents];
+
+ if (selectedIrisCategory !== "すべて") {
+ filtered = filtered.filter(ev => (ev.category || "") === selectedIrisCategory || (ev.category || "").includes(selectedIrisCategory));
+ }
+
+ if (irisSearchQuery.trim() !== "") {
+ const queryKeywords = irisSearchQuery.trim().split(/[\s　]+/).filter(k => k.length > 0);
+ filtered = filtered.filter(ev => {
+ const combined = [
+ ev.title || "",
+ ev.venue || "",
+ ev.description || "",
+ ev.category || "",
+ ev.period || "",
+ ev.tag || ""
+ ].join(" ");
+ const normalizedTarget = toNormalizedKana(combined);
+ return queryKeywords.every(kw => normalizedTarget.includes(toNormalizedKana(kw)));
+ });
+ }
+
+ const grid = document.getElementById('iris-grid-container');
+ const empty = document.getElementById('iris-empty-state');
+ const countLabel = document.getElementById('iris-count-label');
+
+ if (countLabel) {
+ countLabel.textContent = `全 ${irisEvents.length} 項目中 ${filtered.length} 件を表示`;
+ }
+
+ if (filtered.length === 0) {
+ if (grid) grid.classList.add('hidden');
+ if (empty) empty.classList.remove('hidden');
+ return;
+ }
+
+ if (empty) empty.classList.add('hidden');
+ if (grid) {
+ grid.classList.remove('hidden');
+ grid.innerHTML = filtered.map(ev => {
+ const isSelected = selectedIrisId === ev.id;
+ const badgeClass = getIrisBadgeClass(ev.category || "ライブ");
+ const allMatchedArticles = getMatchedArticlesForIrisEvent(ev);
+ const allArticleCount = allMatchedArticles.length;
+ const recObj = getRecommendedArticlesForIrisEvent(ev);
+ const recArticles = recObj.articles;
+
+ const officialLinkBtn = ev.officialUrl ? `
+ <a href="${ev.officialUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-xl bg-himi-50 dark:bg-himi-900/50 hover:bg-himi-100 text-himi-800 dark:text-purple-200 border editorial-border text-[10px] font-bold inline-flex items-center gap-1 transition-colors">
+ <span>代表記事・詳細</span>
+ <i class="ph-bold ph-arrow-up-right text-[9px] text-himi-500"></i>
+ </a>
+ ` : '';
+
+ const cardCls = isSelected
+ ? "bg-white dark:bg-[#181226] border-2 border-himi-500 dark:border-himi-400 ring-4 ring-himi-400/20 rounded-3xl p-4 sm:p-5 shadow-lg shadow-himi-600/10 transition-all cursor-pointer"
+ : "bg-white dark:bg-[#181226] border-2 border-himi-200/90 dark:border-himi-800/80 rounded-3xl p-4 sm:p-5 hover:border-himi-400 dark:hover:border-himi-500 hover:shadow-md transition-all cursor-pointer";
+
+ let recArticlesHtml = '';
+ if (recArticles.length > 0) {
+ recArticlesHtml = recArticles.map(art => renderRecommendedArticleCard(art, false)).join('');
+ } else {
+ recArticlesHtml = `
+ <div class="bg-white/80 dark:bg-[#140D20]/80 border-2 border-dashed editorial-border rounded-2xl p-4 text-center space-y-1.5" onclick="event.stopPropagation()">
+ <p class="text-xs font-bold text-himi-950 dark:text-white">
+ おすすめ記事はまだ登録されていません
+ </p>
+ <p class="text-[11px] text-himi-800/70 dark:text-purple-200/70">
+ スプレッドシート（シート1）のF列にキーワードを入力すると優先表示されます。
+ </p>
+ </div>
+ `;
+ }
+
+ return `
+ <article onclick="toggleIrisSelection(${ev.id})" class="${cardCls}">
+ <div class="space-y-2.5">
+ <div class="flex items-center justify-between text-xs gap-1">
+ <div class="flex items-center gap-1.5 flex-wrap">
+ <span class="px-2.5 py-0.5 text-[10px] font-bold border rounded-full ${badgeClass}">
+ ${ev.category || 'ライブ'}
+ </span>
+ ${ev.period ? `<span class="font-mono text-[11px] font-bold text-himi-700/80 dark:text-himi-300/80">${ev.period}</span>` : ''}
+ </div>
+ ${isSelected ? `
+ <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-himi-600 text-white flex items-center gap-1 shadow-xs shrink-0">
+ <i class="ph-bold ph-check"></i>
+ <span>選択中</span>
+ </span>
+ ` : `
+ <span class="text-[10px] font-bold text-himi-600 dark:text-himi-400 flex items-center gap-0.5 shrink-0">
+ <span>おすすめ記事</span>
+ <i class="ph-bold ph-caret-down text-xs"></i>
+ </span>
+ `}
+ </div>
+
+ <div>
+ <h3 class="font-serif text-[15px] sm:text-base font-bold text-himi-950 dark:text-white leading-snug">
+ ${ev.title}
+ </h3>
+ ${ev.venue ? `
+ <div class="mt-1.5 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-himi-100/90 dark:bg-himi-900/70 text-himi-800 dark:text-himi-200 text-[11px] font-bold">
+ <i class="ph-fill ph-map-pin text-pink-500 text-xs shrink-0"></i>
+ <span class="truncate">${ev.venue}</span>
+ </div>
+ ` : ''}
+ </div>
+
+ <p class="text-xs text-himi-900/85 dark:text-purple-100/90 leading-relaxed break-words-any line-clamp-3">
+ ${ev.description || ''}
+ </p>
+
+ ${officialLinkBtn ? `
+ <div class="flex items-center gap-1.5 pt-0.5" onclick="event.stopPropagation()">
+ ${officialLinkBtn}
+ </div>
+ ` : ''}
+ </div>
+
+ <!-- タップ時に展開されるおすすめ記事＆全記事ジャンプエリア -->
+ ${isSelected ? `
+ <div class="mt-4 pt-3.5 border-t-2 border-dashed border-himi-200 dark:border-himi-800 space-y-3 animate-sheet-up" onclick="event.stopPropagation()">
+ <div class="flex items-center justify-between bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-2xl px-3 py-2">
+ <div class="flex items-center gap-1.5 min-w-0">
+ <i class="ph-fill ph-star text-amber-500 text-sm shrink-0"></i>
+ <div class="truncate">
+ <span class="text-xs font-bold text-amber-950 dark:text-amber-100">おすすめ記事ピックアップ</span>
+ </div>
+ </div>
+ <div class="flex items-center gap-2 shrink-0">
+ <span class="font-mono text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-amber-500 text-white shadow-xs">
+ ${recArticles.length}件
+ </span>
+ <button type="button" onclick="event.stopPropagation(); toggleIrisSelection(${ev.id})" class="text-[11px] font-bold text-himi-700 dark:text-himi-300 hover:text-himi-950 hover:underline flex items-center gap-0.5">
+ <span>閉じる</span>
+ <i class="ph-bold ph-caret-up text-[10px]"></i>
+ </button>
+ </div>
+ </div>
+
+ <div class="space-y-2.5">
+ ${recArticlesHtml}
+ </div>
+
+ <button type="button" onclick="event.stopPropagation(); jumpToArticlesByIrisEvent(${ev.id})" class="w-full py-2.5 px-3 rounded-2xl bg-himi-600 hover:bg-himi-700 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 active:scale-98 shadow-sm shadow-himi-600/20">
+ <i class="ph-bold ph-newspaper text-sm"></i>
+ <span>このライブに関する記事一覧へ飛ぶ（全${allArticleCount}件）</span>
+ <i class="ph-bold ph-arrow-right text-xs"></i>
+ </button>
+ </div>
+ ` : `
+ <div class="pt-3 mt-3 border-t editorial-border flex items-center justify-between">
+ <span class="text-[11px] font-bold text-himi-600 dark:text-himi-400 inline-flex items-center gap-1">
+ <i class="ph-fill ph-star text-amber-500 text-xs"></i>
+ <span>おすすめ記事 (${recArticles.length}件) / 関連記事 (全${allArticleCount}件)</span>
+ </span>
+ <i class="ph-bold ph-caret-down text-xs text-himi-500"></i>
+ </div>
+ `}
+ </article>
+ `;
+ }).join('');
+ }
+ }
+
+ function populateIrisData(rawIris) {
+ if (!Array.isArray(rawIris) || rawIris.length === 0) return;
+ irisEvents = rawIris.map((ev, idx) => {
+ const titleStr = (ev.title || "").toString().trim();
+ let periodStr = (ev.period || "").toString().trim();
+ const isoDateMatch = periodStr.match(/^(\d{4})-(\d{1,2})-(\d{1,2})(?:[T\s].*)?$/);
+ if (isoDateMatch) {
+ periodStr = `${isoDateMatch[1]}年${parseInt(isoDateMatch[2], 10)}月${parseInt(isoDateMatch[3], 10)}日`;
+ } else if (/^\d{4}-\d{2}-\d{2}T/.test(periodStr) || /^\w{3}\s+\w{3}\s+\d{1,2}\s+\d{4}/.test(periodStr)) {
+ const dObj = new Date(periodStr);
+ if (!isNaN(dObj.getTime())) {
+ const jst = new Date(dObj.getTime() + 9 * 60 * 60 * 1000);
+ periodStr = `${jst.getUTCFullYear()}年${jst.getUTCMonth() + 1}月${jst.getUTCDate()}日`;
+ }
+ }
+ if (titleStr.includes("i☆Ris on STAGE") && titleStr.includes("舞台挨拶")) {
+ periodStr = "2024年9月14日";
+ } else if (titleStr.includes("ナガノアニエラフェスタ 2024")) {
+ periodStr = "2024年9月21日〜22日";
+ } else if (titleStr.includes("虹会ファンクラブイベント 2020 WINTER")) {
+ periodStr = "2020年2月";
+ }
+ return {
+ id: ev.id || idx + 1,
+ category: (ev.category || "ツアー").toString().trim(),
+ title: titleStr,
+ period: periodStr,
+ venue: (ev.venue || ev.role || "").toString().trim(),
+ description: (ev.description || "").toString().trim(),
+ officialUrl: (ev.officialUrl || "").toString().trim(),
+ tag: (ev.tag || "").toString().trim()
+ };
+ }).filter(ev => ev.title.length > 0);
+
+ const tabBadge = document.getElementById('tab-iris-badge');
+ if (tabBadge) tabBadge.textContent = `${irisEvents.length}件`;
+
+ renderIrisCategoryTabs();
+ applyIrisFiltersAndRender();
+ };
+
+ function getWorkBadgeClass(cat) {
+ if (cat.includes("アニメ")) {
+ return "bg-purple-100 text-purple-900 border-purple-300 dark:bg-purple-950/70 dark:text-purple-200 dark:border-purple-800";
+ }
+ if (cat.includes("舞台")) {
+ return "bg-indigo-100 text-indigo-900 border-indigo-300 dark:bg-indigo-950/70 dark:text-indigo-200 dark:border-indigo-800";
+ }
+ if (cat.includes("音楽") || cat.includes("ソロ")) {
+ return "bg-pink-100 text-pink-900 border-pink-300 dark:bg-pink-950/70 dark:text-pink-200 dark:border-pink-800";
+ }
+ if (cat.includes("ラジオ")) {
+ return "bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-950/70 dark:text-amber-200 dark:border-amber-800";
+ }
+ return "bg-himi-100 text-himi-900 border-himi-300 dark:bg-himi-900/70 dark:text-himi-200 dark:border-himi-700";
+ }
+
+ function applyWorksFiltersAndRender() {
+ let filtered = [...works];
+
+ if (selectedWorksCategory !== "すべて") {
+ filtered = filtered.filter(w => (w.category || "").includes(selectedWorksCategory));
+ }
+
+ if (worksSearchQuery.trim() !== "") {
+ const queryKeywords = worksSearchQuery.trim().split(/[\s　]+/).filter(k => k.length > 0);
+ filtered = filtered.filter(w => {
+ const combined = [
+ w.title || "",
+ w.role || "",
+ w.description || "",
+ w.category || "",
+ w.period || "",
+ w.tag || ""
+ ].join(" ");
+ const normalizedTarget = toNormalizedKana(combined);
+ return queryKeywords.every(kw => normalizedTarget.includes(toNormalizedKana(kw)));
+ });
+ }
+
+ const grid = document.getElementById('works-grid-container');
+ const empty = document.getElementById('works-empty-state');
+ const countLabel = document.getElementById('works-count-label');
+
+ if (countLabel) {
+ countLabel.textContent = `全 ${works.length} 作品中 ${filtered.length} 件を表示`;
+ }
+
+ if (works.length === 0) {
+ if (empty) empty.classList.add('hidden');
+ return;
+ }
+
+ if (filtered.length === 0) {
+ if (grid) grid.classList.add('hidden');
+ if (empty) empty.classList.remove('hidden');
+ return;
+ }
+
+ if (empty) empty.classList.add('hidden');
+ if (grid) {
+ grid.classList.remove('hidden');
+ grid.innerHTML = filtered.map(w => {
+ const isSelected = selectedWorkId === w.id;
+ const badgeClass = getWorkBadgeClass(w.category || "作品");
+ const allArticleCount = getArticleCountForWork(w);
+ const recArticles = getRecommendedArticlesForWork(w);
+ const cleanTitle = (w.title || "").replace(/[『』「」]/g, '').split(/[\/／]/)[0].trim();
+
+ const officialLinkBtn = w.officialUrl ? `
+ <a href="${w.officialUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-xl bg-himi-50 dark:bg-himi-900/50 hover:bg-himi-100 text-himi-800 dark:text-purple-200 border editorial-border text-[10px] font-bold inline-flex items-center gap-1 transition-colors">
+ <span>公式HP</span>
+ <i class="ph-bold ph-arrow-up-right text-[9px] text-himi-500"></i>
+ </a>
+ ` : '';
+
+ const watchLinkBtn = w.watchUrl ? `
+ <a href="${w.watchUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-xl bg-himi-50 dark:bg-himi-900/50 hover:bg-himi-100 text-himi-800 dark:text-purple-200 border editorial-border text-[10px] font-bold inline-flex items-center gap-1 transition-colors">
+ <span>配信・詳細</span>
+ <i class="ph-bold ph-arrow-up-right text-[9px] text-himi-500"></i>
+ </a>
+ ` : '';
+
+ const cardCls = isSelected
+ ? "bg-white dark:bg-[#181226] border-2 border-himi-500 dark:border-himi-400 ring-4 ring-himi-400/20 rounded-3xl p-4 sm:p-5 shadow-lg shadow-himi-600/10 transition-all cursor-pointer"
+ : "bg-white dark:bg-[#181226] border-2 border-himi-200/90 dark:border-himi-800/80 rounded-3xl p-4 sm:p-5 hover:border-himi-400 dark:hover:border-himi-500 hover:shadow-md transition-all cursor-pointer";
+
+ let recArticlesHtml = '';
+ if (recArticles.length > 0) {
+ recArticlesHtml = recArticles.map(art => renderRecommendedArticleCard(art, true)).join('');
+ }
+
+ return `
+ <article onclick="toggleWorkSelection(${w.id})" class="${cardCls}">
+ <div class="space-y-2.5">
+ <div class="flex items-center justify-between text-xs">
+ <div class="flex items-center gap-1.5">
+ <span class="px-2.5 py-0.5 text-[10px] font-bold border rounded-full ${badgeClass}">
+ ${w.category || '作品'}
+ </span>
+ ${w.period ? `<span class="font-mono text-[11px] font-bold text-himi-700/80 dark:text-himi-300/80">${w.period}</span>` : ''}
+ </div>
+ ${isSelected ? `
+ <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-himi-600 text-white flex items-center gap-1 shadow-xs hover:bg-himi-700">
+ <i class="ph-bold ph-check"></i>
+ <span>選択中（タップで閉じる）</span>
+ </span>
+ ` : `
+ <span class="text-[10px] font-bold text-himi-600 dark:text-himi-400 flex items-center gap-0.5">
+ <span>おすすめ記事を表示</span>
+ <i class="ph-bold ph-caret-down text-xs"></i>
+ </span>
+ `}
+ </div>
+
+ <div>
+ <h3 class="font-serif text-[15px] sm:text-base font-bold text-himi-950 dark:text-white leading-snug">
+ ${w.title}
+ </h3>
+ ${w.role ? `
+ <div class="mt-1 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-himi-100/90 dark:bg-himi-900/70 text-himi-800 dark:text-himi-200 text-[11px] font-bold">
+ <i class="ph-fill ph-user-circle text-himi-500 text-xs"></i>
+ <span>${w.role}</span>
+ </div>
+ ` : ''}
+ </div>
+
+ <p class="text-xs text-himi-900/85 dark:text-purple-100/90 leading-relaxed break-words-any line-clamp-3">
+ ${w.description || ''}
+ </p>
+
+ ${(officialLinkBtn || watchLinkBtn) ? `
+ <div class="flex items-center gap-1.5 pt-0.5" onclick="event.stopPropagation()">
+ ${officialLinkBtn}
+ ${watchLinkBtn}
+ </div>
+ ` : ''}
+ </div>
+
+ ${isSelected ? `
+ <div class="mt-4 pt-3.5 border-t-2 border-dashed border-himi-200 dark:border-himi-800 space-y-3 animate-sheet-up" onclick="event.stopPropagation()">
+ <div class="flex items-center justify-between bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-2xl px-3 py-2">
+ <div class="flex items-center gap-1.5 min-w-0">
+ <i class="ph-fill ph-star text-amber-500 text-sm shrink-0"></i>
+ <div class="truncate">
+ <span class="text-xs font-bold text-amber-950 dark:text-amber-100">おすすめインタビュー記事</span>
+ </div>
+ </div>
+ <div class="flex items-center gap-2 shrink-0">
+ <span class="font-mono text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-amber-500 text-white shadow-xs">
+ ${recArticles.length}件
+ </span>
+ <button type="button" onclick="event.stopPropagation(); toggleWorkSelection(${w.id})" class="text-[11px] font-bold text-himi-700 dark:text-himi-300 hover:text-himi-950 hover:underline flex items-center gap-0.5" title="おすすめ記事を閉じる">
+ <span>閉じる</span>
+ <i class="ph-bold ph-caret-up text-[10px]"></i>
+ </button>
+ </div>
+ </div>
+
+ <div class="space-y-2.5">
+ ${recArticlesHtml}
+ </div>
+
+ <button type="button" onclick="event.stopPropagation(); jumpToArticlesByWorkTag('${escapeJsStr(w.tag || '')}', '${escapeJsStr(w.title)}')" class="w-full py-2.5 px-3 rounded-2xl bg-himi-100/90 hover:bg-himi-200/90 dark:bg-himi-900/60 dark:hover:bg-himi-900 text-himi-900 dark:text-purple-100 text-xs font-bold transition-all border border-himi-300/80 dark:border-himi-700 flex items-center justify-center gap-1.5 active:scale-98 shadow-xs">
+ <i class="ph-bold ph-newspaper text-himi-600 dark:text-himi-400 text-sm"></i>
+ <span>『${cleanTitle}』の全記事（${allArticleCount}件）を記事一覧で見る</span>
+ <i class="ph-bold ph-arrow-up-right text-xs text-himi-500"></i>
+ </button>
+ </div>
+ ` : `
+ <div class="pt-3 mt-3 border-t editorial-border flex items-center justify-between">
+ <span class="text-[11px] font-bold text-himi-600 dark:text-himi-400 inline-flex items-center gap-1">
+ <i class="ph-fill ph-star text-amber-500 text-xs"></i>
+ <span>おすすめ記事を見る (${recArticles.length}件)</span>
+ </span>
+ <i class="ph-bold ph-caret-down text-xs text-himi-500"></i>
+ </div>
+ `}
+ </article>
+ `;
+ }).join('');
+ }
+ }
+
+ window.resetWorksFilters = function() {
+ selectedWorksCategory = "すべて";
+ worksSearchQuery = "";
+ const input = document.getElementById('works-search-input');
+ const clearBtn = document.getElementById('works-clear-search-btn');
+ if (input) input.value = "";
+ if (clearBtn) clearBtn.classList.add('hidden');
+ renderWorksCategoryTabs();
+ applyWorksFiltersAndRender();
+ };
+
+ function populateWorksData(rawWorks) {
+ if (!Array.isArray(rawWorks) || rawWorks.length === 0) return;
+ works = rawWorks.map((w, idx) => ({
+ id: w.id || idx + 1,
+ category: (w.category || "作品").toString().trim(),
+ title: (w.title || "").toString().trim(),
+ role: (w.role || "").toString().trim(),
+ period: (w.period || "").toString().trim(),
+ description: (w.description || "").toString().trim(),
+ officialUrl: (w.officialUrl || "").toString().trim(),
+ watchUrl: (w.watchUrl || "").toString().trim(),
+ tag: (w.tag || "").toString().trim(),
+ recommended: w.recommended === true || (w.recommended || "").toString().trim() !== ""
+ })).filter(w => w.title.length > 0);
+
+ const tabBadge = document.getElementById('tab-works-badge');
+ if (tabBadge) tabBadge.textContent = `${works.length}件`;
+
+ renderWorksCategoryTabs();
+ applyWorksFiltersAndRender();
+ }
+
+ function getCategoryBadgeClass(cat) {
+ if (cat === "ライブレポ") {
+ return "bg-pink-100 text-pink-900 border-pink-300 dark:bg-pink-950/70 dark:text-pink-200 dark:border-pink-800";
+ }
+ if (cat === "舞台挨拶・イベント") {
+ return "bg-indigo-100 text-indigo-900 border-indigo-300 dark:bg-indigo-950/70 dark:text-indigo-200 dark:border-indigo-800";
+ }
+ return "bg-himi-100 text-himi-900 border-himi-300 dark:bg-himi-900/70 dark:text-himi-200 dark:border-himi-700";
+ }
+
+ // カードグリッド描画（単一記事 ＆ 複数メディア集約カード対応）
+ function renderMagazineGrid(entries) {
+ cardsContainer.innerHTML = entries.map(entry => {
+ const item = entry.primary;
+ const isGroup = entry.isGroup && entry.articles.length > 1;
+ const isExpanded = isGroup && expandedArticleGroupKeys.has(entry.groupKey);
+ const isFav = entry.articles.some(a => favoriteIds.includes(a.id));
+ const catStyle = getCategoryBadgeClass(entry.category);
+
+ const tagsHtml = (entry.tags || []).slice(0, 6).map(t => {
+ const isSelected = selectedTags.includes(t);
+ const tStyle = isSelected
+ ? "bg-himi-600 text-white font-bold"
+ : "bg-himi-50 dark:bg-[#211834] text-himi-800 dark:text-purple-200 hover:bg-himi-200 dark:hover:bg-himi-800 border border-himi-200/70 dark:border-himi-800 font-bold";
+ return `
+ <button type="button" onclick="event.stopPropagation(); event.preventDefault(); toggleTagFilter('${escapeJsStr(t)}')" class="text-[11px] px-2.5 py-1 rounded-full transition-colors ${tStyle}">
+ #${t}
+ </button>
+ `;
+ }).join('');
+
+ if (!isGroup) {
+ return `
+ <article onclick="window.open('${item.url || '#'}', '_blank', 'noopener,noreferrer')" class="group bg-white dark:bg-[#181226] border editorial-border rounded-3xl p-4 sm:p-5 flex flex-col justify-between hover:border-himi-500 dark:hover:border-himi-400 hover:shadow-lg hover:shadow-himi-600/10 transition-all cursor-pointer active:scale-[0.99]">
+ <div class="space-y-2.5">
+ <div class="flex items-center justify-between gap-2 text-xs">
+ <time class="font-mono font-bold text-himi-700 dark:text-himi-300">${item.date || '----'}</time>
+ <div class="flex items-center gap-1.5 shrink-0">
+ <span class="px-2.5 py-0.5 text-[10px] font-bold border rounded-full ${catStyle}">
+ ${item.category}
+ </span>
+ <button type="button" onclick="toggleFavorite(event, '${item.id}')" class="p-1.5 rounded-full text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 hover:bg-himi-50 dark:hover:bg-himi-900/50 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+ <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-base"></i>
+ </button>
+ </div>
+ </div>
+
+ <h3 class="font-serif text-[15px] sm:text-base font-bold text-himi-950 dark:text-white leading-relaxed group-hover:text-himi-600 dark:group-hover:text-himi-300 transition-colors break-words-any">
+ ${item.title}
+ </h3>
+
+ <p class="text-xs text-himi-900/85 dark:text-purple-100/90 leading-relaxed line-clamp-3 break-words-any">
+ ${item.summary || '記事の詳細はリンク先の元記事よりご覧いただけます。'}
+ </p>
+ </div>
+
+ <div class="pt-3 mt-3.5 border-t editorial-border space-y-2.5">
+ <div class="flex flex-wrap gap-1.5">
+ ${tagsHtml}
+ </div>
+
+ <div class="flex items-center justify-between text-[11px] text-himi-800/90 dark:text-purple-200/95 pt-0.5">
+ <span class="font-bold truncate max-w-[65%]">${item.media}</span>
+ <span class="inline-flex items-center gap-1 font-bold text-himi-700 dark:text-himi-300 group-hover:translate-x-0.5 transition-transform shrink-0">
+ <span>記事を開く</span>
+ <i class="ph-bold ph-arrow-up-right"></i>
+ </span>
+ </div>
+ </div>
+ </article>
+ `;
+ }
+
+ // 複数メディア集約カード（クリックで各メディアの記事一覧を展開）
+ const mediaPreviewPills = entry.mediaList.slice(0, 4).map(m => `
+ <span class="px-2 py-0.5 rounded-full bg-himi-100/90 dark:bg-himi-900/70 text-himi-800 dark:text-purple-200 text-[10px] font-bold border border-himi-200 dark:border-himi-800">${m}</span>
+ `).join('') + (entry.mediaList.length > 4 ? `<span class="text-[10px] font-bold text-himi-600 dark:text-himi-300">+${entry.mediaList.length - 4}媒体</span>` : '');
+
+ const subArticlesHtml = entry.articles.map(sub => {
+ const subFav = favoriteIds.includes(sub.id);
+ return `
+ <div class="bg-himi-50/80 dark:bg-[#130D1E] border border-himi-200/90 dark:border-himi-800/80 rounded-2xl p-3 space-y-1.5 hover:border-himi-500 dark:hover:border-himi-400 transition-all" onclick="event.stopPropagation()">
+ <div class="flex items-center justify-between gap-2 text-[11px]">
+ <div class="flex items-center gap-1.5 min-w-0">
+ <span class="px-2 py-0.5 rounded-md bg-himi-600 text-white font-bold text-[10px] shrink-0">${sub.media}</span>
+ <time class="font-mono text-[10px] font-bold text-himi-700/80 dark:text-purple-300/80 shrink-0">${sub.date}</time>
+ </div>
+ <button type="button" onclick="toggleFavorite(event, '${sub.id}')" class="p-1 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors shrink-0" title="${subFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+ <i class="${subFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-sm"></i>
+ </button>
+ </div>
+ <h4 class="font-serif font-bold text-xs text-himi-950 dark:text-white leading-snug hover:text-himi-600 dark:hover:text-himi-300 transition-colors">
+ <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="block">
+ ${sub.title}
+ </a>
+ </h4>
+ <p class="text-[11px] text-himi-900/80 dark:text-purple-200/80 line-clamp-2 leading-relaxed">
+ ${sub.summary || ''}
+ </p>
+ <div class="pt-1 flex justify-end">
+ <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-bold text-himi-600 dark:text-himi-300 hover:underline">
+ <span>${sub.media}の記事を読む</span>
+ <i class="ph-bold ph-arrow-up-right text-[10px]"></i>
+ </a>
+ </div>
+ </div>
+ `;
+ }).join('');
+
+ const cardBorderCls = isExpanded
+ ? "border-2 border-himi-500 dark:border-himi-400 ring-4 ring-himi-400/15 shadow-lg"
+ : "border-2 border-himi-300/90 dark:border-himi-700/90 hover:border-himi-500 dark:hover:border-himi-400 hover:shadow-lg";
+
+ return `
+ <article onclick="toggleArticleGroupExpand(event, '${entry.groupKey}')" class="group bg-white dark:bg-[#181226] ${cardBorderCls} rounded-3xl p-4 sm:p-5 flex flex-col justify-between transition-all cursor-pointer">
+ <div class="space-y-2.5">
+ <div class="flex items-center justify-between gap-2 text-xs">
+ <div class="flex items-center gap-1.5">
+ <time class="font-mono font-bold text-himi-700 dark:text-himi-300">${entry.dateDisplay || entry.date || '----'}</time>
+ <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-himi-600 to-pink-500 text-white text-[10px] font-bold shadow-xs">
+ <i class="ph-fill ph-stack text-[10px]"></i>
+ <span>${entry.articles.length}メディア掲載</span>
+ </span>
+ </div>
+ <span class="px-2.5 py-0.5 text-[10px] font-bold border rounded-full shrink-0 ${catStyle}">
+ ${entry.category}
+ </span>
+ </div>
+
+ <h3 class="font-serif text-[15px] sm:text-base font-bold text-himi-950 dark:text-white leading-relaxed group-hover:text-himi-600 dark:group-hover:text-himi-300 transition-colors break-words-any">
+ ${entry.title}
+ </h3>
+
+ <p class="text-xs text-himi-900/85 dark:text-purple-100/90 leading-relaxed line-clamp-2 break-words-any">
+ ${entry.summary || ''}
+ </p>
+
+ <div class="flex flex-wrap items-center gap-1 pt-0.5">
+ ${mediaPreviewPills}
+ </div>
+ </div>
+
+ ${isExpanded ? `
+ <div class="mt-4 pt-3.5 border-t-2 border-dashed border-himi-200 dark:border-himi-800 space-y-2.5 animate-fade-in" onclick="event.stopPropagation()">
+ <div class="flex items-center justify-between text-xs px-1">
+ <span class="font-bold text-himi-900 dark:text-purple-100 flex items-center gap-1.5">
+ <i class="ph-fill ph-newspaper-clipping text-himi-500 text-sm"></i>
+ <span>各メディアの記事一覧（全${entry.articles.length}件）</span>
+ </span>
+ <button type="button" onclick="toggleArticleGroupExpand(event, '${entry.groupKey}')" class="text-[11px] font-bold text-himi-600 dark:text-himi-300 hover:underline inline-flex items-center gap-0.5">
+ <span>閉じる</span>
+ <i class="ph-bold ph-caret-up text-[10px]"></i>
+ </button>
+ </div>
+ <div class="space-y-2 max-h-96 overflow-y-auto purple-scrollbar pr-0.5">
+ ${subArticlesHtml}
+ </div>
+ </div>
+ ` : ''}
+
+ <div class="pt-3 mt-3.5 border-t editorial-border space-y-2.5">
+ <div class="flex flex-wrap gap-1.5">
+ ${tagsHtml}
+ </div>
+
+ <div class="flex items-center justify-between text-[11px] text-himi-800/90 dark:text-purple-200/95 pt-0.5">
+ <span class="font-bold text-himi-700 dark:text-himi-300 inline-flex items-center gap-1">
+ <i class="ph-bold ${isExpanded ? 'ph-caret-up' : 'ph-caret-down'} text-xs"></i>
+ <span>${isExpanded ? 'メディア一覧を閉じる' : `全${entry.articles.length}メディアの記事を一覧表示`}</span>
+ </span>
+ <a href="${item.url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="inline-flex items-center gap-1 font-bold text-himi-600 dark:text-himi-300 hover:underline shrink-0">
+ <span>代表記事へ</span>
+ <i class="ph-bold ph-arrow-up-right"></i>
+ </a>
+ </div>
+ </div>
+ </article>
+ `;
+ }).join('');
+ }
+
+ // コンパクト目次リスト描画（単一記事 ＆ 複数メディア集約アコーディオン対応）
+ function renderIndexTable(entries) {
+ listTableBody.innerHTML = entries.map(entry => {
+ const item = entry.primary;
+ const isGroup = entry.isGroup && entry.articles.length > 1;
+ const isExpanded = isGroup && expandedArticleGroupKeys.has(entry.groupKey);
+ const isFav = entry.articles.some(a => favoriteIds.includes(a.id));
+ const catStyle = getCategoryBadgeClass(entry.category);
+
+ const tagsInline = (entry.tags || []).slice(0, 5).map(t => `
+ <button type="button" onclick="event.stopPropagation(); event.preventDefault(); toggleTagFilter('${escapeJsStr(t)}')" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-himi-50 dark:bg-himi-900/40 text-himi-700 dark:text-himi-300 hover:bg-himi-200 mr-1 mb-1 inline-block">#${t}</button>
+ `).join('');
+
+ if (!isGroup) {
+ return `
+ <tr onclick="window.open('${item.url || '#'}', '_blank', 'noopener,noreferrer')" class="group hover:bg-himi-50/80 dark:hover:bg-himi-900/30 transition-colors cursor-pointer block sm:table-row p-3 sm:p-0 border-b editorial-border sm:border-0">
+ <td class="block sm:hidden p-0 mb-1.5">
+ <div class="flex items-center justify-between text-xs">
+ <div class="flex items-center gap-1.5">
+ <span class="font-mono font-bold text-[11px] text-himi-700 dark:text-himi-300">${item.date || '----'}</span>
+ <span class="inline-block px-2 py-0.5 text-[10px] font-bold border rounded-full ${catStyle}">${item.category}</span>
+ </div>
+ <div class="flex items-center gap-2">
+ <span class="text-[10px] font-bold text-himi-800/90 dark:text-purple-200/95 truncate max-w-[120px]">${item.media}</span>
+ <button type="button" onclick="toggleFavorite(event, '${item.id}')" class="p-1 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+ <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-base"></i>
+ </button>
+ </div>
+ </div>
+ </td>
+
+ <td class="hidden sm:table-cell py-3.5 px-4 font-mono font-bold text-[11px] text-himi-700 dark:text-himi-300 whitespace-nowrap align-top">
+ ${item.date || '----'}
+ </td>
+
+ <td class="hidden sm:table-cell py-3.5 px-3 align-top">
+ <span class="inline-block px-2.5 py-0.5 text-[10px] font-bold border rounded-full whitespace-nowrap ${catStyle}">
+ ${item.category}
+ </span>
+ </td>
+
+ <td class="p-0 sm:py-3.5 sm:px-3 align-top space-y-1 block sm:table-cell">
+ <div class="font-serif font-bold text-sm text-himi-950 dark:text-white group-hover:text-himi-600 dark:group-hover:text-himi-300 transition-colors leading-relaxed break-words-any">
+ ${item.title}
+ </div>
+ <div class="text-[11px] text-himi-900/85 dark:text-purple-100/90 line-clamp-2 sm:line-clamp-1 break-words-any">
+ ${item.summary || ''}
+ </div>
+ <div class="pt-0.5">
+ ${tagsInline}
+ </div>
+ </td>
+
+ <td class="hidden md:table-cell py-3.5 px-3 text-[11px] font-bold text-himi-800 dark:text-purple-200 align-top whitespace-nowrap">
+ ${item.media}
+ </td>
+
+ <td class="hidden sm:table-cell py-3.5 px-3 text-center align-top">
+ <button type="button" onclick="toggleFavorite(event, '${item.id}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+ <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-base"></i>
+ </button>
+ </td>
+ </tr>
+ `;
+ }
+
+ // 複数メディア集約行（タップで各メディアの記事一覧をアコーディオン展開）
+ const subListHtml = entry.articles.map(sub => {
+ const subFav = favoriteIds.includes(sub.id);
+ return `
+ <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-2.5 rounded-2xl bg-white dark:bg-[#161024] border editorial-border hover:border-himi-400 transition-all" onclick="event.stopPropagation()">
+ <div class="space-y-1 min-w-0 flex-1">
+ <div class="flex items-center gap-1.5 flex-wrap">
+ <span class="px-2 py-0.5 rounded-md bg-himi-600 text-white font-bold text-[10px]">${sub.media}</span>
+ <time class="font-mono text-[10px] font-bold text-himi-700/80 dark:text-purple-300/80">${sub.date}</time>
+ </div>
+ <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="font-serif font-bold text-xs sm:text-[13px] text-himi-950 dark:text-white hover:text-himi-600 dark:hover:text-himi-300 block leading-snug">
+ ${sub.title}
+ </a>
+ <p class="text-[11px] text-himi-900/75 dark:text-purple-200/75 line-clamp-1">
+ ${sub.summary || ''}
+ </p>
+ </div>
+ <div class="flex items-center justify-end gap-2 shrink-0 pt-1 sm:pt-0">
+ <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full bg-himi-100 hover:bg-himi-200 dark:bg-himi-900/70 dark:hover:bg-himi-800 text-himi-800 dark:text-purple-100 text-[11px] font-bold inline-flex items-center gap-1 transition-colors">
+ <span>記事を開く</span>
+ <i class="ph-bold ph-arrow-up-right text-[10px]"></i>
+ </a>
+ <button type="button" onclick="toggleFavorite(event, '${sub.id}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${subFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+ <i class="${subFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-sm"></i>
+ </button>
+ </div>
+ </div>
+ `;
+ }).join('');
+
+ return `
+ <tr onclick="toggleArticleGroupExpand(event, '${entry.groupKey}')" class="group ${isExpanded ? 'bg-himi-50/90 dark:bg-himi-950/40' : 'hover:bg-himi-50/80 dark:hover:bg-himi-900/30'} transition-colors cursor-pointer block sm:table-row p-3 sm:p-0 border-b editorial-border sm:border-0">
+ <td class="block sm:hidden p-0 mb-1.5">
+ <div class="flex items-center justify-between text-xs">
+ <div class="flex items-center gap-1.5">
+ <span class="font-mono font-bold text-[11px] text-himi-700 dark:text-himi-300">${entry.dateDisplay || entry.date || '----'}</span>
+ <span class="inline-block px-2 py-0.5 text-[10px] font-bold border rounded-full ${catStyle}">${entry.category}</span>
+ <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gradient-to-r from-himi-600 to-pink-500 text-white text-[10px] font-bold">
+ <i class="ph-fill ph-stack text-[10px]"></i>
+ <span>${entry.articles.length}媒体</span>
+ </span>
+ </div>
+ <span class="text-[11px] font-bold text-himi-600 dark:text-himi-300 inline-flex items-center gap-0.5">
+ <span>${isExpanded ? '閉じる' : '一覧'}</span>
+ <i class="ph-bold ${isExpanded ? 'ph-caret-up' : 'ph-caret-down'} text-xs"></i>
+ </span>
+ </div>
+ </td>
+
+ <td class="hidden sm:table-cell py-3.5 px-4 font-mono font-bold text-[11px] text-himi-700 dark:text-himi-300 whitespace-nowrap align-top">
+ ${entry.dateDisplay || entry.date || '----'}
+ </td>
+
+ <td class="hidden sm:table-cell py-3.5 px-3 align-top space-y-1">
+ <span class="inline-block px-2.5 py-0.5 text-[10px] font-bold border rounded-full whitespace-nowrap ${catStyle}">
+ ${entry.category}
+ </span>
+ <div>
+ <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gradient-to-r from-himi-600 to-pink-500 text-white text-[10px] font-bold">
+ <i class="ph-fill ph-stack text-[10px]"></i>
+ <span>${entry.articles.length}メディア</span>
+ </span>
+ </div>
+ </td>
+
+ <td class="p-0 sm:py-3.5 sm:px-3 align-top space-y-1.5 block sm:table-cell">
+ <div class="flex items-start justify-between gap-2">
+ <div class="font-serif font-bold text-sm text-himi-950 dark:text-white group-hover:text-himi-600 dark:group-hover:text-himi-300 transition-colors leading-relaxed break-words-any">
+ ${entry.title}
+ </div>
+ <span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-himi-100 dark:bg-himi-900/60 text-himi-700 dark:text-himi-300 text-[11px] font-bold shrink-0">
+ <span>${isExpanded ? '一覧を閉じる' : `全${entry.articles.length}件を表示`}</span>
+ <i class="ph-bold ${isExpanded ? 'ph-caret-up' : 'ph-caret-down'} text-xs"></i>
+ </span>
+ </div>
+ <div class="text-[11px] text-himi-900/85 dark:text-purple-100/90 line-clamp-2 sm:line-clamp-1 break-words-any">
+ ${entry.summary || ''}
+ </div>
+ <div class="flex flex-wrap items-center gap-1 pt-0.5">
+ <span class="text-[10px] font-bold text-himi-700 dark:text-himi-300 mr-1">掲載媒体: ${entry.mediaList.join(' / ')}</span>
+ </div>
+ <div class="pt-0.5">
+ ${tagsInline}
+ </div>
+
+ ${isExpanded ? `
+ <div class="mt-3 pt-3 border-t-2 border-dashed border-himi-200 dark:border-himi-800 space-y-2 animate-fade-in">
+ ${subListHtml}
+ </div>
+ ` : ''}
+ </td>
+
+ <td class="hidden md:table-cell py-3.5 px-3 text-[11px] font-bold text-himi-800 dark:text-purple-200 align-top">
+ <span class="line-clamp-2">${entry.mediaList.slice(0, 2).join('・')}${entry.mediaList.length > 2 ? ` ほか計${entry.articles.length}件` : ''}</span>
+ </td>
+
+ <td class="hidden sm:table-cell py-3.5 px-3 text-center align-top">
+ <button type="button" onclick="toggleFavorite(event, '${item.id}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+ <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-base"></i>
+ </button>
+ </td>
+ </tr>
+ `;
+ }).join('');
+ }
+
+ // ハンバーガーメニュー／スマホ用絞り込みドロワーの描画と開閉
+ function renderDrawerContents() {
+ const drawerCats = document.getElementById('drawer-categories');
+ const drawerTags = document.getElementById('drawer-tags');
+ const drawerYears = document.getElementById('drawer-years');
+ if (!drawerCats || !drawerTags || !drawerYears) return;
+
+ drawerCats.innerHTML = categoryPresets.map(cat => {
+ const isSelected = (cat === "すべて" && selectedCategory === "") || selectedCategory === cat;
+ let count = 0;
+ if (cat === "すべて") count = items.length;
+ else if (cat === "★ ブックマーク") count = favoriteIds.length;
+ else count = items.filter(it => it.category === cat).length;
+
+ const cls = isSelected
+ ? "bg-himi-600 text-white border-himi-600 font-bold"
+ : "bg-himi-50 dark:bg-himi-900/40 text-himi-900 dark:text-purple-100 border editorial-border font-bold";
+
+ return `
+ <button type="button" onclick="selectCategoryFilter('${cat}')" class="px-3 py-2.5 rounded-2xl border text-xs flex items-center justify-between transition-all ${cls}">
+ <span class="truncate">${cat}</span>
+ <span class="font-mono text-[10px] opacity-85">(${count})</span>
+ </button>
+ `;
+ }).join('');
+
+ const mediaTags = getAvailableMediaTags();
+
+ const themeHtml = themeTagPresets.map(tag => {
+ const isSelected = selectedTags.includes(tag);
+ const count = getTagCount(tag);
+ const iconName = tagIcons[tag] || "ph-hash";
+ const cls = isSelected
+ ? "bg-himi-600 text-white border-himi-600 font-bold shadow-xs"
+ : "bg-himi-50 dark:bg-himi-900/40 text-himi-900 dark:text-purple-100 border editorial-border font-bold";
+
+ return `
+ <button type="button" onclick="toggleTagFilter('${escapeJsStr(tag)}')" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-full border text-xs transition-all ${cls}">
+ <i class="ph-fill ${iconName} text-xs ${isSelected ? 'text-white' : 'text-himi-500'}"></i>
+ <span>${tag}</span>
+ <span class="font-mono text-[10px] opacity-75">(${count})</span>
+ </button>
+ `;
+ }).join('');
+
+ const mediaHtml = mediaTags.map(tag => {
+ const isSelected = selectedTags.includes(tag);
+ const count = getTagCount(tag);
+ const cls = isSelected
+ ? "bg-himi-600 text-white border-himi-600 font-bold shadow-xs"
+ : "bg-white dark:bg-[#1A1328] text-himi-900 dark:text-purple-100 border editorial-border font-bold";
+
+ return `
+ <button type="button" onclick="toggleTagFilter('${escapeJsStr(tag)}')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full border text-[11px] transition-all ${cls}">
+ <i class="ph-bold ph-hash text-[10px] ${isSelected ? 'text-white' : 'text-himi-500'}"></i>
+ <span>${tag}</span>
+ <span class="font-mono text-[10px] opacity-75">(${count})</span>
+ </button>
+ `;
+ }).join('');
+
+ drawerTags.innerHTML = `
+ <div class="space-y-1.5 w-full">
+ <div class="text-[11px] font-bold text-himi-700/80 dark:text-purple-300/80 flex items-center gap-1">
+ <i class="ph-fill ph-tag text-xs text-himi-500"></i>
+ <span>テーマ・活動</span>
+ </div>
+ <div class="flex flex-wrap gap-1.5">
+ ${themeHtml}
+ </div>
+ </div>
+ <div class="space-y-1.5 w-full pt-2 border-t editorial-border">
+ <div class="flex items-center justify-between text-[11px] font-bold text-himi-700/80 dark:text-purple-300/80">
+ <span class="flex items-center gap-1">
+ <i class="ph-fill ph-newspaper-clipping text-xs text-himi-500"></i>
+ <span>掲載メディア別（全${mediaTags.length}媒体）</span>
+ </span>
+ <span class="text-[10px] opacity-75">タップして選択</span>
+ </div>
+ <div class="flex flex-wrap gap-1.5 max-h-56 overflow-y-auto purple-scrollbar p-1 bg-himi-50/50 dark:bg-himi-950/40 rounded-2xl border editorial-border">
+ ${mediaHtml}
+ </div>
+ </div>
+ `;
+
+ const yearCountMap = {};
+ items.forEach(item => {
+ if (item.date && item.date.length >= 4) {
+ const yr = item.date.substring(0, 4);
+ if (/^\d{4}$/.test(yr)) yearCountMap[yr] = (yearCountMap[yr] || 0) + 1;
+ }
+ });
+
+ drawerYears.innerHTML = availableYearsList.map(yr => {
+ const isSelected = (yr === "全期間" && selectedYear === "") || selectedYear === yr;
+ const count = yr === "全期間" ? items.length : (yearCountMap[yr] || 0);
+ const cls = isSelected
+ ? "bg-himi-600 text-white border-himi-600 font-bold"
+ : "bg-himi-50 dark:bg-himi-900/40 text-himi-900 dark:text-purple-100 border editorial-border font-bold";
+
+ return `
+ <button type="button" onclick="selectYearFilter('${yr}')" class="px-2.5 py-2 rounded-2xl border text-xs font-mono flex items-center justify-center gap-1 transition-all ${cls}">
+ <span>${yr === "全期間" ? "全期間" : yr + "年"}</span>
+ <span class="text-[10px] opacity-75">(${count})</span>
+ </button>
+ `;
+ }).join('');
+ }
+
+ window.openMobileDrawer = function() {
+ renderDrawerContents();
+ const d = document.getElementById('mobile-drawer');
+ d.classList.remove('hidden');
+ d.classList.add('flex');
+ };
+
+ window.closeMobileDrawer = function() {
+ const d = document.getElementById('mobile-drawer');
+ d.classList.add('hidden');
+ d.classList.remove('flex');
+ };
+
+ window.openPolicyModal = function() {
+ const m = document.getElementById('policy-modal');
+ m.classList.remove('hidden');
+ m.classList.add('flex');
+ };
+ window.closePolicyModal = function() {
+ const m = document.getElementById('policy-modal');
+ m.classList.add('hidden');
+ m.classList.remove('flex');
+ };
+
+ searchInput.addEventListener('input', (e) => {
+ displayedCount = PAGE_SIZE;
+ searchQuery = e.target.value;
+ clearSearchBtn.classList.toggle('hidden', searchQuery.length === 0);
+ applyFiltersAndRender();
+ });
+
+ clearSearchBtn.addEventListener('click', () => {
+ searchInput.value = '';
+ searchQuery = '';
+ clearSearchBtn.classList.add('hidden');
+ searchInput.focus();
+ applyFiltersAndRender();
+ });
+
+ sortSelect.addEventListener('change', (e) => {
+ displayedCount = PAGE_SIZE;
+ currentSort = e.target.value;
+ applyFiltersAndRender();
+ });
+
+ resetFiltersBtn.addEventListener('click', resetAllFilters);
+
+ function populateItemsData(rawItems, fromCache = false) {
+ if (!Array.isArray(rawItems) || rawItems.length === 0) return;
+ items = rawItems
+ .map((raw, idx) => normalizeArticle(raw, idx))
+ .filter(it => !it.hidden)
+ .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+ if (archiveStatusBadge) {
+ archiveStatusBadge.textContent = fromCache ? `${items.length} RECORDS (キャッシュ)` : `${items.length} RECORDS`;
+ }
+ const tabArticlesBadge = document.getElementById('tab-articles-badge');
+ if (tabArticlesBadge) {
+ tabArticlesBadge.textContent = `${items.length}件`;
+ }
+ renderFeaturedArticles();
+ renderYearTimeline();
+ renderCategoryTabs();
+ renderQuickFilters();
+ applyFiltersAndRender(false);
+ renderDrawerContents();
+ applyIrisFiltersAndRender();
+ applyWorksFiltersAndRender();
+ }
+
+ // 静的JSON優先ローダー（静的配信時は `./data.json` を0.05秒で取得し、手動更新時やローカルではGASとフォールバック）
+ async function loadSpreadsheetData(force = false) {
+ const refreshIcon = document.getElementById('refresh-cache-icon');
+ if (refreshIcon) refreshIcon.classList.add('animate-spin');
+
+ if (!force) {
+ try {
+ const cachedJson = safeStorage.getItem(CACHE_KEY);
+ const cachedTime = parseInt(safeStorage.getItem(CACHE_TIME_KEY) || '0', 10);
+ const now = Date.now();
+
+ if (cachedJson && (now - cachedTime < CACHE_TTL_MS)) {
+ const cachedItems = JSON.parse(cachedJson);
+ if (Array.isArray(cachedItems) && cachedItems.length > 0) {
+ populateItemsData(cachedItems, true);
+
+ try {
+ const cachedWorksJson = safeStorage.getItem(WORKS_CACHE_KEY);
+ if (cachedWorksJson) populateWorksData(JSON.parse(cachedWorksJson));
+ const cachedIrisJson = safeStorage.getItem(IRIS_CACHE_KEY);
+ if (cachedIrisJson) populateIrisData(JSON.parse(cachedIrisJson));
+ } catch (e) {}
+
+ if (refreshIcon) refreshIcon.classList.remove('animate-spin');
+ fetchLatestData(false);
+ return;
+ }
+ }
+ } catch (e) {}
+ }
+
+ await fetchLatestData(true);
+ }
+
+ async function fetchLatestData(updateUI = true) {
+ const refreshIcon = document.getElementById('refresh-cache-icon');
+ try {
+ let data = null;
+ // 1. まず高速な静的 data.json の取得を試みる
+ try {
+ const staticRes = await fetch(STATIC_DATA_ENDPOINT, { cache: "no-cache" });
+ if (staticRes.ok) {
+ data = await staticRes.json();
+ }
+ } catch (e) {
+ // data.json が未配置またはローカルfile://の場合はGASへフォールバック
+ }
+
+ // 2. data.json が取れなかった場合は GAS API を呼び出す
+ if (!data || data.status !== "success") {
+ const controller = new AbortController();
+ const timeoutId = setTimeout(() => controller.abort(), 12000);
+ const gasRes = await fetch(LIVE_GAS_ENDPOINT, { signal: controller.signal });
+ clearTimeout(timeoutId);
+ data = await gasRes.json();
+ }
+
+ if (data && data.status === "success") {
+ if (Array.isArray(data.items) && data.items.length > 0) {
+ safeStorage.setItem(CACHE_KEY, JSON.stringify(data.items));
+ safeStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
+ if (updateUI) {
+ populateItemsData(data.items, false);
+ }
+ }
+
+ if (Array.isArray(data.works) && data.works.length > 0) {
+ safeStorage.setItem(WORKS_CACHE_KEY, JSON.stringify(data.works));
+ populateWorksData(data.works);
+ }
+
+ const rawIrisList = data.iris || data.irisEvents;
+ if (Array.isArray(rawIrisList) && rawIrisList.length > 0) {
+ safeStorage.setItem(IRIS_CACHE_KEY, JSON.stringify(rawIrisList));
+ populateIrisData(rawIrisList);
+ }
+ }
+ } catch (err) {
+ if (archiveStatusBadge) archiveStatusBadge.textContent = `${items.length} RECORDS`;
+ } finally {
+ if (refreshIcon) refreshIcon.classList.remove('animate-spin');
+ }
+ }
+
+ window.refreshArchiveData = function() {
+ displayedCount = PAGE_SIZE;
+ loadSpreadsheetData(true);
+ };
+
+ function initApp() {
+ initTheme();
+ updateFeaturedCollapseUI();
+ updateViewModeButtons();
+ updateGroupSimilarButtonUI();
+ setupTimelineInteractions();
+ if (archiveStatusBadge) archiveStatusBadge.textContent = `${items.length} RECORDS`;
+ const tabArticlesBadge = document.getElementById('tab-articles-badge');
+ if (tabArticlesBadge) tabArticlesBadge.textContent = `${items.length}件`;
+ const tabIrisBadge = document.getElementById('tab-iris-badge');
+ if (tabIrisBadge) tabIrisBadge.textContent = `${irisEvents.length}件`;
+ const tabWorksBadge = document.getElementById('tab-works-badge');
+ if (tabWorksBadge) tabWorksBadge.textContent = `${works.length}件`;
+
+ renderFeaturedArticles();
+ renderYearTimeline();
+ renderCategoryTabs();
+ renderQuickFilters();
+ applyFiltersAndRender(true);
+ renderDrawerContents();
+
+ const irisInput = document.getElementById('iris-search-input');
+ const irisClearBtn = document.getElementById('iris-clear-search-btn');
+ if (irisInput && irisClearBtn) {
+ irisInput.addEventListener('input', (e) => {
+ irisSearchQuery = e.target.value;
+ irisClearBtn.classList.toggle('hidden', irisSearchQuery.length === 0);
+ applyIrisFiltersAndRender();
+ });
+ irisClearBtn.addEventListener('click', () => {
+ irisInput.value = '';
+ irisSearchQuery = '';
+ irisClearBtn.classList.add('hidden');
+ irisInput.focus();
+ applyIrisFiltersAndRender();
+ });
+ }
+
+ renderIrisCategoryTabs();
+ applyIrisFiltersAndRender();
+
+ const worksInput = document.getElementById('works-search-input');
+ const worksClearBtn = document.getElementById('works-clear-search-btn');
+ if (worksInput && worksClearBtn) {
+ worksInput.addEventListener('input', (e) => {
+ worksSearchQuery = e.target.value;
+ worksClearBtn.classList.toggle('hidden', worksSearchQuery.length === 0);
+ applyWorksFiltersAndRender();
+ });
+ worksClearBtn.addEventListener('click', () => {
+ worksInput.value = '';
+ worksSearchQuery = '';
+ worksClearBtn.classList.add('hidden');
+ worksInput.focus();
+ applyWorksFiltersAndRender();
+ });
+ }
+
+ renderWorksCategoryTabs();
+ applyWorksFiltersAndRender();
+
+ let lastScrollY = window.scrollY;
+ window.addEventListener('scroll', () => {
+ const currentScrollY = window.scrollY;
+ const floatingBar = document.getElementById('mobile-floating-bar');
+ if (!floatingBar) return;
+ if (currentScrollY > lastScrollY && currentScrollY > 120) {
+ floatingBar.style.transform = 'translateY(130%)';
+ floatingBar.style.opacity = '0';
+ } else {
+ floatingBar.style.transform = 'translateY(0)';
+ floatingBar.style.opacity = '1';
+ }
+ lastScrollY = currentScrollY;
+ }, { passive: true });
+
+ loadSpreadsheetData(false);
+ }
+
+ if (document.readyState === 'loading') {
+ document.addEventListener('DOMContentLoaded', initApp);
+ } else {
+ initApp();
+ }
+ </script>
+</body>
+</html>
