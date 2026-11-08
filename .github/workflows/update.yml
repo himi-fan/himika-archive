@@ -1,0 +1,28 @@
+name: Update Archive Data
+
+on:
+  schedule:
+    # 毎日午前3時（日本時間）に自動実行
+    - cron: '0 18 * * *'
+  # GitHubの画面から手動で「今すぐ更新」ボタンを押すことも可能
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: GASから最新データを取得
+        run: |
+          curl -sL "https://script.google.com/macros/s/AKfycbwPjjtMlbBxJRwZnruJolqaOwlKgg3FZOurpJ89r4FoFsvbZS2_YECOOQbncMtWYDio/exec" -o data.json
+
+      - name: 変更があれば自動コミットしてプッシュ
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update data.json from Spreadsheet" && git push)
