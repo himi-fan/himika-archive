@@ -321,17 +321,6 @@
               </select>
               <i class="ph-bold ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-himi-600 text-xs pointer-events-none"></i>
             </div>
-
-            <div class="hidden md:inline-flex rounded-2xl border editorial-border bg-himi-50/80 dark:bg-[#110C1B] p-1 shrink-0">
-              <button type="button" id="view-grid-btn" onclick="setViewMode('grid')" class="inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl transition-all" title="カード表示">
-                <i class="ph-bold ph-squares-four text-sm"></i>
-                <span class="hidden sm:inline">カード</span>
-              </button>
-              <button type="button" id="view-list-btn" onclick="setViewMode('list')" class="inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl transition-all" title="コンパクトリスト表示">
-                <i class="ph-bold ph-rows text-sm"></i>
-                <span class="hidden sm:inline">目次リスト</span>
-              </button>
-            </div>
           </div>
         </div>
 
@@ -449,11 +438,9 @@
 
       <!-- 記事一覧表示エリア -->
       <section id="archive-display-wrapper" class="space-y-4">
-        <!-- カードグリッド表示 -->
-        <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-start"></div>
 
         <!-- コンパクトリスト表示（スマホでも横スクロール不要で見やすいレスポンシブ設計） -->
-        <div id="list-container" class="hidden bg-white dark:bg-[#181226] border editorial-border rounded-3xl overflow-hidden shadow-xs">
+        <div id="list-container" class="bg-white dark:bg-[#181226] border editorial-border rounded-3xl overflow-hidden shadow-xs">
           <div class="overflow-x-auto purple-scrollbar">
             <table class="w-full text-left border-collapse">
               <thead class="hidden sm:table-header-group">
@@ -883,61 +870,9 @@
         .replace(/[ァ-ヶ]/g, m => String.fromCharCode(m.charCodeAt(0) - 0x60));
     }
 
-    const initialWorksData = [
-      {"id":1,"category":"アニメ","title":"プリパラ","role":"真中らぁら（主演）","period":"2014年〜","description":"初主演を務めた代表作シリーズ。主人公・真中らぁら役としてTVアニメ『プリパラ』『アイドルタイムプリパラ』から10周年記念ライブ、劇場版『アイカツ！×プリパラ THE MOVIE -出会いのキセキ！-』（2025年）まで10年以上にわたり演じ続けている。","officialUrl":"https://www.tv-tokyo.co.jp/anime/pripara/","watchUrl":"","tag":"プリパラ","recommended":true},
-      {"id":2,"category":"アニメ","title":"終末のイゼッタ","role":"イゼッタ（主演）","period":"2016年","description":"オリジナルTVアニメ。エイルシュタット公国を守るため「白き魔女」として戦場に立つ主人公・イゼッタ役を熱演し、シリアスな人間ドラマと芯のある演技が高く評価された。","officialUrl":"https://sh-anime.shochiku.co.jp/izetta/","watchUrl":"","tag":"終末のイゼッタ","recommended":true},
-      {"id":3,"category":"舞台","title":"ワールドトリガー the Stage","role":"宇佐美栞","period":"2021年〜2025年","description":"大人気SFアクション漫画の舞台化シリーズ。2021年の初演から2025年の「B級ランク戦最終決戦編」まで、玉狛第2のオペレーター・宇佐美栞役として闘う仲間を支える役どころを一貫して好演。","officialUrl":"https://worldtrigger-stage.com/","watchUrl":"","tag":"ワールドトリガー","recommended":true},
-      {"id":4,"category":"アニメ","title":"魔法少女サイト","role":"奴村露乃","period":"2018年","description":"過酷な運命に立ち向かう少女たちを描くダークファンタジーTVアニメ。主人公・朝霧彩の最大の理解者となるメインキャラクター・奴村露乃役を担当し、キャラクターソング「believe again」MVでは初のソロダンスにも挑戦した。","officialUrl":"https://mahoushoujyo-anime.com/","watchUrl":"","tag":"魔法少女サイト","recommended":true},
-      {"id":5,"category":"アニメ","title":"Dance with Devils","role":"立華リツカ（ヒロイン）","period":"2015年〜2017年","description":"アクマとヴァンパイアに翻弄される運命を描いたミュージカルアニメ。ヒロイン・立華リツカ役としてTVアニメ（2015年）および劇場版『Dance with Devils-Fortuna-』（2017年）に出演し、劇中ミュージカル曲も歌唱。","officialUrl":"https://dwd-anime.com/","watchUrl":"","tag":"Dance with Devils","recommended":true},
-      {"id":6,"category":"ソロ音楽","title":"Himika Akaneya","role":"Himika Akaneya（ソロアーティスト）","period":"2023年〜","description":"ソロアーティスト名義。TVアニメ『MFゴースト』1st〜3rd SeasonのEDテーマとなった1stシングル「Stereo Sunset (Prod. AmPm)」、2ndシングル「Side U (Prod. AmPm)」、3rdシングル「予感の途中 Prod. ☆Taku Takahashi (m-flo)」などをリリースし、大人のシティポップ・ダンスミュージックとファルセット表現で新境地を拓く。","officialUrl":"https://avex.jp/himika/","watchUrl":"","tag":"ソロ","recommended":true}
-    ];
+    const initialWorksData = [];
 
-    const initialIrisData = [
-      {"id":1,"category":"ツアー","title":"i☆Ris Final Live Tour 2027","period":"2027年4月〜7月","venue":"全国12会場17公演（初日：千葉・市川市文化会館 / 千秋楽：東京・立川ステージガーデン）","description":"2027年末の活動終了を前に開催される、i☆Risにとって最後となる全国ツアー。全国12会場17公演を巡り、15年間の集大成としてファンへの感謝を届けるラストツアー。","officialUrl":"https://iris.dive2ent.com/news/detail.php?id=1136911","tag":"Final Live Tour, ファイナルツアー, Final Live Tour 2027, ラストツアー"},
-      {"id":2,"category":"周年ライブ","title":"i☆Ris 14th Anniversary Live ～FANTASISTA～","period":"2026年11月3日","venue":"横浜アリーナ","description":"グループ初となる横浜アリーナ単独公演として開催されたデビュー14周年記念ライブ。「幻想曲WONDERLAND」での茜屋日海夏さんの開幕シャウトや初期衣装での「Color」、山北早紀さんとの「Believe in」デュエット、客席降臨など全29曲を披露。ファイナルツアー等の重大発表も行われた。","officialUrl":"https://www.lisani.jp/0000321540/","tag":"14th Anniversary Live, 14周年記念, 14周年ライブ, FANTASISTA, 横浜アリーナ"},
-      {"id":3,"category":"その他のイベント","title":"TOKYO IDOL FESTIVAL (TIF2026 / TIF2025 ほか)","period":"2026年8月 / 2025年8月 ほか","venue":"お台場・青海周辺エリア（HOT STAGEほか）","description":"世界最大のアイドルフェス「TOKYO IDOL FESTIVAL」への出演。7年ぶりの凱旋となったTIF2025や、14年目の総合力を見せつけたTIF2026のHOT STAGEなど、恒例の自己紹介や熱いパフォーマンスで会場を魅了。","officialUrl":"https://nikkan-spa.jp/2178229","tag":"TIF2026, TIF2025, TIFで刺激"},
-      {"id":4,"category":"その他のイベント","title":"Animelo Summer Live (アニサマ2026 / 2013 ほか)","period":"2026年7月 / 2013年8月 ほか","venue":"さいたまスーパーアリーナ","description":"世界最大級のアニソンフェス「アニサマ」への出演。2013年の初出場から、14周年のキャリアが光る2026年DAY3ステージ（『アイカツ！×プリパラ』コラボメドレーや『賢者の孫』主題歌など計4曲披露）まで数々の名演を刻む。","officialUrl":"https://www.animatetimes.com/news/details.php?id=1783827263","tag":"Animelo Summer Live, アニサマ2026, 2度目のアニサマ"},
-      {"id":5,"category":"ツアー","title":"i☆Ris 11th Live Tour 2026 ～VINTAGEイイ味出てます～","period":"2026年5月〜7月","venue":"全国ツアー（千秋楽：立川ステージガーデン）","description":"11回目の全国ツアー。ツアーテーマ曲「Sweet(×5) Vintage!」や27thシングル「Welcome to あざとさワールド」などを披露し、全公演完売を達成。円熟味あふれるステージとともに横浜アリーナ公演への決意を表明。","officialUrl":"https://www.lisani.jp/0000316491/","tag":"11th Live Tour, 11th全国ツアー, VINTAGEイイ味出てます"},
-      {"id":6,"category":"周年ライブ","title":"i☆Ris 13th Anniversary Live -TITLE MATCH-","period":"2025年11月15日","venue":"ぴあアリーナMM","description":"2年連続となるぴあアリーナMMで開催されたデビュー13周年記念ライブ。チケット完売のリベンジとグループ史上最多動員を達成し、ソロバトルでの「Stereo Sunset」披露や掛け声バトル、新曲「夢へのヒトカケラ」を含む全30曲を熱唱。","officialUrl":"https://www.lisani.jp/0000296828/","tag":"13th Anniversary Live, 13周年記念, 13周年ライブ, TITLE MATCH, 13周年アリーナ"},
-      {"id":7,"category":"ツアー","title":"i☆Ris 10th Live Tour 2025 ～ViVa i☆Ris～","period":"2025年5月〜7月","venue":"全国ツアー（初日：埼玉 / 千秋楽：東京）","description":"5thアルバム『ViVa i☆DOL』を引っ提げた記念すべき10回目の全国ツアー。自身がプロデュースに携わった楽曲や「Platonic」などアルバム新曲を披露し、ぴあアリーナMMでの13周年リベンジ公演も発表された。","officialUrl":"https://www.lisani.jp/0000288168/","tag":"10th Live Tour, 10th全国ツアー, ViVa i☆Ris"},
-      {"id":8,"category":"その他のイベント","title":"劇場版アニメ『i☆Ris the Movie - Full Energy!! -』公開記念＆SPイベント","period":"2024年3月〜2025年2月","venue":"AnimeJapan 2024 / 完成披露上映会 / SPイベント","description":"10周年プロジェクトの集大成となる劇場版アニメの関連イベント群。AJ2024での主題歌「愛 for you！」初披露、完成披露プレミア上映会、シャッフル生アフレコや劇中曲ライブを行ったSPイベントなどを開催。","officialUrl":"https://www.animatetimes.com/news/details.php?id=1740306866","tag":"i☆Ris the Movie"},
-      {"id":9,"category":"周年ライブ","title":"i☆Ris 12th Anniversary Live ‐初☆アリーナMM(マジみて)‐","period":"2024年11月4日","venue":"ぴあアリーナMM","description":"デビュー12周年を記念し、グループ史上最大規模となる初のアリーナ単独公演として開催。花道やセンターステージを駆使して12年間の歴史を凝縮した全28曲を披露し、MCではアイドルとしても高みを目指し続ける真摯な決意を語った。","officialUrl":"https://www.lisani.jp/0000271923/","tag":"12th Anniversary Live, 12周年記念, 初☆アリーナMM"},
-      {"id":10,"category":"その他のイベント","title":"実写映画『Live & Documentary Movie ～i☆Ris on STAGE～』公開記念舞台挨拶","period":"2024年9月14日","venue":"新宿バルト9 ほか","description":"グループ初の実写ライブドキュメンタリー映画の公開記念舞台挨拶＆インタビュー。長期密着や故郷・秋田ロケの裏話、過去のライブ映像を振り返って「常に今が最高と更新し続けている」と語ったほか、澁谷梓希からのサプライズ手紙も披露された。","officialUrl":"https://natalie.mu/comic/news/590946","tag":"i☆Ris on STAGE"},
-      {"id":11,"category":"その他のイベント","title":"ナガノアニエラフェスタ 2024","period":"2024年9月21日〜22日","venue":"長野県佐久市・駒場公園","description":"長野県で開催されたアニソン野外フェスへの出演。開催前対談では若井友希と共に前年の初出演時の思い出や野外ならではの開放感、ライブへの意気込みを語った。","officialUrl":"https://www.lisani.jp/0000266103/","tag":"ナガノアニエラフェスタ"},
-      {"id":12,"category":"ツアー","title":"i☆Ris 9th Live Tour 2024 愛たくて…Full Ener9y!!","period":"2024年4月〜6月","venue":"全国ツアー（神奈川・東京ほか）","description":"劇場版アニメ『i☆Ris the Movie - Full Energy!! -』公開と連動して開催された9回目の全国ツアー。主題歌「愛 for you！」や挿入歌「希望の花を」など、メンバーとファンの愛が響き合う熱いステージを展開。","officialUrl":"https://www.lisani.jp/0000265353/","tag":"9th Live Tour, 9th全国ツアー, Full Ener9y"},
-      {"id":13,"category":"周年ライブ","title":"i☆Ris 11th Anniversary Live ～Heart Jack～","period":"2023年11月26日","venue":"パシフィコ横浜 国立大ホール","description":"5人が怪盗となってファンのハートを奪うコンセプトで開催されたデビュー11周年記念ライブ。客席降臨演出や新曲「White Lyrical Kingdom」「Let you know!」の初披露、劇場版アニメに向けた歓声公開収録も行われた。","officialUrl":"https://www.lisani.jp/0000245877/","tag":"11th Anniversary Live, 11周年ライブ, 11周年記念ライブ, Heart Jack"},
-      {"id":14,"category":"ツアー","title":"i☆Ris 8th Live Tour 2023 ～わっしょい!!!!!～","period":"2023年4月〜6月","venue":"全国ツアー（千秋楽：TOKYO DOME CITY HALL）","description":"約3年ぶりの声出し解禁となった8回目の全国ツアー。前山田健一提供のテーマ曲「あっぱれ！馬鹿騒ぎ」や縁日・屋台演出、ファン投票によるシャッフルユニットコーナー（「Secret Garden」「Believe in」等）で百花繚乱の盛り上がりを見せた。","officialUrl":"https://avexnet.jp/column/1000642","tag":"8th Live Tour, 8th全国ツアー, わっしょい!!!!!"},
-      {"id":15,"category":"周年ライブ","title":"i☆Ris 10th Anniversary Live ～a Live～","period":"2022年11月7日","venue":"東京国際フォーラム ホールA","description":"デビュー10周年記念日当日に生バンド編成を交えて開催された集大成ライブ。デビュー曲「Color」から『プリパラ』歴代OPメドレー、メンバーの手紙をもとに作られた新曲「Anniversary」まで全27曲を披露し、劇場版アニメ化決定も発表された。","officialUrl":"https://www.lisani.jp/0000215144/","tag":"10th Anniversary Live, 10周年記念ライブ, 10周年ライブ, ～a Live～"},
-      {"id":16,"category":"ツアー","title":"i☆Ris 7th Live Tour 2022 ～Traveling～","period":"2022年4月〜6月","venue":"全国ツアー（名古屋・中野サンプラザほか）","description":"10周年イヤーに“i☆Ris AirLine”による空の旅をコンセプトに開催された7thツアー。CA風衣装での登場やツアー新曲「Dream Travelers」、22ndシングル「Queens Bluff」初披露、若井友希とのデュエットなどを披露。","officialUrl":"https://www.lisani.jp/0000203459/","tag":"7th Live Tour, 7thライブツアー, Traveling"},
-      {"id":17,"category":"周年ライブ","title":"i☆Ris 9th Anniversary Live ～Queen's Message～","period":"2021年11月7日","venue":"幕張メッセ イベントホール","description":"5人体制となって初の周年ライブ。フォーメーションを再構築した楽曲群や新曲「12月のSnowry」「5STAR☆(仮)」「Cheer up」の初披露、初のトロッコ・リフター演出、直筆メッセージ公開など10年目への決意を示した一夜。","officialUrl":"https://spice.eplus.jp/articles/296393","tag":"9th Anniversary Live, 9周年記念ライブ, 9周年ライブ, Queen's Message"},
-      {"id":18,"category":"ツアー","title":"i☆Ris 6th Live Tour 2021 ～Carnival～","period":"2021年4月〜7月","venue":"全国ツアー（東京・愛知・大阪ほか）","description":"5人体制での新たなスタートとして開催された6回目の全国ツアー。歌割りやフォーメーションを再構築し、4thアルバム『Shall we☆Carnival』の楽曲や20thシングル「Summer Dude」へと繋がる進化したパフォーマンスを披露。","officialUrl":"https://barks.jp/news/916096/","tag":"新体制のツアー, Summer Dude"},
-      {"id":19,"category":"その他のイベント","title":"i☆Ris LIVE 2021 ～storiez～（6人体制ラストライブ）","period":"2021年3月28日","venue":"パシフィコ横浜 国立大ホール","description":"澁谷梓希の卒業公演となる、6人体制最後のワンマンライブ。デビュー曲「Color」から「Memorial」やプリパラメドレーまで約8年間の軌跡を詰め込み、心からの感謝と共に新たな一歩へと送り出した感動のステージ。","officialUrl":"https://www.lisani.jp/0000169857/","tag":"storiez, 6人体制ラストライブ"},
-      {"id":20,"category":"その他のイベント","title":"i☆Ris Special Online Live 2021","period":"2021年1月16日","venue":"オンライン配信ライブ","description":"2021年の“ライブ始め”として開催されたオンラインワンマンライブ。ソロコーナーでの「WHAT YOU ARE」披露など多彩なパフォーマンスを展開。","officialUrl":"https://seigura.com/news/53353/","tag":"Special Online Live 2021"},
-      {"id":21,"category":"周年ライブ","title":"i☆Ris 8th Anniversary Live ～88888888～ (パチパチ)","period":"2020年11月7日","venue":"河口湖ステラシアター（生配信）","description":"約1年ぶりのワンマンとして思い出の地・河口湖ステラシアターから無観客生配信されたデビュー8周年記念ライブ。4thアルバム曲「ハピラキ☆Dream Carnival」「Spending」初披露やAR演出、夜空を彩る花火で魅了した。","officialUrl":"https://www.lisani.jp/0000158197/","tag":"8th Anniversary Live, 8周年記念ライブ, 8周年ライブ, 88888888"},
-      {"id":22,"category":"その他のイベント","title":"虹会ファンクラブイベント 2020 WINTER","period":"2020年2月","venue":"ファンクラブ限定イベント","description":"公式ファンクラブ「虹会」の会員限定イベント。珍回答続出のバラエティゲームコーナーと熱狂のライブパートでファンとの交流を楽しんだ。","officialUrl":"https://avexnet.jp/column/1000359","tag":"虹会ファンクラブイベント"},
-      {"id":23,"category":"周年ライブ","title":"i☆Ris 7th Anniversary Live ～七福万来～","period":"2019年11月24日","venue":"パシフィコ横浜 国立大ホール","description":"パシフィコ横浜に約5,000人のファンを集めて開催されたデビュー7周年記念ライブ。チャイナ風の華やかなコンセプト衣装や「FANTASTIC ILLUSION」「Changing point」、新曲「泡沫の光」初披露など7年間の絆を響かせた。","officialUrl":"https://www.lisani.jp/0000140446/","tag":"7th Anniversary Live, 7周年記念ライブ, 七福万来"},
-      {"id":24,"category":"ツアー","title":"i☆Ris 5th Live Tour 2019 ～FEVER～","period":"2019年4月〜6月","venue":"全国ツアー（千秋楽：中野サンプラザ）","description":"メンバー自身が構成・演出に深く携わった5回目の全国ツアー。燕尾ベスト姿でのツアーテーマ曲「ありえんほどフィーバー」やバーレスク風のダンスパフォーマンス、18thシングル「アルティメット☆MAGIC」初披露などショーアップされたステージで魅了。","officialUrl":"https://www.lisani.jp/0000131688/","tag":"5th Live Tour, 5th全国ツアー, 5thツアー, ありえんほどフィーバー"},
-      {"id":25,"category":"その他のイベント","title":"i☆Ris & Wake Up, Girls！ & Run Girls, Run！ バレンタインLive 2019","period":"2019年2月2日","venue":"ベイサイドヨコハマ","description":"姉妹ユニットであるi☆Ris・Wake Up, Girls！・Run Girls, Run！の3組が集結した合同バレンタインイベント。3ユニットの絆が光るトークやコラボライブステージが繰り広げられた。","officialUrl":"https://www.lisani.jp/0000123623/","tag":"バレンタインLive 2019, バレンタイン Live 2019"},
-      {"id":26,"category":"周年ライブ","title":"i☆Ris 6th Anniversary Live ～Lock on♡ 無理なんて言わせないっ！～","period":"2018年11月7日","venue":"TOKYO DOME CITY HALL","description":"デビュー6周年記念日に開催されたアニバーサリーライブ。メンバー自身が構成に携わったストーリー仕立てのステージで、若井友希とのデュエット曲「流星」や新曲「アメコイ」初披露など全19曲をパフォーマンス。","officialUrl":"https://www.lisani.jp/0000119174/","tag":"6th Anniversary Live, 6周年記念ライブ, Lock on"},
-      {"id":27,"category":"ツアー","title":"i☆Ris 4th Live Tour 2018 ～WONDERFUL PALETTE～","period":"2018年4月〜6月","venue":"全国ツアー（中野サンプラザ・名古屋ほか）","description":"3rdアルバム『WONDERFUL PALETTE』を引っ提げた4th全国ツアー。自身が作詞・歌唱したソロ曲「Dear...」や「Memorial」「Changing point」、最終・名古屋公演での「Color」披露など6人の実力が光るツアーとなった。","officialUrl":"https://www.lisani.jp/0000109648/","tag":"4th Live Tour, 4th全国ツアー, 4thツアー, 4回目の全国ツアー"},
-      {"id":28,"category":"周年ライブ","title":"i☆Ris 5th Anniversary Live ～Go～","period":"2017年11月6日〜7日","venue":"府中の森芸術劇場 どりーむホール","description":"デビュー5周年を記念した2DAYSライブ。ファン投票による楽曲ランキングTOP10の発表＆披露や、新曲「WONDERFUL PALETTE」初披露など、5年間の成長とさらなる未来への一歩を刻んだ公演。","officialUrl":"https://www.lisani.jp/0000065185/","tag":"5th Anniversary Live, デビュー5周年記念ライブ, 5周年ライブ"},
-      {"id":29,"category":"周年ライブ","title":"i☆Ris 結成5周年記念Live ～5 years old! Everyone comes together☆～","period":"2017年7月17日","venue":"かつしかシンフォニーヒルズ","description":"結成5周年を記念して開催されたスペシャルイベント。前半の「真夏の大運動会」ではリレー・大縄跳び・尻相撲で白熱のバトルを繰り広げ、後半ライブでは「真夏の花火と秘密基地」初披露や自身の23歳バースデーサプライズ祝福も行われた。","officialUrl":"https://www.lisani.jp/0000057746/","tag":"結成5周年記念"},
-      {"id":30,"category":"ツアー","title":"i☆Ris 3rd Live Tour 2017 ～Fan+6=∞～","period":"2017年4月〜6月","venue":"全国9ヵ所17公演（ファイナル：NHK大阪ホール）","description":"日本武道館公演を経て、過去最多となる全国9ヵ所17公演を巡った3rdツアー。ファイナル大阪公演ではソロで「WHAT YOU ARE」を披露し、「i☆Risでいられることが誇らしい」とメンバーやファンへの思いを語った。","officialUrl":"https://www.lisani.jp/0000055151/","tag":"3rd Live Tour, 3rd全国ツアー, 3rdツアー"},
-      {"id":31,"category":"その他のイベント","title":"ANIMAX MUSIX 2017 OSAKA","period":"2017年1月14日","venue":"大阪城ホール","description":"大阪城ホールで開催されたアニメミュージックイベントへの出演。声優アイドルならではの強みを生かしたパフォーマンスやコラボステージの感想を語った。","officialUrl":"https://news.mynavi.jp/article/20170330-iRis/","tag":"ANIMAX MUSIX"},
-      {"id":32,"category":"その他のイベント","title":"シングル＆アルバム発売記念リリースイベント（噴水広場・教会広場ほか）","period":"2015年〜2017年","venue":"池袋サンシャインシティ噴水広場 / ヴィーナスフォート教会広場","description":"9thシングル「ドリームパレード」（噴水広場）、11thシングル「Goin'on」＆2ndアルバム（教会広場）、14thシングル「Shining Star」など、憧れのステージで新衣装・新曲を初披露してきたメモリアルなリリースイベント群。","officialUrl":"https://www.lisani.jp/0000001576/","tag":"リリースイベント, 予約イベント"},
-      {"id":33,"category":"周年ライブ","title":"i☆Ris 4th Anniversary Live ～418～（日本武道館）","period":"2016年11月25日","venue":"日本武道館","description":"デビュー4周年にして念願の初・日本武道館単独公演。「鏡のLabyrinth」への想いやデビュー当時の葛藤、メンバーとファンへの感謝を涙ながらに語り、「どうしても6人全員でこの曲を歌いたい」と選んだ「ドリームパレード」まで全20曲を駆け抜けた。","officialUrl":"https://www.lisani.jp/0000037644/","tag":"4th Anniversary Live, 4周年記念ライブ, 日本武道館公演, 武道館ライブ"},
-      {"id":34,"category":"周年ライブ","title":"i☆Ris 結成4周年記念Live ～foooour～","period":"2016年7月9日","venue":"河口湖ステラシアター","description":"デビュー合宿を行った思い出の地・河口湖での結成4周年凱旋野外ライブ。特別列車「i☆Ris号」の車内ナレーションや、弾き語り、法被姿でのレアアニソンカバー、「Garnet」「Re:Call」初披露など全21曲を披露。","officialUrl":"https://www.lisani.jp/0000002020/","tag":"結成4周年, foooor, foooour"},
-      {"id":35,"category":"ツアー","title":"i☆Ris 2nd Live Tour 2016 ～Th!s !s i☆Ris!!～","period":"2016年4月〜5月","venue":"全国5大都市Zeppツアー（千秋楽：Zepp Tokyo）","description":"2ndアルバム『Th!s !s i☆Ris!!』を携えて全国5大都市のZeppを巡った2ndツアー。ユニット曲「Secret Garden」披露や恒例のアフレコ劇、13thシングル『Re:Call』発表など熱狂のステージを展開。","officialUrl":"https://www.animatetimes.com/news/details.php?id=1463849765","tag":"2nd Live Tour, 2ndライブツアー, 2ndツアー"},
-      {"id":36,"category":"周年ライブ","title":"i☆Ris 3rd Anniversary LIVE ～GALAXY～","period":"2015年11月8日","venue":"豊洲PIT","description":"豊洲PITに約3,000人を動員して開催されたデビュー3周年記念ライブ。ソロコーナーでの「特捜戦隊デカレンジャー」熱唱や、3年間の総括と4年目の飛躍を誓う全21曲のステージを披露。","officialUrl":"https://www.lisani.jp/0000001734/","tag":"3rd Anniversary LIVE, 3周年記念ライブ, i☆Ris3周年ライブ, デビュー3周年"},
-      {"id":37,"category":"周年ライブ","title":"i☆Ris 結成3周年記念イベント","period":"2015年7月25日","venue":"竹芝ニューピアホール","description":"結成3周年を記念して開催されたトーク＆ライブイベント。メンバーカラーの帯を取り入れた浴衣姿でのファンアンケート企画や告白セリフコーナー、デビュー前の秘蔵映像公開、ライブステージで会場を沸かせた。","officialUrl":"https://www.lisani.jp/0000001698/","tag":"結成3周年"},
-      {"id":38,"category":"ツアー","title":"i☆Ris 1st Live Tour 2015 ～We are i☆Ris!!!～","period":"2015年4月〜5月","venue":"全国4大都市ツアー（ファイナル：Zepp Tokyo）","description":"1stフルアルバム『We are i☆Ris!!!』を引っ提げて開催された初の全国ツアー。若井友希とのデュエットバラード「流星」や朗読劇、新曲「ドリームパレード」初披露、そして「やってきたことはムダじゃなかった」と決意を語った記念すべきツアー。","officialUrl":"https://www.lisani.jp/0000001560/","tag":"1st Live Tour, 1st全国ツアー, 1stツアー, 初の全国ツアー"},
-      {"id":39,"category":"その他のイベント","title":"AKIBAカルチャーズ劇場 メンバー生誕祭イベント","period":"2014年11月〜2015年3月","venue":"AKIBAカルチャーズ劇場","description":"メンバーそれぞれの誕生日に合わせて開催された生誕祭イベント（「若井友希生誕祭」「久保田未夢生誕祭」「山北早紀生誕祭」等）。特別ユニットでの「おジャ魔女カーニバル!!」カバーやアレンジ自己紹介などで祝福した。","officialUrl":"https://www.lisani.jp/0000001488/","tag":"生誕祭"},
-      {"id":40,"category":"周年ライブ","title":"i☆Ris 2nd Anniversary Live ～Dream Evolution～","period":"2014年11月23日","venue":"六本木ブルーシアター","description":"デビュー2周年記念ライブ。「ミラクル☆パラダイス」から幕を開け、SoLaMi♡SMILEとしての『プリパラ』キャラクターソング初披露や生アフレココーナーなど、2年間の進化を証明する全17曲を披露。","officialUrl":"https://www.lisani.jp/0000001418/","tag":"2nd Anniversary Live, 2周年記念ライブ, 2周年ライブ"},
-      {"id":41,"category":"その他のイベント","title":"i☆Ris 2ndワンマンライブ ～STEP INTO THE RAINBOW～","period":"2014年3月30日","venue":"新宿BLAZE","description":"新宿BLAZEで開催された2度目のワンマンライブ。若井友希とのカバー披露や生アフレコへの初挑戦、5thシングル「徒太陽」初披露など、初期の熱気あふれるステージ。","officialUrl":"https://www.lisani.jp/0000001178/","tag":"STEP INTO THE RAINBOW, 2ndワンマンライブ"},
-      {"id":42,"category":"周年ライブ","title":"i☆Ris 1st Anniversary Live -THANK YOU ALL-","period":"2013年11月9日","venue":"原宿アストロホール","description":"デビュー1周年を記念した初のアニバーサリーワンマンライブ。1周年記念シングル「幻想曲WONDERLAND」の披露や、仲間とファンに支えられ「1人じゃない」と実感した感謝のMCが綴られた原点となる公演。","officialUrl":"https://repotama.com/2013/11/63648/","tag":"デビュー１周年ライブ, 1st Anniversary, 1周年記念ライブ"},
-      {"id":43,"category":"周年ライブ","title":"i☆Ris 結成1周年記念イベント","period":"2013年7月7日","venue":"表参道GROUND","description":"結成1周年を記念して開催されたイベント。3rdシングル「§Rainbow」の初披露や、「Animelo Summer Live 2013 -FLAG NINE-」への初出演決定がサプライズ発表されメンバー全員が感涙した。","officialUrl":"https://barks.jp/news/699557/","tag":"結成1周年記念イベント"},
-      {"id":44,"category":"その他のイベント","title":"デビュー曲「Color」お披露目イベント＆秋葉原 毎週月曜定期ライブ","period":"2012年10月〜2013年5月","venue":"アキバ☆ソフマップ1号店 ほか","description":"2012年10月のデビュー曲「Color」お披露目イベントから、2013年春に開催された毎週月曜定期ライブ最終公演まで、自身が選曲した「おジャ魔女カーニバル!!」カバー披露や1周年ライブサプライズ発表など、i☆Risの礎を築いた初期イベント。","officialUrl":"https://barks.jp/news/695796/","tag":"お披露目イベント, 定期ライブ"}
-    ];
+    const initialIrisData = [];
 
     // URLから媒体名を自動補完するマップ（GAS経由の最新データ取得時にも活用）
     const DOMAIN_MEDIA_MAP = {
@@ -1428,7 +1363,6 @@
     let isTagsExpandedOnMobile = false;
     let isMobileFiltersOpen = false;
 
-    let viewMode = safeStorage.getItem('himika_view_mode') || "grid";
     let isFeaturedCollapsed = safeStorage.getItem('himika_featured_collapsed') === 'true';
     let favoriteIds = [];
     try {
@@ -1493,7 +1427,6 @@
       "対談": "ph-chats-circle"
     };
 
-    const cardsContainer = document.getElementById('cards-container');
     const listContainer = document.getElementById('list-container');
     const listTableBody = document.getElementById('list-table-body');
     const yearTimeline = document.getElementById('year-timeline');
@@ -1611,25 +1544,6 @@
       }
       applyFiltersAndRender();
     };
-
-    window.setViewMode = function(mode) {
-      viewMode = mode;
-      safeStorage.setItem('himika_view_mode', mode);
-      updateViewModeButtons();
-      applyFiltersAndRender();
-    };
-
-    function updateViewModeButtons() {
-      const gridBtn = document.getElementById('view-grid-btn');
-      const listBtn = document.getElementById('view-list-btn');
-      if (viewMode === 'grid') {
-        gridBtn.className = "inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl bg-himi-600 text-white shadow-xs transition-all";
-        listBtn.className = "inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl text-himi-800/70 hover:text-himi-950 dark:text-purple-200/70 dark:hover:text-white transition-all";
-      } else {
-        listBtn.className = "inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl bg-himi-600 text-white shadow-xs transition-all";
-        gridBtn.className = "inline-flex items-center gap-1 px-3 py-2 text-xs font-bold rounded-xl text-himi-800/70 hover:text-himi-950 dark:text-purple-200/70 dark:hover:text-white transition-all";
-      }
-    }
 
     function setupTimelineInteractions() {
       let isDown = false;
@@ -2120,24 +2034,13 @@
       const allLoadedText = document.getElementById('all-loaded-text');
 
       if (totalEntries === 0) {
-        cardsContainer.classList.add('hidden');
         listContainer.classList.add('hidden');
         emptyState.classList.remove('hidden');
         if (loadMoreContainer) loadMoreContainer.classList.add('hidden');
       } else {
         emptyState.classList.add('hidden');
-        const isMobileScreen = window.innerWidth < 768;
-        const effectiveMode = isMobileScreen ? 'list' : viewMode;
-
-        if (effectiveMode === 'grid') {
-          listContainer.classList.add('hidden');
-          cardsContainer.classList.remove('hidden');
-          renderMagazineGrid(visibleEntries);
-        } else {
-          cardsContainer.classList.add('hidden');
-          listContainer.classList.remove('hidden');
-          renderIndexTable(visibleEntries);
-        }
+        listContainer.classList.remove('hidden');
+        renderIndexTable(visibleEntries);
 
         if (loadMoreContainer) {
           if (totalEntries > displayedCount) {
@@ -2559,6 +2462,11 @@
         countLabel.textContent = `全 ${irisEvents.length} 項目中 ${filtered.length} 件を表示`;
       }
 
+      if (irisEvents.length === 0) {
+        if (empty) empty.classList.add('hidden');
+        return;
+      }
+
       if (filtered.length === 0) {
         if (grid) grid.classList.add('hidden');
         if (empty) empty.classList.remove('hidden');
@@ -2960,177 +2868,6 @@
         return "bg-indigo-100 text-indigo-900 border-indigo-300 dark:bg-indigo-950/70 dark:text-indigo-200 dark:border-indigo-800";
       }
       return "bg-himi-100 text-himi-900 border-himi-300 dark:bg-himi-900/70 dark:text-himi-200 dark:border-himi-700";
-    }
-
-    // カードグリッド描画（単一記事 ＆ 複数メディア集約カード対応）
-    function renderMagazineGrid(entries) {
-      cardsContainer.innerHTML = entries.map(entry => {
-        const item = entry.primary;
-        const isGroup = entry.isGroup && entry.articles.length > 1;
-        const isExpanded = isGroup && expandedArticleGroupKeys.has(entry.groupKey);
-        const isFav = entry.articles.some(a => favoriteIds.includes(a.id));
-        const catStyle = getCategoryBadgeClass(entry.category);
-
-        const tagsHtml = (entry.tags || []).slice(0, 4).map(t => {
-          const isSelected = selectedTags.includes(t);
-          const tStyle = isSelected
-            ? "bg-himi-600 text-white font-bold"
-            : "bg-himi-50 dark:bg-[#211834] text-himi-800 dark:text-purple-200 hover:bg-himi-200 dark:hover:bg-himi-800 border border-himi-200/70 dark:border-himi-800 font-bold";
-          return `
-            <button type="button" onclick="event.stopPropagation(); event.preventDefault(); toggleTagFilter('${escapeJsStr(t)}')" class="text-[11px] px-2.5 py-1 rounded-full transition-colors max-w-[160px] truncate ${tStyle}">
-              #${t}
-            </button>
-          `;
-        }).join('');
-
-        if (!isGroup) {
-          return `
-            <article onclick="window.open('${item.url || '#'}', '_blank', 'noopener,noreferrer')" class="group bg-white dark:bg-[#181226] border editorial-border rounded-3xl p-4 sm:p-5 flex flex-col justify-between hover:border-himi-500 dark:hover:border-himi-400 hover:shadow-lg hover:shadow-himi-600/10 transition-all cursor-pointer active:scale-[0.99]">
-              <div class="space-y-2.5">
-                <div class="flex items-center justify-between gap-2 text-xs">
-                  <time class="font-mono font-bold text-himi-700 dark:text-himi-300">${item.date || '----'}</time>
-                  <div class="flex items-center gap-1.5 shrink-0">
-                    <span class="px-2.5 py-0.5 text-[10px] font-bold border rounded-full ${catStyle}">
-                      ${item.category}
-                    </span>
-                    <button type="button" onclick="toggleFavorite(event, '${item.id}')" class="p-1.5 rounded-full text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 hover:bg-himi-50 dark:hover:bg-himi-900/50 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
-                      <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-base"></i>
-                    </button>
-                  </div>
-                </div>
-
-                <h3 class="font-serif text-[15px] sm:text-base font-bold text-himi-950 dark:text-white leading-relaxed group-hover:text-himi-600 dark:group-hover:text-himi-300 transition-colors break-words-any">
-                  ${item.title}
-                </h3>
-
-                <p class="text-xs text-himi-900/85 dark:text-purple-100/90 leading-relaxed line-clamp-3 break-words-any">
-                  ${item.summary || '記事の詳細はリンク先の元記事よりご覧いただけます。'}
-                </p>
-              </div>
-
-              <div class="pt-3 mt-3.5 border-t editorial-border space-y-2.5">
-                <div class="flex flex-wrap gap-1.5">
-                  ${tagsHtml}
-                </div>
-
-                <div class="flex items-center justify-between text-[11px] text-himi-800/90 dark:text-purple-200/95 pt-0.5">
-                  <span class="font-bold truncate max-w-[65%]">${item.media}</span>
-                  <span class="inline-flex items-center gap-1 font-bold text-himi-700 dark:text-himi-300 group-hover:translate-x-0.5 transition-transform shrink-0">
-                    <span>記事を開く</span>
-                    <i class="ph-bold ph-arrow-up-right"></i>
-                  </span>
-                </div>
-              </div>
-            </article>
-          `;
-        }
-
-        // 複数メディア集約カード（クリックで各メディアの記事一覧を展開）
-        const mediaPreviewPills = entry.mediaList.slice(0, 4).map(m => `
-          <span class="px-2 py-0.5 rounded-full bg-himi-100/90 dark:bg-himi-900/70 text-himi-800 dark:text-purple-200 text-[10px] font-bold border border-himi-200 dark:border-himi-800">${m}</span>
-        `).join('') + (entry.mediaList.length > 4 ? `<span class="text-[10px] font-bold text-himi-600 dark:text-himi-300">+${entry.mediaList.length - 4}媒体</span>` : '');
-
-        const subArticlesHtml = entry.articles.map(sub => {
-          const subFav = favoriteIds.includes(sub.id);
-          return `
-            <div class="bg-himi-50/80 dark:bg-[#130D1E] border border-himi-200/90 dark:border-himi-800/80 rounded-2xl p-3 space-y-1.5 hover:border-himi-500 dark:hover:border-himi-400 transition-all" onclick="event.stopPropagation()">
-              <div class="flex items-center justify-between gap-2 text-[11px]">
-                <div class="flex items-center gap-1.5 min-w-0">
-                  <span class="px-2 py-0.5 rounded-md bg-himi-600 text-white font-bold text-[10px] shrink-0">${sub.media}</span>
-                  <time class="font-mono text-[10px] font-bold text-himi-700/80 dark:text-purple-300/80 shrink-0">${sub.date}</time>
-                </div>
-                <button type="button" onclick="toggleFavorite(event, '${sub.id}')" class="p-1 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors shrink-0" title="${subFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
-                  <i class="${subFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-sm"></i>
-                </button>
-              </div>
-              <h4 class="font-serif font-bold text-xs text-himi-950 dark:text-white leading-snug hover:text-himi-600 dark:hover:text-himi-300 transition-colors">
-                <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="block">
-                  ${sub.title}
-                </a>
-              </h4>
-              <p class="text-[11px] text-himi-900/80 dark:text-purple-200/80 line-clamp-2 leading-relaxed">
-                ${sub.summary || ''}
-              </p>
-              <div class="pt-1 flex justify-end">
-                <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-bold text-himi-600 dark:text-himi-300 hover:underline">
-                  <span>${sub.media}の記事を読む</span>
-                  <i class="ph-bold ph-arrow-up-right text-[10px]"></i>
-                </a>
-              </div>
-            </div>
-          `;
-        }).join('');
-
-        const cardBorderCls = isExpanded
-          ? "border-2 border-himi-500 dark:border-himi-400 ring-4 ring-himi-400/15 shadow-lg"
-          : "border-2 border-himi-300/90 dark:border-himi-700/90 hover:border-himi-500 dark:hover:border-himi-400 hover:shadow-lg";
-
-        return `
-          <article onclick="toggleArticleGroupExpand(event, '${entry.groupKey}')" class="group bg-white dark:bg-[#181226] ${cardBorderCls} rounded-3xl p-4 sm:p-5 flex flex-col justify-between transition-all cursor-pointer">
-            <div class="space-y-2.5">
-              <div class="flex items-center justify-between gap-2 text-xs">
-                <div class="flex items-center gap-1.5">
-                  <time class="font-mono font-bold text-himi-700 dark:text-himi-300">${entry.dateDisplay || entry.date || '----'}</time>
-                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-himi-600 to-pink-500 text-white text-[10px] font-bold shadow-xs">
-                    <i class="ph-fill ph-stack text-[10px]"></i>
-                    <span>${entry.articles.length}メディア掲載</span>
-                  </span>
-                </div>
-                <span class="px-2.5 py-0.5 text-[10px] font-bold border rounded-full shrink-0 ${catStyle}">
-                  ${entry.category}
-                </span>
-              </div>
-
-              <h3 class="font-serif text-[15px] sm:text-base font-bold text-himi-950 dark:text-white leading-relaxed group-hover:text-himi-600 dark:group-hover:text-himi-300 transition-colors break-words-any">
-                ${entry.title}
-              </h3>
-
-              <p class="text-xs text-himi-900/85 dark:text-purple-100/90 leading-relaxed line-clamp-2 break-words-any">
-                ${entry.summary || ''}
-              </p>
-
-              <div class="flex flex-wrap items-center gap-1 pt-0.5">
-                ${mediaPreviewPills}
-              </div>
-            </div>
-
-            ${isExpanded ? `
-              <div class="mt-4 pt-3.5 border-t-2 border-dashed border-himi-200 dark:border-himi-800 space-y-2.5 animate-fade-in" onclick="event.stopPropagation()">
-                <div class="flex items-center justify-between text-xs px-1">
-                  <span class="font-bold text-himi-900 dark:text-purple-100 flex items-center gap-1.5">
-                    <i class="ph-fill ph-newspaper-clipping text-himi-500 text-sm"></i>
-                    <span>各メディアの記事一覧（全${entry.articles.length}件）</span>
-                  </span>
-                  <button type="button" onclick="toggleArticleGroupExpand(event, '${entry.groupKey}')" class="text-[11px] font-bold text-himi-600 dark:text-himi-300 hover:underline inline-flex items-center gap-0.5">
-                    <span>閉じる</span>
-                    <i class="ph-bold ph-caret-up text-[10px]"></i>
-                  </button>
-                </div>
-                <div class="space-y-2 max-h-96 overflow-y-auto purple-scrollbar pr-0.5">
-                  ${subArticlesHtml}
-                </div>
-              </div>
-            ` : ''}
-
-            <div class="pt-3 mt-3.5 border-t editorial-border space-y-2.5">
-              <div class="flex flex-wrap gap-1.5">
-                ${tagsHtml}
-              </div>
-
-              <div class="flex items-center justify-between text-[11px] text-himi-800/90 dark:text-purple-200/95 pt-0.5">
-                <span class="font-bold text-himi-700 dark:text-himi-300 inline-flex items-center gap-1">
-                  <i class="ph-bold ${isExpanded ? 'ph-caret-up' : 'ph-caret-down'} text-xs"></i>
-                  <span>${isExpanded ? 'メディア一覧を閉じる' : `全${entry.articles.length}メディアの記事を一覧表示`}</span>
-                </span>
-                <a href="${item.url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="inline-flex items-center gap-1 font-bold text-himi-600 dark:text-himi-300 hover:underline shrink-0">
-                  <span>代表記事へ</span>
-                  <i class="ph-bold ph-arrow-up-right"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-        `;
-      }).join('');
     }
 
     // コンパクト目次リスト描画（単一記事 ＆ 複数メディア集約アコーディオン対応）
@@ -3581,7 +3318,6 @@
     function initApp() {
       initTheme();
       updateFeaturedCollapseUI();
-      updateViewModeButtons();
       updateGroupSimilarButtonUI();
       setupTimelineInteractions();
       if (archiveStatusBadge) archiveStatusBadge.textContent = `${items.length} RECORDS`;
