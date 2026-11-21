@@ -436,10 +436,10 @@
       <!-- 記事一覧表示エリア -->
       <section id="archive-display-wrapper" class="space-y-4">
 
-        <!-- コンパクトリスト表示（スマホでも横スクロール不要で見やすいレスポンシブ設計） -->
-        <div id="list-container" class="bg-white dark:bg-[#181226] border editorial-border rounded-3xl overflow-hidden shadow-xs">
-          <div class="overflow-x-auto purple-scrollbar">
-            <table class="w-full text-left border-collapse">
+        <!-- コンパクトリスト表示（スマホでは1記事ごとの独立カード表示、PCではテーブル表示） -->
+        <div id="list-container" class="bg-transparent sm:bg-white sm:dark:bg-[#181226] border-0 sm:border sm:editorial-border rounded-none sm:rounded-3xl overflow-visible sm:overflow-hidden shadow-none sm:shadow-xs">
+          <div class="sm:overflow-x-auto purple-scrollbar">
+            <table class="w-full text-left border-collapse block sm:table">
               <thead class="hidden sm:table-header-group">
                 <tr class="border-b editorial-border bg-himi-100/60 dark:bg-himi-950/60 text-[11px] text-himi-900 dark:text-himi-200 font-bold">
                   <th class="py-3.5 px-4 w-28 whitespace-nowrap">公開日</th>
@@ -449,7 +449,7 @@
                   <th class="py-3.5 px-3 w-14 text-center whitespace-nowrap">保存</th>
                 </tr>
               </thead>
-              <tbody id="list-table-body" class="divide-y editorial-border text-xs"></tbody>
+              <tbody id="list-table-body" class="block sm:table-row-group space-y-3 sm:space-y-0 sm:divide-y editorial-border text-xs"></tbody>
             </table>
           </div>
         </div>
@@ -1062,19 +1062,23 @@
     }
 
     // --- 類似記事（同一ライブ・イベント・リリース等の複数メディア記事）のトピック集約ルール ---
+    // 原則：同じカテゴリー・同じイベント/作品フェーズのみをまとめ、別時期の発表や別イベントが混ざらないよう厳密化
     const TOPIC_GROUP_RULES = [
       // 2026
-      { pat: /14th Anniversary|FANTASISTA|14周年記念/i, yr: /^2026-11/, cat: "ライブレポ", title: "『i☆Ris 14th Anniversary Live ～FANTASISTA～』横浜アリーナ公演 ライブレポート" },
-      { pat: /超吟醸祭2026/i, yr: /^2026-10/, title: "「超吟醸祭2026」トークショー＆開催レポート" },
-      { pat: /Welcome to あざとさワールド|27thシングル/i, yr: /^2026/, cat: "インタビュー", title: "i☆Ris 27thシングル「Welcome to あざとさワールド」リリースインタビュー" },
-      { pat: /Animelo Summer Live 2026|アニサマ2026/i, yr: /^2026/, cat: "ライブレポ", title: "『Animelo Summer Live 2026 -Messenger-』DAY3 ライブレポート" },
-      { pat: /超時空捜査隊マルキュー|シネマダミス/i, yr: /^2026/, title: "シネマダミス『超時空捜査隊マルキュー』キャストコメント＆発表" },
-      { pat: /予感の途中|MFゴースト 3rd/i, yr: /^2026/, cat: "インタビュー", title: "Himika Akaneya 3rdシングル「予感の途中 Prod. ☆Taku Takahashi (m-flo)」インタビュー" },
-      { pat: /プリ♡プリライブ|アイプリ×キラッとプリ☆チャン/i, yr: /^2026/, cat: "ライブレポ", title: "合同ライブ「ひみつのアイプリ×キラッとプリ☆チャン プリ♡プリライブ」公式レポート" },
+      { pat: /(i☆Ris.*(14th Anniversary|14周年記念)|FANTASISTA)/i, yr: /^2026-11/, cat: "ライブレポ", title: "『i☆Ris 14th Anniversary Live ～FANTASISTA～』横浜アリーナ公演 ライブレポート" },
+      { pat: /超吟醸祭2026/i, yr: /^2026-10/, cat: "舞台挨拶・イベント", title: "「超吟醸祭2026」トークショー＆開催レポート" },
+      { pat: /Welcome to あざとさワールド/i, yr: /^2026-07/, cat: "インタビュー", title: "i☆Ris 27thシングル「Welcome to あざとさワールド」リリースインタビュー" },
+      { pat: /11th Live Tour 2026|VINTAGEイイ味出てます/i, yr: /^2026/, cat: "インタビュー", title: "『i☆Ris 11th Live Tour 2026 ～VINTAGEイイ味出てます～』インタビュー" },
+      { pat: /11th Live Tour 2026|VINTAGEイイ味出てます/i, yr: /^2026/, cat: "ライブレポ", title: "『i☆Ris 11th Live Tour 2026 ～VINTAGEイイ味出てます～』ライブレポート" },
+      { pat: /(Animelo Summer Live 2026|アニサマ2026).*(DAY\s*3|3日目|大トリ|最終日)/i, yr: /^2026-08|^2026-09/, cat: "ライブレポ", title: "『Animelo Summer Live 2026 -Messenger-』DAY3 ライブレポート" },
+      { pat: /超時空捜査隊マルキュー/i, yr: /^2026-04/, cat: "インタビュー", title: "シネマダミス『超時空捜査隊マルキュー』発表・キャストコメント（4月）" },
+      { pat: /超時空捜査隊マルキュー/i, yr: /^2026-06/, cat: "インタビュー", title: "シネマダミス『超時空捜査隊マルキュー』公演・キャストコメント（6月）" },
+      { pat: /予感の途中/i, yr: /^2026/, cat: "インタビュー", title: "Himika Akaneya 3rdシングル「予感の途中 Prod. ☆Taku Takahashi (m-flo)」インタビュー" },
+      { pat: /プリ♡プリライブ/i, yr: /^2026/, cat: "ライブレポ", title: "合同ライブ「ひみつのアイプリ×キラッとプリ☆チャン プリ♡プリライブ」公式レポート" },
       // 2025
       { pat: /Crossing Live 2025|Crossing Live.*28曲/i, yr: /^2025/, cat: "ライブレポ", title: "合同ライブ「プリティーシリーズ Crossing Live 2025」イベントレポート" },
-      { pat: /13周年記念.*記者会見|TITLE MATCH.*記者会見|ファイティングポーズ/i, yr: /^2025-11/, cat: "舞台挨拶・イベント", title: "『i☆Ris 13th Anniversary Live -TITLE MATCH-』開催記念記者会見レポート" },
-      { pat: /13th Anniversary|TITLE MATCH|13周年記念.*(ライブ|アリーナ|奇跡)/i, yr: /^2025-11/, cat: "ライブレポ", title: "『i☆Ris 13th Anniversary Live -TITLE MATCH-』ぴあアリーナMM ライブレポート" },
+      { pat: /(13周年記念|13th Anniversary|TITLE MATCH).*記者会見|ファイティングポーズ/i, yr: /^2025-11/, cat: "舞台挨拶・イベント", title: "『i☆Ris 13th Anniversary Live -TITLE MATCH-』開催記念記者会見レポート" },
+      { pat: /13th Anniversary|TITLE MATCH|i☆Ris.*13周年記念.*(ライブ|アリーナ|奇跡)/i, yr: /^2025-11/, cat: "ライブレポ", title: "『i☆Ris 13th Anniversary Live -TITLE MATCH-』ぴあアリーナMM ライブレポート" },
       { pat: /アイカツ！×プリパラ.*(初日舞台挨拶|点が線になった)/i, yr: /^2025-10/, cat: "舞台挨拶・イベント", title: "映画『アイカツ！×プリパラ THE MOVIE -出会いのキセキ！-』初日舞台挨拶レポート" },
       { pat: /アイカツ！×プリパラ.*(完成披露|幼少期にこの映画|これから歩む10年|出会いは「奇跡」)/i, yr: /^2025/, cat: "舞台挨拶・イベント", title: "映画『アイカツ！×プリパラ THE MOVIE -出会いのキセキ！-』完成披露舞台挨拶レポート" },
       { pat: /アイカツ！×プリパラ.*(対談|インタビュー|下地紫野)/i, yr: /^2025-10/, cat: "インタビュー", title: "映画『アイカツ！×プリパラ THE MOVIE』下地紫野×茜屋日海夏 対談インタビュー" },
@@ -1098,9 +1102,9 @@
       // 2023
       { pat: /エジソン.*12月23日/i, yr: /^2023-12/, title: "文化放送『A&G TRIBAL RADIO エジソン』（2023年12月23日放送）ゲスト特集＆後記" },
       { pat: /Winter Live 2023/i, yr: /^2023-12/, cat: "ライブレポ", title: "合同ライブ「プリパラ＆キラッとプリ☆チャン＆ワッチャプリマジ！Winter Live 2023」レポート" },
-      { pat: /11th Anniversary|Heart Jack|11周年ライブ|30歳になっても見たい景色/i, yr: /^(2023-11|2023-12|2024-01)/, cat: "ライブレポ", title: "『i☆Ris 11th Anniversary Live ～Heart Jack～』パシフィコ横浜 ライブレポート" },
-      { pat: /Stereo Sunset|ソロデビュー|K-POP沼/i, yr: /^(2023-11|2023-12)/, cat: "インタビュー", excl: /ヨルナイト/i, title: "Himika Akaneya ソロデビューシングル「Stereo Sunset (Prod. AmPm)」インタビュー" },
-      { pat: /B級ランク戦開始編.*(開幕|ゲネプロ)/i, yr: /^2023-08/, title: "『ワールドトリガー the Stage』B級ランク戦開始編 開幕・ゲネプロレポート" },
+      { pat: /11th Anniversary|Heart Jack|i☆Ris.*11周年ライブ|30歳になっても見たい景色/i, yr: /^(2023-11|2023-12|2024-01)/, cat: "ライブレポ", title: "『i☆Ris 11th Anniversary Live ～Heart Jack～』パシフィコ横浜 ライブレポート" },
+      { pat: /Stereo Sunset|Himika Akaneya.*ソロデビュー/i, yr: /^(2023-11|2023-12)/, cat: "インタビュー", excl: /ヨルナイト/i, title: "Himika Akaneya ソロデビューシングル「Stereo Sunset (Prod. AmPm)」インタビュー" },
+      { pat: /B級ランク戦開始編.*(開幕|ゲネプロ)/i, yr: /^2023-08/, cat: "舞台挨拶・イベント", title: "『ワールドトリガー the Stage』B級ランク戦開始編 開幕・ゲネプロレポート" },
       { pat: /ワーステ日誌|稽古場日誌|B級ランク戦開始編 終幕/i, yr: /^2023-(07|08)/, title: "『ワールドトリガー the Stage』B級ランク戦開始編 稽古場日誌・公式ブログ連載" },
       { pat: /Sun!Sea!Summer!'23|初ソロライブ|ソロ初ライブ/i, yr: /^2023-07/, cat: "ライブレポ", title: "初ソロライブ「HIMIKA AKANEYA 1st Live Sun!Sea!Summer!'23」公式レポート" },
       { pat: /わっしょい.*(ファイナル|TOKYO DOME CITY HALL)|8th Live Tour.*(ファイナル|TOKYO DOME CITY HALL)/i, yr: /^2023-06/, cat: "ライブレポ", title: "『i☆Ris 8th Live Tour 2023 ～わっしょい!!!!!～』東京ファイナル公演レポート" },
@@ -1108,7 +1112,7 @@
       { pat: /映画『30S』.*友情出演/i, yr: /^2023-04/, title: "映画『30S（サーティーズ）』出演決定＆キャストコメント" },
       // 2022
       { pat: /Winter Live\s*2022/i, yr: /^(2022-12|2023-01)/, cat: "ライブレポ", title: "合同ライブ「プリパラ＆キラッとプリ☆チャン＆ワッチャプリマジ！Winter Live 2022」レポート" },
-      { pat: /10th Anniversary Live|～a Live～|10周年ライブが令和で見た|10周年記念ライブ/i, yr: /^2022-11/, cat: "ライブレポ", title: "『i☆Ris 10th Anniversary Live ～a Live～』東京国際フォーラム ライブレポート" },
+      { pat: /10th Anniversary Live|～a Live～|10周年ライブが令和で見た|i☆Ris.*10周年記念ライブ/i, yr: /^2022-11/, cat: "ライブレポ", title: "『i☆Ris 10th Anniversary Live ～a Live～』東京国際フォーラム ライブレポート" },
       { pat: /ベストアルバム|10年間の足跡|10年間で築いた自信|ライバル視していたi☆Risの10年|葛藤、変化 「プリパラ」への思い/i, yr: /^2022-11/, cat: "インタビュー", title: "i☆Ris 10周年記念ベストアルバム『Best i☆Rist』対談＆インタビュー" },
       { pat: /エジソン.*8月6日/i, yr: /^2022-08/, title: "文化放送『A&G TRIBAL RADIO エジソン』（2022年8月6日放送）特集＆後記" },
       { pat: /Traveling.*(中野サンプラザ|東京|10周年の旅はまだまだ続く|最強の『i☆Ris』)/i, yr: /^2022-06/, cat: "ライブレポ", title: "『i☆Ris 7th Live Tour 2022 ～Traveling～』東京・中野サンプラザ公演レポート" },
@@ -1116,11 +1120,11 @@
       // 2021
       { pat: /12月のSnowry|ハートビート急上昇|2021年を新曲とともに|声優でもアイドルでもない/i, yr: /^2021-12/, cat: "インタビュー", excl: /ヨルナイト/i, title: "i☆Ris 21stシングル「12月のSnowry／ハートビート急上昇」リリースインタビュー" },
       { pat: /ワールドトリガー the Stage.*(開幕|スタート)/i, yr: /^2021-11/, cat: "舞台挨拶・イベント", title: "舞台『ワールドトリガー the Stage』初演・東京公演開幕レポート" },
-      { pat: /9th Anniversary|Queen's Message|9周年ライブ|新たな魅力と変わらないらしさ/i, yr: /^(2021-11|2021-12)/, cat: "ライブレポ", title: "『i☆Ris 9th Anniversary Live ～Queen's Message～』幕張メッセ ライブレポート" },
+      { pat: /9th Anniversary|Queen's Message|i☆Ris.*9周年ライブ|新たな魅力と変わらないらしさ/i, yr: /^(2021-11|2021-12)/, cat: "ライブレポ", title: "『i☆Ris 9th Anniversary Live ～Queen's Message～』幕張メッセ ライブレポート" },
       { pat: /オータムライブ2021|うっちゃり初ライブ/i, yr: /^(2021-09|2021-10)/, cat: "ライブレポ", title: "単独ライブ「プリパラフレンドシップ オータムライブ2021」イベントレポート" },
-      { pat: /Welcome to プリ☆チャンランド|『プリ☆チャン』ライブで林鼓子が宣言/i, yr: /^(2021-08|2021-09)/, title: "『キラッとプリ☆チャン』単独ライブ「Welcome to プリ☆チャンランド!」レポート" },
+      { pat: /Welcome to プリ☆チャンランド|『プリ☆チャン』ライブで林鼓子が宣言/i, yr: /^(2021-08|2021-09)/, cat: "ライブレポ", title: "『キラッとプリ☆チャン』単独ライブ「Welcome to プリ☆チャンランド!」レポート" },
       { pat: /Summer Dude/i, yr: /^2021-08/, cat: "インタビュー", title: "i☆Ris 20thシングル「Summer Dude」リリースインタビュー" },
-      { pat: /Pretty Festival|プリティーフェスティバル/i, yr: /^2021-05/, title: "10周年記念イベント「Pretty series 10th Anniversary Pretty Festival」レポート" },
+      { pat: /Pretty Festival|プリティーフェスティバル/i, yr: /^2021-05/, cat: "ライブレポ", title: "10周年記念イベント「Pretty series 10th Anniversary Pretty Festival」レポート" },
       { pat: /ワールドトリガー.*追加キャスト|ワールドトリガー.*第?2弾キャスト/i, yr: /^2021-04/, title: "舞台『ワールドトリガー the Stage』追加キャスト＆ビジュアル解禁コメント" },
       { pat: /storiez|澁谷梓希.*ラストステージ/i, yr: /^2021-03/, cat: "ライブレポ", title: "6人体制ラストライブ「i☆Ris LIVE 2021 ～storiez～」オフィシャルレポート" },
       { pat: /8周年の集い|生配信で見せたi☆Risらしさ/i, yr: /^2021-03/, cat: "インタビュー", title: "生配信特番『6人揃ってファンと8周年の集い』直後インタビュー" },
@@ -1131,8 +1135,8 @@
       { pat: /リングマリィ|徳井青空/i, yr: /^2020-04/, cat: "インタビュー", title: "『キラッとプリ☆チャン』リングマリィ（茜屋日海夏×徳井青空）対談インタビュー" },
       { pat: /戦国BASARA バトルパーティー|小松姫/i, yr: /^2020-03/, cat: "インタビュー", title: "アプリ『戦国BASARA バトルパーティー』新武将・小松姫役インタビュー" },
       { pat: /Shall we☆Carnival|アルバム全曲ダイジェスト|i☆Risソロインタビュー（1）/i, yr: /^2020-03/, cat: "インタビュー", title: "i☆Ris 4thアルバム『Shall we☆Carnival』リリース記念インタビュー" },
-      { pat: /bare.*(上演中|開幕|幕開け|稽古場)/i, yr: /^2020-(01|02)/, title: "ミュージカル『bare -ベア-』開幕・稽古場レポート" },
-      { pat: /七福万来|7th Anniversary|7周年記念ライブ/i, yr: /^(2019-11|2019-12|2020-01)/, cat: "ライブレポ", title: "『i☆Ris 7th Anniversary Live ～七福万来～』パシフィコ横浜 ライブレポート" },
+      { pat: /bare.*(上演中|開幕|幕開け|稽古場)/i, yr: /^2020-(01|02)/, cat: "舞台挨拶・イベント", title: "ミュージカル『bare -ベア-』開幕・稽古場レポート" },
+      { pat: /七福万来|7th Anniversary|i☆Ris.*7周年記念ライブ/i, yr: /^(2019-11|2019-12|2020-01)/, cat: "ライブレポ", title: "『i☆Ris 7th Anniversary Live ～七福万来～』パシフィコ横浜 ライブレポート" },
       // 2019
       { pat: /FANTASTIC ILLUSION|手品先輩.*OP/i, yr: /^2019-(08|09)/, cat: "インタビュー", excl: /ヨルナイト/i, title: "i☆Ris 19thシングル「FANTASTIC ILLUSION」（『手品先輩』OP）インタビュー" },
       { pat: /5th Live Tour.*(ファイナル|千秋楽)|FEVER.*(ファイナル|千秋楽)/i, yr: /^2019-(06|07)/, cat: "ライブレポ", title: "『i☆Ris 5th Live Tour 2019 ～FEVER～』中野サンプラザ千秋楽レポート" },
@@ -1147,7 +1151,7 @@
       { pat: /AUTUMN LIVE TOUR み～んなでアイドルやってみた/i, yr: /^2018-(09|10|12)/, cat: "ライブレポ", title: "「プリパラ＆キラッとプリ☆チャン AUTUMN LIVE TOUR」東京公演レポート" },
       { pat: /ミントチョコレート|絶頂島の姫/i, yr: /^2018-08/, title: "ボイスドラマ『ミントチョコレート』配信発表" },
       { pat: /4th Live Tour|4回目の全国ツアー/i, yr: /^2018-(06|07)/, cat: "ライブレポ", title: "『i☆Ris 4th Live Tour 2018 ～WONDERFUL PALETTE～』ライブレポート" },
-      { pat: /馬の骨/i, yr: /^(2018-06|2018-07)/, title: "実写映画『馬の骨』初日舞台挨拶レポート＆告知" },
+      { pat: /馬の骨/i, yr: /^(2018-06|2018-07)/, cat: "舞台挨拶・イベント", title: "実写映画『馬の骨』初日舞台挨拶レポート" },
       { pat: /Changing point/i, yr: /^2018-05/, cat: "インタビュー", title: "i☆Ris 16thシングル「Changing point」リリースインタビュー" },
       { pat: /劇場版\s*プリパラ＆(キラッと)?プリ☆チャン.*初日舞台/i, yr: /^2018-05/, cat: "舞台挨拶・イベント", title: "『劇場版 プリパラ＆キラッとプリ☆チャン ～きらきらメモリアルライブ～』初日舞台挨拶レポート" },
       { pat: /believe again|キャラソンで初のソロダンス|奴村露乃.*MV/i, yr: /^2018-04/, title: "『魔法少女サイト』奴村露乃キャラソン「believe again」MVレポート＆インタビュー" },
@@ -1156,8 +1160,8 @@
       { pat: /刀使ノ巫女.*イベント|刀使祭/i, yr: /^2018-(01|02)/, cat: "舞台挨拶・イベント", title: "『刀使ノ巫女』キャストイベント「刀使祭」レポート" },
       // 2017
       { pat: /WONDERFUL PALETTE|3rdアルバム/i, yr: /^(2017-10|2017-11)/, cat: "インタビュー", title: "i☆Ris 3rdアルバム『WONDERFUL PALETTE』リリースインタビュー" },
-      { pat: /5th Anniversary|5周年ライブ|5周年記念ライブ1日目/i, yr: /^2017-11/, cat: "ライブレポ", title: "『i☆Ris 5th Anniversary Live ～Go～』府中の森芸術劇場 ライブレポート" },
-      { pat: /Dance with Devils-Fortuna-|ダンデビ/i, yr: /^2017-11/, title: "劇場版『Dance with Devils-Fortuna-』初日舞台挨拶レポート＆コメント" },
+      { pat: /5th Anniversary|i☆Ris.*5周年ライブ|5周年記念ライブ1日目/i, yr: /^2017-11/, cat: "ライブレポ", title: "『i☆Ris 5th Anniversary Live ～Go～』府中の森芸術劇場 ライブレポート" },
+      { pat: /Dance with Devils-Fortuna-|ダンデビ/i, yr: /^2017-11/, cat: "舞台挨拶・イベント", title: "劇場版『Dance with Devils-Fortuna-』初日舞台挨拶レポート" },
       { pat: /ミイラの飼い方.*(サンリオ|逃げ恥)/i, yr: /^2017-09/, cat: "舞台挨拶・イベント", title: "TVアニメ『ミイラの飼い方』サンリオEXPO発表会レポート" },
       { pat: /結成5周年記念Live|結成5周年記念ライブ/i, yr: /^2017-07/, cat: "ライブレポ", title: "『i☆Ris 結成5周年記念Live ～5 years old! Everyone comes together☆～』レポート" },
       { pat: /POLKA DOTS|DRAGON CRY/i, yr: /^2017-05/, cat: "インタビュー", title: "ユニット「POLKA DOTS」（茜屋日海夏×タカオユキ）インタビュー" },
@@ -1179,22 +1183,22 @@
       { pat: /Goin'on.*リリースイベント/i, yr: /^2016-(01|02)/, cat: "舞台挨拶・イベント", title: "i☆Ris 11thシングル「Goin'on」リリースイベントレポート" },
       { pat: /Goin'on.*(インタビュー|魅力)/i, yr: /^2016-02/, cat: "インタビュー", title: "i☆Ris 11thシングル「Goin'on」リリースインタビュー" },
       { pat: /ライブミュージカル.*プリパラ|ミュージカルで「無意識にらぁら/i, yr: /^(2016-01|2016-02)/, cat: "舞台挨拶・イベント", title: "初演『ライブミュージカル「プリパラ」み～んなにとどけ！プリズム☆ボイス』ゲネプロ＆稽古場レポート" },
-      { pat: /クォンタム・ドールズ/i, yr: /^2016-01/, title: "初主演舞台『クォンタム・ドールズ ～量子境界の遊歩者～』レポート＆対談" },
+      { pat: /クォンタム・ドールズ/i, yr: /^2016-01/, cat: "舞台挨拶・イベント", title: "初主演舞台『クォンタム・ドールズ ～量子境界の遊歩者～』レポート" },
       // 2015
       { pat: /クリスマス☆ドリームライブ|クリスマスイベントで空中ライブ/i, yr: /^2015-12/, cat: "ライブレポ", title: "「プリパラ クリスマス☆ドリームライブ」イベントレポート" },
       { pat: /とびだすプリパラ/i, yr: /^(2015-10|2015-11)/, cat: "インタビュー", title: "3D劇場版『とびだすプリパラ み～んなでめざせ！アイドル☆グランプリ』インタビュー" },
       { pat: /3rd Anniversary|GALAXY|i☆Ris3周年ライブ/i, yr: /^2015-11/, cat: "ライブレポ", title: "『i☆Ris 3rd Anniversary LIVE ～GALAXY～』豊洲PIT ライブレポート" },
       { pat: /ブライトファンタジー/i, yr: /^(2015-10|2015-11)/, cat: "インタビュー", title: "i☆Ris 10thシングル「ブライトファンタジー」リリースインタビュー" },
-      { pat: /結成3周年|デビュー3周年記念ライブを発表/i, yr: /^2015-(07|08|09|10)/, title: "『i☆Ris 結成3周年記念イベント』竹芝ニューピアホール レポート" },
+      { pat: /結成3周年/i, yr: /^2015-(07|08|09|10)/, excl: /ワンフェス|ワンダーフェスティバル/i, title: "『i☆Ris 結成3周年記念イベント』竹芝ニューピアホール レポート" },
       { pat: /らぁら.*1周年|サプライズ.*バースデ/i, yr: /^2015-(07|08)/, title: "「らぁらプリパラデビュー1周年記念イベント」公式レポート" },
-      { pat: /ワンフェス|3周年記念ライブを発表/i, yr: /^2015-07/, title: "ワンダーフェスティバル2015［夏］i☆Risステージ＆3周年ライブ発表レポート" },
+      { pat: /ワンフェス|ワンダーフェスティバル/i, yr: /^2015-07/, title: "ワンダーフェスティバル2015［夏］i☆Risステージ＆3周年ライブ発表レポート" },
       { pat: /ドリームパレード.*(噴水広場|予約イベント|ミニライブ)/i, yr: /^2015-(06|07)/, cat: "舞台挨拶・イベント", title: "i☆Ris 9thシングル「ドリームパレード」サンシャインシティ噴水広場イベントレポート" },
       { pat: /ドリームパレード.*(インタビュー|緊急取材)/i, yr: /^2015-07/, cat: "インタビュー", title: "i☆Ris 9thシングル「ドリームパレード」リリースインタビュー" },
       { pat: /1st Live Tour 2015|ツアーファイナル/i, yr: /^(2015-05|2015-06)/, cat: "ライブレポ", title: "『i☆Ris 1st Live Tour 2015 ～We are i☆Ris!!!～』東京千秋楽レポート" },
       { pat: /We are i☆Ris!!!|初のアルバム|初フル作|新盤発売 i☆Ris/i, yr: /^2015-04/, cat: "インタビュー", title: "i☆Ris 1stアルバム『We are i☆Ris!!!』リリースインタビュー" },
       { pat: /Realize！|Realize!/i, yr: /^(2015-02|2015-03)/, cat: "インタビュー", title: "i☆Ris 8thシングル「Realize!」＆『劇場版プリパラ』インタビュー" },
       { pat: /プリズム☆(スターズ|ツアーズ).*舞台挨拶/i, yr: /^2015-03/, cat: "舞台挨拶・イベント", title: "『劇場版プリパラ み～んなあつまれ！プリズム☆ツアーズ』公開初日舞台挨拶レポート" },
-      { pat: /2nd Anniversary|Dream Evolution|2周年ライブ/i, yr: /^(2014-11|2014-12|2015-01)/, title: "『i☆Ris 2nd Anniversary Live ～Dream Evolution～』ライブレポート＆インタビュー" },
+      { pat: /2nd Anniversary|Dream Evolution|2周年ライブ/i, yr: /^(2014-11|2014-12|2015-01)/, cat: "ライブレポ", title: "『i☆Ris 2nd Anniversary Live ～Dream Evolution～』ライブレポート" },
       // 2014
       { pat: /月曜２ｈ/i, yr: /^2014-12/, title: "文化放送超！A&G+『i☆Risの2h』最終回＆放送レポート" },
       { pat: /町田にファン600人|キャラクターソングCD発売記念イベント/i, yr: /^2014-10/, title: "『プリパラ』キャラクターソングCD発売記念イベント（町田）レポート" },
@@ -1206,6 +1210,35 @@
       { pat: /カバ☆リス/i, yr: /^(2013-03|2013-04)/, title: "アニソンカバーミニアルバム『カバ☆リス』発売コメント＆インタビュー" },
       { pat: /アイドル戦国時代|エイベックスからデビュー|お披露目イベント/i, yr: /^(2012-09|2012-10|2012-11)/, title: "i☆Ris デビューシングル「Color」発売＆お披露目イベントレポート" }
     ];
+
+    const GENERIC_AUTO_TOPIC_BLACKLIST = new Set([
+      "iris", "i☆ris", "プリパラ", "アイドルタイムプリパラ", "キラッとプリ☆チャン",
+      "茜屋日海夏", "himika akaneya", "インタビュー", "前編", "後編", "中編",
+      "ライブ", "イベント", "レポート", "ワールドトリガー", "魔法少女サイト",
+      "アニメ", "舞台", "ラジオ", "ソロ", "声優"
+    ]);
+
+    function extractSpecificTitleTopic(titleStr) {
+      if (!titleStr) return null;
+      const matches = titleStr.match(/[『「]([^』」]{4,60})[』」]/g);
+      if (!matches) return null;
+      for (const m of matches) {
+        const inner = m.slice(1, -1).trim();
+        const norm = toNormalizedKana(inner);
+        if (inner.length >= 4 && !GENERIC_AUTO_TOPIC_BLACKLIST.has(norm)) {
+          return inner;
+        }
+      }
+      return null;
+    }
+
+    function daysBetweenDates(d1, d2) {
+      if (!d1 || !d2) return 9999;
+      const t1 = Date.parse(d1);
+      const t2 = Date.parse(d2);
+      if (isNaN(t1) || isNaN(t2)) return 9999;
+      return Math.abs(t1 - t2) / (1000 * 60 * 60 * 24);
+    }
 
     function formatGroupDateRange(minDate, maxDate) {
       if (!minDate && !maxDate) return '----';
@@ -1232,31 +1265,15 @@
       return null;
     }
 
-    // 記事リストを類似トピックごとに集約する関数
+    // 記事リストを類似トピックごとに集約する関数（ルール一致 ＋ 同一カテゴリー・近接日付の固有名詞一致）
     function buildGroupedEntries(articleList) {
       const groupMap = new Map();
       const entries = [];
+      const autoBuckets = [];
 
       articleList.forEach(item => {
         const gInfo = getArticleGroupKey(item);
-        if (!gInfo) {
-          entries.push({
-            isGroup: false,
-            groupKey: `single_${item.id}`,
-            primary: item,
-            articles: [item],
-            date: item.date,
-            minDate: item.date,
-            maxDate: item.date,
-            dateDisplay: item.date,
-            title: item.title,
-            summary: item.summary,
-            category: item.category,
-            media: item.media,
-            mediaList: [item.media],
-            tags: item.tags || []
-          });
-        } else {
+        if (gInfo) {
           if (!groupMap.has(gInfo.key)) {
             const groupObj = {
               isGroup: true,
@@ -1288,7 +1305,6 @@
               g.minDate = item.date;
             }
             g.dateDisplay = formatGroupDateRange(g.minDate, g.maxDate);
-            // おすすめ指定がある記事または詳細な概要を持つ記事を代表記事に優先
             if (item.featuredMark && !g.primary.featuredMark) {
               g.primary = item;
               g.summary = item.summary;
@@ -1300,6 +1316,61 @@
               if (!g.tags.includes(t)) g.tags.push(t);
             });
           }
+        } else {
+          // ルール外の記事でも「同カテゴリー × 公開日10日以内 × タイトル内の固有名詞一致」なら自動集約
+          const topicName = extractSpecificTitleTopic(item.title);
+          const normTopic = topicName ? toNormalizedKana(topicName) : null;
+          let matchedBucket = null;
+          if (normTopic) {
+            matchedBucket = autoBuckets.find(b =>
+              b.normTopic === normTopic &&
+              b.category === item.category &&
+              daysBetweenDates(b.minDate, item.date) <= 10
+            );
+          }
+
+          if (matchedBucket) {
+            matchedBucket.articles.push(item);
+            if ((item.date || "") > (matchedBucket.maxDate || "")) {
+              matchedBucket.maxDate = item.date;
+              matchedBucket.date = item.date;
+            }
+            if (!matchedBucket.minDate || (item.date && item.date < matchedBucket.minDate)) {
+              matchedBucket.minDate = item.date;
+            }
+            matchedBucket.dateDisplay = formatGroupDateRange(matchedBucket.minDate, matchedBucket.maxDate);
+            if (item.featuredMark && !matchedBucket.primary.featuredMark) {
+              matchedBucket.primary = item;
+              matchedBucket.summary = item.summary;
+            }
+            if (item.media && !matchedBucket.mediaList.includes(item.media)) {
+              matchedBucket.mediaList.push(item.media);
+            }
+            (item.tags || []).forEach(t => {
+              if (!matchedBucket.tags.includes(t)) matchedBucket.tags.push(t);
+            });
+          } else {
+            const newEntry = {
+              isGroup: Boolean(normTopic),
+              normTopic: normTopic,
+              groupKey: normTopic ? `auto_${item.category}_${normTopic.slice(0, 20)}_${item.date}` : `single_${item.id}`,
+              groupTitle: normTopic ? `『${topicName}』${item.category}まとめ` : item.title,
+              primary: item,
+              articles: [item],
+              date: item.date,
+              minDate: item.date,
+              maxDate: item.date,
+              dateDisplay: item.date,
+              title: normTopic ? `『${topicName}』${item.category}まとめ` : item.title,
+              summary: item.summary,
+              category: item.category,
+              media: item.media,
+              mediaList: [item.media],
+              tags: [...(item.tags || [])]
+            };
+            if (normTopic) autoBuckets.push(newEntry);
+            entries.push(newEntry);
+          }
         }
       });
 
@@ -1307,16 +1378,16 @@
       function getArticleSeriesPartOrder(art) {
         const title = art.title || "";
         const url = art.url || "";
-        if (/【前編】|（前編）|\(前編\)|インタビュー前編|前編：|前編\b|前半|（1）|\(1\)|その1\b|Part\.?\s*1\b|Vol\.?\s*1\b|連載第1回/i.test(title)) return 1;
-        if (/【中編】|（中編）|\(中編\)|インタビュー中編|中編：|中編\b|（2）|\(2\)|その2\b|Part\.?\s*2\b|Vol\.?\s*2\b|連載第2回/i.test(title)) return 2;
-        if (/【後編】|（後編）|\(後編\)|インタビュー後編|後編：|後編\b|後半|（3）|\(3\)|その3\b|Part\.?\s*3\b|Vol\.?\s*3\b|連載第3回/i.test(title)) return 3;
+        if (/【前編】|（前編）|\(前編\)|インタビュー前編|前編：|前編|前半|（1）|\(1\)|その1|Part\.?\s*1|Vol\.?\s*1|連載第1回/i.test(title)) return 1;
+        if (/【中編】|（中編）|\(中編\)|インタビュー中編|中編：|中編|（2）|\(2\)|その2|Part\.?\s*2|Vol\.?\s*2|連載第2回/i.test(title)) return 2;
+        if (/【後編】|（後編）|\(後編\)|インタビュー後編|後編：|後編|後半|（3）|\(3\)|その3|Part\.?\s*3|Vol\.?\s*3|連載第3回/i.test(title)) return 3;
         const circled = "①②③④⑤⑥⑦⑧⑨⑩";
         for (let i = 0; i < circled.length; i++) {
           if (title.includes(circled[i])) return i + 1;
         }
         // タイトルに「前編・後編」表記がない同日・連日公開の前後編ペア（HOMINIS / 日刊SPA!）
-        if (/post13008|\/2006843\b/.test(url)) return 1;
-        if (/post13019|\/2008548\b/.test(url)) return 3;
+        if (/post13008|\/2006843/.test(url)) return 1;
+        if (/post13019|\/2008548/.test(url)) return 3;
         return 50;
       }
 
@@ -1339,7 +1410,6 @@
           const aHasSeries = pA !== 50 && mediaSeriesMinDate.has(a.media);
           const bHasSeries = pB !== 50 && mediaSeriesMinDate.has(b.media);
 
-          // 同一メディアの前後編・連載ペアは他メディアが間の日付に入っていても連続で読めるよう初回公開日に揃える
           const effDateA = aHasSeries ? mediaSeriesMinDate.get(a.media) : (a.date || "");
           const effDateB = bHasSeries ? mediaSeriesMinDate.get(b.media) : (b.date || "");
           const effCmp = effDateA.localeCompare(effDateB);
@@ -1381,7 +1451,6 @@
           };
         }
         ent.articles = sortGroupArticlesChronologically(ent.articles);
-        // 代表記事に特定のfeaturedMark指定がない場合は、時系列の先頭（前編・第1回）を代表要約にする
         if (!ent.primary || !ent.primary.featuredMark) {
           ent.primary = ent.articles[0];
           ent.summary = ent.articles[0].summary;
@@ -3022,7 +3091,7 @@
 
         if (!isGroup) {
           return `
-            <tr class="group hover:bg-himi-50/80 dark:hover:bg-himi-900/30 transition-colors block sm:table-row p-3.5 sm:p-0 border-b editorial-border last:border-b-0 sm:border-0">
+            <tr class="group rounded-2xl sm:rounded-none bg-white dark:bg-[#181226] sm:bg-transparent border-2 border-himi-200/80 dark:border-himi-800/70 sm:border-0 shadow-sm sm:shadow-none hover:border-himi-400 sm:hover:bg-himi-50/80 dark:sm:hover:bg-himi-900/30 transition-colors block sm:table-row p-3.5 sm:p-0">
               <td class="block sm:hidden p-0 mb-1.5">
                 <div class="flex items-center justify-between text-xs gap-2">
                   <div class="flex items-center gap-1.5 min-w-0">
@@ -3113,7 +3182,7 @@
         }).join('');
 
         return `
-          <tr onclick="toggleArticleGroupExpand(event, '${entry.groupKey}')" class="group ${isExpanded ? 'bg-himi-50/90 dark:bg-himi-950/40' : 'hover:bg-himi-50/80 dark:hover:bg-himi-900/30'} transition-colors cursor-pointer block sm:table-row p-3.5 sm:p-0 border-b editorial-border last:border-b-0 sm:border-0">
+          <tr onclick="toggleArticleGroupExpand(event, '${entry.groupKey}')" class="group ${isExpanded ? 'rounded-2xl sm:rounded-none bg-himi-50/95 dark:bg-[#1E1530] border-2 border-himi-500 dark:border-himi-400 sm:border-0 sm:border-l-4 sm:border-l-himi-500 ring-2 ring-himi-400/25 sm:ring-0 shadow-md sm:shadow-none' : 'rounded-2xl sm:rounded-none bg-white dark:bg-[#181226] sm:bg-transparent border-2 border-himi-300/90 dark:border-himi-700/80 sm:border-0 shadow-sm sm:shadow-none hover:border-himi-400 sm:hover:bg-himi-50/80 dark:sm:hover:bg-himi-900/30'} transition-colors cursor-pointer block sm:table-row p-3.5 sm:p-0">
             <td class="block sm:hidden p-0 mb-2">
               <div class="space-y-1">
                 <div class="flex items-center justify-between text-xs gap-2">
@@ -3170,12 +3239,16 @@
               </div>
 
               ${isExpanded ? `
-                <div class="mt-3 pt-3 border-t-2 border-dashed border-himi-200 dark:border-himi-800 space-y-2 animate-fade-in">
-                  <div class="flex items-center justify-between text-[10px] font-bold text-himi-600 dark:text-himi-300 px-1">
-                    <span class="inline-flex items-center gap-1"><i class="ph-bold ph-sort-ascending"></i><span>時系列・公開順（前編 → 後編）で表示中</span></span>
-                    <span class="font-mono opacity-80">全${entry.articles.length}記事</span>
+                <div class="mt-3 p-2.5 sm:p-3 rounded-2xl bg-himi-100/75 dark:bg-[#120C1E] border border-himi-300/80 dark:border-himi-700/80 space-y-2.5 animate-fade-in" onclick="event.stopPropagation()">
+                  <div class="flex items-center justify-between text-[10px] font-bold text-himi-700 dark:text-himi-200 px-1">
+                    <span class="inline-flex items-center gap-1"><i class="ph-bold ph-sort-ascending"></i><span>このまとめの収録記事（時系列：前編 → 後編）</span></span>
+                    <span class="font-mono px-2 py-0.5 rounded-full bg-himi-600 text-white text-[9px]">全${entry.articles.length}記事</span>
                   </div>
                   ${subListHtml}
+                  <button type="button" onclick="toggleArticleGroupExpand(event, '${entry.groupKey}')" class="w-full py-2 rounded-xl bg-himi-200/80 hover:bg-himi-300/80 dark:bg-himi-800/80 dark:hover:bg-himi-700 text-himi-900 dark:text-purple-100 text-[11px] font-bold flex items-center justify-center gap-1 transition-colors">
+                    <i class="ph-bold ph-caret-up text-xs"></i>
+                    <span>このまとめグループを閉じる（全${entry.articles.length}件）</span>
+                  </button>
                 </div>
               ` : ''}
             </td>
