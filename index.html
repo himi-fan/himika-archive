@@ -1883,7 +1883,7 @@
             return orKeywords.some(kw => normalizedTarget.includes(kw));
           });
         } else {
-          const queryKeywords = rawQ.split(/[\s　]+/).filter(k => k.length > 0);
+          const queryKeywords = rawQ.split(/[\s　,、]+/).filter(k => k.length > 0);
           base = base.filter(item => {
             const combined = [item.title || "", item.summary || "", item.media || "", item.category || "", item.date || "", item.featuredMark || "", ...(item.tags || [])].join(" ");
             const normalizedTarget = toNormalizedKana(combined);
@@ -2229,7 +2229,7 @@
             return orKeywords.some(kw => normalizedTarget.includes(kw));
           });
         } else {
-          const queryKeywords = rawQ.split(/[\s　]+/).filter(k => k.length > 0);
+          const queryKeywords = rawQ.split(/[\s　,、]+/).filter(k => k.length > 0);
           filtered = filtered.filter(item => {
             const combined = [
               item.title || "",
@@ -2396,15 +2396,15 @@
     // --- 出演作の全関連記事リスト取得 ---
     function getMatchedArticlesForWork(work) {
       if (!work) return [];
-      const normTag = work.tag ? toNormalizedKana(work.tag) : "";
-      const cleanTitle = (work.title || "").replace(/[『』「」]/g, '').split(/[\/／]/)[0].trim();
+      const tagList = (work.tag || "").toString().split(/[,、|]+/).map(t => toNormalizedKana(t.trim())).filter(Boolean);
+      const cleanTitle = (work.title || "").replace(/[『』「」]/g, '').split(/[\/／（(]/)[0].trim();
       const normTitle = toNormalizedKana(cleanTitle);
 
       return items.filter(it => {
         const itemTagsNorm = (it.tags || []).map(t => toNormalizedKana(t));
-        if (normTag && itemTagsNorm.includes(normTag)) return true;
+        if (tagList.some(nt => itemTagsNorm.includes(nt))) return true;
         const combined = toNormalizedKana(`${it.title} ${it.summary} ${it.featuredMark || ''}`);
-        if (normTag && combined.includes(normTag)) return true;
+        if (tagList.some(nt => combined.includes(nt))) return true;
         if (normTitle && combined.includes(normTitle)) return true;
         if (work.title.includes("Dance with Devils") && combined.includes("だんでび")) return true;
         if (work.title.includes("ワールドトリガー") && combined.includes("わーすて")) return true;
@@ -2510,11 +2510,13 @@
       activeCategoryIndicator.classList.add('hidden');
       activeCategoryIndicator.classList.remove('inline-flex');
 
+      const kwList = (tag || "").toString().split(/[,、|]+/).map(k => k.trim()).filter(Boolean);
       const allKnownTags = getAllTagPresets();
-      if (tag && allKnownTags.includes(tag)) {
-        selectedTags = [tag];
+      if (kwList.length === 1 && allKnownTags.includes(kwList[0])) {
+        selectedTags = [kwList[0]];
       } else {
-        const queryTerm = (tag || (title || "").replace(/[『』「」]/g, '').split(/[\/／]/)[0]).trim();
+        const cleanTitle = (title || "").replace(/[『』「」]/g, '').split(/[\/／（(]/)[0].trim();
+        const queryTerm = kwList.length > 1 ? kwList.join(" | ") : (kwList[0] || cleanTitle);
         searchQuery = queryTerm;
         searchInput.value = queryTerm;
         clearSearchBtn.classList.remove('hidden');
