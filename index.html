@@ -259,12 +259,12 @@
         <button type="button" id="main-tab-iris" onclick="switchPortalTab('iris')" class="flex items-center justify-center gap-1 sm:gap-1.5 px-1 sm:px-4 py-2 sm:py-2 rounded-xl text-[11px] sm:text-sm font-bold transition-colors duration-75 text-himi-800/80 hover:text-himi-950 dark:text-purple-200/80 dark:hover:text-white whitespace-nowrap min-w-0">
           <i class="ph-bold ph-sparkle hidden sm:inline text-base text-pink-500 shrink-0"></i>
           <span>i☆Ris</span>
-          <span id="tab-iris-badge" class="font-mono text-[9px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-himi-200/70 dark:bg-himi-800 text-himi-700 dark:text-himi-300 shrink-0">44</span>
+          <span id="tab-iris-badge" class="font-mono text-[9px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-himi-200/70 dark:bg-himi-800 text-himi-700 dark:text-himi-300 shrink-0">---</span>
         </button>
         <button type="button" id="main-tab-works" onclick="switchPortalTab('works')" class="flex items-center justify-center gap-1 sm:gap-1.5 px-1 sm:px-4 py-2 sm:py-2 rounded-xl text-[11px] sm:text-sm font-bold transition-colors duration-75 text-himi-800/80 hover:text-himi-950 dark:text-purple-200/80 dark:hover:text-white whitespace-nowrap min-w-0">
           <i class="ph-bold ph-film-strip hidden sm:inline text-base text-himi-500 shrink-0"></i>
           <span>主な出演作</span>
-          <span id="tab-works-badge" class="font-mono text-[9px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-himi-200/70 dark:bg-himi-800 text-himi-700 dark:text-himi-300 shrink-0">6</span>
+          <span id="tab-works-badge" class="font-mono text-[9px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full bg-himi-200/70 dark:bg-himi-800 text-himi-700 dark:text-himi-300 shrink-0">---</span>
         </button>
       </div>
     </div>
@@ -411,7 +411,7 @@
         <!-- 4. 現在の絞り込み状況バー ＆ 件数表示 -->
         <div class="border-t editorial-border pt-2.5 sm:pt-3 flex flex-wrap items-center justify-between gap-2 text-xs">
           <div id="results-count" class="font-bold text-himi-900 dark:text-purple-100">
-            読み込み中...
+            データを読み込み中...
           </div>
 
           <div class="flex flex-wrap items-center gap-1.5" id="active-filters-bar">
@@ -571,7 +571,7 @@
         </p>
       </div>
 
-      <!-- 作品検索 ＆ カテゴリーフィルター（主な出演作選択時は非表示） -->
+      <!-- 作品検索 ＆ カテゴリーフィルター -->
       <div id="works-filter-panel" class="bg-white dark:bg-[#181226] border-2 border-himi-200/90 dark:border-himi-800/80 rounded-3xl p-3.5 sm:p-5 shadow-md shadow-himi-900/5 space-y-3.5">
         <div class="relative flex-grow">
           <i class="ph-bold ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-himi-500 text-base"></i>
@@ -617,7 +617,7 @@
 
   </main>
 
-  <!-- スマホ用・下部固定フローティングナビバー（スマート自動開閉・被り解消） -->
+  <!-- スマホ用・下部固定フローティングナビバー（スマート自動開閉・タブ連動） -->
   <div id="mobile-floating-bar" class="md:hidden fixed bottom-3 inset-x-3.5 z-30 pointer-events-none flex items-center justify-center transition-all duration-300">
     <div class="pointer-events-auto bg-white/95 dark:bg-[#1C142B]/95 backdrop-blur-md border-2 border-himi-300/90 dark:border-himi-700 rounded-full shadow-xl shadow-himi-950/25 px-1.5 py-1 flex items-center gap-1 max-w-full">
       <button type="button" onclick="openMobileDrawer()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-himi-600 text-white text-[11px] font-bold shadow-xs active:scale-95 transition-transform">
@@ -691,7 +691,7 @@
               タグ解除
             </button>
           </div>
-          <div id="drawer-tags" class="flex flex-wrap gap-1.5"></div>
+          <div id="drawer-tags" class="space-y-2"></div>
         </div>
 
         <!-- ドロワー内：年代選択（3列グリッドで全年代を快適タップ） -->
@@ -852,13 +852,42 @@
     const STATIC_DATA_ENDPOINT = "./data.json";
     const initialArticlesData = [];
 
-    // 全角半角・大文字小文字・ひらがなカタカナの表記揺れを吸収する正規化関数
-    // インラインonclick属性内のシングルクォート・ダブルクォート安全エスケープ関数
-    function escapeJsStr(str) {
-      if (!str) return "";
-      return String(str).replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/"/g, "&quot;");
+    // HTML表示用の安全エスケープ関数（XSS・タグ崩れ防止）
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return "";
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
     }
 
+    // インラインonclick属性内の文字列安全エスケープ関数
+    function escapeJsStr(str) {
+      if (str === null || str === undefined) return "";
+      return String(str)
+        .replace(/\\/g, "\\\\")
+        .replace(/'/g, "\\'")
+        .replace(/"/g, "&quot;")
+        .replace(/\r?\n/g, " ");
+    }
+
+    // グループキーを安全な識別子へ正規化
+    function sanitizeGroupKey(str) {
+      return String(str || "").replace(/['"\\<>`]/g, "_");
+    }
+
+    // デバウンスヘルパー（検索入力時の過剰な再描画を抑制）
+    function debounce(fn, delayMs) {
+      let timerId = null;
+      return function(...args) {
+        clearTimeout(timerId);
+        timerId = setTimeout(() => fn.apply(this, args), delayMs);
+      };
+    }
+
+    // 全角半角・大文字小文字・ひらがなカタカナの表記揺れを吸収する正規化関数
     function toNormalizedKana(str) {
       if (!str) return "";
       return str
@@ -869,10 +898,9 @@
     }
 
     const initialWorksData = [];
-
     const initialIrisData = [];
 
-    // URLから媒体名を自動補完するマップ（GAS経由の最新データ取得時にも活用）
+    // URLから媒体名を自動補完するマップ（GAS側のgetMediaNameFromUrlと同期）
     const DOMAIN_MEDIA_MAP = {
       "www.animatetimes.com": "アニメイトタイムズ",
       "www.lisani.jp": "リスアニ！",
@@ -926,11 +954,13 @@
       "www.billboard-japan.com": "Billboard JAPAN",
       "animageplus.jp": "アニメージュプラス",
       "anime.eiga.com": "アニメハック",
+      "eiga.com": "映画.com",
       "s.animeanime.jp": "アニメ！アニメ！",
       "ameblo.jp": "Amebaブログ (公式日誌)",
       "www.walkerplus.com": "ウォーカープラス",
       "getnews.jp": "ガジェット通信",
       "adv.tokyo-np.co.jp": "東京新聞 (PR TIMES)",
+      "prtimes.jp": "PR TIMES",
       "magazine.confetti-web.com": "カンフェティ",
       "news.denfaminicogamer.jp": "電ファミニコゲーマー",
       "numan.tokyo": "numan",
@@ -958,15 +988,29 @@
       "news.amiami.jp": "あみあみニュース",
       "anime-jam.com": "アニメJAM公式",
       "www.81produce.co.jp": "81プロデュース公式",
+      "www.81produce-45th.com": "81プロデュース45周年特設",
       "shop.mu-mo.net": "mu-moショップ特集",
-      "jisin.jp": "女性自身"
+      "jisin.jp": "女性自身",
+      "www.wws-channel.com": "WWSチャンネル",
+      "wws-channel.com": "WWSチャンネル",
+      "times.abema.tv": "ABEMA TIMES",
+      "www.atpress.ne.jp": "＠Press",
+      "atpress.ne.jp": "＠Press",
+      "www.tower.jp": "TOWER RECORDS",
+      "tower.jp": "TOWER RECORDS",
+      "av.watch.impress.co.jp": "AV Watch",
+      "inside-games.jp": "インサイド",
+      "www.inside-games.jp": "インサイド"
     };
 
     function detectMediaFromUrl(urlStr, fallbackMedia) {
       if (fallbackMedia && fallbackMedia !== "Webメディア") return fallbackMedia;
       try {
-        const host = new URL(urlStr).hostname;
+        const host = new URL(urlStr).hostname.toLowerCase();
         if (DOMAIN_MEDIA_MAP[host]) return DOMAIN_MEDIA_MAP[host];
+        const bareHost = host.replace(/^www\./, '');
+        if (DOMAIN_MEDIA_MAP[bareHost]) return DOMAIN_MEDIA_MAP[bareHost];
+        if (DOMAIN_MEDIA_MAP['www.' + bareHost]) return DOMAIN_MEDIA_MAP['www.' + bareHost];
       } catch (e) {}
       return fallbackMedia || "Webメディア";
     }
@@ -1015,7 +1059,7 @@
       const summaryStr = (isArr ? (raw[2] || "") : (raw.summary || "")).toString().trim();
       const rawFeatured = (isArr ? (raw[6] || "") : (raw.featuredMark || (typeof raw.featured === 'string' ? raw.featured : (raw.featured === true ? "おすすめ" : "")))).toString().trim();
       const isHidden = /^[✕×xX]|非表示|除外|NG|不要/i.test(rawFeatured) || (!isArr && raw.hidden === true);
-      const isFeatured = /^[★☆1]|おすすめ|注目/i.test(rawFeatured) || (!isArr && raw.featured === true);
+      const isFeatured = !isHidden && (/^[★☆1]|おすすめ|注目/i.test(rawFeatured) || (!isArr && raw.featured === true));
 
       const fallbackMedia = (isArr ? (raw[7] || "") : (raw.media || "")).toString().trim();
       const mediaStr = detectMediaFromUrl(urlStr, fallbackMedia);
@@ -1062,7 +1106,6 @@
     }
 
     // --- 類似記事（同一ライブ・イベント・リリース等の複数メディア記事）のトピック集約ルール ---
-    // 原則：同じカテゴリー・同じイベント/作品フェーズのみをまとめ、別時期の発表や別イベントが混ざらないよう厳密化
     const TOPIC_GROUP_RULES = [
       // 2026
       { pat: /(i☆Ris.*(14th Anniversary|14周年記念)|FANTASISTA)/i, yr: /^2026-11/, cat: "ライブレポ", title: "『i☆Ris 14th Anniversary Live ～FANTASISTA～』横浜アリーナ公演 ライブレポート" },
@@ -1350,10 +1393,11 @@
               if (!matchedBucket.tags.includes(t)) matchedBucket.tags.push(t);
             });
           } else {
+            const safeTopicKey = sanitizeGroupKey(normTopic ? normTopic.slice(0, 20) : "");
             const newEntry = {
               isGroup: Boolean(normTopic),
               normTopic: normTopic,
-              groupKey: normTopic ? `auto_${item.category}_${normTopic.slice(0, 20)}_${item.date}` : `single_${item.id}`,
+              groupKey: normTopic ? `auto_${sanitizeGroupKey(item.category)}_${safeTopicKey}_${sanitizeGroupKey(item.date)}` : `single_${sanitizeGroupKey(item.id)}`,
               groupTitle: normTopic ? `『${topicName}』${item.category}まとめ` : item.title,
               primary: item,
               articles: [item],
@@ -1378,16 +1422,16 @@
       function getArticleSeriesPartOrder(art) {
         const title = art.title || "";
         const url = art.url || "";
-        if (/【前編】|（前編）|\(前編\)|インタビュー前編|前編：|前編|前半|（1）|\(1\)|その1|Part\.?\s*1|Vol\.?\s*1|連載第1回/i.test(title)) return 1;
-        if (/【中編】|（中編）|\(中編\)|インタビュー中編|中編：|中編|（2）|\(2\)|その2|Part\.?\s*2|Vol\.?\s*2|連載第2回/i.test(title)) return 2;
-        if (/【後編】|（後編）|\(後編\)|インタビュー後編|後編：|後編|後半|（3）|\(3\)|その3|Part\.?\s*3|Vol\.?\s*3|連載第3回/i.test(title)) return 3;
+        if (/【前編】|（前編）|\(前編\)|インタビュー前編|前編：|前編|前半|（1）|\(1\)|その1|Part\.?\s*1|Vol\.?\s*1|連載第1回/i.test(title)) return 1;
+        if (/【中編】|（中編）|\(中編\)|インタビュー中編|中編：|中編|（2）|\(2\)|その2|Part\.?\s*2|Vol\.?\s*2|連載第2回/i.test(title)) return 2;
+        if (/【後編】|（後編）|\(後編\)|インタビュー後編|後編：|後編|後半|（3）|\(3\)|その3|Part\.?\s*3|Vol\.?\s*3|連載第3回/i.test(title)) return 3;
         const circled = "①②③④⑤⑥⑦⑧⑨⑩";
         for (let i = 0; i < circled.length; i++) {
           if (title.includes(circled[i])) return i + 1;
         }
         // タイトルに「前編・後編」表記がない同日・連日公開の前後編ペア（HOMINIS / 日刊SPA!）
-        if (/post13008|\/2006843/.test(url)) return 1;
-        if (/post13019|\/2008548/.test(url)) return 3;
+        if (/post13008|\/2006843/.test(url)) return 1;
+        if (/post13019|\/2008548/.test(url)) return 3;
         return 50;
       }
 
@@ -1435,7 +1479,7 @@
           const single = ent.articles[0];
           return {
             isGroup: false,
-            groupKey: `single_${single.id}`,
+            groupKey: `single_${sanitizeGroupKey(single.id)}`,
             primary: single,
             articles: [single],
             date: single.date,
@@ -1468,12 +1512,15 @@
 
     const CACHE_KEY = "himika_articles_cache_v8";
     const CACHE_TIME_KEY = "himika_articles_cache_time_v8";
+    const CACHE_SIG_KEY = "himika_articles_cache_sig_v8";
     const CACHE_TTL_MS = 30 * 60 * 1000; // 30分間キャッシュ保持
 
     const PAGE_SIZE = 30; // 1回あたりの表示件数（分割表示）
     let displayedCount = PAGE_SIZE;
+    let isInitialLoading = true;
 
     let items = initialArticlesData.map((item, idx) => normalizeArticle(item, idx)).filter(it => !it.hidden);
+    let cachedMediaTags = [];
     let works = [...initialWorksData];
     let selectedWorksCategory = "すべて";
     let worksSearchQuery = "";
@@ -1513,7 +1560,7 @@
 
     // 旧バージョンの行番号お気に入り（数値ID）を記事URLベースの不変IDへ自動移行する関数
     function migrateLegacyFavorites(articleList) {
-      if (!Array.isArray(favoriteIds) || favoriteIds.length === 0) return;
+      if (!Array.isArray(favoriteIds) || favoriteIds.length === 0 || articleList.length === 0) return;
       let changed = false;
       const migrated = [];
       favoriteIds.forEach(fid => {
@@ -1534,20 +1581,26 @@
         safeStorage.setItem('himika_favorites', JSON.stringify(favoriteIds));
       }
     }
-    migrateLegacyFavorites(items);
 
     const categoryPresets = ["すべて", "インタビュー", "ライブレポ", "舞台挨拶・イベント", "★ ブックマーク"];
     // テーマタグとメディアタグの定義
     const themeTagPresets = ["ソロ", "i☆Ris", "プリパラ", "声優", "舞台", "ラジオ", "日本酒", "対談"];
 
-    function getAvailableMediaTags() {
+    function rebuildMediaTagsCache() {
       const mediaMap = {};
       items.forEach(it => {
         if (it.media && it.media !== "Webメディア") {
           mediaMap[it.media] = (mediaMap[it.media] || 0) + 1;
         }
       });
-      return Object.keys(mediaMap).sort((a, b) => mediaMap[b] - mediaMap[a]);
+      cachedMediaTags = Object.keys(mediaMap).sort((a, b) => mediaMap[b] - mediaMap[a]);
+    }
+
+    function getAvailableMediaTags() {
+      if (cachedMediaTags.length === 0 && items.length > 0) {
+        rebuildMediaTagsCache();
+      }
+      return cachedMediaTags;
     }
 
     function getAllTagPresets() {
@@ -1595,6 +1648,11 @@
     const toggleFeaturedBtn = document.getElementById('toggle-featured-btn');
     const toggleFeaturedLabel = document.getElementById('toggle-featured-label');
     const toggleFeaturedIcon = document.getElementById('toggle-featured-icon');
+
+    function isDrawerOpen() {
+      const d = document.getElementById('mobile-drawer');
+      return d && !d.classList.contains('hidden');
+    }
 
     window.toggleMobileFilterDetails = function() {
       isMobileFiltersOpen = !isMobileFiltersOpen;
@@ -1726,10 +1784,9 @@
         favoriteIds.push(id);
       }
       safeStorage.setItem('himika_favorites', JSON.stringify(favoriteIds));
-      renderCategoryTabs();
       applyFiltersAndRender();
       renderFeaturedArticles();
-      renderDrawerContents();
+      if (isDrawerOpen()) renderDrawerContents(true);
     };
 
     function renderFeaturedArticles() {
@@ -1753,28 +1810,28 @@
               <div class="flex items-center justify-between border-b editorial-border pb-1.5 text-xs">
                 <div class="flex items-center gap-1.5 truncate">
                   <span class="font-mono text-[10px] font-bold px-2 py-0.5 rounded-full bg-himi-100 dark:bg-himi-900/70 text-himi-700 dark:text-himi-300">PICK ${issueNum}</span>
-                  <span class="text-himi-800/90 dark:text-purple-200/95 font-bold truncate">${item.media}</span>
+                  <span class="text-himi-800/90 dark:text-purple-200/95 font-bold truncate">${escapeHtml(item.media)}</span>
                 </div>
-                <span class="font-mono text-[11px] font-semibold text-himi-700/70 dark:text-purple-300/70 shrink-0">${item.date}</span>
+                <span class="font-mono text-[11px] font-semibold text-himi-700/70 dark:text-purple-300/70 shrink-0">${escapeHtml(item.date)}</span>
               </div>
 
               <h3 class="font-serif text-sm font-bold text-himi-950 dark:text-white leading-snug group-hover:text-himi-600 dark:group-hover:text-himi-300 transition-colors break-words-any line-clamp-2">
-                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="focus:outline-none">
-                  ${item.title}
+                <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="focus:outline-none">
+                  ${escapeHtml(item.title)}
                 </a>
               </h3>
 
               <p class="text-[11px] text-himi-900/85 dark:text-purple-100/90 line-clamp-3 leading-relaxed break-words-any">
-                ${item.summary || ''}
+                ${escapeHtml(item.summary || '')}
               </p>
             </div>
 
             <div class="pt-2 mt-2 border-t editorial-border flex items-center justify-between text-xs">
-              <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="font-bold text-himi-700 dark:text-himi-300 group-hover:text-himi-500 inline-flex items-center gap-1">
+              <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer" class="font-bold text-himi-700 dark:text-himi-300 group-hover:text-himi-500 inline-flex items-center gap-1">
                 <span>記事を読む</span>
                 <i class="ph-bold ph-arrow-up-right text-xs"></i>
               </a>
-              <button type="button" onclick="toggleFavorite(event, '${item.id}')" class="text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors p-1.5 rounded-full hover:bg-himi-50 dark:hover:bg-himi-900/50" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+              <button type="button" onclick="toggleFavorite(event, '${escapeJsStr(item.id)}')" class="text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors p-1.5 rounded-full hover:bg-himi-50 dark:hover:bg-himi-900/50" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
                 <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-base"></i>
               </button>
             </div>
@@ -1866,7 +1923,6 @@
         }
       }
 
-      // コンパクト時は「全期間」＋直近5年分（または選択中の年）をボタン表示し、展開時は全年代を表示
       let displayYears = availableYearsList;
       if (!isYearGridExpanded && availableYearsList.length > 6) {
         displayYears = availableYearsList.slice(0, 6);
@@ -1884,8 +1940,8 @@
           : "bg-white dark:bg-[#1C142B] text-himi-900 dark:text-purple-100 hover:bg-himi-100 dark:hover:bg-himi-900/50 border editorial-border font-bold";
 
         return `
-          <button type="button" data-year="${yr}" onclick="selectYearFilter('${yr}')" class="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-2xl text-xs font-mono whitespace-nowrap transition-colors border active:scale-95 ${btnClass}">
-            <span>${yr === "全期間" ? "全期間" : yr + "年"}</span>
+          <button type="button" data-year="${escapeHtml(yr)}" onclick="selectYearFilter('${escapeJsStr(yr)}')" class="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-2xl text-xs font-mono whitespace-nowrap transition-colors border active:scale-95 ${btnClass}">
+            <span>${yr === "全期間" ? "全期間" : escapeHtml(yr) + "年"}</span>
             <span class="text-[10px] opacity-80">(${count})</span>
           </button>
         `;
@@ -1905,9 +1961,8 @@
         activeYearName.textContent = yr + "年";
       }
 
-      renderYearTimeline();
       applyFiltersAndRender();
-      renderDrawerContents();
+      if (isDrawerOpen()) renderDrawerContents(true);
     };
 
     function clearYearFilter() {
@@ -1937,8 +1992,8 @@
           : "bg-white dark:bg-himi-900/70 text-himi-700 dark:text-himi-300";
 
         return `
-          <button type="button" onclick="selectCategoryFilter('${cat}')" class="${spanColClass} inline-flex items-center justify-between sm:justify-center gap-1 sm:gap-2 px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl border text-[11px] sm:text-xs whitespace-nowrap transition-all active:scale-95 ${tabClass}">
-            <span class="truncate">${cat}</span>
+          <button type="button" onclick="selectCategoryFilter('${escapeJsStr(cat)}')" class="${spanColClass} inline-flex items-center justify-between sm:justify-center gap-1 sm:gap-2 px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl border text-[11px] sm:text-xs whitespace-nowrap transition-all active:scale-95 ${tabClass}">
+            <span class="truncate">${escapeHtml(cat)}</span>
             <span class="font-mono text-[10px] px-1.5 sm:px-2 py-0.5 rounded-full font-bold shrink-0 ${badgeClass}">${count}</span>
           </button>
         `;
@@ -1954,9 +2009,8 @@
         activeCategoryIndicator.classList.remove('hidden');
         activeCategoryIndicator.classList.add('inline-flex');
         activeCategoryName.textContent = cat;
-        renderCategoryTabs();
         applyFiltersAndRender();
-        renderDrawerContents();
+        if (isDrawerOpen()) renderDrawerContents(true);
       }
     };
 
@@ -1964,9 +2018,8 @@
       selectedCategory = "";
       activeCategoryIndicator.classList.add('hidden');
       activeCategoryIndicator.classList.remove('inline-flex');
-      renderCategoryTabs();
       applyFiltersAndRender();
-      renderDrawerContents();
+      if (isDrawerOpen()) renderDrawerContents(true);
     }
 
     clearCatBtn.addEventListener('click', clearCategoryFilter);
@@ -1981,7 +2034,8 @@
 
     function getTagCount(tag, baseList) {
       const targetList = baseList || items;
-      return targetList.filter(it => (it.tags || []).some(t => t.toLowerCase() === tag.toLowerCase())).length;
+      const lowerTag = tag.toLowerCase();
+      return targetList.filter(it => (it.tags || []).some(t => t.toLowerCase() === lowerTag)).length;
     }
 
     function renderQuickFilters() {
@@ -2026,14 +2080,13 @@
         return `
           <button type="button" onclick="toggleTagFilter('${escapeJsStr(tag)}')" class="${hiddenClass} items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs transition-colors active:scale-95 ${pillClass}">
             <i class="ph-fill ${iconName} text-xs ${isSelected ? 'text-white' : 'text-himi-500 dark:text-himi-400'}"></i>
-            <span>${tag}</span>
+            <span>${escapeHtml(tag)}</span>
             <span class="font-mono text-[10px] opacity-75">(${count})</span>
           </button>
         `;
       }).join('');
 
       renderActiveTagsBar();
-      renderDrawerContents();
     }
 
     window.toggleTagFilter = function(tag) {
@@ -2043,8 +2096,8 @@
       } else {
         selectedTags.push(tag);
       }
-      renderQuickFilters();
       applyFiltersAndRender();
+      if (isDrawerOpen()) renderDrawerContents(true);
     };
 
     function renderActiveTagsBar() {
@@ -2055,7 +2108,7 @@
 
       activeTagsContainer.innerHTML = selectedTags.map(tag => `
         <span class="inline-flex items-center gap-1 bg-himi-600 text-white px-3 py-1 rounded-full text-[11px] font-bold shadow-xs">
-          <span>#${tag}</span>
+          <span>#${escapeHtml(tag)}</span>
           <button type="button" onclick="toggleTagFilter('${escapeJsStr(tag)}')" class="hover:opacity-75 p-0.5">
             <i class="ph-bold ph-x text-[10px]"></i>
           </button>
@@ -2070,8 +2123,8 @@
     window.clearAllTags = function() {
       displayedCount = PAGE_SIZE;
       selectedTags = [];
-      renderQuickFilters();
       applyFiltersAndRender();
+      if (isDrawerOpen()) renderDrawerContents(true);
     };
 
     let resizeTimer = null;
@@ -2085,7 +2138,7 @@
 
     window.loadMoreArticles = function() {
       displayedCount += PAGE_SIZE;
-      applyFiltersAndRender(false);
+      applyFiltersAndRender();
     };
 
     window.resetAllFilters = function() {
@@ -2101,11 +2154,8 @@
       activeCategoryIndicator.classList.remove('inline-flex');
       selectedTags = [];
       expandedArticleGroupKeys.clear();
-      renderYearTimeline();
-      renderCategoryTabs();
-      renderQuickFilters();
       applyFiltersAndRender();
-      renderDrawerContents();
+      if (isDrawerOpen()) renderDrawerContents(false);
     };
 
     function updateMobileFloatingBadges(filteredLength) {
@@ -2190,7 +2240,6 @@
 
       if (currentSort === 'date-desc') {
         filtered.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-        migrateLegacyFavorites(items);
       } else if (currentSort === 'date-asc') {
         filtered.sort((a, b) => (a.date || "").localeCompare(b.date || ""));
       } else if (currentSort === 'title-asc') {
@@ -2199,14 +2248,13 @@
 
       const totalFilteredArticles = filtered.length;
 
-      // 類似記事まとめモードがONの場合は、同一イベント・リリースの記事を1つのグループエントリにまとめる
       let displayEntries;
       if (isGroupSimilarEnabled) {
         displayEntries = buildGroupedEntries(filtered);
       } else {
         displayEntries = filtered.map(it => ({
           isGroup: false,
-          groupKey: `single_${it.id}`,
+          groupKey: `single_${sanitizeGroupKey(it.id)}`,
           primary: it,
           articles: [it],
           date: it.date,
@@ -2227,6 +2275,20 @@
       renderCategoryTabs();
       renderQuickFilters();
 
+      const loadMoreContainer = document.getElementById('load-more-container');
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      const loadMoreText = document.getElementById('load-more-text');
+      const allLoadedText = document.getElementById('all-loaded-text');
+
+      if (isInitialLoading && items.length === 0) {
+        resultsCount.textContent = "データを読み込み中...";
+        listContainer.classList.add('hidden');
+        emptyState.classList.add('hidden');
+        if (loadMoreContainer) loadMoreContainer.classList.add('hidden');
+        updateMobileFloatingBadges(0);
+        return;
+      }
+
       if (isGroupSimilarEnabled && multiGroupCount > 0) {
         resultsCount.innerHTML = `全 <strong class="text-himi-700 dark:text-himi-300 text-sm font-mono">${totalFilteredArticles}</strong> 記事を <strong class="text-himi-600 dark:text-himi-400 text-sm font-mono">${totalEntries}</strong> トピックに集約表示中 <span class="text-[11px] opacity-75">（複数メディアまとめ: ${multiGroupCount}件 / タップで一覧展開）</span>`;
       } else if (totalEntries <= displayedCount) {
@@ -2235,11 +2297,6 @@
         resultsCount.innerHTML = `全 <strong class="text-himi-700 dark:text-himi-300 text-sm font-mono">${totalFilteredArticles}</strong> 件中 <strong class="text-himi-600 dark:text-himi-400 font-mono">${visibleEntries.length}</strong> 件を表示中 <span class="text-[11px] opacity-75 font-mono">(総収録: ${items.length}件)</span>`;
       }
       updateMobileFloatingBadges(totalFilteredArticles);
-
-      const loadMoreContainer = document.getElementById('load-more-container');
-      const loadMoreBtn = document.getElementById('load-more-btn');
-      const loadMoreText = document.getElementById('load-more-text');
-      const allLoadedText = document.getElementById('all-loaded-text');
 
       if (totalEntries === 0) {
         listContainer.classList.add('hidden');
@@ -2275,6 +2332,7 @@
       const articlesView = document.getElementById('articles-portal-view');
       const irisView = document.getElementById('iris-portal-view');
       const worksView = document.getElementById('works-portal-view');
+      const floatingBar = document.getElementById('mobile-floating-bar');
 
       const tabArticlesBtn = document.getElementById('main-tab-articles');
       const tabIrisBtn = document.getElementById('main-tab-iris');
@@ -2301,6 +2359,9 @@
       if (irisView) irisView.classList.toggle('hidden', tab !== 'iris');
       if (worksView) worksView.classList.toggle('hidden', tab !== 'works');
 
+      // 記事一覧タブ以外では下部フローティングバー（記事用絞り込み）を非表示にする
+      if (floatingBar) floatingBar.classList.toggle('hidden', tab !== 'articles');
+
       if (tabArticlesBtn) tabArticlesBtn.className = tab === 'articles' ? activeBtnCls : inactiveBtnCls;
       if (tabIrisBtn) tabIrisBtn.className = tab === 'iris' ? activeBtnCls : inactiveBtnCls;
       if (tabWorksBtn) tabWorksBtn.className = tab === 'works' ? activeBtnCls : inactiveBtnCls;
@@ -2314,7 +2375,7 @@
       if (drawerTabWorks) drawerTabWorks.className = tab === 'works' ? activeDrawerCls : inactiveDrawerCls;
 
       if (tab === 'articles') {
-        applyFiltersAndRender(false);
+        applyFiltersAndRender();
       } else if (tab === 'iris') {
         renderIrisCategoryTabs();
         applyIrisFiltersAndRender();
@@ -2352,7 +2413,6 @@
       const cleanTitle = (work.title || "").replace(/[『』「」]/g, '').split(/[\/／]/)[0].trim();
       const normTitle = toNormalizedKana(cleanTitle);
 
-      // 1. F列（featuredMark）にその作品名またはタグ名が記載されている記事を優先抽出
       const fMatched = items.filter(item => {
         if (!item.featuredMark) return false;
         const normMark = toNormalizedKana(item.featuredMark);
@@ -2371,7 +2431,6 @@
 
       if (fMatched.length > 0) return fMatched;
 
-      // 2. F列に未設定の場合は、関連記事の中からインタビュー・おすすめ記事を中心に上位3件を自動ピックアップ
       const allMatched = getMatchedArticlesForWork(work);
       const sorted = [...allMatched].sort((a, b) => {
         const aScore = (a.featured ? 10 : 0) + (a.category === 'インタビュー' ? 5 : 0);
@@ -2384,14 +2443,13 @@
 
     window.toggleWorkSelection = function(id) {
       if (selectedWorkId === id) {
-        selectedWorkId = null; // 再タップで閉じる
+        selectedWorkId = null;
       } else {
-        selectedWorkId = id; // タップされた作品を選択して展開
+        selectedWorkId = id;
       }
       applyWorksFiltersAndRender();
     };
 
-    // --- 作品と記事の相互連携（クロスリンク） ---
     function getArticleCountForWork(work) {
       return getMatchedArticlesForWork(work).length;
     }
@@ -2402,27 +2460,27 @@
       const footerLeft = showFColTag ? `
         <span class="text-[10px] font-bold text-amber-700 dark:text-amber-400 flex items-center gap-0.5">
           <i class="ph-bold ph-tag text-[10px]"></i>
-          <span>${art.featuredMark ? `F列: ${art.featuredMark}` : art.category}</span>
+          <span>${escapeHtml(art.featuredMark ? `F列: ${art.featuredMark}` : art.category)}</span>
         </span>` : '';
       return `
         <div class="bg-white dark:bg-[#140D20] border-2 border-amber-200/90 dark:border-amber-800/70 rounded-2xl p-3 sm:p-3.5 space-y-2 hover:border-amber-400 dark:hover:border-amber-500 transition-all shadow-xs" onclick="event.stopPropagation()">
           <div class="flex items-center justify-between text-xs gap-2">
             <div class="flex items-center gap-1.5 truncate">
-              <time class="font-mono text-[10px] font-bold text-himi-700 dark:text-himi-300">${art.date || '----'}</time>
-              <span class="text-[11px] font-bold text-himi-800 dark:text-purple-200 truncate max-w-[130px]">${art.media}</span>
-              <span class="px-1.5 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 text-[9px] font-bold border border-amber-300/80">${badgeText}</span>
+              <time class="font-mono text-[10px] font-bold text-himi-700 dark:text-himi-300">${escapeHtml(art.date || '----')}</time>
+              <span class="text-[11px] font-bold text-himi-800 dark:text-purple-200 truncate max-w-[130px]">${escapeHtml(art.media)}</span>
+              <span class="px-1.5 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 text-[9px] font-bold border border-amber-300/80">${escapeHtml(badgeText)}</span>
             </div>
-            <button type="button" onclick="toggleFavorite(event, '${art.id}')" class="p-1 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+            <button type="button" onclick="toggleFavorite(event, '${escapeJsStr(art.id)}')" class="p-1 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
               <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-sm"></i>
             </button>
           </div>
           <h5 class="font-serif font-bold text-xs sm:text-[13px] text-himi-950 dark:text-white leading-snug hover:text-himi-600 dark:hover:text-himi-300 transition-colors line-clamp-2">
-            <a href="${art.url}" target="_blank" rel="noopener noreferrer">${art.title}</a>
+            <a href="${escapeHtml(art.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(art.title)}</a>
           </h5>
-          <p class="text-[11px] text-himi-900/85 dark:text-purple-100/90 line-clamp-2 leading-relaxed">${art.summary || ''}</p>
+          <p class="text-[11px] text-himi-900/85 dark:text-purple-100/90 line-clamp-2 leading-relaxed">${escapeHtml(art.summary || '')}</p>
           <div class="pt-1 flex items-center ${showFColTag ? 'justify-between' : 'justify-end'} text-[11px] border-t editorial-border">
             ${footerLeft}
-            <a href="${art.url}" target="_blank" rel="noopener noreferrer" class="font-bold text-himi-600 dark:text-himi-300 hover:underline inline-flex items-center gap-1 text-[11px]">
+            <a href="${escapeHtml(art.url)}" target="_blank" rel="noopener noreferrer" class="font-bold text-himi-600 dark:text-himi-300 hover:underline inline-flex items-center gap-1 text-[11px]">
               <span>記事を読む</span>
               <i class="ph-bold ph-arrow-up-right text-[10px]"></i>
             </a>
@@ -2439,6 +2497,10 @@
       searchQuery = "";
       searchInput.value = "";
       clearSearchBtn.classList.add('hidden');
+      activeYearIndicator.classList.add('hidden');
+      activeYearIndicator.classList.remove('inline-flex');
+      activeCategoryIndicator.classList.add('hidden');
+      activeCategoryIndicator.classList.remove('inline-flex');
 
       const allKnownTags = getAllTagPresets();
       if (tag && allKnownTags.includes(tag)) {
@@ -2450,11 +2512,7 @@
         clearSearchBtn.classList.remove('hidden');
       }
 
-      renderYearTimeline();
-      renderCategoryTabs();
-      renderQuickFilters();
-      applyFiltersAndRender(true);
-      renderDrawerContents();
+      applyFiltersAndRender();
 
       setTimeout(() => {
         const target = document.getElementById('filter-panel');
@@ -2487,8 +2545,8 @@
           : "bg-himi-50 dark:bg-[#130E1F] text-himi-900 dark:text-purple-100 hover:bg-himi-100 dark:hover:bg-himi-900/50 border editorial-border font-bold";
 
         return `
-          <button type="button" onclick="selectWorksCategory('${cat}')" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-2xl border text-xs whitespace-nowrap transition-all active:scale-95 ${cls}">
-            <span>${cat}</span>
+          <button type="button" onclick="selectWorksCategory('${escapeJsStr(cat)}')" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-2xl border text-xs whitespace-nowrap transition-all active:scale-95 ${cls}">
+            <span>${escapeHtml(cat)}</span>
             <span class="font-mono text-[10px] px-1.5 py-0.5 rounded-full font-bold ${isSelected ? 'bg-white/20 text-white' : 'bg-white dark:bg-himi-900 text-himi-700 dark:text-himi-300'}">(${count})</span>
           </button>
         `;
@@ -2529,7 +2587,6 @@
       const kwList = getKeywordsForIrisEvent(ev).map(k => toNormalizedKana(k)).filter(Boolean);
       const cleanTitle = toNormalizedKana((ev.title || "").replace(/[『』「」]/g, '').split(/[～〜(（]/)[0].trim());
 
-      // 1. シート1のF列（featuredMark）にキーワードやライブ名が指定されている記事を最優先で抽出
       const fMatched = items.filter(it => {
         if (!it.featuredMark) return false;
         const normMark = toNormalizedKana(it.featuredMark);
@@ -2542,7 +2599,6 @@
         return { articles: fMatched, isFromFCol: true };
       }
 
-      // 2. F列に未入力の場合は、そのライブの関連記事からライブレポ・インタビューの上位3件を自動ピックアップ
       const allMatched = getMatchedArticlesForIrisEvent(ev);
       const sorted = [...allMatched].sort((a, b) => {
         const aScore = (a.featured ? 10 : 0) + (a.category === 'ライブレポ' ? 4 : (a.category === 'インタビュー' ? 3 : 1));
@@ -2571,6 +2627,7 @@
     window.resetIrisFilters = function() {
       selectedIrisCategory = "すべて";
       irisSearchQuery = "";
+      selectedIrisId = null;
       const input = document.getElementById('iris-search-input');
       const clearBtn = document.getElementById('iris-clear-search-btn');
       if (input) input.value = "";
@@ -2600,11 +2657,7 @@
       searchInput.value = queryTerm;
       clearSearchBtn.classList.remove('hidden');
 
-      renderYearTimeline();
-      renderCategoryTabs();
-      renderQuickFilters();
-      applyFiltersAndRender(true);
-      renderDrawerContents();
+      applyFiltersAndRender();
 
       setTimeout(() => {
         const target = document.getElementById('filter-panel');
@@ -2639,8 +2692,8 @@
           : "bg-himi-50 dark:bg-[#130E1F] text-himi-900 dark:text-purple-100 hover:bg-himi-100 dark:hover:bg-himi-900/50 border editorial-border font-bold";
 
         return `
-          <button type="button" onclick="selectIrisCategory('${cat}')" class="inline-flex items-center justify-between sm:justify-center gap-1.5 px-3 py-2.5 rounded-2xl border text-[11px] sm:text-xs whitespace-nowrap transition-all active:scale-95 ${cls}">
-            <span class="truncate">${cat}</span>
+          <button type="button" onclick="selectIrisCategory('${escapeJsStr(cat)}')" class="inline-flex items-center justify-between sm:justify-center gap-1.5 px-3 py-2.5 rounded-2xl border text-[11px] sm:text-xs whitespace-nowrap transition-all active:scale-95 ${cls}">
+            <span class="truncate">${escapeHtml(cat)}</span>
             <span class="font-mono text-[10px] px-1.5 sm:px-2 py-0.5 rounded-full font-bold shrink-0 ${isSelected ? 'bg-white/20 text-white' : 'bg-white dark:bg-himi-900 text-himi-700 dark:text-himi-300'}">${count}</span>
           </button>
         `;
@@ -2668,6 +2721,10 @@
           const normalizedTarget = toNormalizedKana(combined);
           return queryKeywords.every(kw => normalizedTarget.includes(toNormalizedKana(kw)));
         });
+      }
+
+      if (selectedIrisId !== null && !filtered.some(ev => ev.id === selectedIrisId)) {
+        selectedIrisId = null;
       }
 
       const grid = document.getElementById('iris-grid-container');
@@ -2701,7 +2758,7 @@
           const recArticles = recObj.articles;
 
           const officialLinkBtn = ev.officialUrl ? `
-            <a href="${ev.officialUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-xl bg-himi-50 dark:bg-himi-900/50 hover:bg-himi-100 text-himi-800 dark:text-purple-200 border editorial-border text-[10px] font-bold inline-flex items-center gap-1 transition-colors">
+            <a href="${escapeHtml(ev.officialUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-xl bg-himi-50 dark:bg-himi-900/50 hover:bg-himi-100 text-himi-800 dark:text-purple-200 border editorial-border text-[10px] font-bold inline-flex items-center gap-1 transition-colors">
               <span>代表記事・詳細</span>
               <i class="ph-bold ph-arrow-up-right text-[9px] text-himi-500"></i>
             </a>
@@ -2728,14 +2785,14 @@
           }
 
           return `
-            <article onclick="toggleIrisSelection(${ev.id})" class="${cardCls}">
+            <article onclick="toggleIrisSelection(${Number(ev.id)})" class="${cardCls}">
               <div class="space-y-2.5">
                 <div class="flex items-center justify-between text-xs gap-1">
                   <div class="flex items-center gap-1.5 flex-wrap">
                     <span class="px-2.5 py-0.5 text-[10px] font-bold border rounded-full ${badgeClass}">
-                      ${ev.category || 'ライブ'}
+                      ${escapeHtml(ev.category || 'ライブ')}
                     </span>
-                    ${ev.period ? `<span class="font-mono text-[11px] font-bold text-himi-700/80 dark:text-himi-300/80">${ev.period}</span>` : ''}
+                    ${ev.period ? `<span class="font-mono text-[11px] font-bold text-himi-700/80 dark:text-himi-300/80">${escapeHtml(ev.period)}</span>` : ''}
                   </div>
                   ${isSelected ? `
                     <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-himi-600 text-white flex items-center gap-1 shadow-xs shrink-0">
@@ -2747,18 +2804,18 @@
 
                 <div class="min-w-0">
                   <h3 class="font-serif text-[15px] sm:text-base font-bold text-himi-950 dark:text-white leading-snug break-words-any">
-                    ${ev.title}
+                    ${escapeHtml(ev.title)}
                   </h3>
                   ${ev.venue ? `
                     <div class="mt-1.5 inline-flex max-w-full items-center gap-1 px-2.5 py-0.5 rounded-full bg-himi-100/90 dark:bg-himi-900/70 text-himi-800 dark:text-himi-200 text-[11px] font-bold overflow-hidden">
                       <i class="ph-fill ph-map-pin text-pink-500 text-xs shrink-0"></i>
-                      <span class="truncate">${ev.venue}</span>
+                      <span class="truncate">${escapeHtml(ev.venue)}</span>
                     </div>
                   ` : ''}
                 </div>
 
                 <p class="text-xs text-himi-900/85 dark:text-purple-100/90 leading-relaxed break-words-any line-clamp-3">
-                  ${ev.description || ''}
+                  ${escapeHtml(ev.description || '')}
                 </p>
 
                 ${officialLinkBtn ? `
@@ -2768,7 +2825,6 @@
                 ` : ''}
               </div>
 
-              <!-- タップ時に展開されるおすすめ記事＆全記事ジャンプエリア -->
               ${isSelected ? `
                 <div class="mt-4 pt-3.5 border-t-2 border-dashed border-himi-200 dark:border-himi-800 space-y-3 animate-sheet-up" onclick="event.stopPropagation()">
                   <div class="flex items-center justify-between bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-2xl px-3 py-2">
@@ -2782,7 +2838,7 @@
                       <span class="font-mono text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-amber-500 text-white shadow-xs">
                         ${recArticles.length}件
                       </span>
-                      <button type="button" onclick="event.stopPropagation(); toggleIrisSelection(${ev.id})" class="text-[11px] font-bold text-himi-700 dark:text-himi-300 hover:text-himi-950 hover:underline flex items-center gap-0.5">
+                      <button type="button" onclick="event.stopPropagation(); toggleIrisSelection(${Number(ev.id)})" class="text-[11px] font-bold text-himi-700 dark:text-himi-300 hover:text-himi-950 hover:underline flex items-center gap-0.5">
                         <span>閉じる</span>
                         <i class="ph-bold ph-caret-up text-[10px]"></i>
                       </button>
@@ -2793,7 +2849,7 @@
                     ${recArticlesHtml}
                   </div>
 
-                  <button type="button" onclick="event.stopPropagation(); jumpToArticlesByIrisEvent(${ev.id})" class="w-full py-2.5 px-3 rounded-2xl bg-himi-600 hover:bg-himi-700 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 active:scale-98 shadow-sm shadow-himi-600/20">
+                  <button type="button" onclick="event.stopPropagation(); jumpToArticlesByIrisEvent(${Number(ev.id)})" class="w-full py-2.5 px-3 rounded-2xl bg-himi-600 hover:bg-himi-700 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 active:scale-98 shadow-sm shadow-himi-600/20">
                     <i class="ph-bold ph-newspaper text-sm"></i>
                     <span>このライブに関する記事一覧へ飛ぶ（全${allArticleCount}件）</span>
                     <i class="ph-bold ph-arrow-right text-xs"></i>
@@ -2894,6 +2950,10 @@
         });
       }
 
+      if (selectedWorkId !== null && !filtered.some(w => w.id === selectedWorkId)) {
+        selectedWorkId = null;
+      }
+
       const grid = document.getElementById('works-grid-container');
       const empty = document.getElementById('works-empty-state');
       const countLabel = document.getElementById('works-count-label');
@@ -2924,14 +2984,14 @@
           const cleanTitle = (w.title || "").replace(/[『』「」]/g, '').split(/[\/／]/)[0].trim();
 
           const officialLinkBtn = w.officialUrl ? `
-            <a href="${w.officialUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-xl bg-himi-50 dark:bg-himi-900/50 hover:bg-himi-100 text-himi-800 dark:text-purple-200 border editorial-border text-[10px] font-bold inline-flex items-center gap-1 transition-colors">
+            <a href="${escapeHtml(w.officialUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-xl bg-himi-50 dark:bg-himi-900/50 hover:bg-himi-100 text-himi-800 dark:text-purple-200 border editorial-border text-[10px] font-bold inline-flex items-center gap-1 transition-colors">
               <span>公式HP</span>
               <i class="ph-bold ph-arrow-up-right text-[9px] text-himi-500"></i>
             </a>
           ` : '';
 
           const watchLinkBtn = w.watchUrl ? `
-            <a href="${w.watchUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-xl bg-himi-50 dark:bg-himi-900/50 hover:bg-himi-100 text-himi-800 dark:text-purple-200 border editorial-border text-[10px] font-bold inline-flex items-center gap-1 transition-colors">
+            <a href="${escapeHtml(w.watchUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="px-2.5 py-1 rounded-xl bg-himi-50 dark:bg-himi-900/50 hover:bg-himi-100 text-himi-800 dark:text-purple-200 border editorial-border text-[10px] font-bold inline-flex items-center gap-1 transition-colors">
               <span>配信・詳細</span>
               <i class="ph-bold ph-arrow-up-right text-[9px] text-himi-500"></i>
             </a>
@@ -2947,14 +3007,14 @@
           }
 
           return `
-            <article onclick="toggleWorkSelection(${w.id})" class="${cardCls}">
+            <article onclick="toggleWorkSelection(${Number(w.id)})" class="${cardCls}">
               <div class="space-y-2.5">
                 <div class="flex items-center justify-between text-xs">
                   <div class="flex items-center gap-1.5">
                     <span class="px-2.5 py-0.5 text-[10px] font-bold border rounded-full ${badgeClass}">
-                      ${w.category || '作品'}
+                      ${escapeHtml(w.category || '作品')}
                     </span>
-                    ${w.period ? `<span class="font-mono text-[11px] font-bold text-himi-700/80 dark:text-himi-300/80">${w.period}</span>` : ''}
+                    ${w.period ? `<span class="font-mono text-[11px] font-bold text-himi-700/80 dark:text-himi-300/80">${escapeHtml(w.period)}</span>` : ''}
                   </div>
                   ${isSelected ? `
                     <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-himi-600 text-white flex items-center gap-1 shadow-xs hover:bg-himi-700">
@@ -2966,18 +3026,18 @@
 
                 <div>
                   <h3 class="font-serif text-[15px] sm:text-base font-bold text-himi-950 dark:text-white leading-snug">
-                    ${w.title}
+                    ${escapeHtml(w.title)}
                   </h3>
                   ${w.role ? `
                     <div class="mt-1 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-himi-100/90 dark:bg-himi-900/70 text-himi-800 dark:text-himi-200 text-[11px] font-bold">
                       <i class="ph-fill ph-user-circle text-himi-500 text-xs"></i>
-                      <span>${w.role}</span>
+                      <span>${escapeHtml(w.role)}</span>
                     </div>
                   ` : ''}
                 </div>
 
                 <p class="text-xs text-himi-900/85 dark:text-purple-100/90 leading-relaxed break-words-any line-clamp-3">
-                  ${w.description || ''}
+                  ${escapeHtml(w.description || '')}
                 </p>
 
                 ${(officialLinkBtn || watchLinkBtn) ? `
@@ -3001,7 +3061,7 @@
                       <span class="font-mono text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-amber-500 text-white shadow-xs">
                         ${recArticles.length}件
                       </span>
-                      <button type="button" onclick="event.stopPropagation(); toggleWorkSelection(${w.id})" class="text-[11px] font-bold text-himi-700 dark:text-himi-300 hover:text-himi-950 hover:underline flex items-center gap-0.5" title="おすすめ記事を閉じる">
+                      <button type="button" onclick="event.stopPropagation(); toggleWorkSelection(${Number(w.id)})" class="text-[11px] font-bold text-himi-700 dark:text-himi-300 hover:text-himi-950 hover:underline flex items-center gap-0.5" title="おすすめ記事を閉じる">
                         <span>閉じる</span>
                         <i class="ph-bold ph-caret-up text-[10px]"></i>
                       </button>
@@ -3014,7 +3074,7 @@
 
                   <button type="button" onclick="event.stopPropagation(); jumpToArticlesByWorkTag('${escapeJsStr(w.tag || '')}', '${escapeJsStr(w.title)}')" class="w-full py-2.5 px-3 rounded-2xl bg-himi-100/90 hover:bg-himi-200/90 dark:bg-himi-900/60 dark:hover:bg-himi-900 text-himi-900 dark:text-purple-100 text-xs font-bold transition-all border border-himi-300/80 dark:border-himi-700 flex items-center justify-center gap-1.5 active:scale-98 shadow-xs">
                     <i class="ph-bold ph-newspaper text-himi-600 dark:text-himi-400 text-sm"></i>
-                    <span>『${cleanTitle}』の全記事（${allArticleCount}件）を記事一覧で見る</span>
+                    <span>『${escapeHtml(cleanTitle)}』の全記事（${allArticleCount}件）を記事一覧で見る</span>
                     <i class="ph-bold ph-arrow-up-right text-xs text-himi-500"></i>
                   </button>
                 </div>
@@ -3036,6 +3096,7 @@
     window.resetWorksFilters = function() {
       selectedWorksCategory = "すべて";
       worksSearchQuery = "";
+      selectedWorkId = null;
       const input = document.getElementById('works-search-input');
       const clearBtn = document.getElementById('works-clear-search-btn');
       if (input) input.value = "";
@@ -3086,7 +3147,7 @@
         const catStyle = getCategoryBadgeClass(entry.category);
 
         const tagsInline = (entry.tags || []).slice(0, 4).map(t => `
-          <button type="button" onclick="event.stopPropagation(); event.preventDefault(); toggleTagFilter('${escapeJsStr(t)}')" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-himi-50 dark:bg-himi-900/40 text-himi-700 dark:text-himi-300 hover:bg-himi-200 mr-1 mb-1 inline-block max-w-[155px] truncate align-middle">#${t}</button>
+          <button type="button" onclick="event.stopPropagation(); event.preventDefault(); toggleTagFilter('${escapeJsStr(t)}')" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-himi-50 dark:bg-himi-900/40 text-himi-700 dark:text-himi-300 hover:bg-himi-200 mr-1 mb-1 inline-block max-w-[155px] truncate align-middle">#${escapeHtml(t)}</button>
         `).join('');
 
         if (!isGroup) {
@@ -3095,12 +3156,12 @@
               <td class="block sm:hidden p-0 mb-1.5">
                 <div class="flex items-center justify-between text-xs gap-2">
                   <div class="flex items-center gap-1.5 min-w-0">
-                    <span class="font-mono font-bold text-[11px] text-himi-700 dark:text-himi-300 shrink-0">${item.date || '----'}</span>
-                    <span class="inline-block px-2 py-0.5 text-[10px] font-bold border rounded-full truncate ${catStyle}">${item.category}</span>
+                    <span class="font-mono font-bold text-[11px] text-himi-700 dark:text-himi-300 shrink-0">${escapeHtml(item.date || '----')}</span>
+                    <span class="inline-block px-2 py-0.5 text-[10px] font-bold border rounded-full truncate ${catStyle}">${escapeHtml(item.category)}</span>
                   </div>
                   <div class="flex items-center gap-1.5 shrink-0">
-                    <span class="text-[10px] font-bold text-himi-800/90 dark:text-purple-200/95 truncate max-w-[110px]">${item.media}</span>
-                    <button type="button" onclick="toggleFavorite(event, '${item.id}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+                    <span class="text-[10px] font-bold text-himi-800/90 dark:text-purple-200/95 truncate max-w-[110px]">${escapeHtml(item.media)}</span>
+                    <button type="button" onclick="toggleFavorite(event, '${escapeJsStr(item.id)}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
                       <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-base"></i>
                     </button>
                   </div>
@@ -3108,25 +3169,25 @@
               </td>
 
               <td class="hidden sm:table-cell py-3.5 px-4 font-mono font-bold text-[11px] text-himi-700 dark:text-himi-300 whitespace-nowrap align-top">
-                ${item.date || '----'}
+                ${escapeHtml(item.date || '----')}
               </td>
 
               <td class="hidden sm:table-cell py-3.5 px-3 align-top">
                 <span class="inline-block px-2.5 py-0.5 text-[10px] font-bold border rounded-full whitespace-nowrap ${catStyle}">
-                  ${item.category}
+                  ${escapeHtml(item.category)}
                 </span>
               </td>
 
               <td class="p-0 sm:py-3.5 sm:px-3 align-top space-y-1.5 block sm:table-cell">
-                <a href="${item.url || '#'}" target="_blank" rel="noopener noreferrer" class="font-serif font-bold text-sm text-himi-950 dark:text-white hover:text-himi-600 dark:hover:text-himi-300 transition-colors leading-relaxed break-words-any block">
-                  ${item.title}
+                <a href="${escapeHtml(item.url || '#')}" target="_blank" rel="noopener noreferrer" class="font-serif font-bold text-sm text-himi-950 dark:text-white hover:text-himi-600 dark:hover:text-himi-300 transition-colors leading-relaxed break-words-any block">
+                  ${escapeHtml(item.title)}
                 </a>
                 <div class="text-[11px] text-himi-900/85 dark:text-purple-100/90 line-clamp-2 break-words-any">
-                  ${item.summary || ''}
+                  ${escapeHtml(item.summary || '')}
                 </div>
                 <div class="flex flex-wrap items-center justify-between gap-2 pt-0.5">
                   <div class="flex flex-wrap items-center">${tagsInline}</div>
-                  <a href="${item.url || '#'}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-himi-100/80 hover:bg-himi-200 dark:bg-himi-900/60 dark:hover:bg-himi-800 text-himi-700 dark:text-himi-200 text-[11px] font-bold shrink-0 transition-colors">
+                  <a href="${escapeHtml(item.url || '#')}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-himi-100/80 hover:bg-himi-200 dark:bg-himi-900/60 dark:hover:bg-himi-800 text-himi-700 dark:text-himi-200 text-[11px] font-bold shrink-0 transition-colors">
                     <span>記事を読む</span>
                     <i class="ph-bold ph-arrow-up-right text-[10px]"></i>
                   </a>
@@ -3134,11 +3195,11 @@
               </td>
 
               <td class="hidden md:table-cell py-3.5 px-3 text-[11px] font-bold text-himi-800 dark:text-purple-200 align-top whitespace-nowrap">
-                ${item.media}
+                ${escapeHtml(item.media)}
               </td>
 
               <td class="hidden sm:table-cell py-3.5 px-3 text-center align-top">
-                <button type="button" onclick="toggleFavorite(event, '${item.id}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+                <button type="button" onclick="toggleFavorite(event, '${escapeJsStr(item.id)}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
                   <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-base"></i>
                 </button>
               </td>
@@ -3148,8 +3209,8 @@
 
         // 複数メディア集約行（タップで各メディアの記事一覧をアコーディオン展開）
         const mediaSummaryText = entry.mediaList.length > 3
-          ? `${entry.mediaList.slice(0, 3).join(' / ')} 他${entry.mediaList.length - 3}媒体`
-          : entry.mediaList.join(' / ');
+          ? `${entry.mediaList.slice(0, 3).map(escapeHtml).join(' / ')} 他${entry.mediaList.length - 3}媒体`
+          : entry.mediaList.map(escapeHtml).join(' / ');
 
         const subListHtml = entry.articles.map((sub, subIdx) => {
           const subFav = favoriteIds.includes(sub.id);
@@ -3158,22 +3219,22 @@
               <div class="space-y-1 min-w-0 flex-1">
                 <div class="flex items-center gap-1.5 flex-wrap">
                   <span class="inline-flex items-center justify-center w-4 h-4 rounded-full bg-himi-100 dark:bg-himi-900 text-himi-700 dark:text-himi-200 font-mono font-bold text-[10px]">${subIdx + 1}</span>
-                  <span class="px-2 py-0.5 rounded-md bg-himi-600 text-white font-bold text-[10px]">${sub.media}</span>
-                  <time class="font-mono text-[10px] font-bold text-himi-700/80 dark:text-purple-300/80">${sub.date}</time>
+                  <span class="px-2 py-0.5 rounded-md bg-himi-600 text-white font-bold text-[10px]">${escapeHtml(sub.media)}</span>
+                  <time class="font-mono text-[10px] font-bold text-himi-700/80 dark:text-purple-300/80">${escapeHtml(sub.date)}</time>
                 </div>
-                <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="font-serif font-bold text-xs sm:text-[13px] text-himi-950 dark:text-white hover:text-himi-600 dark:hover:text-himi-300 block leading-snug">
-                  ${sub.title}
+                <a href="${escapeHtml(sub.url)}" target="_blank" rel="noopener noreferrer" class="font-serif font-bold text-xs sm:text-[13px] text-himi-950 dark:text-white hover:text-himi-600 dark:hover:text-himi-300 block leading-snug">
+                  ${escapeHtml(sub.title)}
                 </a>
                 <p class="text-[11px] text-himi-900/75 dark:text-purple-200/75 line-clamp-1">
-                  ${sub.summary || ''}
+                  ${escapeHtml(sub.summary || '')}
                 </p>
               </div>
               <div class="flex items-center justify-end gap-2 shrink-0 pt-1 sm:pt-0">
-                <a href="${sub.url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full bg-himi-100 hover:bg-himi-200 dark:bg-himi-900/70 dark:hover:bg-himi-800 text-himi-800 dark:text-purple-100 text-[11px] font-bold inline-flex items-center gap-1 transition-colors">
+                <a href="${escapeHtml(sub.url)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-full bg-himi-100 hover:bg-himi-200 dark:bg-himi-900/70 dark:hover:bg-himi-800 text-himi-800 dark:text-purple-100 text-[11px] font-bold inline-flex items-center gap-1 transition-colors">
                   <span>記事を読む</span>
                   <i class="ph-bold ph-arrow-up-right text-[10px]"></i>
                 </a>
-                <button type="button" onclick="toggleFavorite(event, '${sub.id}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${subFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+                <button type="button" onclick="toggleFavorite(event, '${escapeJsStr(sub.id)}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${subFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
                   <i class="${subFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-sm"></i>
                 </button>
               </div>
@@ -3181,19 +3242,21 @@
           `;
         }).join('');
 
+        const safeGroupKey = escapeJsStr(entry.groupKey);
+
         return `
-          <tr onclick="toggleArticleGroupExpand(event, '${entry.groupKey}')" class="group ${isExpanded ? 'rounded-2xl sm:rounded-none bg-himi-50/95 dark:bg-[#1E1530] border-2 border-himi-500 dark:border-himi-400 sm:border-0 sm:border-l-4 sm:border-l-himi-500 ring-2 ring-himi-400/25 sm:ring-0 shadow-md sm:shadow-none' : 'rounded-2xl sm:rounded-none bg-white dark:bg-[#181226] sm:bg-transparent border-2 border-himi-300/90 dark:border-himi-700/80 sm:border-0 shadow-sm sm:shadow-none hover:border-himi-400 sm:hover:bg-himi-50/80 dark:sm:hover:bg-himi-900/30'} transition-colors cursor-pointer block sm:table-row p-3.5 sm:p-0">
+          <tr onclick="toggleArticleGroupExpand(event, '${safeGroupKey}')" class="group ${isExpanded ? 'rounded-2xl sm:rounded-none bg-himi-50/95 dark:bg-[#1E1530] border-2 border-himi-500 dark:border-himi-400 sm:border-0 sm:border-l-4 sm:border-l-himi-500 ring-2 ring-himi-400/25 sm:ring-0 shadow-md sm:shadow-none' : 'rounded-2xl sm:rounded-none bg-white dark:bg-[#181226] sm:bg-transparent border-2 border-himi-300/90 dark:border-himi-700/80 sm:border-0 shadow-sm sm:shadow-none hover:border-himi-400 sm:hover:bg-himi-50/80 dark:sm:hover:bg-himi-900/30'} transition-colors cursor-pointer block sm:table-row p-3.5 sm:p-0">
             <td class="block sm:hidden p-0 mb-2">
               <div class="space-y-1">
                 <div class="flex items-center justify-between text-xs gap-2">
-                  <span class="font-mono font-bold text-[11px] text-himi-700 dark:text-himi-300 truncate">${entry.dateDisplay || entry.date || '----'}</span>
+                  <span class="font-mono font-bold text-[11px] text-himi-700 dark:text-himi-300 truncate">${escapeHtml(entry.dateDisplay || entry.date || '----')}</span>
                   <span class="text-[11px] font-bold text-himi-600 dark:text-himi-300 inline-flex items-center gap-0.5 shrink-0">
                     <span>${isExpanded ? '閉じる' : `全${entry.articles.length}件を見る`}</span>
                     <i class="ph-bold ${isExpanded ? 'ph-caret-up' : 'ph-caret-down'} text-xs"></i>
                   </span>
                 </div>
                 <div class="flex items-center gap-1.5 flex-wrap">
-                  <span class="inline-block px-2 py-0.5 text-[10px] font-bold border rounded-full ${catStyle}">${entry.category}</span>
+                  <span class="inline-block px-2 py-0.5 text-[10px] font-bold border rounded-full ${catStyle}">${escapeHtml(entry.category)}</span>
                   <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gradient-to-r from-himi-600 to-pink-500 text-white text-[10px] font-bold shrink-0">
                     <i class="ph-fill ph-stack text-[10px]"></i>
                     <span>${entry.articles.length}媒体まとめ</span>
@@ -3203,12 +3266,12 @@
             </td>
 
             <td class="hidden sm:table-cell py-3.5 px-4 font-mono font-bold text-[11px] text-himi-700 dark:text-himi-300 whitespace-nowrap align-top">
-              ${entry.dateDisplay || entry.date || '----'}
+              ${escapeHtml(entry.dateDisplay || entry.date || '----')}
             </td>
 
             <td class="hidden sm:table-cell py-3.5 px-3 align-top space-y-1">
               <span class="inline-block px-2.5 py-0.5 text-[10px] font-bold border rounded-full whitespace-nowrap ${catStyle}">
-                ${entry.category}
+                ${escapeHtml(entry.category)}
               </span>
               <div>
                 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-gradient-to-r from-himi-600 to-pink-500 text-white text-[10px] font-bold">
@@ -3221,7 +3284,7 @@
             <td class="p-0 sm:py-3.5 sm:px-3 align-top space-y-1.5 block sm:table-cell">
               <div class="flex items-start justify-between gap-2">
                 <div class="font-serif font-bold text-sm text-himi-950 dark:text-white group-hover:text-himi-600 dark:group-hover:text-himi-300 transition-colors leading-relaxed break-words-any">
-                  ${entry.title}
+                  ${escapeHtml(entry.title)}
                 </div>
                 <span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-himi-100 dark:bg-himi-900/60 text-himi-700 dark:text-himi-300 text-[11px] font-bold shrink-0">
                   <span>${isExpanded ? '一覧を閉じる' : `全${entry.articles.length}件を表示`}</span>
@@ -3229,7 +3292,7 @@
                 </span>
               </div>
               <div class="text-[11px] text-himi-900/85 dark:text-purple-100/90 line-clamp-2 sm:line-clamp-1 break-words-any">
-                ${entry.summary || ''}
+                ${escapeHtml(entry.summary || '')}
               </div>
               <div class="flex flex-wrap items-center gap-1 pt-0.5">
                 <span class="text-[10px] font-bold text-himi-700 dark:text-himi-300">掲載媒体: ${mediaSummaryText}</span>
@@ -3245,7 +3308,7 @@
                     <span class="font-mono px-2 py-0.5 rounded-full bg-himi-600 text-white text-[9px]">全${entry.articles.length}記事</span>
                   </div>
                   ${subListHtml}
-                  <button type="button" onclick="toggleArticleGroupExpand(event, '${entry.groupKey}')" class="w-full py-2 rounded-xl bg-himi-200/80 hover:bg-himi-300/80 dark:bg-himi-800/80 dark:hover:bg-himi-700 text-himi-900 dark:text-purple-100 text-[11px] font-bold flex items-center justify-center gap-1 transition-colors">
+                  <button type="button" onclick="toggleArticleGroupExpand(event, '${safeGroupKey}')" class="w-full py-2 rounded-xl bg-himi-200/80 hover:bg-himi-300/80 dark:bg-himi-800/80 dark:hover:bg-himi-700 text-himi-900 dark:text-purple-100 text-[11px] font-bold flex items-center justify-center gap-1 transition-colors">
                     <i class="ph-bold ph-caret-up text-xs"></i>
                     <span>このまとめグループを閉じる（全${entry.articles.length}件）</span>
                   </button>
@@ -3254,11 +3317,11 @@
             </td>
 
             <td class="hidden md:table-cell py-3.5 px-3 text-[11px] font-bold text-himi-800 dark:text-purple-200 align-top">
-              <span class="line-clamp-2">${entry.mediaList.slice(0, 2).join('・')}${entry.mediaList.length > 2 ? ` ほか計${entry.articles.length}件` : ''}</span>
+              <span class="line-clamp-2">${entry.mediaList.slice(0, 2).map(escapeHtml).join('・')}${entry.mediaList.length > 2 ? ` ほか計${entry.articles.length}件` : ''}</span>
             </td>
 
             <td class="hidden sm:table-cell py-3.5 px-3 text-center align-top">
-              <button type="button" onclick="toggleFavorite(event, '${item.id}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
+              <button type="button" onclick="toggleFavorite(event, '${escapeJsStr(item.id)}')" class="p-1.5 text-himi-400 hover:text-himi-600 dark:hover:text-himi-300 transition-colors" title="${isFav ? 'ブックマーク解除' : 'ブックマーク保存'}">
                 <i class="${isFav ? 'ph-fill ph-bookmark-simple text-himi-600 dark:text-himi-400' : 'ph-bold ph-bookmark-simple'} text-base"></i>
               </button>
             </td>
@@ -3267,8 +3330,8 @@
       }).join('');
     }
 
-    // ハンバーガーメニュー／スマホ用絞り込みドロワーの描画と開閉
-    function renderDrawerContents() {
+    // ハンバーガーメニュー／スマホ用絞り込みドロワーの描画と開閉（preserveInputFocus対応）
+    function renderDrawerContents(preserveMediaSearchInput = false) {
       const drawerCats = document.getElementById('drawer-categories');
       const drawerTags = document.getElementById('drawer-tags');
       const drawerYears = document.getElementById('drawer-years');
@@ -3290,8 +3353,8 @@
           : "bg-himi-50 dark:bg-himi-900/40 text-himi-900 dark:text-purple-100 border editorial-border font-bold";
 
         return `
-          <button type="button" onclick="selectCategoryFilter('${cat}')" class="px-3 py-2.5 rounded-2xl border text-xs flex items-center justify-between transition-all ${cls}">
-            <span class="truncate">${cat}</span>
+          <button type="button" onclick="selectCategoryFilter('${escapeJsStr(cat)}')" class="px-3 py-2.5 rounded-2xl border text-xs flex items-center justify-between transition-all ${cls}">
+            <span class="truncate">${escapeHtml(cat)}</span>
             <span class="font-mono text-[10px] opacity-85">(${count})</span>
           </button>
         `;
@@ -3310,7 +3373,7 @@
         return `
           <button type="button" onclick="toggleTagFilter('${escapeJsStr(tag)}')" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-full border text-xs transition-all ${cls}">
             <i class="ph-fill ${iconName} text-xs ${isSelected ? 'text-white' : 'text-himi-500'}"></i>
-            <span>${tag}</span>
+            <span>${escapeHtml(tag)}</span>
             <span class="font-mono text-[10px] opacity-75">(${count})</span>
           </button>
         `;
@@ -3331,39 +3394,47 @@
         return `
           <button type="button" onclick="toggleTagFilter('${escapeJsStr(tag)}')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full border text-[11px] transition-colors ${cls}">
             <i class="ph-bold ph-hash text-[10px] ${isSelected ? 'text-white' : 'text-himi-500'}"></i>
-            <span>${tag}</span>
+            <span>${escapeHtml(tag)}</span>
             <span class="font-mono text-[10px] opacity-75">(${count})</span>
           </button>
         `;
       }).join('') : '<span class="text-[11px] text-himi-700/70 dark:text-purple-300/70 py-1 px-1">該当するメディアが見つかりません</span>';
 
-      drawerTags.innerHTML = `
-        <div class="space-y-1.5 w-full">
-          <div class="text-[11px] font-bold text-himi-700/80 dark:text-purple-300/80 flex items-center gap-1">
-            <i class="ph-fill ph-tag text-xs text-himi-500"></i>
-            <span>テーマ・活動</span>
+      // メディア検索入力欄がすでにある場合は、テーマリストとメディアリストのみ部分更新してフォーカス・スクロールを維持
+      const existingThemeList = document.getElementById('drawer-theme-list');
+      const existingMediaList = document.getElementById('drawer-media-list');
+      if (preserveMediaSearchInput && existingThemeList && existingMediaList) {
+        existingThemeList.innerHTML = themeHtml;
+        existingMediaList.innerHTML = mediaHtml;
+      } else {
+        drawerTags.innerHTML = `
+          <div class="space-y-1.5 w-full">
+            <div class="text-[11px] font-bold text-himi-700/80 dark:text-purple-300/80 flex items-center gap-1">
+              <i class="ph-fill ph-tag text-xs text-himi-500"></i>
+              <span>テーマ・活動</span>
+            </div>
+            <div id="drawer-theme-list" class="flex flex-wrap gap-1.5">
+              ${themeHtml}
+            </div>
           </div>
-          <div class="flex flex-wrap gap-1.5">
-            ${themeHtml}
+          <div class="space-y-2 w-full pt-2 border-t editorial-border">
+            <div class="flex items-center justify-between text-[11px] font-bold text-himi-700/80 dark:text-purple-300/80">
+              <span class="flex items-center gap-1">
+                <i class="ph-fill ph-newspaper-clipping text-xs text-himi-500"></i>
+                <span>掲載メディア別（全${mediaTags.length}媒体）</span>
+              </span>
+              <span class="text-[10px] opacity-75">タップして選択</span>
+            </div>
+            <div class="relative">
+              <i class="ph-bold ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-himi-500 text-xs"></i>
+              <input type="text" id="drawer-media-search-input" value="${escapeHtml(drawerMediaFilterQuery)}" oninput="handleDrawerMediaSearch(this.value)" placeholder="メディア名で検索（例: リスアニ、ナタリー）" class="w-full pl-8 pr-3 py-2 bg-himi-50/80 dark:bg-[#110C1B] border editorial-border rounded-xl text-xs text-himi-950 dark:text-white focus:outline-none focus:border-himi-500 placeholder:text-himi-900/40 dark:placeholder:text-purple-200/40">
+            </div>
+            <div id="drawer-media-list" class="flex flex-wrap gap-1.5 p-2 bg-himi-50/50 dark:bg-himi-950/40 rounded-2xl border editorial-border">
+              ${mediaHtml}
+            </div>
           </div>
-        </div>
-        <div class="space-y-2 w-full pt-2 border-t editorial-border">
-          <div class="flex items-center justify-between text-[11px] font-bold text-himi-700/80 dark:text-purple-300/80">
-            <span class="flex items-center gap-1">
-              <i class="ph-fill ph-newspaper-clipping text-xs text-himi-500"></i>
-              <span>掲載メディア別（全${mediaTags.length}媒体）</span>
-            </span>
-            <span class="text-[10px] opacity-75">タップして選択</span>
-          </div>
-          <div class="relative">
-            <i class="ph-bold ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-himi-500 text-xs"></i>
-            <input type="text" id="drawer-media-search-input" value="${escapeJsStr(drawerMediaFilterQuery)}" oninput="handleDrawerMediaSearch(this.value)" placeholder="メディア名で検索（例: リスアニ、ナタリー）" class="w-full pl-8 pr-3 py-2 bg-himi-50/80 dark:bg-[#110C1B] border editorial-border rounded-xl text-xs text-himi-950 dark:text-white focus:outline-none focus:border-himi-500 placeholder:text-himi-900/40 dark:placeholder:text-purple-200/40">
-          </div>
-          <div id="drawer-media-list" class="flex flex-wrap gap-1.5 p-2 bg-himi-50/50 dark:bg-himi-950/40 rounded-2xl border editorial-border">
-            ${mediaHtml}
-          </div>
-        </div>
-      `;
+        `;
+      }
 
       const yearCountMap = {};
       baseYearItems.forEach(item => {
@@ -3381,8 +3452,8 @@
           : "bg-himi-50 dark:bg-himi-900/40 text-himi-900 dark:text-purple-100 border editorial-border font-bold";
 
         return `
-          <button type="button" onclick="selectYearFilter('${yr}')" class="px-2.5 py-2 rounded-2xl border text-xs font-mono flex items-center justify-center gap-1 transition-all ${cls}">
-            <span>${yr === "全期間" ? "全期間" : yr + "年"}</span>
+          <button type="button" onclick="selectYearFilter('${escapeJsStr(yr)}')" class="px-2.5 py-2 rounded-2xl border text-xs font-mono flex items-center justify-center gap-1 transition-all ${cls}">
+            <span>${yr === "全期間" ? "全期間" : escapeHtml(yr) + "年"}</span>
             <span class="text-[10px] opacity-75">(${count})</span>
           </button>
         `;
@@ -3390,7 +3461,7 @@
     }
 
     window.openMobileDrawer = function() {
-      renderDrawerContents();
+      renderDrawerContents(false);
       const d = document.getElementById('mobile-drawer');
       d.classList.remove('hidden');
       d.classList.add('flex');
@@ -3432,7 +3503,7 @@
         return `
           <button type="button" onclick="toggleTagFilter('${escapeJsStr(tag)}')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full border text-[11px] transition-colors ${cls}">
             <i class="ph-bold ph-hash text-[10px] ${isSelected ? 'text-white' : 'text-himi-500'}"></i>
-            <span>${tag}</span>
+            <span>${escapeHtml(tag)}</span>
             <span class="font-mono text-[10px] opacity-75">(${count})</span>
           </button>
         `;
@@ -3441,20 +3512,25 @@
 
     const pcMediaSearchInput = document.getElementById('pc-media-search-input');
     if (pcMediaSearchInput) {
-      pcMediaSearchInput.addEventListener('input', (e) => {
+      pcMediaSearchInput.addEventListener('input', debounce((e) => {
         pcMediaFilterQuery = e.target.value || "";
         renderQuickFilters();
-      });
+      }, 150));
     }
 
-    searchInput.addEventListener('input', (e) => {
+    const debouncedArticleSearch = debounce(() => {
       displayedCount = PAGE_SIZE;
+      applyFiltersAndRender();
+    }, 180);
+
+    searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value;
       clearSearchBtn.classList.toggle('hidden', searchQuery.length === 0);
-      applyFiltersAndRender();
+      debouncedArticleSearch();
     });
 
     clearSearchBtn.addEventListener('click', () => {
+      displayedCount = PAGE_SIZE;
       searchInput.value = '';
       searchQuery = '';
       clearSearchBtn.classList.add('hidden');
@@ -3472,10 +3548,14 @@
 
     function populateItemsData(rawItems, fromCache = false) {
       if (!Array.isArray(rawItems) || rawItems.length === 0) return;
+      isInitialLoading = false;
       items = rawItems
         .map((raw, idx) => normalizeArticle(raw, idx))
         .filter(it => !it.hidden)
         .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+      migrateLegacyFavorites(items);
+      rebuildMediaTagsCache();
 
       if (archiveStatusBadge) {
         archiveStatusBadge.textContent = fromCache ? `${items.length} RECORDS (キャッシュ)` : `${items.length} RECORDS`;
@@ -3485,19 +3565,25 @@
         tabArticlesBadge.innerHTML = `${items.length}<span class="hidden sm:inline">件</span>`;
       }
       renderFeaturedArticles();
-      renderYearTimeline();
-      renderCategoryTabs();
-      renderQuickFilters();
-      applyFiltersAndRender(false);
-      renderDrawerContents();
-      applyIrisFiltersAndRender();
-      applyWorksFiltersAndRender();
+      applyFiltersAndRender();
+      if (isDrawerOpen()) renderDrawerContents(true);
+      if (currentPortalTab === 'iris') applyIrisFiltersAndRender();
+      if (currentPortalTab === 'works') applyWorksFiltersAndRender();
     }
 
-    // 静的JSON優先ローダー（静的配信時は `./data.json` を0.05秒で取得し、手動更新時やローカルではGASとフォールバック）
+    function buildDataSignature(data) {
+      const len = Array.isArray(data.items) ? data.items.length : 0;
+      const firstUrl = len > 0 ? (data.items[0].url || data.items[0][3] || '') : '';
+      const updated = data.updatedAt || '';
+      return `${len}|${updated}|${firstUrl}`;
+    }
+
+    // 静的JSON優先ローダー（キャッシュ有効時もバックグラウンドで差分があれば即座にUIを更新）
     async function loadSpreadsheetData(force = false) {
       const refreshIcon = document.getElementById('refresh-cache-icon');
       if (refreshIcon) refreshIcon.classList.add('animate-spin');
+
+      let currentSig = safeStorage.getItem(CACHE_SIG_KEY) || '';
 
       if (!force) {
         try {
@@ -3518,21 +3604,20 @@
               } catch (e) {}
 
               if (refreshIcon) refreshIcon.classList.remove('animate-spin');
-              fetchLatestData(false);
+              fetchLatestData(false, currentSig);
               return;
             }
           }
         } catch (e) {}
       }
 
-      await fetchLatestData(true);
+      await fetchLatestData(true, currentSig);
     }
 
-    async function fetchLatestData(updateUI = true) {
+    async function fetchLatestData(forceUI = true, prevSig = '') {
       const refreshIcon = document.getElementById('refresh-cache-icon');
       try {
         let data = null;
-        // 1. まず高速な静的 data.json の取得を試みる（プレビュー環境等では公開サイトの data.json にもフォールバック）
         try {
           const staticRes = await fetch(STATIC_DATA_ENDPOINT, { cache: "no-cache" });
           if (staticRes.ok) {
@@ -3548,7 +3633,6 @@
           } catch (e) {}
         }
 
-        // 2. data.json が取れなかった場合は GAS API を呼び出す
         if (!data || data.status !== "success") {
           const controller = new AbortController();
           const timeoutId = setTimeout(() => controller.abort(), 12000);
@@ -3559,9 +3643,12 @@
 
         if (data && data.status === "success") {
           if (Array.isArray(data.items) && data.items.length > 0) {
+            const newSig = buildDataSignature(data);
             safeStorage.setItem(CACHE_KEY, JSON.stringify(data.items));
             safeStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
-            if (updateUI) {
+            safeStorage.setItem(CACHE_SIG_KEY, newSig);
+            // 強制UI更新、またはキャッシュと差分がある場合は即座に画面へ反映
+            if (forceUI || newSig !== prevSig) {
               populateItemsData(data.items, false);
             }
           }
@@ -3580,6 +3667,8 @@
       } catch (err) {
         if (archiveStatusBadge) archiveStatusBadge.textContent = `${items.length} RECORDS`;
       } finally {
+        isInitialLoading = false;
+        if (items.length === 0) applyFiltersAndRender();
         if (refreshIcon) refreshIcon.classList.remove('animate-spin');
       }
     }
@@ -3594,28 +3683,24 @@
       updateFeaturedCollapseUI();
       updateGroupSimilarButtonUI();
       setupTimelineInteractions();
+      migrateLegacyFavorites(items);
+      rebuildMediaTagsCache();
+
       if (archiveStatusBadge) archiveStatusBadge.textContent = `${items.length} RECORDS`;
       const tabArticlesBadge = document.getElementById('tab-articles-badge');
       if (tabArticlesBadge) tabArticlesBadge.innerHTML = `${items.length}<span class="hidden sm:inline">件</span>`;
-      const tabIrisBadge = document.getElementById('tab-iris-badge');
-      if (tabIrisBadge) tabIrisBadge.innerHTML = `${irisEvents.length}<span class="hidden sm:inline">件</span>`;
-      const tabWorksBadge = document.getElementById('tab-works-badge');
-      if (tabWorksBadge) tabWorksBadge.innerHTML = `${works.length}<span class="hidden sm:inline">件</span>`;
 
       renderFeaturedArticles();
-      renderYearTimeline();
-      renderCategoryTabs();
-      renderQuickFilters();
-      applyFiltersAndRender(true);
-      renderDrawerContents();
+      applyFiltersAndRender();
 
       const irisInput = document.getElementById('iris-search-input');
       const irisClearBtn = document.getElementById('iris-clear-search-btn');
       if (irisInput && irisClearBtn) {
+        const debouncedIrisSearch = debounce(() => applyIrisFiltersAndRender(), 180);
         irisInput.addEventListener('input', (e) => {
           irisSearchQuery = e.target.value;
           irisClearBtn.classList.toggle('hidden', irisSearchQuery.length === 0);
-          applyIrisFiltersAndRender();
+          debouncedIrisSearch();
         });
         irisClearBtn.addEventListener('click', () => {
           irisInput.value = '';
@@ -3632,10 +3717,11 @@
       const worksInput = document.getElementById('works-search-input');
       const worksClearBtn = document.getElementById('works-clear-search-btn');
       if (worksInput && worksClearBtn) {
+        const debouncedWorksSearch = debounce(() => applyWorksFiltersAndRender(), 180);
         worksInput.addEventListener('input', (e) => {
           worksSearchQuery = e.target.value;
           worksClearBtn.classList.toggle('hidden', worksSearchQuery.length === 0);
-          applyWorksFiltersAndRender();
+          debouncedWorksSearch();
         });
         worksClearBtn.addEventListener('click', () => {
           worksInput.value = '';
@@ -3653,7 +3739,7 @@
       window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
         const floatingBar = document.getElementById('mobile-floating-bar');
-        if (!floatingBar) return;
+        if (!floatingBar || currentPortalTab !== 'articles') return;
         if (currentScrollY > lastScrollY && currentScrollY > 120) {
           floatingBar.style.transform = 'translateY(130%)';
           floatingBar.style.opacity = '0';
