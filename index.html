@@ -3302,7 +3302,7 @@
               </div>
 
               ${isExpanded ? `
-                <div class="mt-3 p-2.5 sm:p-3 rounded-2xl bg-himi-100/75 dark:bg-[#120C1E] border border-himi-300/80 dark:border-himi-700/80 space-y-2.5 animate-fade-in" onclick="event.stopPropagation()">
+                <div class="sm:hidden mt-3 p-2.5 rounded-2xl bg-himi-100/75 dark:bg-[#120C1E] border border-himi-300/80 dark:border-himi-700/80 space-y-2.5 animate-fade-in" onclick="event.stopPropagation()">
                   <div class="flex items-center justify-between text-[10px] font-bold text-himi-700 dark:text-himi-200 px-1">
                     <span class="inline-flex items-center gap-1"><i class="ph-bold ph-sort-ascending"></i><span>このまとめの収録記事（時系列：前編 → 後編）</span></span>
                     <span class="font-mono px-2 py-0.5 rounded-full bg-himi-600 text-white text-[9px]">全${entry.articles.length}記事</span>
@@ -3326,6 +3326,23 @@
               </button>
             </td>
           </tr>
+          ${isExpanded ? `
+            <tr class="hidden sm:table-row bg-himi-50/70 dark:bg-[#160F24] border-l-4 border-l-himi-500">
+              <td colspan="5" class="p-3 sm:p-4">
+                <div class="p-3 rounded-2xl bg-himi-100/75 dark:bg-[#120C1E] border border-himi-300/80 dark:border-himi-700/80 space-y-2.5 animate-fade-in" onclick="event.stopPropagation()">
+                  <div class="flex items-center justify-between text-[11px] font-bold text-himi-700 dark:text-himi-200 px-1">
+                    <span class="inline-flex items-center gap-1.5"><i class="ph-bold ph-sort-ascending"></i><span>このまとめの収録記事（時系列：前編 → 後編）</span></span>
+                    <span class="font-mono px-2.5 py-0.5 rounded-full bg-himi-600 text-white text-[10px]">全${entry.articles.length}記事</span>
+                  </div>
+                  ${subListHtml}
+                  <button type="button" onclick="toggleArticleGroupExpand(event, '${safeGroupKey}')" class="w-full py-2 rounded-xl bg-himi-200/80 hover:bg-himi-300/80 dark:bg-himi-800/80 dark:hover:bg-himi-700 text-himi-900 dark:text-purple-100 text-xs font-bold flex items-center justify-center gap-1 transition-colors">
+                    <i class="ph-bold ph-caret-up text-xs"></i>
+                    <span>このまとめグループを閉じる（全${entry.articles.length}件）</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ` : ''}
         `;
       }).join('');
     }
